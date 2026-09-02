@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>А11 · ГНСС — слайды</title>
+  <link rel="stylesheet" href="../../css/course.css" />
+</head>
+<body class="mode-slides">
+  <header class="topbar">
+    <div class="brand">А11 · ГНСС <small>стрелки · F полноэкран · N заметки · ? справка</small></div>
+        <nav class="nav">
+      <a href="../../index.html">Лекции</a>
+      <a href="../../practice.html">Практика</a>
+      <a href="../../glossary.html">Глоссарий</a>
+      <a href="../../exam.html">Экзамен</a>
+      <a href="../../literature.html">Литература</a>
+      <a href="notes.html">Конспект</a>
+      <a href="SOURCES.md">Источники</a>
+      <a href="../a10-ivp/slides.html">А10</a>
+      <a href="../a12-sk/slides.html">А12</a>
+    </nav>
+  </header>
+  <div class="deck">
+<section class="slide slide--title is-active">
+  <h1>ГНСС в контуре АФС</h1>
+  <p>А11 · пара 1,5 ч · псевдодальность · RTK · метка затвора</p>
+</section>
+
+<section class="slide">
+  <h2>На пару</h2>
+  <ul>
+    <li>Группировки и три сегмента</li>
+    <li>Почему дальность — псевдо</li>
+    <li>Статика, кинематика, RTK / PPK</li>
+    <li>Бюджет ошибок</li>
+    <li>Фазовый центр антенны ≠ центр проекции камеры</li>
+  </ul>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">ГНСС</p>
+  <p class="defn">Космос + управление + аппаратура потребителя. Глобальные: ГЛОНАСС, GPS, BeiDou, Galileo. Гражданский сигнал «из коробки» — метры, не сантиметры.</p>
+</section>
+
+<section class="slide">
+  <h2>Зачем фотограмметристу</h2>
+  <p>Приближённые линейные ЭВО и координаты ПВО. Не «магия сантиметров в телефоне». Точными ЭВО становятся после уравнивания (Ф09, А12).</p>
+</section>
+
+<section class="slide">
+  <h2>Группировки</h2>
+  <ul>
+    <li>GPS ~55° наклонения</li>
+    <li>ГЛОНАСС ~64,8° — удобнее на высоких широтах</li>
+    <li>число НС и периоды — живут, таблицу не зубрить</li>
+    <li>селективный доступ GPS снят в 2000</li>
+  </ul>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Псевдодальность</p>
+  <p class="defn">(t<sub>приёма</sub> − t<sub>излучения</sub>) × c. «Псевдо»: часы приёмника сдвинуты. По нескольким спутникам решают координаты антенны.</p>
+</section>
+
+<section class="slide">
+  <h2>Код и фаза</h2>
+  <p>Кодовые измерения — метры. Фаза несущей — миллиметры относительной базы, но нужна неоднозначность:</p>
+  <p class="formula">D = Nλ + δλ</p>
+  <p>N — целое число длин волн. Без разрешения N нет «сантиметрового RTK».</p>
+</section>
+
+<section class="slide">
+  <h2>Рычаг антенна–камера</h2>
+  <p>Фазовый центр антенны ≠ центр проекции S. Смещение калибруют (lever arm). Иначе «отличный RTK» врёт ЭВО на десятки сантиметров.</p>
+</section>
+
+<section class="slide">
+  <h2>Режимы</h2>
+  <ul>
+    <li>статика — неподвижные, база часто &gt; 15 км, час+</li>
+    <li>быстрая статика — короче, линии до ~15 км</li>
+    <li>кинематика — движущийся ровер после инициализации</li>
+    <li>«стой–иди» — остановки 5–30 с</li>
+  </ul>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">RTK</p>
+  <p class="defn">Real Time Kinematic: база шлёт поправки роверу в полёте. PPK — те же фазы после посадки. Навигационный GNSS пульта коптера RTK не является.</p>
+</section>
+
+<section class="slide">
+  <h2>Ошибки</h2>
+  <ul>
+    <li>эфемериды и часы спутника</li>
+    <li>ионосфера, тропосфера</li>
+    <li>многолучёвость, помехи</li>
+  </ul>
+  <p>SBAS / GBAS улучшают навигацию. ТопоАФС всё равно замыкают на ПВО или фазовую кинематику с контролем.</p>
+</section>
+
+<section class="slide">
+  <h2>Метка затвора</h2>
+  <p>Эпоха экспозиции должна быть связана с эпохой ГНСС. Трек «каждые 0,1 с» без события затвора — не ЭВО кадра. IMU держит углы между эпохами; юстировка камера–IMU — отдельная калибровка (в этом pptx почти нет).</p>
+</section>
+
+<section class="slide">
+  <h2>СК</h2>
+  <p>ГНСС живёт в WGS-84 / ПЗ-90. Заказчику часто нужны ГСК-2011 или МСК. Переход — А12.</p>
+</section>
+
+<section class="slide">
+  <h2>Вопросы</h2>
+  <ol>
+    <li>Почему дальность называют псевдодальностью?</li>
+    <li>Чем RTK отличается от GPS в смартфоне?</li>
+    <li>Зачем метка затвора, если трек и так пишется?</li>
+    <li>Два источника ошибок ГНСС?</li>
+  </ol>
+</section>
+
+<section class="slide slide--title">
+  <h1>Спасибо</h1>
+  <p><a href="notes.html">Конспект</a> · СК — <a href="../a12-sk/slides.html">А12</a></p>
+</section>
+  </div>
+  <div class="footer-bar">
+    <button id="prev" type="button">←</button>
+    <span id="counter"></span>
+    <div id="progress-track"><div id="progress"></div></div>
+    <button id="next" type="button">→</button>
+  </div>
+  <div class="help" id="help">
+    <div class="help-card">
+      <p><kbd>←</kbd> <kbd>→</kbd> <kbd>пробел</kbd> — слайды</p>
+      <p><kbd>F</kbd> — полный экран</p>
+      <p><kbd>N</kbd> — заметки докладчика</p>
+    </div>
+  </div>
+  <script src="../../js/slides.js"></script>
+</body>
+</html>

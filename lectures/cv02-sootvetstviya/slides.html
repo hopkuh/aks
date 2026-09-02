@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CV02 соответствия — слайды</title>
+  <link rel="stylesheet" href="../../css/course.css" />
+</head>
+<body class="mode-slides">
+  <header class="topbar">
+    <div class="brand">CV02 · соответствия <small>стрелки · F полноэкран · N заметки · ? справка</small></div>
+        <nav class="nav">
+      <a href="../../index.html">Лекции</a>
+      <a href="../../practice.html">Практика</a>
+      <a href="../../glossary.html">Глоссарий</a>
+      <a href="../../exam.html">Экзамен</a>
+      <a href="../../literature.html">Литература</a>
+      <a href="notes.html">Конспект</a>
+      <a href="SOURCES.md">Источники</a>
+      <a href="../cv01-rastr/slides.html">CV01</a>
+      <a href="../cv03-dve-kamery/slides.html">CV03</a>
+    </nav>
+  </header>
+  <div class="deck">
+<section class="slide slide--title is-active"><h1>Соответствия</h1><p>CV02 · Харрис · SIFT/ORB · RANSAC · гомография</p></section>
+
+<section class="slide slide--definition"><p class="term">Соответствие</p>
+    <p class="defn">Одноимённые точки на двух кадрах. В Metashape — связующие. Без них нет ни панорамы, ни стерео, ни бандла.</p></section>
+
+<section class="slide"><h2>Харрис</h2><svg class="scheme" viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg"><rect width="800" height="340" fill="#141b24"/>
+    <text x="40" y="32" fill="#93a1b3" font-size="14">окно w: сдвиг (u,v) · изменение энергии E</text>
+    <rect x="80" y="80" width="200" height="160" fill="#1e2733" stroke="#6ec3d8"/>
+    <rect x="130" y="120" width="80" height="80" fill="none" stroke="#e2b56a" stroke-width="2"/>
+    <text x="170" y="164" text-anchor="middle" fill="#e2b56a" font-size="13">окно</text>
+    <text x="340" y="100" fill="#e9eef4" font-size="15">угол: E велико во всех сдвигах</text>
+    <text x="340" y="140" fill="#93a1b3" font-size="14">край: велико вдоль одной оси</text>
+    <text x="340" y="180" fill="#93a1b3" font-size="14">плоскость: E≈0</text>
+    </svg>
+    <p class="formula">E(u,v) ≈ [u v] M [u;v] · R = det M − κ (tr M)²</p></section>
+
+<section class="slide"><h2>Дескриптор</h2>
+    <ul>
+      <li>SIFT: масштаб (пирамида), ориентация, гистограммы градиента 128D — Lowe IJCV 2004</li>
+      <li>ORB: FAST + BRIEF, быстрее, патентно спокойнее</li>
+      <li>Сопоставление: отношение расстояний Лоу ~0,8 отсекает двусмысленность</li>
+    </ul></section>
+
+<section class="slide slide--definition"><p class="term">RANSAC</p>
+    <p class="defn">Случайная выборка минимального набора, оценка модели, счёт inliers. Устойчив к грубым промахам, которыми забит матчинг. Fischler, Bolles, CACM 1981.</p></section>
+
+<section class="slide"><h2>Гомография</h2>
+    <p class="formula">x′ ∼ H x · H 3×3, 8 степеней (масштаб свободный)</p>
+    <p>Верна, если точки мира на <em>плоскости</em> или камера чисто вращается. Стереопара вазы — гомография врёт. Тогда F (CV03).</p></section>
+
+<section class="slide"><h2>Когда H ок</h2><svg class="scheme" viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg"><rect width="800" height="340" fill="#141b24"/>
+    <rect x="40" y="80" width="220" height="160" fill="#1e2733" stroke="#6ec3d8"/>
+    <polygon points="70,200 140,90 240,110 200,220" fill="none" stroke="#86c99a" stroke-width="2"/>
+    <text x="150" y="260" text-anchor="middle" fill="#6ec3d8" font-size="13">кадр 1 · фасад</text>
+    <rect x="420" y="60" width="280" height="200" fill="#1e2733" stroke="#e2b56a"/>
+    <polygon points="460,80 680,90 660,230 450,220" fill="none" stroke="#86c99a" stroke-width="2"/>
+    <text x="560" y="280" text-anchor="middle" fill="#e2b56a" font-size="13">кадр 2 · H · плоскость</text>
+    <text x="40" y="40" fill="#93a1b3" font-size="14">пантограф плоскости · глубина не восстанавливается</text>
+    </svg></section>
+
+<section class="slide"><h2>Минимальные наборы RANSAC</h2>
+    <table class="data"><thead><tr><th>Модель</th><th>Точек</th><th>Куда</th></tr></thead>
+    <tbody>
+      <tr><td>гомография H</td><td>4</td><td>плоскость / панорама</td></tr>
+      <tr><td>фундаментальная F</td><td>7 или 8</td><td>стерео</td></tr>
+      <tr><td>существенная E</td><td>5</td><td>калиброванная пара</td></tr>
+    </tbody></table></section>
+
+<section class="slide"><h2>Повторяющаяся текстура</h2>
+    <p>Окно, фасад, лес — дескриптор матчит «не ту» клетку. RANSAC спасёт, если inliers всё же большинство. На Ф08 однотон — нечему матчить.</p></section>
+
+<section class="slide"><h2>Масштаб и освещение</h2>
+    <ul>
+      <li>SIFT задуман инвариантным к масштабу и повороту</li>
+      <li>Сильный ББ и JPEG ломают даже SIFT</li>
+      <li>Протокол ЦФК: один ББ на серию — не каприз</li>
+    </ul></section>
+
+<section class="slide"><h2>Практика</h2>
+    <ul>
+      <li>Панорама с узла — H работает</li>
+      <li>Базис Ф07 — H ломает, нужны эпиполяры</li>
+      <li>Рисунок inliers RANSAC</li>
+    </ul></section>
+
+<section class="slide"><h2>Источники</h2><ul>
+    <li>Harris, Stephens, AVC 1988</li>
+    <li>Lowe, IJCV 2004 — cs.ubc.ca/~lowe/papers/ijcv04.pdf</li>
+    <li>Fischler, Bolles — doi:10.1145/358669.358692</li>
+    <li>OpenCV: feature homography</li>
+    </ul></section>
+  </div>
+  <div class="footer-bar">
+    <button id="prev" type="button">←</button>
+    <span id="counter"></span>
+    <div id="progress-track"><div id="progress"></div></div>
+    <button id="next" type="button">→</button>
+  </div>
+  <div class="help" id="help">
+    <div class="help-card">
+      <p><kbd>←</kbd> <kbd>→</kbd> <kbd>пробел</kbd> — слайды</p>
+      <p><kbd>F</kbd> — полный экран</p>
+      <p><kbd>N</kbd> — заметки докладчика</p>
+    </div>
+  </div>
+  <script src="../../js/slides.js"></script>
+  <script src="../../js/widgets.js"></script>
+</body>
+</html>

@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ф01 · Фотоаппарат — слайды</title>
+  <link rel="stylesheet" href="../../css/course.css" />
+</head>
+<body class="mode-slides">
+  <header class="topbar">
+    <div class="brand">Ф01 · Фотоаппарат <small>стрелки · F полноэкран · N заметки · ? справка</small></div>
+        <nav class="nav">
+      <a href="../../index.html">Лекции</a>
+      <a href="../../practice.html">Практика</a>
+      <a href="../../glossary.html">Глоссарий</a>
+      <a href="../../exam.html">Экзамен</a>
+      <a href="../../literature.html">Литература</a>
+      <a href="notes.html">Конспект</a>
+      <a href="SOURCES.md">Источники</a>
+    </nav>
+  </header>
+
+  <div class="deck">
+<section class="slide slide--title is-active">
+  <h1>Фотоаппарат и фотография</h1>
+  <p>Дрыга Данила Олегович<br><span class="muted">введение в курс · устройство камеры · история</span></p>
+</section>
+
+<section class="slide">
+  <h2>Два семестра</h2>
+  <div class="columns">
+    <div>
+      <h3>Семестр 3</h3>
+      <ul>
+        <li>Устройство фотоаппарата</li>
+        <li>Теория построения изображения</li>
+        <li>Техническая фотография</li>
+        <li>Трёхмерное моделирование</li>
+        <li>Контрольная · РГР ×2 · курсовая · зачёт</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Семестр 4</h3>
+      <ul>
+        <li>Устройство БВС</li>
+        <li>Планирование АФС</li>
+        <li>Оценка качества материалов АФС</li>
+        <li>Контрольная · курсовая · экзамен за 2 семестра</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="columns">
+    <div>
+      <p class="term">ДЗЗ</p>
+      <p class="defn">Совокупность методов получения информации по результатам измерений <strong>без прямого контакта</strong> с объектом.</p>
+      <div class="stages stages--stack">
+        <div class="stage-card">
+          <p class="n">Этап 1</p>
+          <p>Получение изображений: носитель, камера, экспозиция, перекрытие.</p>
+        </div>
+        <div class="stage-arrow" aria-hidden="true">→</div>
+        <div class="stage-card">
+          <p class="n">Этап 2</p>
+          <p>Обработка изображений: ориентирование, ЦМР, орто, дешифрирование.</p>
+        </div>
+      </div>
+    </div>
+    <figure class="fig fig-lg">
+        <img src="images/schemes/f01-dzz-cycle.svg" alt="Цикл дистанционного зондирования">
+        <figcaption>Цикл ДЗЗ</figcaption>
+      </figure>
+  </div>
+</section>
+
+<section class="slide">
+  <h2>Что такое АКС?</h2>
+  <p class="defn">Методы исследования Земли с воздушных и космических носителей: регистрация и анализ электромагнитного излучения, идущего от Земли.</p>
+  <div class="class-grid">
+    <article class="class-card">
+      <h3>Носитель</h3>
+      <ul>
+        <li>Космическая съёмка</li>
+        <li>Аэросъёмка (самолёт, БВС)</li>
+      </ul>
+    </article>
+    <article class="class-card">
+      <h3>Спектр</h3>
+      <ul>
+        <li>Видимый (фото)</li>
+        <li>ИК · тепловизор</li>
+        <li>Радиолокация</li>
+      </ul>
+    </article>
+    <article class="class-card">
+      <h3>Излучение</h3>
+      <ul>
+        <li>Пассивные: фото, ИК, тепло</li>
+        <li>Активные: лидар, РЛС</li>
+      </ul>
+    </article>
+  </div>
+  <aside class="speaker-notes">По типу носителя: космос и воздух. Пассивные принимают своё/отражённое; активные подсвечивают сами.</aside>
+</section>
+
+<section class="slide">
+  <h2>БВС снимает землю с перекрытием</h2>
+  <figure class="fig fig-lg">
+    <img src="images/schemes/f01-uav-overlap.svg" alt="БВС, два кадра и продольное перекрытие Px">
+    <figcaption>Два соседних кадра · общая полоса — стереопара</figcaption>
+  </figure>
+</section>
+
+<section class="slide">
+  <div class="columns">
+    <div>
+      <p class="term">АФС</p>
+      <p class="defn">Основной вид АКС: аэрофотосъёмка аэрофотоаппаратами и спецоборудованием в <strong>видимом диапазоне</strong>.</p>
+      <p>Видимый диапазон — то, что видит глаз: примерно 380–780 нм, от фиолетового к красному. Короче — УФ, длиннее — ближний ИК и тепло.</p>
+    </div>
+    <figure class="fig fig-lg">
+        <img src="images/schemes/f01-em-spectrum.svg" alt="Электромагнитный спектр с выделенным видимым диапазоном">
+        <figcaption>Видимый диапазон ≈ 380–780 нм</figcaption>
+      </figure>
+  </div>
+  <aside class="speaker-notes">От бытовой фотографии: мелкие малоконтрастные детали, атмосфера, движение и вибрации камеры во время экспонирования.</aside>
+</section>
+
+<section class="slide">
+  <h2>Зачем?</h2>
+  <figure class="fig fig-lg">
+        <img src="images/s07_04.jpg" alt="Иллюстрация применения аэрофотосъёмки">
+        <figcaption>Зачем нужна АФС · <a href="SOURCES.md">источник</a></figcaption>
+      </figure>
+</section>
+
+<section class="slide">
+  <h2>Основные результаты обработки АФС</h2>
+  <div data-widget="layers"
+       data-tin="images/s08_07.png"
+       data-tex="images/s08_08.png"
+       data-dem="images/s08_06.png"
+       data-ortho="images/s08_05.png"></div>
+</section>
+
+<section class="slide">
+  <h2>Тепловизионная съёмка</h2>
+  <div class="columns">
+    <ul>
+      <li>Мониторинг утечек тепла</li>
+      <li>Теплотрассы, ЛЭП, трубопроводы</li>
+      <li>Диагностика промышленных объектов</li>
+      <li>Экологический мониторинг</li>
+      <li>Поисково-спасательные операции</li>
+    </ul>
+    <figure class="fig">
+        <img src="images/s09_09.jpg" alt="Тепловизионное изображение">
+        <figcaption>Тепловизор · <a href="SOURCES.md">источник</a></figcaption>
+      </figure>
+  </div>
+</section>
+
+<section class="slide">
+  <h2>Фасадная съёмка</h2>
+  <p>Наземная фотограмметрия · аэрофотосъёмка · обмерные чертежи</p>
+  <div class="gallery gallery--paper"><img src="images/s10_10.jpg" alt="фасад 1">
+<img src="images/s10_11.png" alt="фасад 2">
+<img src="images/s10_12.png" alt="фасад 3"></div>
+</section>
+
+<section class="slide">
+  <h2>Съёмка канала им. Москвы</h2>
+  <p>Топографическая съёмка · аэрофотосъёмка</p>
+  <figure class="fig fig-lg fig--paper">
+        <img src="images/s11_13.png" alt="Съёмка канала имени Москвы">
+        <figcaption>Пример: канал им. Москвы · <a href="SOURCES.md">источник</a></figcaption>
+      </figure>
+</section>
+
+<section class="slide">
+  <h2>Геоподоснова г. Чехов</h2>
+  <p>Аэрофотосъёмка → ортофотоплан → оцифровка</p>
+  <div class="gallery"><img src="images/s12_14.jpg" alt="Чехов 1">
+<img src="images/s12_15.png" alt="Чехов 2"></div>
+</section>
+
+<section class="slide">
+  <h2>Трёхмерная модель квартала, Евпатория</h2>
+  <p>Аэрофотосъёмка · создание 3D-моделей</p>
+  <div class="gallery"><img src="images/s13_16.jpg" alt="Евпатория 1">
+<img src="images/s13_17.jpg" alt="Евпатория 2"></div>
+</section>
+
+<section class="slide">
+  <h2>Бетонный завод ООО «ПСК Обрэй»</h2>
+  <p>АФС · 3D · DEM и горизонтали · объёмы</p>
+  <div class="gallery"><img src="images/s14_18.jpg" alt="завод 1">
+<img src="images/s14_19.png" alt="завод 2">
+<img src="images/s14_20.png" alt="завод 3">
+<img src="images/s14_21.png" alt="завод 4"></div>
+</section>
+
+<section class="slide">
+  <h2>Трёхмерные копии картин</h2>
+  <p>Фотосъёмка · 3D-модель · ортофотоплан и карта высот</p>
+  <div class="gallery"><img src="images/s15_22.jpg" alt="картина 1">
+<img src="images/s15_23.jpg" alt="картина 2">
+<img src="images/s15_24.png" alt="карта высот"></div>
+</section>
+
+<section class="slide">
+  <h2>Фотореалистичная 3D-модель района Зюзино</h2>
+  <figure class="fig fig-lg">
+        <img src="images/s16_25.png" alt="3D-модель района Зюзино">
+        <figcaption>Москва, Зюзино · <a href="SOURCES.md">источник</a></figcaption>
+      </figure>
+</section>
+
+<section class="slide">
+  <h2>Масштаб</h2>
+  <ul>
+    <li>именованный</li>
+    <li>численный</li>
+    <li>линейный</li>
+  </ul>
+  <figure class="fig fig-lg">
+        <img src="images/s17_26.png" alt="Виды масштаба">
+        <figcaption>Три записи масштаба · <a href="SOURCES.md">источник</a></figcaption>
+      </figure>
+</section>
+
+<section class="slide">
+  <h2>Разный масштаб · одинаковое разрешение</h2>
+  <div class="gallery"><img src="images/s18_27.jpg" alt="масштаб 1">
+<img src="images/s18_28.jpg" alt="масштаб 2"></div>
+</section>
+
+<section class="slide">
+  <h2>Одинаковый масштаб · разное разрешение</h2>
+  <div class="gallery"><img src="images/s19_29.jpg" alt="разрешение 1">
+<img src="images/s19_30.jpg" alt="разрешение 2"></div>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Масштаб</p>
+  <p class="defn">Соотношение, показывающее, во сколько раз линия на карте или чертеже меньше или больше действительного размера.</p>
+  <ul>
+    <li>Полнота (генерализация) и точность</li>
+    <li>«Мерная палка»: погрешность контуров на плане ≤ 0,5 мм относительно ближайших точек обоснования</li>
+  </ul>
+</section>
+
+<section class="slide slide--table">
+  <h2>Высота сечения рельефа на топопланах</h2>
+  <p class="caveat">Погрешность съёмки рельефа — не более 1/4 принятой высоты сечения.</p>
+  <table class="data">
+    <thead>
+      <tr><th>Рельеф</th><th>1:5000</th><th>1:2000</th><th>1:1000 / 1:500</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Равнинный, до 2°</td><td>1,0 м</td><td>0,5 м</td><td>0,5 м</td></tr>
+      <tr><td>Всхолмлённый, до 4°</td><td>2,0 м</td><td>1,0 м</td><td>0,5 м</td></tr>
+      <tr><td>Пересечённый, до 6°</td><td>2,0 м</td><td>2,0 м</td><td>0,5 м</td></tr>
+      <tr><td>Горный, более 6°</td><td>5,0 м</td><td>2,0 м</td><td>1,0 м</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="slide">
+  <div class="columns">
+    <div>
+      <p class="term">Фотография</p>
+      <p class="defn">Фиксация оптического изображения регистрацией света (≈ 380–780 нм) на химическом или электронном светочувствительном материале.</p>
+      <p class="caveat">Основа — фотоэффект. Три взгляда: философия (след времени) · фотограф (захват света) · техника (это определение).</p>
+    </div>
+    <figure class="fig fig-lg">
+        <img src="images/s22_31.jpg" alt="Иллюстрация фотографии">
+        <figcaption>Захват изображения · <a href="SOURCES.md">источник</a></figcaption>
+      </figure>
+  </div>
+</section>
+
+<section class="slide">
+  <h2>Это всё о захвате света</h2>
+  <div class="columns">
+    <figure class="fig fig-lg">
+      <img src="images/s23_32.jpg" alt="Свет, выдержка, момент">
+    </figure>
+    <blockquote class="quote">
+      «Фотография — это прекрасное изобретение, посредством которого каждый из нас может передавать другим в верной копии всё, чем было заинтересовано его зрение»
+      <cite>Н. Г. Чернышевский. Критика // Отечественные записки. 1854</cite>
+    </blockquote>
+  </div>
+</section>
+
+<section class="slide">
+  <h2>Камера-обскура: кто и что</h2>
+  <div class="people-grid">
+    <article class="person">
+      <img src="images/wiki/aristotle.jpg" alt="Бюст Аристотеля">
+      <h3>Аристотель</h3>
+      <p>III в. до н. э. · тёмная комната, проекция через отверстие</p>
+    </article>
+    <article class="person">
+      <img src="images/s24_36.jpg" alt="Альхазен">
+      <h3>Альхазен</h3>
+      <p>X–XI в. · описание обскуры в «Книге оптики»</p>
+    </article>
+    <article class="person">
+      <img src="images/s24_38.png" alt="Роджер Бэкон">
+      <h3>Бэкон</h3>
+      <p>XIII в. · оптика, наблюдение затмений через отверстие</p>
+    </article>
+    <article class="person">
+      <img src="images/s24_39.jpg" alt="Леонардо да Винчи">
+      <h3>Леонардо</h3>
+      <p>XV в. · чертежи камеры-обскуры</p>
+    </article>
+    <article class="person">
+      <img src="images/wiki/della-porta.jpg" alt="Джамбаттиста делла Порта">
+      <h3>Делла Порта · Кардано</h3>
+      <p>XVI в. · линза в отверстии: ярче, можно рисовать</p>
+    </article>
+  </div>
+</section>
+
+<section class="slide">
+  <h2>Камера-обскура</h2>
+  <div class="columns">
+    <div>
+      <p class="defn">Проекционное устройство: тёмный ящик, отверстие (позже — линза), изображение на противоположной стенке.</p>
+      <p>Две тысячи лет умели получать картинку и не умели её <strong>фиксировать</strong>. Обскура — не фотоаппарат.</p>
+    </div>
+    <figure class="fig fig-lg fig--paper">
+      <img src="images/wiki/camera-obscura.jpg" alt="Гравюра камеры-обскуры из Encyclopédie, XVIII в.">
+      <figcaption>Encyclopédie, 1763 · Wikimedia Commons</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="slide">
+  <h2>Как устроена обскура</h2>
+  <figure class="fig fig-lg">
+        <img src="images/schemes/f01-camera-obscura.svg" alt="Камера-обскура: подобные треугольники, перевёрнутое изображение">
+        <figcaption>h / d = h′ / d′ · луч через O продолжается · изображение перевёрнуто</figcaption>
+      </figure>
+</section>
+
+<section class="slide">
+  <h2>Гелиография</h2>
+  <div class="hist-meta">
+    <div><span class="k">Автор</span><p>Жозеф Нисефор Ньепс</p></div>
+    <div><span class="k">Год</span><p>1825 · гравюра; 1826/27 — «Вид из окна»</p></div>
+    <div><span class="k">Технология</span><p>Битум иудейский затвердевает на свету, незасвеченное смывают</p></div>
+  </div>
+  <div class="gallery gallery--paper">
+    <img src="images/wiki/niepce-1825.jpg" alt="Гелиогравюра Ньепса, 1825 — старейшее сохранившееся фотомеханическое изображение">
+    <img src="images/wiki/niepce-le-gras.jpg" alt="Вид из окна в Ле Гра, ок. 1826–27">
+  </div>
+  <p class="caveat">Слева — гелиогравюра 1825 (копия гравюры). Справа — первое сохранившееся <em>фотографическое</em> изображение с натуры, экспозиция ~8 ч. Harry Ransom Center.</p>
+</section>
+
+<section class="slide">
+  <h2>Дагерротипия · примеры</h2>
+  <p>19 августа 1839 — официальный день рождения фотографии. Один экземпляр, тиражировать нельзя. Экспозиция 15–30 минут.</p>
+  <div class="gallery gallery--paper">
+    <img src="images/wiki/daguerre-atelier-1837.jpg" alt="Дагерротип ателье Дагера, 1837">
+    <img src="images/wiki/daguerre-boulevard.jpg" alt="Бульвар дю Тампль, Дагер, 1838">
+  </div>
+  <p class="caveat">Слева — натюрморт в ателье, 1837. Справа — «Бульвар дю Тампль»: улица пустая, потому что выдержка длинная; виден только человек, который стоял достаточно долго (чистка обуви).</p>
+  <aside class="speaker-notes">Пластина → пары йода → экспозиция → пары ртути → фиксаж. Араго: «подарок миру».</aside>
+</section>
+
+<section class="slide">
+  <h2>Дагерротипия</h2>
+  <div class="columns">
+    <div>
+      <p>Так выглядела камера. Это не карманный аппарат — ящик с линзой плюс химия в чемоданах.</p>
+      <ul>
+        <li><strong>Кто:</strong> Луи Дагер</li>
+        <li><strong>Когда:</strong> 19 августа 1839, Париж — день рождения фотографии</li>
+        <li><strong>Что на выходе:</strong> одна металлическая пластина. Копии нет</li>
+        <li><strong>Выдержка:</strong> 15–30 минут</li>
+        <li><strong>Как:</strong> серебро → пары йода → снимок → пары ртути → фиксаж</li>
+        <li><strong>Вес комплекта:</strong> порядка 120 кг</li>
+      </ul>
+    </div>
+    <figure class="fig fig-lg">
+      <img src="images/s25_41.jpg" alt="Камера для дагерротипии: деревянный ящик и латунный объектив">
+      <figcaption>Камера дагерротипа · скользящий ящик, латунный объектив</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="slide">
+  <h2>Калотипия</h2>
+  <p>Изобрёл <strong>Уильям Генри Фокс Тальбот</strong>, патент <strong>1841</strong> (№ 8842). Бумага в камере даёт негатив — с него печатаешь сколько угодно позитивов.</p>
+  <div class="gallery gallery--paper">
+    <img src="images/wiki/talbot-portrait.jpg" alt="Уильям Генри Фокс Тальбот, портрет Джона Моффата, 1864">
+    <img src="images/wiki/talbot-process-1841.jpg" alt="Обложка сообщения Тальбота в Королевское общество, 1841: процесс калотипии">
+    <img src="images/s25_40.jpg" alt="Деревянная камера эпохи калотипии">
+  </div>
+  <p class="caveat">Слева направо: автор · текст процесса 1841 · камера. Пока есть негатив — снимок можно размножить. У Дагера негатива нет, поэтому дагерротипия не стала массовой.</p>
+</section>
+
+<section class="slide">
+  <h2>Один экземпляр vs печать</h2>
+  <figure class="fig fig-lg">
+        <img src="images/schemes/f01-daguerre-calotype.png" alt="Дагерротипия: один экземпляр. Калотипия: негатив и много позитивов">
+      </figure>
+</section>
+
+<section class="slide">
+  <h2>Вам должно быть жаль этих ребят</h2>
+  <p class="caveat">Хмурые лица — следствие выдержки 15–30 минут.</p>
+  <div class="gallery"><img src="images/s26_42.jpg" alt="портрет 1">
+<img src="images/s26_43.jpg" alt="портрет 2"></div>
+</section>
+
+<section class="slide">
+  <h2>Оборудование</h2>
+  <p>Комплект мог весить около 120 кг.</p>
+  <div class="gallery"><img src="images/s27_44.jpg" alt="оборудование 1">
+<img src="images/s27_45.jpg" alt="оборудование 2"></div>
+</section>
+
+<section class="slide">
+  <h2>Мокрый коллодий · Ф. С. Арчер, 1851</h2>
+  <div class="columns">
+    <div>
+      <p><strong>Что:</strong> эмульсия на стекле, пластину поливают, экспонируют и проявляют, пока сырая.</p>
+      <p><strong>Что даёт:</strong> экспозиция секунды, а не минуты. На портрете уже можно моргнуть. Резкость выше, чем у бумаги Тальбота.</p>
+      <p class="caveat">Полевая съёмка — ад: нужна походная лаборатория. Камера ещё не отделена от химии.</p>
+    </div>
+    <figure class="fig fig-lg">
+        <img src="images/s28_46.jpg" alt="Эмульсионная пластина">
+        <figcaption>Мокрый коллодий · <a href="SOURCES.md">источник</a></figcaption>
+      </figure>
+  </div>
+</section>
+
+<section class="slide">
+  <h2>Желатина · Р. Мэддокс, 1871</h2>
+  <div class="columns">
+    <div>
+      <p><strong>Что:</strong> сухие броможелатиновые пластины. Свет чувствителен заранее, проявлять можно позже.</p>
+      <p><strong>Что даёт:</strong> камера отделяется от лаборатории. Можно снять в поле и проявить дома. Шаг к плёнке (Истмен, 1880-е) и к массовой фотографии.</p>
+    </div>
+    <figure class="fig fig-lg">
+        <img src="images/s29_47.jpg" alt="Желатиновая пластина или плёнка">
+        <figcaption>Желатина · <a href="SOURCES.md">источник</a></figcaption>
+      </figure>
+  </div>
+</section>
+
+<section class="slide">
+  <h2>Почему фотография сначала чёрно-белая?</h2>
+  <p class="q-hook">Мир цветной. Галогенид серебра темнеет от света. Почему тогда снимок — серый?</p>
+  <ul>
+    <li>Кристалл считает <strong>сколько</strong> фотонов пришло, а не <strong>какой</strong> длины волны.</li>
+    <li>Синий и красный одинаковой энергии дают одно и то же потемнение.</li>
+    <li>Цвет — отдельная задача: разделить спектр на каналы (фильтры) или встроить красители в слои.</li>
+  </ul>
+  <p class="caveat">Запишите ответ своими словами. Это тот же принцип, что позже у фильтра Байера на матрице.</p>
+</section>
+
+<section class="slide">
+  <h2>Первый цвет · Максвелл, 1861</h2>
+  <div class="columns">
+    <div>
+      <p>Три съёмки через красный, зелёный и синий фильтры → три ч/б негатива → аддитивное наложение проекций.</p>
+      <p>Это доказательство принципа Юнга — Гельмгольца, ещё не «цветная плёнка в один клик».</p>
+      <p class="caveat">Прокудин-Горский (1910-е) — та же тройка RGB, но три раздельные пластины для печати, не Автохром.</p>
+    </div>
+    <figure class="fig fig-lg fig--paper">
+      <img src="images/wiki/maxwell-tartan.jpg" alt="Тартановая лента Максвелла, 1861 — первая устойчивая цветная фотография">
+      <figcaption>Tartan Ribbon · Максвелл / Саттон, 1861 · Wikimedia</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="slide">
+  <h2>Автохром · братья Люмьер</h2>
+  <div class="hist-meta">
+    <div><span class="k">Патент</span><p>1903 · в продаже с 1907</p></div>
+    <div><span class="k">Как</span><p>Зёрна крахмала RGB на стекле + панхроматическая эмульсия</p></div>
+    <div><span class="k">Зачем</span><p>Один кадр, обычная камера. Первая массовая цветная система</p></div>
+  </div>
+  <div class="gallery gallery--paper">
+    <img src="images/wiki/autochrome-micro.jpg" alt="Микрофото растра Автохрома: зёрна крахмала RGB">
+    <img src="images/wiki/autochrome-stieglitz.jpg" alt="Автохром Стиглица, ок. 1907">
+    <img src="images/wiki/autochrome-paris-1914.jpg" alt="Автохром Парижа, 1914, Стефан Пассе">
+  </div>
+  <p class="caveat">Слева — растр пластины (то, как устроен цвет). Минус процесса: темно, медленно (~ISO 1–4), почти нельзя тиражировать. Поэтому Прокудин-Горский Автохром не взял.</p>
+</section>
+
+<section class="slide">
+  <h2>Что заменило Автохром</h2>
+  <div class="columns">
+    <div>
+      <p><strong>Kodachrome, 1935</strong> и хромогенные трёхслойные плёнки: три эмульсии друг над другом, каждая чувствительна к своему диапазону, красители проявляются в слоях.</p>
+      <p>Почему победили: выше светочувствительность, нет крахмального растра, удобнее печать и кино, один кадр без аддитивной проекции.</p>
+      <p>Дальше — цветной негатив (Kodacolor и аналоги) и уже привычная «цветная плёнка из магазина».</p>
+    </div>
+    <figure class="fig fig-lg fig--paper">
+      <img src="images/wiki/kodachrome-ii.jpg" alt="Кассета Kodachrome II — трёхслойная цветная плёнка">
+      <figcaption>Kodachrome II · Wikimedia Commons · трёхслойный процесс с 1935</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="slide">
+  <h2>ПЗС · что это</h2>
+  <div class="columns">
+    <div>
+      <p><strong>Кто:</strong> Уиллард Бойл и Джордж Смит, Bell Labs, 1969. Нобель по физике 2009 — за ПЗС, не за «первую камеру».</p>
+      <p><strong>Что:</strong> charge-coupled device. Фотон → заряд в ячейке. Заряд <em>едет</em> по цепочке к общему выходу и только там становится напряжением.</p>
+      <p>Упрощённо: не «каждый пиксель сам говорит», а «все по очереди сдают заряд на одну кассу».</p>
+    </div>
+    <figure class="fig fig-lg">
+        <img src="images/schemes/f01-ccd-cmos.svg" alt="Как считывается заряд в ПЗС и КМОП">
+        <figcaption>ПЗС: сдвиг заряда · КМОП: усилитель в ячейке</figcaption>
+      </figure>
+  </div>
+</section>
+
+<section class="slide">
+  <h2>Матрица 100×100 · Fairchild, 1973</h2>
+  <p>Первая коммерческая ПЗС-матрица: 100×100 элементов = <strong>0,01 Мп</strong>. Это ещё не камера, это датчик, который можно вставить в прибор.</p>
+  <p>Без двумерной матрицы нет кадра: был фотоэлемент (одна точка) и линейка (одна строка). Матрица — кадр целиком.</p>
+  <p class="caveat">Место для фото Fairchild CCD / даташита · <a href="SOURCES.md">источники</a></p>
+</section>
+
+<section class="slide">
+  <h2>Прототип · Стивен Сассун, Kodak, 1975</h2>
+  <div class="columns">
+    <div>
+      <p>Не серийный продукт: «бесплёночная» камера на матрице Fairchild 100×100.</p>
+      <ul>
+        <li>≈ 3,6 кг, 16 элементов AA</li>
+        <li>объектив от Super 8, выдержка 1/20 с</li>
+        <li>запись кадра ~23 с на кассету</li>
+        <li>первый снимок — 9 декабря 1975</li>
+      </ul>
+      <p class="caveat">Kodak жил продажей плёнки — прототип не запустили в серию.</p>
+    </div>
+    <div class="gallery"><img src="images/s32_50.jpg" alt="Сассун">
+<img src="images/s32_51.jpg" alt="Kodak прототип"></div>
+  </div>
+</section>
+
+<section class="slide">
+  <h2>Первая серийная · Sony Mavica, 1981</h2>
+  <div class="columns">
+    <div>
+      <p>Серийный стоп-кадр на мини-диск, ≈ 0,3 Мп. По сути — кадр с видеокамеры, не «цифровая зеркалка».</p>
+      <p>Путь к цифре шёл через видео так же, как путь к плёнке шёл через негатив.</p>
+      <p>1995 — QuickTake, Kodak DC40, Casio QV-11: уже можно сразу увидеть, что снял.</p>
+    </div>
+    <figure class="fig">
+      <img src="images/s32_52.jpg" alt="Ранняя цифровая камера">
+      <figcaption>Бытовой ориентир · <a href="SOURCES.md">источник</a></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="slide">
+  <h2>КМОП · усилитель · обратная засветка</h2>
+  <ul>
+    <li><strong>КМОП (CMOS)</strong> как технология логики существовала давно; для картинки долго уступала ПЗС по чувствительности и шуму.</li>
+    <li><strong>Active pixel</strong> (Эрик Фоссум и др., начало 1990-х, в т. ч. работы для NASA/JPL): усилитель <em>в каждой ячейке</em>. Заряд не едет через весь чип — читается на месте. Меньше энергия, выше скорость.</li>
+    <li><strong>Обратная засветка (BSI)</strong>, 2000-е: свет заходит с тыльной стороны, не через разводку. Больше фотонов доходит до фотодиода — главный ход смартфонов и современных камер.</li>
+  </ul>
+  <p class="caveat">Сегодня почти все фотоаппараты и телефоны — КМОП. ПЗС осталась в нишах (наука, часть сканеров).</p>
+</section>
+
+<section class="slide">
+  <h2>Классификация фотоаппаратов</h2>
+  <div class="gallery"><img src="images/s33_53.jpg" alt="UltraCam X">
+<img src="images/s33_54.jpg" alt="камера 2">
+<img src="images/s33_55.jpg" alt="камера 3">
+<img src="images/s33_56.png" alt="камера 4"></div>
+</section>
+
+<section class="slide">
+  <h2>По назначению</h2>
+  <ul>
+    <li>Общего</li>
+    <li>Специального: АФА, медицинские, панорамные, стереоскопические</li>
+  </ul>
+  <div class="gallery"><img src="images/s34_57.jpg" alt="назначение 1">
+<img src="images/s34_58.jpg" alt="назначение 2">
+<img src="images/s34_59.jpg" alt="назначение 3">
+<img src="images/s34_61.jpg" alt="назначение 4">
+<img src="images/s34_62.png" alt="назначение 5">
+<img src="images/s34_63.png" alt="назначение 6"></div>
+</section>
+
+<section class="slide">
+  <h2>По типу приёмника излучения</h2>
+  <ul>
+    <li>Плёночный</li>
+    <li>Пластиночный</li>
+    <li>Матричный</li>
+    <li>Линейка ПЗС</li>
+  </ul>
+  <div class="gallery"><img src="images/s35_64.jpg" alt="приёмник 1">
+<img src="images/s35_65.png" alt="приёмник 2">
+<img src="images/s35_66.jpg" alt="приёмник 3">
+<img src="images/s35_67.png" alt="приёмник 4">
+<img src="images/s35_68.png" alt="приёмник 5"></div>
+</section>
+
+<section class="slide">
+  <h2>По спектральному диапазону</h2>
+  <figure class="fig fig-lg">
+        <img src="images/schemes/f01-spectral-qe.svg" alt="Кривые чувствительности: панхром, RGB, NIR, гиперспектр">
+        <figcaption>Панхром — один широкий канал · RGB — три · NIR — за 780 нм · гиперспектр — много узких</figcaption>
+      </figure>
+  <aside class="speaker-notes">https://www.youtube.com/watch?v=JeDwItIyvBI</aside>
+</section>
+
+<section class="slide">
+  <h2>Классификация цифровых фотоаппаратов</h2>
+  <ul>
+    <li>Фотофоны</li>
+    <li>Компактные («мыльницы»)</li>
+    <li>Беззеркальные</li>
+    <li>Зеркальные</li>
+    <li>Среднеформатные</li>
+  </ul>
+  <div class="gallery">
+    <div class="cam-card"><img src="images/s38_75.jpg" alt="компакт"></div>
+    <div class="cam-card"><img src="images/s38_76.jpg" alt="беззеркалка"></div>
+    <div class="cam-card"><img src="images/s38_77.jpg" alt="зеркалка"></div>
+    <div class="cam-card"><img src="images/s38_78.png" alt="средний формат"></div>
+  </div>
+</section>
+
+<section class="slide">
+  <h2>Размеры сенсоров</h2>
+  <p class="caveat">В эпоху плёнки кадр тоже был разный: 24×36 мм (малоформат / «полный кадр»), 6×6 см и 6×9 (средний формат), 9×12 см и больше (крупный). Цифровые дюймовые марки 1/2,3″ — маркетинг, смотрите миллиметры.</p>
+  <div class="columns">
+    <table class="data">
+      <thead><tr><th>Формат</th><th>Размер</th><th>Кроп</th></tr></thead>
+      <tbody>
+        <tr><td>1/2,3″</td><td>~6,2 × 4,6 мм</td><td>~5,6</td></tr>
+        <tr><td>1″</td><td>13,2 × 8,8 мм</td><td>2,7</td></tr>
+        <tr><td>M4/3</td><td>17,3 × 13,0 мм</td><td>2,0</td></tr>
+        <tr><td>APS-C</td><td>~22 × 15 мм</td><td>1,5–1,6</td></tr>
+        <tr><td>Полный кадр</td><td>36 × 24 мм</td><td>1,0</td></tr>
+        <tr><td>Средний формат</td><td>44 × 33 мм и больше</td><td>&lt; 0,8</td></tr>
+      </tbody>
+    </table>
+    <figure class="fig fig-lg">
+        <img src="images/schemes/f01-sensor-sizes.svg" alt="Физический размер матрицы">
+        <figcaption>миллиметры, не мегапиксели</figcaption>
+      </figure>
+  </div>
+</section>
+
+<section class="slide slide--definition slide--formula-bg">
+  <p class="formula-watermark">K<sub>f</sub> = l<sub>x36</sub> / l<sub>x</sub> = l<sub>y24</sub> / l<sub>y</sub> = d<sub>36×24</sub> / d</p>
+  <p class="term">Кроп-фактор</p>
+  <p class="defn">Отношение стороны (или диагонали) кадра 36×24 мм к той же величине используемой матрицы. Отражает сужение поля зрения объектива.</p>
+  <figure class="fig fig-lg">
+        <img src="images/schemes/f01-crop-factor.svg" alt="Кроп-фактор: поле зрения уже, фокусное то же">
+      </figure>
+  <aside class="speaker-notes">Фокусное расстояние оптики не меняется. «Виртуальное увеличение» — только удобная метафора.</aside>
+</section>
+
+<section class="slide">
+  <h2>Основные элементы фотоаппарата</h2>
+  <ul>
+    <li>Объектив</li>
+    <li>Диафрагма</li>
+    <li>Затвор</li>
+    <li>Матрица / плёнка</li>
+    <li>Процессор (АЦП, демозаика, сжатие)</li>
+    <li>Видоискатель · автофокус · корпус · байонет</li>
+  </ul>
+  <figure class="fig fig--solo">
+    <img src="images/s41_83.jpg" alt="Разрез фотоаппарата: объектив, затвор, матрица">
+  </figure>
+</section>
+
+<section class="slide">
+  <h2>Общая схема фотосъёмочной системы</h2>
+  <figure class="fig fig-lg">
+        <img src="images/schemes/f01-camera-pipeline.svg" alt="Цепочка цифровой камеры">
+        
+      </figure>
+</section>
+
+<section class="slide slide--table">
+  <h2>Режимы экспозиции</h2>
+  <table class="data">
+    <thead><tr><th>Режим</th><th>Другие обозначения</th><th>Кто чем управляет</th></tr></thead>
+    <tbody>
+      <tr><td>P — Program</td><td>программный</td><td>камера выбирает диафрагму и выдержку</td></tr>
+      <tr><td>A — Aperture</td><td>Av (Aperture value)</td><td>вы — диафрагму, камера — выдержку</td></tr>
+      <tr><td>S — Shutter / Time</td><td>Tv (Time value)</td><td>вы — выдержку, камера — диафрагму</td></tr>
+      <tr><td>M — Manual</td><td>ручной</td><td>полный ручной контроль экспозиции</td></tr>
+    </tbody>
+  </table>
+  <p class="caveat">Canon чаще пишет Av / Tv, Nikon и Sony — A / S. Смысл один. ISO в авторежимах часто остаётся на вас или в Auto ISO.</p>
+  <figure class="fig fig-lg">
+        <img src="images/schemes/f01-pasm.svg" alt="Режимы экспозиции: программный, приоритет диафрагмы, приоритет выдержки, ручной">
+      </figure>
+</section>
+
+<section class="slide">
+  <h2>Как выбрать камеру</h2>
+  <ul>
+    <li>Байонет и оптика важнее корпуса</li>
+    <li>Размер сенсора задаёт потолок качества</li>
+    <li>Носить важнее, чем «лучше на бумаге»</li>
+    <li>Мегапиксели — не главный критерий</li>
+  </ul>
+  <p class="caveat">iPhone 11 — 12 Мп · Xiaomi Mi 10 — 108 Мп. Больше пикселей на той же площади ≠ лучше снимок.</p>
+  <div class="gallery"><img src="images/s44_89.png" alt="iPhone 11">
+<img src="images/s44_90.png" alt="Xiaomi"></div>
+</section>
+
+<section class="slide">
+  <h2>Пять вопросов</h2>
+  <ol>
+    <li>Чем камера-обскура отличается от фотоаппарата?</li>
+    <li>Почему массовой стала калотипия, а не дагерротипия?</li>
+    <li>Какое явление общее для плёнки и цифры?</li>
+    <li>Почему рост Мп при том же размере матрицы не всегда плюс?</li>
+    <li>Три изобретения без которых нет цифровой фотографии?</li>
+  </ol>
+  <p class="caveat">Ответы — в конспекте §10.</p>
+</section>
+
+<section class="slide slide--title">
+  <h1>Спасибо</h1>
+  <p><a href="notes.html">Конспект</a> · <a href="../../glossary.html">словарь</a> · <a href="../03-02-obektiv/slides.html">далее: объектив</a></p>
+</section>
+
+<section class="slide">
+  <h2>Задание</h2>
+  <div class="assign-grid">
+    <article class="assign-card">
+      <h3>4 режима</h3>
+      <p>Один и тот же сюжет снять в <strong>P, A (Av), S (Tv), M</strong>. Подписать режим на кадре или в имени файла.</p>
+    </article>
+    <article class="assign-card">
+      <h3>Три положения</h3>
+      <p>Для <strong>A</strong>, <strong>S</strong> и <strong>ISO</strong> — ближнее / среднее / дальнее значение (открытая–средняя–закрытая диафрагма; короткая–средняя–длинная выдержка; низкое–среднее–высокое ISO).</p>
+    </article>
+    <article class="assign-card">
+      <h3>Выдержка</h3>
+      <p>Подвижный объект: человек, машина, вода, ветка. Сравнить, где смаз, где заморозка.</p>
+    </article>
+    <article class="assign-card">
+      <h3>Диафрагма</h3>
+      <p>Объекты на разном расстоянии в одном кадре. Открытая vs закрытая: что попало в ГРИП.</p>
+    </article>
+  </div>
+  <p class="caveat">Сюжеты на выбор: улица, фасад, предмет 5–20 см, мелкий до 3 см, движение. Расширенный набор (шум, ББ) — практика недели 2.</p>
+</section>
+  </div>
+
+  <div class="footer-bar">
+    <button id="prev" type="button">←</button>
+    <span id="counter"></span>
+    <div id="progress-track"><div id="progress"></div></div>
+    <button id="next" type="button">→</button>
+  </div>
+
+  <div class="help" id="help">
+    <div class="help-card">
+      <p><kbd>←</kbd> <kbd>→</kbd> <kbd>пробел</kbd> — слайды</p>
+      <p><kbd>F</kbd> — полный экран</p>
+      <p><kbd>N</kbd> — заметки докладчика</p>
+      <p><kbd>Home</kbd> / <kbd>End</kbd> — начало / конец</p>
+    </div>
+  </div>
+  <script src="../../js/slides.js"></script>
+  <script src="../../js/widgets.js"></script>
+</body>
+</html>

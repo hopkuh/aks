@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CV03 · Геометрия двух камер — конспект</title>
+  <link rel="stylesheet" href="../../css/course.css" />
+</head>
+<body class="mode-page">
+  <header class="topbar">
+    <div class="brand">CV03 · две камеры</div>
+        <nav class="nav">
+      <a href="../../index.html">Лекции</a>
+      <a href="../../practice.html">Практика</a>
+      <a href="../../glossary.html">Глоссарий</a>
+      <a href="../../exam.html">Экзамен</a>
+      <a href="../../literature.html">Литература</a>
+      <a href="slides.html">Слайды</a>
+      <a href="notes.html" aria-current="page">Конспект</a>
+      <a href="../cv02-sootvetstviya/notes.html">CV02</a>
+      <a href="../cv04-sfm/notes.html">CV04</a>
+      <a href="../09-fotogrammetriya/notes.html">Ф09</a>
+    </nav>
+  </header>
+  <main class="wrap wrap-wide">
+
+    <h1>Геометрия двух камер</h1>
+    <p class="lead">Взаимное ориентирование фотограмметрии и фундаментальная матрица — один объект. Параллакс Ф07 — частный случай.</p>
+    <p class="formula">x₂ᵀ F x₁ = 0</p>
+    <p>F переводит точку первого кадра в прямую на втором. E — то же в калиброванных координатах: из E вынимают R, t (с четырьмя гипотезами, cheirality).</p>
+    <p>Триангуляция: пересечение лучей. Нормальная пара: Z/f = −B/p. Учебник: Hartley, Zisserman. <a href="https://www.robots.ox.ac.uk/~vgg/hzbook/">HZ book</a>. OpenCV: <a href="https://docs.opencv.org/4.x/da/de9/tutorial_py_epipolar_geometry.html">epipolar</a>.</p>
+    <p>Мост: <a href="../09-fotogrammetriya/notes.html">Ф09</a> коллинеарность, <a href="../07-stereo/notes.html">Ф07</a>.</p>
+        
+  </main>
+  <script src="../../js/widgets.js"></script>
+</body>
+</html>

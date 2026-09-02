@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CV04 · SfM и бандл — конспект</title>
+  <link rel="stylesheet" href="../../css/course.css" />
+</head>
+<body class="mode-page">
+  <header class="topbar">
+    <div class="brand">CV04 · SfM</div>
+        <nav class="nav">
+      <a href="../../index.html">Лекции</a>
+      <a href="../../practice.html">Практика</a>
+      <a href="../../glossary.html">Глоссарий</a>
+      <a href="../../exam.html">Экзамен</a>
+      <a href="../../literature.html">Литература</a>
+      <a href="slides.html">Слайды</a>
+      <a href="notes.html" aria-current="page">Конспект</a>
+      <a href="../cv03-dve-kamery/notes.html">CV03</a>
+      <a href="../08-predmetnoe/notes.html">Ф08</a>
+    </nav>
+  </header>
+  <main class="wrap wrap-wide">
+
+    <h1>Много видов: SfM и бандл</h1>
+    <p>Уравнивание блока АКС — bundle adjustment: позы камер и координаты точек минимизируют невязку репроекции. COLMAP — эталон открытой реализации (Schönberger, Frahm, Structure-from-Motion Revisited, CVPR 2016. <a href="https://openaccess.thecvf.com/content_cvpr_2016/papers/Schonberger_Structure-from-Motion_Revisited_CVPR_2016_paper.pdf">PDF</a>). Документация: <a href="https://colmap.github.io/">colmap.github.io</a>.</p>
+    <p class="formula">min Σ || x − π(K,R,t,X) ||²</p>
+    <p>Практика: те же снимки стенда, что курсовая сем. 3. Язык: «в Metashape Align ≈ инкрементальный SfM + бандл».</p>
+        
+  </main>
+  <script src="../../js/widgets.js"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>А05 · Контраст — слайды</title>
+  <link rel="stylesheet" href="../../css/course.css" />
+</head>
+<body class="mode-slides">
+  <header class="topbar">
+    <div class="brand">А05 · Контраст и ФПМ <small>стрелки · F полноэкран · N заметки · ? справка</small></div>
+        <nav class="nav">
+      <a href="../../index.html">Лекции</a>
+      <a href="../../practice.html">Практика</a>
+      <a href="../../glossary.html">Глоссарий</a>
+      <a href="../../exam.html">Экзамен</a>
+      <a href="../../literature.html">Литература</a>
+      <a href="notes.html">Конспект</a>
+      <a href="SOURCES.md">Источники</a>
+      <a href="../a03-bvs/slides.html">А03</a>
+      <a href="../a06-kachestvo/slides.html">А06</a>
+    </nav>
+  </header>
+  <div class="deck">
+<section class="slide slide--title is-active">
+  <h1>Контраст и ФПМ</h1>
+  <p>А05 · σ · ΔE · передача модуляции</p>
+</section>
+
+<section class="slide">
+  <h2>На пару</h2>
+  <ul>
+    <li>Контраст — измеримая величина, не фильтр</li>
+    <li>σ гистограммы vs Вебер объекта к фону</li>
+    <li>ΔE в Lab: яркость одинаковая, цвет разный</li>
+    <li>ФПМ: мелкое уже не отличить, даже если гистограмма широкая</li>
+  </ul>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Контраст</p>
+  <p class="defn">Разница между тёмным и светлым (яркостный) и между цветами (цветовой). Низкий: гистограмма узкая, границы слиплись, классификатор и коррелятор слепнут. Высокий: объекты отделяются. Для алгоритма это разрешающая способность по яркости и цвету, не «вау-фильтр».</p>
+  <div class="gallery"><img src="images/s02_01.png" alt=""><img src="images/s02_02.jpeg" alt=""><img src="images/s02_03.png" alt=""></div>
+</section>
+
+<section class="slide">
+  <h2>Яркостный контраст — σ</h2>
+  <figure class="fig fig-lg">
+        <img src="images/schemes/a05-contrast-sigma.png" alt="Гистограмма и стандартное отклонение">
+        
+      </figure>
+  <p class="formula">σ = √[ Σ (P<sub>i</sub> − μ)² / N ]<span class="eq-note">стандартное отклонение яркостей; в Python: numpy.std(image)</span></p>
+  <p>Узкий столбик гистограммы → σ мало → растягивать осторожно: шум тоже растянется. Цветной снимок — три σ: σ<sub>R</sub>, σ<sub>G</sub>, σ<sub>B</sub>.</p>
+</section>
+
+<section class="slide">
+  <h2>Контраст Вебера</h2>
+  <p class="formula">k = (B<sub>s</sub> − B<sub>b</sub>) / B<sub>b</sub><span class="eq-note">B<sub>s</sub> — яркость предмета, B<sub>b</sub> — фона; это не σ всего кадра</span></p>
+  <p>Вебер отвечает на вопрос «объект на этом фоне виден?». σ отвечает «кадр вялый в целом?». Дымка сажает k, даже если сцена контрастная на земле.</p>
+  <div class="gallery"><img src="images/s03_01.png" alt=""><img src="images/s03_02.png" alt=""><img src="images/s03_03.jpeg" alt=""></div>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Цветовое отличие ΔE</p>
+  <p class="defn">Расстояние между двумя цветами в CIE L*a*b* (L — светлота, a — зелёный–красный, b — синий–жёлтый). Ориентир: ΔE &lt; 5 — для алгоритма почти одно; ΔE &gt; 10 — разные. Глаз замечает порядка единиц. Формулы ΔE<sub>76</sub> и ΔE<sub>00</sub> различаются — в задаче смотрите, какую дали.</p>
+</section>
+
+<section class="slide">
+  <h2>ΔE — схема</h2>
+  <figure class="fig fig-lg">
+        <img src="images/schemes/a05-deltae.png" alt="Цветовое отличие в Lab">
+        
+      </figure>
+</section>
+
+<section class="slide">
+  <h2>Где смотрят ΔE</h2>
+  <ul>
+    <li>классы при похожей яркости (крыша vs асфальт одного L)</li>
+    <li>контроль паншарпенинга и атмосферной коррекции: среднее ΔE «до / после»</li>
+    <li>границы там, где ΔE между соседями скачет, а не только градиент L</li>
+  </ul>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Функция передачи модуляции (ФПМ)</p>
+  <p class="defn">Как система (атмосфера + оптика + смаз + детектор) передаёт контраст в зависимости от пространственной частоты. На нулевой частоте ≈ 1, к мелким деталям падает. Частотно-контрастная характеристика изображения — родственник. В А06 линейный элемент разрешения: порог ~5–10% контраста, не грубее 1,25 px по ГОСТ Р 59328.</p>
+</section>
+
+<section class="slide">
+  <h2>σ не заменяет ФПМ</h2>
+  <p>σ говорит: снимок вялый в целом. ФПМ говорит: мелкое уже не отличить, даже если гистограмма широкая. Растянуть контраст в графическом редакторе ФПМ объектива и атмосферы не вылечит.</p>
+</section>
+
+<section class="slide">
+  <h2>Вопросы</h2>
+  <ol>
+    <li>Почему низкий контраст убивает не только «красоту», но и орто?</li>
+    <li>Что меряет σ? Чем Вебер отличается?</li>
+    <li>Зачем ΔE, если уже есть три канала?</li>
+    <li>Чем ФПМ отличается от «контраста гистограммы»?</li>
+  </ol>
+</section>
+
+<section class="slide slide--title">
+  <h1>Спасибо</h1>
+  <p><a href="notes.html">Конспект</a> · нормы — <a href="../a06-kachestvo/slides.html">А06</a></p>
+</section>
+  </div>
+  <div class="footer-bar">
+    <button id="prev" type="button">←</button>
+    <span id="counter"></span>
+    <div id="progress-track"><div id="progress"></div></div>
+    <button id="next" type="button">→</button>
+  </div>
+  <div class="help" id="help">
+    <div class="help-card">
+      <p><kbd>←</kbd> <kbd>→</kbd> <kbd>пробел</kbd> — слайды</p>
+      <p><kbd>F</kbd> — полный экран</p>
+      <p><kbd>N</kbd> — заметки докладчика</p>
+    </div>
+  </div>
+  <script src="../../js/slides.js"></script>
+</body>
+</html>

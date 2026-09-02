@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 420" width="1100" height="420">
+  <defs>
+    <linearGradient id="vis" x1="0" x2="1">
+      <stop offset="0%" stop-color="#5b4dff"/>
+      <stop offset="18%" stop-color="#2ea7ff"/>
+      <stop offset="40%" stop-color="#3dce6a"/>
+      <stop offset="58%" stop-color="#e2d44a"/>
+      <stop offset="78%" stop-color="#e28a2a"/>
+      <stop offset="100%" stop-color="#e04a4a"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="#141b24"/>
+  <text x="40" y="36" fill="#e2b56a" font-size="20" font-family="Segoe UI, sans-serif" font-weight="600">???????????????? ??????</text>
+
+  <rect x="40" y="90" width="160" height="70" fill="#3a2a52"/>
+  <text x="120" y="132" fill="#c8b8e0" font-size="15" text-anchor="middle">??</text>
+  <rect x="200" y="78" width="280" height="94" fill="url(#vis)" stroke="#e2b56a" stroke-width="3"/>
+  <text x="340" y="132" fill="#141b24" font-size="18" text-anchor="middle" font-weight="700">???????</text>
+  <rect x="480" y="90" width="180" height="70" fill="#6b4e16"/>
+  <text x="570" y="132" fill="#e2b56a" font-size="15" text-anchor="middle">NIR</text>
+  <rect x="660" y="90" width="160" height="70" fill="#5c3e14"/>
+  <text x="740" y="132" fill="#e2b56a" font-size="15" text-anchor="middle">SWIR</text>
+  <rect x="820" y="90" width="240" height="70" fill="#3a4a58"/>
+  <text x="940" y="122" fill="#93a1b3" font-size="14" text-anchor="middle">???????? ??</text>
+  <text x="940" y="144" fill="#93a1b3" font-size="12" text-anchor="middle">TIR � ??? � ?????</text>
+
+  <line x1="200" y1="182" x2="200" y2="210" stroke="#e2b56a"/>
+  <line x1="480" y1="182" x2="480" y2="210" stroke="#e2b56a"/>
+  <text x="200" y="232" fill="#e2b56a" font-size="14" text-anchor="middle">? 380 ??</text>
+  <text x="480" y="232" fill="#e2b56a" font-size="14" text-anchor="middle">? 780 ??</text>
+
+  <rect x="40" y="268" width="1020" height="118" rx="12" fill="none" stroke="#2a3544"/>
+  <text x="60" y="304" fill="#e2b56a" font-size="16" font-family="Segoe UI, sans-serif" font-weight="600">??????? ????????</text>
+  <text x="60" y="336" fill="#e9eef4" font-size="16" font-family="Segoe UI, sans-serif">??, ??? ????? ????: ???????? 380�780 ?? (?????????? ? ???????).</text>
+  <text x="60" y="364" fill="#93a1b3" font-size="15" font-family="Segoe UI, sans-serif">??? ? ???? ????? � ?????? ?????? ?????. ????? ? ????? � ???? ???, ?? ??? ?? �??????????� ? ????? ??????.</text>
+</svg>

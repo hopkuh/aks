@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CV05 глубина — слайды</title>
+  <link rel="stylesheet" href="../../css/course.css" />
+</head>
+<body class="mode-slides">
+  <header class="topbar">
+    <div class="brand">CV05 · MVS и сегментация <small>стрелки · F полноэкран · N заметки · ? справка</small></div>
+        <nav class="nav">
+      <a href="../../index.html">Лекции</a>
+      <a href="../../practice.html">Практика</a>
+      <a href="../../glossary.html">Глоссарий</a>
+      <a href="../../exam.html">Экзамен</a>
+      <a href="../../literature.html">Литература</a>
+      <a href="notes.html">Конспект</a>
+      <a href="SOURCES.md">Источники</a>
+      <a href="../cv04-sfm/slides.html">CV04</a>
+      <a href="../cv06-oblako/slides.html">CV06</a>
+    </nav>
+  </header>
+  <div class="deck">
+<section class="slide slide--title is-active"><h1>Глубина и сегментация</h1><p>CV05 · stereo matching · MVS · маска 2D</p></section>
+
+<section class="slide"><h2>После редкого облака</h2>
+    <p>SfM даёт редкие XYZ. Плотность: поиск соответствий вдоль эпиполяры (блок-матчинг, SGBM) или photo-consistency по многим видам (MVS, COLMAP/OpenMVS).</p></section>
+
+<section class="slide"><h2>Диспаратность</h2><svg class="scheme" viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg"><rect width="800" height="340" fill="#141b24"/>
+    <rect x="40" y="40" width="280" height="200" fill="#1e2733" stroke="#6ec3d8"/>
+    <rect x="360" y="40" width="280" height="200" fill="#1e2733" stroke="#6ec3d8"/>
+    <line x1="60" y1="120" x2="300" y2="120" stroke="#e07a73"/>
+    <line x1="380" y1="120" x2="620" y2="120" stroke="#e07a73"/>
+    <circle cx="140" cy="120" r="6" fill="#86c99a"/>
+    <circle cx="500" cy="120" r="6" fill="#86c99a"/>
+    <text x="180" y="110" fill="#86c99a" font-size="13">x</text>
+    <text x="520" y="110" fill="#86c99a" font-size="13">x−d</text>
+    <text x="180" y="270" fill="#93a1b3" font-size="13">левый</text>
+    <text x="500" y="270" fill="#93a1b3" font-size="13">правый, эпиполяр уже горизонталь</text>
+    </svg>
+    <p class="formula">Z = f B / d</p></section>
+
+<section class="slide"><h2>Сегментация 2D</h2>
+    <p>Класс каждому пикселю (FCN, Long et al. CVPR 2015). На орто учебного участка: крыша / земля / растительность. Готовая сеть, не ImageNet с нуля.</p>
+    <p>Тень ломает маску — сравнить с ребром ЦММ.</p></section>
+
+<section class="slide"><h2>Ректификация нужна SGBM</h2>
+    <p>Без горизонтальных эпиполяр поиск 2D — медленный и врёт. Сначала F, потом warp, потом d.</p></section>
+
+<section class="slide"><h2>Окклюзии</h2>
+    <p>То, что видно слева, не видно справа — дыра диспаратности. На АФС то же: щит, дерево, карниз. Не лечить «дырку» интерполяцией и выдавать за ЦММ.</p></section>
+
+<section class="slide"><h2>MVS vs одна стереопара</h2>
+    <p>Много видов: выбрать лучшие (Pixelwise View Selection). Устойчивее к блику, чем два кадра. OpenMVS — плотная сетка после COLMAP.</p></section>
+
+<section class="slide"><h2>Маска ≠ высота</h2>
+    <p>Семантика орто путает тень с водой. ЦММ путает куст с рельефом. Смотреть оба слоя. А07 — чтение сюжета глазом.</p></section>
+
+<section class="slide"><h2>Источники</h2><ul>
+    <li>Hirschmüller, SGBM, PAMI 2008</li>
+    <li>Schönberger et al. Pixelwise View Selection, ECCV 2016</li>
+    <li>А07 дешифрирование — сосед, не замена</li>
+    </ul></section>
+  </div>
+  <div class="footer-bar">
+    <button id="prev" type="button">←</button>
+    <span id="counter"></span>
+    <div id="progress-track"><div id="progress"></div></div>
+    <button id="next" type="button">→</button>
+  </div>
+  <div class="help" id="help">
+    <div class="help-card">
+      <p><kbd>←</kbd> <kbd>→</kbd> <kbd>пробел</kbd> — слайды</p>
+      <p><kbd>F</kbd> — полный экран</p>
+      <p><kbd>N</kbd> — заметки докладчика</p>
+    </div>
+  </div>
+  <script src="../../js/slides.js"></script>
+  <script src="../../js/widgets.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CV02 · Соответствия — конспект</title>
+  <link rel="stylesheet" href="../../css/course.css" />
+</head>
+<body class="mode-page">
+  <header class="topbar">
+    <div class="brand">CV02 · соответствия</div>
+        <nav class="nav">
+      <a href="../../index.html">Лекции</a>
+      <a href="../../practice.html">Практика</a>
+      <a href="../../glossary.html">Глоссарий</a>
+      <a href="../../exam.html">Экзамен</a>
+      <a href="../../literature.html">Литература</a>
+      <a href="slides.html">Слайды</a>
+      <a href="notes.html" aria-current="page">Конспект</a>
+      <a href="../cv01-rastr/notes.html">CV01</a>
+      <a href="../cv03-dve-kamery/notes.html">CV03</a>
+    </nav>
+  </header>
+  <main class="wrap wrap-wide">
+
+    <h1>Соответствия</h1>
+    <p class="lead">Отождествление Ф07 / связующие Metashape — та же задача. Харрис находит углы, SIFT/ORB описывает, RANSAC отбрасывает ложные пары, гомография клеит плоскость и врёт на объёме.</p>
+    <p class="formula">R = det M − κ (tr M)²<span class="eq-note">отклик Харриса; M — структурный тензор градиентов в окне</span></p>
+    <p>SIFT: Lowe, Distinctive image features… IJCV 2004. <a href="https://www.cs.ubc.ca/~lowe/papers/ijcv04.pdf">PDF</a>. ORB: Rublee et al., ICCV 2011.</p>
+    <p>RANSAC: Fischler, Bolles, CACM 1981. <a href="https://doi.org/10.1145/358669.358692">DOI</a>.</p>
+    <p class="formula">x′ ∼ H x</p>
+    <p>Практика: два кадра стенда — панорама vs базис. Мост: <a href="../07-stereo/notes.html">Ф07</a>, <a href="../08-predmetnoe/notes.html">Ф08</a>.</p>
+        
+  </main>
+  <script src="../../js/widgets.js"></script>
+</body>
+</html>

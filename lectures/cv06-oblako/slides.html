@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CV06 облако — слайды</title>
+  <link rel="stylesheet" href="../../css/course.css" />
+</head>
+<body class="mode-slides">
+  <header class="topbar">
+    <div class="brand">CV06 · облако <small>стрелки · F полноэкран · N заметки · ? справка</small></div>
+        <nav class="nav">
+      <a href="../../index.html">Лекции</a>
+      <a href="../../practice.html">Практика</a>
+      <a href="../../glossary.html">Глоссарий</a>
+      <a href="../../exam.html">Экзамен</a>
+      <a href="../../literature.html">Литература</a>
+      <a href="notes.html">Конспект</a>
+      <a href="SOURCES.md">Источники</a>
+      <a href="../cv05-glubina/slides.html">CV05</a>
+      <a href="../cv07-predstavleniya/slides.html">CV07</a>
+    </nav>
+  </header>
+  <div class="deck">
+<section class="slide slide--title is-active"><h1>Облако как данные</h1><p>CV06 · mesh · нормали · не JPEG</p></section>
+
+<section class="slide"><h2>Представления</h2>
+    <div class="columns-3"><div><h3>Облако</h3><p>XYZ ± цвет ± нормаль</p></div>
+    <div><h3>Mesh</h3><p>Poisson, ретопология Ф08</p></div>
+    <div><h3>Воксели</h3><p>регулярная сетка объёма</p></div></div></section>
+
+<section class="slide"><h2>PointNet-идея</h2>
+    <p>Перестановка точек не должна менять класс. Симметрия — max-pooling по точкам (Qi et al., CVPR 2017).</p>
+    <p>На паре достаточно baseline: высота + нормаль = земля. Класс «здание» на облаке, не на орто.</p></section>
+
+<section class="slide"><h2>Нормаль</h2>
+    <p>PCA по k соседям: наименьший собственный вектор — n. Земля ≈ вертикаль n. Фасад ≈ горизонталь n. Шум облака крутит n.</p></section>
+
+<section class="slide"><h2>Downsample</h2>
+    <p>Воксельная сетка: одна точка на ячейку. Иначе PointNet и даже «высота &lt; 1 м» утонут в миллионах точек двора.</p></section>
+
+<section class="slide"><h2>Сравнение с JPEG</h2>
+    <p>Классификатор на орто не видит карниз сбоку. Облако видит. Зато облако слепо без атрибута RGB. Учебный вывод: задача диктует представление.</p></section>
+
+<section class="slide"><h2>Практика</h2>
+    <ul>
+      <li>Open3D / CloudCompare: downsample, нормали</li>
+      <li>Сравнить сегмент с маской CV05</li>
+    </ul></section>
+  </div>
+  <div class="footer-bar">
+    <button id="prev" type="button">←</button>
+    <span id="counter"></span>
+    <div id="progress-track"><div id="progress"></div></div>
+    <button id="next" type="button">→</button>
+  </div>
+  <div class="help" id="help">
+    <div class="help-card">
+      <p><kbd>←</kbd> <kbd>→</kbd> <kbd>пробел</kbd> — слайды</p>
+      <p><kbd>F</kbd> — полный экран</p>
+      <p><kbd>N</kbd> — заметки докладчика</p>
+    </div>
+  </div>
+  <script src="../../js/slides.js"></script>
+  <script src="../../js/widgets.js"></script>
+</body>
+</html>

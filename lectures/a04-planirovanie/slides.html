@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>А04 · Планирование — слайды</title>
+  <link rel="stylesheet" href="../../css/course.css" />
+</head>
+<body class="mode-slides">
+  <header class="topbar">
+    <div class="brand">А04 · Планирование АФС <small>стрелки · F полноэкран · N заметки · ? справка</small></div>
+        <nav class="nav">
+      <a href="../../index.html">Лекции</a>
+      <a href="../../practice.html">Практика</a>
+      <a href="../../glossary.html">Глоссарий</a>
+      <a href="../../exam.html">Экзамен</a>
+      <a href="../../literature.html">Литература</a>
+      <a href="notes.html">Конспект</a>
+      <a href="SOURCES.md">Источники</a>
+      <a href="../a02-klassifikaciya-afs/slides.html">А02</a>
+      <a href="../a03-bvs/slides.html">А03</a>
+    </nav>
+  </header>
+  <div class="deck">
+<section class="slide slide--title is-active">
+  <h1>Планирование АФС</h1>
+  <p>А04 · пара 1,5 ч · элементы · высоты · GSD · базисы · ПВО</p>
+</section>
+
+<section class="slide">
+  <h2>На пару</h2>
+  <ul>
+    <li>Три корзины аэросъёмочных элементов — и что из чего считают</li>
+    <li>Высоты: абсолютная, относительная, истинная, H<sub>ф</sub></li>
+    <li>Масштаб снимка vs GSD — не одно и то же</li>
+    <li>Захваты, перекрытия, базисы, интервал, смаз</li>
+    <li>Два билета минимума — по шагам на доске</li>
+  </ul>
+  <div class="speaker-notes">Pptx на 134 кадра: половина — примеры отраслей и софт. На пару оставляем расчёт. Конвергентный предмет — Ф07, здесь только предупреждение, что Bx с плановой формулы туда не переносится.</div>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Аэросъёмочные элементы</p>
+  <p class="defn">Величины, которые задают геометрические условия съёмки. Без них нет ни ТЗ, ни маршрута, ни допуска на орто.</p>
+</section>
+
+<section class="slide">
+  <h2>Три корзины</h2>
+  <div class="columns-3">
+    <div>
+      <h3>АФА / ЦФК</h3>
+      <ul>
+        <li>f — фокусное</li>
+        <li>l<sub>x</sub> — продольная сторона кадра</li>
+        <li>l<sub>y</sub> — поперечная сторона кадра</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Фотограмметрия</h3>
+      <ul>
+        <li>1:m — масштаб снимка</li>
+        <li>P<sub>x</sub> — продольное перекрытие</li>
+        <li>P<sub>y</sub> — поперечное перекрытие</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Навигация</h3>
+      <ul>
+        <li>H<sub>ф</sub> — высота фотографирования</li>
+        <li>L<sub>x</sub>, L<sub>y</sub> — захваты</li>
+        <li>B<sub>x</sub>, B<sub>y</sub> — базисы</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <h2>Геометрия камеры — в миллиметрах</h2>
+  <ul>
+    <li>f, l<sub>x</sub>, l<sub>y</sub> — стороны матрицы, не «5472 пикселя»</li>
+    <li>Пиксели входят отдельно: W × H и размер элемента p = l<sub>x</sub> / W</li>
+    <li>Эквивалентное фокусное «как у 35 мм» в формулы АФС не подставляют</li>
+    <li>Зум на топоплане — враг: f должен быть зафиксирован</li>
+  </ul>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Масштаб фотографирования 1:m</p>
+  <p class="defn">Отношение отрезка на снимке к одноимённому отрезку на местности. Для надира: m ≈ H<sub>ф</sub> / f.</p>
+  <p class="formula">m = H<sub>ф</sub> / f = L / l<span class="eq-note">H и f — в одних единицах; L — сторона захвата, l — сторона кадра</span></p>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Перекрытие снимка P</p>
+  <p class="defn">Доля площади снимка, покрываемая смежным кадром. Продольное P<sub>x</sub> — внутри маршрута, поперечное P<sub>y</sub> — между маршрутами.</p>
+</section>
+
+<section class="slide">
+  <h2>Зачем перекрытие</h2>
+  <ul>
+    <li>Стереоэффект: общая зона двух кадров → параллакс → высота</li>
+    <li>Триплет: общая зона трёх кадров → передать СК и масштаб на следующую пару</li>
+    <li>Классика площадной: P<sub>x</sub> ≈ 60%, P<sub>y</sub> ≈ 40%</li>
+    <li>БВС / неустойчивый борт / автоуравнивание: P<sub>x</sub> ≥ 80%, P<sub>y</sub> ≥ 60%</li>
+    <li>Нижняя жёсткая граница контроля: P<sub>x</sub> отдельных кадров не &lt; 55% (ГОСТ Р 59328)</li>
+  </ul>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Триплет</p>
+  <p class="defn">Зона тройного продольного перекрытия. По общим точкам связывают соседние стереопары: передают систему координат и масштаб фотограмметрических построений.</p>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Базис фотографирования</p>
+  <p class="defn">Расстояние между соседними точками съёмки. B<sub>x</sub> — вдоль маршрута, B<sub>y</sub> — между маршрутами.</p>
+  <p class="formula">B<sub>x</sub> = L<sub>x</sub> (1 − P<sub>x</sub>)<span class="eq-note">P в долях: 80% → 0,80. L<sub>x</sub> = l<sub>x</sub> · m — продольный захват</span></p>
+  <p class="formula">B<sub>y</sub> = L<sub>y</sub> (1 − P<sub>y</sub>)</p>
+</section>
+
+<section class="slide">
+  <h2>Захваты и базисы</h2>
+  <figure class="fig fig-lg">
+    <img src="images/schemes/a04-bases.png" alt="Перекрытия, базисы, триплет">
+  </figure>
+</section>
+
+<section class="slide">
+  <h2>Сначала ТЗ, потом «fly»</h2>
+  <ol>
+    <li>Границы участка и вид продукта</li>
+    <li>Стоимость</li>
+    <li>Рекогносцировка</li>
+    <li>План АФС (элементы этой лекции)</li>
+    <li>ПВО</li>
+    <li>Съёмка → оценка качества → обработка → дешифрирование → отчёт</li>
+  </ol>
+  <p class="caveat">«Сделайте фотограмметрию» без масштаба, GSD и продукта — не задача.</p>
+</section>
+
+<section class="slide">
+  <h2>Что сдают</h2>
+  <ul>
+    <li>снимки (первичные материалы)</li>
+    <li>ортофотоплан</li>
+    <li>ЦМР / ЦММ / TIN</li>
+    <li>иногда текстурированная 3D-модель</li>
+  </ul>
+  <p>От масштаба плана зависят сечение рельефа и допуск на контуры. Нормы — не зубрить все строчки, понимать логику.</p>
+</section>
+
+<section class="slide slide--table">
+  <h2>Сечение рельефа на топоплане</h2>
+  <table class="data">
+    <thead>
+      <tr><th>Рельеф</th><th>1:5000</th><th>1:2000</th><th>1:1000 / 1:500</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>равнина, уклоны до 2°</td><td>1,0 м</td><td>0,5 м</td><td>0,5 м</td></tr>
+      <tr><td>всхолмлённый, до 4°</td><td>2,0 м</td><td>1,0 м</td><td>0,5 м</td></tr>
+      <tr><td>пересечённый, до 6°</td><td>2,0 м</td><td>2,0 м</td><td>0,5 м</td></tr>
+      <tr><td>горы, более 6°</td><td>5,0 м</td><td>2,0 м</td><td>1,0 м</td></tr>
+    </tbody>
+  </table>
+  <p class="caveat">Средняя погрешность высот ≤ 1/4 сечения. Контуры с чёткими очертаниями — ≤ 0,5 мм на плане относительно ближайших точек обоснования.</p>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">GSD</p>
+  <p class="defn">Ground Sample Distance — проекция одного пикселя на местности. Номинальное пространственное разрешение снимка, не точность ортофотоплана.</p>
+</section>
+
+<section class="slide">
+  <h2>GSD из геометрии</h2>
+  <figure class="fig">
+    <img src="images/schemes/a04-gsd.png" alt="Высота фотографирования и GSD">
+  </figure>
+  <p class="formula">GSD = p · H<sub>ф</sub> / f<span class="eq-note">p = l<sub>x</sub> / W — размер пикселя на матрице</span></p>
+</section>
+
+<section class="slide">
+  <h2>Живая схема: GSD(H<sub>ф</sub>, f)</h2>
+  <div data-widget="gsd"></div>
+  <p class="caveat">Предустановки: БВС 120 м · самолёт 1,2 км · спутник 700 км. GSD ≠ точность орто.</p>
+</section>
+
+<section class="slide">
+  <h2>Масштаб ≠ разрешение</h2>
+  <div class="columns">
+    <div>
+      <h3>Одинаковый 1:m, разный GSD</h3>
+      <p>Другая матрица: тот же захват, другой p.</p>
+    </div>
+    <div>
+      <h3>Одинаковый GSD, разный 1:m</h3>
+      <p>Другой f или другой формат кадра.</p>
+    </div>
+  </div>
+  <div class="gallery">
+    <img src="images/s69_01.png" alt="">
+    <img src="images/s69_02.png" alt="">
+    <img src="images/s69_03.png" alt="">
+    <img src="images/s69_04.png" alt="">
+  </div>
+</section>
+
+<section class="slide">
+  <h2>Четыре высоты</h2>
+  <ul>
+    <li><strong>H<sub>абс</sub></strong> — абсолютная: борт над уровнем моря (эллипсоид / геоид — как в задании)</li>
+    <li><strong>H<sub>отн</sub></strong> — относительная: над аэродромом или выбранным пунктом</li>
+    <li><strong>H<sub>ист</sub></strong> — истинная: над подстилающей поверхностью под бортом (меняется с рельефом)</li>
+    <li><strong>H<sub>ф</sub></strong> — высота фотографирования: над расчётной (обычно средней) поверхностью участка</li>
+  </ul>
+  <p class="formula">H<sub>ф</sub> = H<sub>абс</sub> − h<sub>ср</sub><span class="eq-note">не высота «по пульту над точкой взлёта»</span></p>
+</section>
+
+<section class="slide">
+  <h2>Билет: относительная высота</h2>
+  <p>H<sub>аэр</sub> = 130 м, h<sub>местн</sub> = 275 м, H<sub>ист</sub> = 2350 м. Найти H<sub>отн</sub>.</p>
+  <p class="formula">H<sub>абс</sub> = H<sub>ист</sub> + h<sub>местн</sub> = 2350 + 275 = 2625 м</p>
+  <p class="formula">H<sub>отн</sub> = H<sub>абс</sub> − H<sub>аэр</sub> = 2625 − 130 = 2495 м</p>
+  <div class="speaker-notes">Следите за тем, относительно какой поверхности дана «истинная». Если истинная уже над местностью 275 м, борт в абсолютной СК — сумма. Относительная — от аэродрома.</div>
+</section>
+
+<section class="slide">
+  <h2>Рельеф ломает перекрытие и GSD</h2>
+  <ul>
+    <li>На вершинах H<sub>ист</sub> меньше → GSD мельче, захват уже → P падает</li>
+    <li>Во впадинах наоборот: запас перекрытия, GSD грубее</li>
+    <li>План считают от h<sub>ср</sub>; контроль H<sub>ф</sub> — от фактической средней</li>
+    <li>На горах допуск H<sub>ф</sub> 5%, на равнине 3% (А06 / ГОСТ)</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Билет 1. Дано</h2>
+  <ul>
+    <li>f = 24 мм</li>
+    <li>кадр l<sub>x</sub> × l<sub>y</sub> = 36 × 24 мм</li>
+    <li>разрешение 3600 × 2400 px</li>
+    <li>GSD = 5 см</li>
+    <li>P<sub>x</sub> = 80%</li>
+  </ul>
+  <p>Найти продольный базис B<sub>x</sub>.</p>
+</section>
+
+<section class="slide">
+  <h2>Билет 1. Шаг 1 — пиксель и масштаб</h2>
+  <p class="formula">p = l<sub>x</sub> / W = 36 мм / 3600 = 0,010 мм</p>
+  <p class="formula">m = GSD / p = 50 мм / 0,010 мм = 5000<span class="eq-note">GSD = 5 см = 50 мм; 1:5000</span></p>
+  <p class="formula">H<sub>ф</sub> = m · f = 5000 · 24 мм = 120 м</p>
+</section>
+
+<section class="slide">
+  <h2>Билет 1. Шаг 2 — захват и базис</h2>
+  <p class="formula">L<sub>x</sub> = l<sub>x</sub> · m = 36 мм · 5000 = 180 м</p>
+  <p class="formula">B<sub>x</sub> = L<sub>x</sub> (1 − 0,80) = 180 · 0,20 = 36 м</p>
+  <p>Проверка через GSD: L<sub>x</sub> = W · GSD = 3600 · 0,05 м = 180 м — то же.</p>
+</section>
+
+<section class="slide">
+  <h2>Если высота уехала</h2>
+  <p>Задано H<sub>ф</sub> = 500 м, P<sub>x</sub> = 60%, l<sub>x</sub> = 24 мм, f = 50 мм. Фактическая высота на 10% меньше. Как сдвинуть B<sub>x</sub>, чтобы P<sub>x</sub> не изменилось?</p>
+  <p class="formula">m = H / f ⇒ L<sub>x</sub> ∝ H ⇒ B<sub>x</sub> ∝ H<span class="eq-note">при фиксированных l и P</span></p>
+  <p>H′ = 0,9 H → B<sub>x</sub>′ = 0,9 B<sub>x</sub>. Базис <em>уменьшить</em> на 10% (иначе перекрытие вырастет).</p>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Интервал фотографирования t<sub>и</sub></p>
+  <p class="defn">Время между экспозициями соседних кадров одного маршрута. Базис выдерживают по времени, по координатам или визуально.</p>
+  <p class="formula">t<sub>и</sub> = B<sub>x</sub> / W<span class="eq-note">W — путевая скорость, м/с. 72 км/ч = 20 м/с</span></p>
+</section>
+
+<section class="slide">
+  <h2>Билет 2. Интервал</h2>
+  <p>H<sub>ист</sub> = 300 м, W = 72 км/ч, l<sub>x</sub> = 18 мм, f = 24 мм, P<sub>x</sub> = 80%.</p>
+  <p class="formula">W = 72 / 3,6 = 20 м/с</p>
+  <p class="formula">m = 300 м / 0,024 м = 12&nbsp;500</p>
+  <p class="formula">L<sub>x</sub> = 0,018 · 12&nbsp;500 = 225 м · B<sub>x</sub> = 225 · 0,2 = 45 м</p>
+  <p class="formula">t<sub>и</sub> = 45 / 20 = 2,25 с</p>
+</section>
+
+<section class="slide">
+  <h2>Смаз / сдвиг изображения</h2>
+  <p>За выдержку t борт проходит W·t по местности; на матрице это смещение δ.</p>
+  <p class="formula">δ = W · t · f / H<sub>ф</sub><span class="eq-note">δ и f — в мм, если H и W·t согласованы</span></p>
+  <p>Старый ориентир: δ ≤ 0,05 мм на снимке для масштабов 1:10&nbsp;000 и мельче. В цифре чаще смотрят ≤ 1,25 px по ЧКХ (А06).</p>
+</section>
+
+<section class="slide">
+  <h2>Считать смаз</h2>
+  <p>W = 18 км/ч = 5 м/с, t = 1/500 с.</p>
+  <p class="formula">сдвиг на местности = 5 / 500 = 0,010 м = 10 мм</p>
+  <p>При 1/100 с уже 50 мм на местности. На матрицу переводят через масштаб: δ = 10 мм / m.</p>
+  <p>Билет: δ<sub>доп</sub> = 3 мм, f = 100 мм, W = 156 км/ч, H = 1565 м → из формулы находят t<sub>доп</sub>.</p>
+</section>
+
+<section class="slide">
+  <h2>Допустимая выдержка</h2>
+  <p class="formula">t<sub>доп</sub> = δ<sub>доп</sub> · H<sub>ф</sub> / (W · f)</p>
+  <p>W = 156 км/ч = 43,33 м/с; δ = 3 мм = 0,003 м; f = 0,100 м; H = 1565 м.</p>
+  <p class="formula">t<sub>доп</sub> = 0,003 · 1565 / (43,33 · 0,100) ≈ 1,08 с<span class="eq-note">на таком H и f допуск 3 мм на снимке очень мягкий; на БВС с коротким f и малым H выдержка жёстче</span></p>
+</section>
+
+<section class="slide">
+  <h2>Поправка перекрытия за рельеф</h2>
+  <p>Проектный P<sub>x</sub> считают на h<sub>ср</sub>. На h<sub>max</sub> захват уже:</p>
+  <p class="formula">L(h) = l · (H<sub>абс</sub> − h) / f</p>
+  <p>Чтобы на вершинах не провалиться ниже 55–60%, в план закладывают запас P или снижают H от «красивого GSD». Это та же формула базиса, только H берут локальную.</p>
+</section>
+
+<section class="slide">
+  <h2>Плановая vs конвергентная</h2>
+  <ul>
+    <li>Формулы B<sub>x</sub>, L<sub>x</sub> — для плановой (оси примерно параллельны, надир)</li>
+    <li>На предмете оси сходятся: «перекрытие площади кадра» ≠ перекрытие объекта</li>
+    <li>Пример pptx: B = 6 м, γ = 30°, формально P<sub>x</sub> = 100% кадра → на объекте ~30%</li>
+    <li>Коррелятор садится, если угол падения луча к поверхности ≳ 45°</li>
+    <li>Триплеты на цилиндре: не 4 кадра, а 6 (P ≈ 66%)</li>
+  </ul>
+  <p class="caveat">Подробный счёт конвергенции — Ф07 / Ф08. Сюда не тащите плановый B<sub>x</sub>.</p>
+</section>
+
+<section class="slide">
+  <h2>Выдерживание масштаба</h2>
+  <p>Пример: f = 8,8 мм, p = 2,35 мкм, GSD<sub>треб</sub> = 5 см, перепад dh = 50 м.</p>
+  <p class="formula">H<sub>ф</sub> = GSD · f / p = 0,05 · 8,8·10<sup>−3</sup> / 2,35·10<sup>−6</sup> ≈ 187 м</p>
+  <p>На ±25 м рельефа GSD гуляет на dh/H ≈ 13%. Либо запас высоты, либо разбить ярусы, либо смириться в ТЗ.</p>
+</section>
+
+<section class="slide">
+  <h2>Калибровка ЦФК</h2>
+  <ul>
+    <li>лабораторная (стенд, шахматка) — f, x<sub>0</sub> y<sub>0</sub>, K<sub>i</sub>, P<sub>i</sub></li>
+    <li>полевая / самокалибровка в блоке — те же параметры из связки</li>
+    <li>модель Брауна–Конради: радиальная + тангенциальная дисторсия</li>
+    <li>камера может «поехать» в полёте (температура, фокус) — зум запрещён</li>
+  </ul>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">ПВО</p>
+  <p class="defn">Планово-высотное обоснование — сеть опознаков с известными координатами, чтобы вписать блок снимков в систему объекта. Плановый, высотный или планово-высотный знак.</p>
+</section>
+
+<section class="slide">
+  <h2>Зачем ПВО, если «на дроне GPS»</h2>
+  <ul>
+    <li>навигационный GNSS пульта — метры, не сантиметры орто 1:2000</li>
+    <li>барометр даёт относительную H, не систему высот карты</li>
+    <li>даже RTK нужно привязать к ГГС / МСК и к метке затвора (А11)</li>
+    <li>контрольные точки в уравнивание не входят — ими проверяют</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Марка опознака</h2>
+  <p>Круг должен читаться на орто. Ориентир: несколько пикселей GSD, контраст к фону, не в тени карниза.</p>
+  <p>Билет: орто 1:2000. На плане 0,2–0,3 мм уже предел «точки». На местности это 0,4–0,6 м. Марку делают заведомо больше GSD съёмки, не «как крестик в CAD».</p>
+</section>
+
+<section class="slide">
+  <h2>Цепочка обработки после плана</h2>
+  <ol>
+    <li>первичная коррекция кадров</li>
+    <li>взаимное ориентирование (стереопары)</li>
+    <li>фотограмметрическая модель</li>
+    <li>внешнее ориентирование модели (ПВО)</li>
+    <li>ортофотоплан, ЦММ</li>
+    <li>контроль (А06) и отчёт</li>
+  </ol>
+</section>
+
+<section class="slide">
+  <h2>Погода и свет — тоже план</h2>
+  <ul>
+    <li>классика: без облачности, Солнце ≥ 20° над горизонтом</li>
+    <li>БВС часто под облаками: ровный свет vs дыры теней</li>
+    <li>слабая ЦФК требует света — иначе ISO и смаз</li>
+    <li>ветер &gt; ~8 м/с на коптере ломает «ёлочку» и ЧКХ</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Вопросы на закрепление</h2>
+  <ol>
+    <li>Чем H<sub>ф</sub> отличается от высоты над аэродромом?</li>
+    <li>Связь GSD, f, p и H<sub>ф</sub>?</li>
+    <li>Как из P<sub>x</sub> и захвата получить B<sub>x</sub>? Зачем триплет?</li>
+    <li>72 км/ч, B<sub>x</sub> = 45 м — какой интервал?</li>
+    <li>Зачем ПВО, если на дроне RTK?</li>
+  </ol>
+</section>
+
+<section class="slide slide--title">
+  <h1>Спасибо</h1>
+  <p><a href="notes.html">Конспект</a> · нормы контроля — <a href="../a06-kachestvo/slides.html">А06</a></p>
+</section>
+  </div>
+  <div class="footer-bar">
+    <button id="prev" type="button">←</button>
+    <span id="counter"></span>
+    <div id="progress-track"><div id="progress"></div></div>
+    <button id="next" type="button">→</button>
+  </div>
+  <div class="help" id="help">
+    <div class="help-card">
+      <p><kbd>←</kbd> <kbd>→</kbd> <kbd>пробел</kbd> — слайды</p>
+      <p><kbd>F</kbd> — полный экран</p>
+      <p><kbd>N</kbd> — заметки докладчика</p>
+    </div>
+  </div>
+  <script src="../../js/slides.js"></script>
+  <script src="../../js/widgets.js"></script>
+</body>
+</html>

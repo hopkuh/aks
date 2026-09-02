@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ф04 · АЦП — слайды</title>
+  <link rel="stylesheet" href="../../css/course.css" />
+</head>
+<body class="mode-slides">
+  <header class="topbar">
+    <div class="brand">Ф04 · АЦП и графика <small>стрелки · F полноэкран · N заметки · ? справка</small></div>
+        <nav class="nav">
+      <a href="../../index.html">Лекции</a>
+      <a href="../../practice.html">Практика</a>
+      <a href="../../glossary.html">Глоссарий</a>
+      <a href="../../exam.html">Экзамен</a>
+      <a href="../../literature.html">Литература</a>
+      <a href="notes.html">Конспект</a>
+      <a href="SOURCES.md">Источники</a>
+      <a href="../05-formaty/slides.html">Ф05</a>
+    </nav>
+  </header>
+  <div class="deck">
+<section class="slide slide--title is-active">
+  <h1>АЦП и виды графики</h1>
+  <p>Ф04 · процессор · дискретизация · растр / вектор<br><span class="muted">форматы — следующая пара</span></p>
+</section>
+
+<section class="slide">
+  <h2>Виды графики</h2>
+  <ul>
+    <li>растровая — набор точек</li>
+    <li>векторная — кривые и заливки</li>
+    <li>трёхмерная — вектор + растровые текстуры</li>
+    <li>текст — коды + шрифт</li>
+  </ul>
+  <p class="caveat">Фракталы в курсе не разбираем · 3D — мост к Ф08</p>
+</section>
+
+<section class="slide">
+  <h2>Свет — аналог</h2>
+  <p>Источник непрерывный, глаз непрерывный. Можно спрашивать сколь угодно часто и мерить сколь угодно точно — пока не нарезали.</p>
+  <figure class="fig fig-lg"><img src="images/s03_01.png" alt=""></figure>
+</section>
+
+<section class="slide">
+  <h2>Элементы ЦФК</h2>
+  <p>Объектив · затвор · матрица · <strong>процессор</strong> · накопитель</p>
+  <figure class="fig fig-lg"><img src="images/s05_01.jpeg" alt=""></figure>
+  <p class="caveat">Свойства снимка — от всех звеньев, не только от мегапикселей</p>
+</section>
+
+<section class="slide">
+  <h2>Процессор</h2>
+  <ul>
+    <li>фокус и экспопара</li>
+    <li>АЦП</li>
+    <li>файл и сжатие</li>
+    <li>запись на карту</li>
+  </ul>
+  <figure class="fig"><img src="images/s06_01.jpg" alt=""></figure>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">АЦП</p>
+  <p class="defn">Устройство, переводящее входную физическую величину (напряжение с пикселя) в числовой код.</p>
+  <p class="caveat">На слайдах pptx «дискредитация» — в тетради: дискретизация</p>
+</section>
+
+<section class="slide">
+  <h2>Три шага</h2>
+  <figure class="fig fig-lg">
+        <img src="images/schemes/f04-adc-steps.png" alt="Дискретизация, квантование, кодирование">
+        
+      </figure>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Дискретизация</p>
+  <p class="defn">Непрерывную функцию заменяем отсчётами в выбранных точках аргумента. Уровень сигнала ещё непрерывный.</p>
+  <p>Звук — время. Кадр — плоскость. Видео — кадры × пиксели.</p>
+</section>
+
+<section class="slide">
+  <h2>По времени и по пространству</h2>
+  <p>FPS — сколько кадров в секунду. Сетка — сколько пикселей на кадр. Чаще / мельче — правдоподобнее и тяжелее.</p>
+  <div class="gallery"><img src="images/s10_01.gif" alt=""><img src="images/s10_02.jpg" alt=""></div>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Квантование</p>
+  <p class="defn">Диапазон режем на конечное число уровней и округляем отсчёт до ближайшего.</p>
+  <p class="caveat">Дискретизация — сколько раз спросили · квантование — насколько грубо ответили</p>
+</section>
+
+<section class="slide">
+  <h2>Три вида сигнала</h2>
+  <figure class="fig fig-lg">
+        <img src="images/schemes/f04-signals.png" alt="Аналоговый, дискретный, цифровой сигнал">
+        
+      </figure>
+</section>
+
+<section class="slide">
+  <h2>1 бит</h2>
+  <p>Два состояния: 0 или 1. Свет горит / нет. Текст как чёрное / белое.</p>
+  <div class="gallery"><img src="images/s13_01.png" alt=""><img src="images/s13_02.png" alt=""></div>
+</section>
+
+<section class="slide">
+  <h2>Глубина цвета</h2>
+  <p class="formula">N = 2<sup>n</sup><span class="eq-note">уровней при n битах на канал</span></p>
+  <p>8 бит → 256 · RGB 8+8+8 = 24 бит/пиксель</p>
+  <p class="formula">B = 2<sup>3×8</sup> = 16&nbsp;777&nbsp;216<span class="eq-note">типовая задача билета</span></p>
+</section>
+
+<section class="slide">
+  <h2>24 бита в вебе</h2>
+  <p>Три полутоновых канала. Внутри файла обычно сжато — несжатый вес считают отдельно.</p>
+  <div class="gallery"><img src="images/s17_01.jpeg" alt=""><img src="images/s17_02.jpeg" alt=""><img src="images/s17_03.jpeg" alt=""><img src="images/s17_04.jpeg" alt=""></div>
+</section>
+
+<section class="slide">
+  <h2>Аттестация</h2>
+  <p>Частота оценок — дискретизация. Шкала баллов — квантование. Чаще и мельче — честнее и толще ведомость.</p>
+</section>
+
+<section class="slide">
+  <h2>Теорема Котельникова</h2>
+  <p class="formula">f<sub>s</sub> &gt; 2 f<sub>max</sub><span class="eq-note">иначе верх спектра не восстановить</span></p>
+  <p>Слух ~20 кГц → 44,1 кГц с запасом. Редкая сетка кадра — невосстановимые детали и лесенка.</p>
+  <figure class="fig"><img src="images/s23_01.jpg" alt=""></figure>
+</section>
+
+<section class="slide">
+  <h2>Вес несжатого растра</h2>
+  <p class="formula">V = W · H · b / 8<span class="eq-note">байты · b — бит на пиксель</span></p>
+  <p>16 оттенков → 4 бит. 3000×4000 → 6&nbsp;000&nbsp;000 байт.</p>
+  <p class="caveat">От «сложности» сцены несжатый объём не зависит</p>
+  <div class="gallery"><img src="images/s36_01.png" alt=""><img src="images/s36_02.png" alt=""><img src="images/s36_03.png" alt=""></div>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Вектор</p>
+  <p class="defn">Кривые и заливки. Масштаб без распада на пиксели. Цена: разная интерпретация ПО, слабый авто-ввод, на экран всё равно растеризация.</p>
+</section>
+
+<section class="slide">
+  <h2>Трассировка фото</h2>
+  <p>Векторизация снимка даёт кашу мелких контуров. Для фасада бессмысленно. Горизонтали на карте — ещё спорно.</p>
+  <figure class="fig fig-lg"><img src="images/s30_01.png" alt=""></figure>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Растр</p>
+  <p class="defn">Упорядоченный набор пикселей — bitmap. Объектов нет, только независимые точки с координатой и цветом.</p>
+</section>
+
+<section class="slide">
+  <h2>Растр и вектор</h2>
+  <figure class="fig fig-lg">
+        <img src="images/schemes/f04-raster-vector.png" alt="Растровая сетка и векторные кривые">
+        
+      </figure>
+</section>
+
+<section class="slide">
+  <h2>Сравнение</h2>
+  <table class="plan">
+    <thead><tr><th></th><th>Вектор</th><th>Растр</th></tr></thead>
+    <tbody>
+      <tr><td>из чего</td><td>кривые</td><td>пиксели</td></tr>
+      <tr><td>ввод</td><td>обычно руками</td><td>камера, сканер</td></tr>
+      <tr><td>масштаб</td><td>не распадается</td><td>пикселизация</td></tr>
+      <tr><td>трансформ.</td><td>без потерь записи</td><td>всегда с потерями</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="slide">
+  <h2>Антиалиасинг</h2>
+  <p>Соседей «лесенки» красят промежуточным цветом. Контур чуть мылится — ступенька пропадает.</p>
+  <figure class="fig fig-lg"><img src="images/s39_01.png" alt=""></figure>
+</section>
+
+<section class="slide">
+  <h2>Текст</h2>
+  <p>Коды символов + файл шрифта. Замена шрифта меняет начертание, не смысл. Современные шрифты — вектор.</p>
+  <div class="gallery"><img src="images/s42_01.png" alt=""><img src="images/s42_02.jpg" alt=""></div>
+</section>
+
+<section class="slide">
+  <h2>Вопросы</h2>
+  <ol>
+    <li>Дискретизация vs квантование?</li>
+    <li>3×8 бит RGB — сколько оттенков?</li>
+    <li>16 оттенков, 3000×4000 — вес?</li>
+    <li>Почему 44,1 кГц?</li>
+    <li>Зачем антиалиасинг?</li>
+  </ol>
+</section>
+
+<section class="slide slide--title">
+  <h1>Спасибо</h1>
+  <p><a href="notes.html">Конспект</a> · <a href="../05-formaty/slides.html">Ф05 форматы</a></p>
+</section>
+  </div>
+  <div class="footer-bar">
+    <button id="prev" type="button">←</button>
+    <span id="counter"></span>
+    <div id="progress-track"><div id="progress"></div></div>
+    <button id="next" type="button">→</button>
+  </div>
+  <div class="help" id="help">
+    <div class="help-card">
+      <p><kbd>←</kbd> <kbd>→</kbd> <kbd>пробел</kbd> — слайды</p>
+      <p><kbd>F</kbd> — полный экран</p>
+      <p><kbd>N</kbd> — заметки докладчика</p>
+    </div>
+  </div>
+  <script src="../../js/slides.js"></script>
+</body>
+</html>

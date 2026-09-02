@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" width="960" height="360">
+  <defs>
+    <marker id="ac" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#6ec3d8"/></marker>
+    <marker id="ag" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#e2b56a"/></marker>
+    <marker id="aw" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#93a1b3"/></marker>
+  </defs>
+  <rect width="100%" height="100%" fill="#141b24"/>
+
+  <text x="40" y="36" fill="#e2b56a" font-size="20" font-family="Segoe UI, PT Sans, sans-serif" font-weight="600" text-anchor="start">Глаз и камера — аналогия, не тождество</text>
+
+  <rect x="50" y="80" width="400" height="220" rx="12" fill="none" stroke="#2a3544"/>
+  <text x="250" y="120" fill="#93a1b3" font-size="16" font-family="Segoe UI, PT Sans, sans-serif" font-weight="600" text-anchor="middle">глаз</text>
+
+  <text x="80" y="165" fill="#e9eef4" font-size="15" font-family="Segoe UI, PT Sans, sans-serif" font-weight="600" text-anchor="start">хрусталик</text>
+
+  <text x="80" y="200" fill="#e9eef4" font-size="15" font-family="Segoe UI, PT Sans, sans-serif" font-weight="600" text-anchor="start">зрачок</text>
+
+  <text x="80" y="235" fill="#e9eef4" font-size="15" font-family="Segoe UI, PT Sans, sans-serif" font-weight="600" text-anchor="start">сетчатка</text>
+
+  <text x="80" y="270" fill="#e9eef4" font-size="15" font-family="Segoe UI, PT Sans, sans-serif" font-weight="600" text-anchor="start">аккомодация</text>
+
+  <rect x="510" y="80" width="400" height="220" rx="12" fill="none" stroke="#6ec3d8"/>
+  <text x="710" y="120" fill="#6ec3d8" font-size="16" font-family="Segoe UI, PT Sans, sans-serif" font-weight="600" text-anchor="middle">камера</text>
+
+  <text x="540" y="165" fill="#e2b56a" font-size="15" font-family="Segoe UI, PT Sans, sans-serif" font-weight="600" text-anchor="start">объектив</text>
+
+  <text x="540" y="200" fill="#e2b56a" font-size="15" font-family="Segoe UI, PT Sans, sans-serif" font-weight="600" text-anchor="start">диафрагма</text>
+
+  <text x="540" y="235" fill="#e2b56a" font-size="15" font-family="Segoe UI, PT Sans, sans-serif" font-weight="600" text-anchor="start">матрица</text>
+
+  <text x="540" y="270" fill="#e2b56a" font-size="15" font-family="Segoe UI, PT Sans, sans-serif" font-weight="600" text-anchor="start">фокусировка</text>
+
+  <text x="40" y="330" fill="#93a1b3" font-size="14" font-family="Segoe UI, PT Sans, sans-serif" font-weight="600" text-anchor="start">глаз непрерывно перефокусируется · объектив строит одно поле на плоском кадре</text>
+
+
+</svg>

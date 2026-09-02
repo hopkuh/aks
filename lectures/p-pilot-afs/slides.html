@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Пилотируемая АФС — слайды</title>
+  <link rel="stylesheet" href="../../css/course.css" />
+</head>
+<body class="mode-slides">
+  <header class="topbar">
+    <div class="brand">Пилотируемая АФС · авионика · сканер <small>стрелки · F полноэкран · N заметки · ? справка</small></div>
+        <nav class="nav">
+      <a href="../../index.html">Лекции</a>
+      <a href="../../practice.html">Практика</a>
+      <a href="../../glossary.html">Глоссарий</a>
+      <a href="../../exam.html">Экзамен</a>
+      <a href="../../literature.html">Литература</a>
+      <a href="notes.html">Конспект</a>
+      <a href="SOURCES.md">Источники</a>
+      <a href="../optika-sredy/slides.html">оптика</a>
+      <a href="../a04-planirovanie/slides.html">А04</a>
+    </nav>
+  </header>
+  <div class="deck">
+<section class="slide slide--title is-active">
+  <h1>Пилотируемая АФС</h1>
+  <p>Самолёт ≠ большой дрон · авионика · отворот · сканер · мультиспектр</p>
+</section>
+
+<section class="slide">
+  <h2>На пару</h2>
+  <ul>
+    <li>Тот же GSD = p H / f — другие H, V, полезная нагрузка</li>
+    <li>Авионика: метка затвора, ИНС, гиростабилизация, FMC, снос</li>
+    <li>Заход с отворотом: километры радиуса, брак на крене</li>
+    <li>Кадровый АФА vs pushbroom</li>
+    <li>Мультиспектр с борта ≠ JPEG дрона</li>
+  </ul>
+  <div class="speaker-notes">Право А10 для БВС не копировать сюда слепо: эшелон и экипаж. Дымка — решение вылетать, формулы на оптике среды.</div>
+</section>
+
+<section class="slide">
+  <h2>Две машины</h2>
+  <table class="data">
+    <thead><tr><th></th><th>БВС</th><th>Самолёт</th></tr></thead>
+    <tbody>
+      <tr><td>Hф</td><td>10² м</td><td>10³ м</td></tr>
+      <tr><td>V</td><td>~15 м/с</td><td>~100 м/с</td></tr>
+      <tr><td>Смаз</td><td>часто терпим</td><td>FMC обязателен</td></tr>
+      <tr><td>Разворот</td><td>двор</td><td>километры</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="slide">
+  <h2>GSD на высоте самолёта</h2>
+  <div data-widget="gsd"></div>
+  <p class="caveat">Пример: f=152 мм, p=6 мкм, H=1,2 км → ~4,7 см. Столб атмосферы длиннее, чем у БВС.</p>
+</section>
+
+<section class="slide">
+  <h2>Смаз и FMC</h2>
+  <p class="formula">δ<sub>местн</sub> ≈ V · t<span class="eq-note">100 м/с · 1/1000 с = 10 см за выдержку</span></p>
+  <p>FMC — сдвиг приёмника вдоль маршрута на время t. На коптере 12 м/с · 1/1000 = 1,2 см.</p>
+  <p class="formula">δ<sub>снимка</sub> ≈ V · t · f / H<sub>ф</sub></p>
+</section>
+
+<section class="slide">
+  <h2>Авионика съёмочного борта</h2>
+  <svg class="scheme" viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg"><rect width="800" height="360" fill="#141b24"/>
+  <rect x="300" y="40" width="200" height="70" fill="#1e2733" stroke="#e2b56a"/>
+  <text x="400" y="80" text-anchor="middle" fill="#e2b56a" font-size="16">АФА + FMC</text>
+  <rect x="40" y="160" width="160" height="60" fill="#1e2733" stroke="#6ec3d8"/>
+  <text x="120" y="195" text-anchor="middle" fill="#6ec3d8" font-size="14">ГНСС + метка</text>
+  <rect x="240" y="160" width="160" height="60" fill="#1e2733" stroke="#6ec3d8"/>
+  <text x="320" y="195" text-anchor="middle" fill="#6ec3d8" font-size="14">ИНС / IMU</text>
+  <rect x="440" y="160" width="160" height="60" fill="#1e2733" stroke="#6ec3d8"/>
+  <text x="520" y="188" text-anchor="middle" fill="#6ec3d8" font-size="13">гиростаб.</text>
+  <text x="520" y="208" text-anchor="middle" fill="#6ec3d8" font-size="13">установка</text>
+  <rect x="640" y="160" width="140" height="60" fill="#1e2733" stroke="#6ec3d8"/>
+  <text x="710" y="195" text-anchor="middle" fill="#6ec3d8" font-size="14">снос / drift</text>
+  <path d="M120 160 L400 110" stroke="#93a1b3"/>
+  <path d="M320 160 L400 110" stroke="#93a1b3"/>
+  <path d="M520 160 L400 110" stroke="#93a1b3"/>
+  <path d="M710 160 L500 110" stroke="#93a1b3"/>
+  <text x="400" y="300" text-anchor="middle" fill="#93a1b3" font-size="14">GPS пульта БВС ≠ этот контур</text>
+</svg>
+</section>
+
+<section class="slide">
+  <h2>Что обязательно назвать</h2>
+  <ul>
+    <li>Метка затвора — эпоха кадра в траектории ГНСС</li>
+    <li>ИНС — углы между эпохами; сканеру без неё нельзя</li>
+    <li>Гиростаб — надир и ёлочка ≤ 7° (ГОСТ Р 59328)</li>
+    <li>Угол сноса: путевая vs продольная сторона кадра</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Заход с отворотом</h2>
+  <svg class="scheme" viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg"><rect width="800" height="360" fill="#141b24"/>
+  <line x1="80" y1="80" x2="520" y2="80" stroke="#6ec3d8" stroke-width="3"/>
+  <line x1="80" y1="200" x2="520" y2="200" stroke="#6ec3d8" stroke-width="3"/>
+  <path d="M520 80 Q700 80 700 140 Q700 200 520 200" fill="none" stroke="#e2b56a" stroke-width="3"/>
+  <polygon points="500,80 520,74 520,86" fill="#6ec3d8"/>
+  <polygon points="100,200 80,194 80,206" fill="#6ec3d8"/>
+  <text x="280" y="68" fill="#6ec3d8" font-size="14">маршрут n, курс 090</text>
+  <text x="280" y="228" fill="#6ec3d8" font-size="14">маршрут n+1, курс 270</text>
+  <text x="640" y="140" fill="#e2b56a" font-size="14">отворот</text>
+  <text x="80" y="300" fill="#93a1b3" font-size="14">R ≈ V² / (g tan γ) · кадры на дуге — брак по крену</text>
+</svg>
+</section>
+
+<section class="slide">
+  <h2>След отворота на блоке</h2>
+  <ul>
+    <li>Запас захвата за рамкой ТЗ — иначе дыра после разворота</li>
+    <li>Крены на дуге &gt; допуска табл. Г.1 — кадры выкинуть</li>
+    <li>Выход на линию: снос → ёлочка</li>
+    <li>Челнок: соседние маршруты встречными курсами, разный BRDF крыш</li>
+    <li>Короткий маршрут → большая доля топлива на «грушу»</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Кадровый ≠ сканерный</h2>
+  <svg class="scheme" viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg"><rect width="800" height="360" fill="#141b24"/>
+  <text x="80" y="36" fill="#e2b56a" font-size="16">кадр: один S на все пиксели</text>
+  <rect x="60" y="60" width="280" height="180" fill="#1e2733" stroke="#e2b56a"/>
+  <polygon points="200,40 80,220 320,220" fill="none" stroke="#6ec3d8"/>
+  <circle cx="200" cy="48" r="6" fill="#e2b56a"/>
+  <text x="480" y="36" fill="#6ec3d8" font-size="16">сканер: свой S на каждую строку</text>
+  <rect x="460" y="60" width="280" height="180" fill="#1e2733" stroke="#6ec3d8"/>
+  <line x1="470" y1="90" x2="730" y2="90" stroke="#86c99a"/>
+  <line x1="470" y1="130" x2="730" y2="130" stroke="#86c99a"/>
+  <line x1="470" y1="170" x2="730" y2="170" stroke="#86c99a"/>
+  <circle cx="500" cy="90" r="4" fill="#e2b56a"/>
+  <circle cx="560" cy="130" r="4" fill="#e2b56a"/>
+  <circle cx="620" cy="170" r="4" fill="#e2b56a"/>
+  <text x="400" y="280" text-anchor="middle" fill="#93a1b3" font-size="14">ГОСТ Р 51833: кадровый = одномоментно в пределах выдержки</text>
+</svg>
+</section>
+
+<section class="slide">
+  <h2>Pushbroom на борту</h2>
+  <ul>
+    <li>Линейка поперёк маршрута, строки во времени</li>
+    <li>Ориентирование: траектория + ИНС на строку</li>
+    <li>Leica ADS, космос MSI/OLI — родственники</li>
+    <li>Rolling shutter БВС — плохой родственник (Ф03а)</li>
+    <li>Стереопара Ф07 из двух полос — не учебный минимум</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Мультиспектр с самолёта</h2>
+  <ul>
+    <li>CIR: NIR→R, R→G, G→B — растительность «красная»</li>
+    <li>Сейчас: отдельные тракты R G B NIR, иногда TIR</li>
+    <li>Панхром мельче (геометрия), MS грубее (индексы)</li>
+    <li>Совместное ориентирование каналов</li>
+    <li>NDVI по Байеру телефона — нельзя</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Дымка — не фильтр</h2>
+  <ul>
+    <li>Видимость у горизонта, «молоко»</li>
+    <li>Синий умрёт первым (Рэлей)</li>
+    <li>ГОСТ Р 59328: облака и тон соседних кадров</li>
+    <li>L<sub>path</sub> и T — лекция «оптика среды»</li>
+    <li>Низкое солнце: длинный путь и тени; зенит: блики</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Вопросы</h2>
+  <ol>
+    <li>Зачем FMC на самолёте?</li>
+    <li>Что даёт метка затвора?</li>
+    <li>Почему кадры на отвороте выкидывают?</li>
+    <li>Где центр проекции у pushbroom?</li>
+    <li>NDVI с RGB-дрона?</li>
+  </ol>
+</section>
+
+<section class="slide slide--title">
+  <h1>Связки</h1>
+  <p><a href="notes.html">Конспект</a> · <a href="../optika-sredy/slides.html">оптика</a> · <a href="../a04-planirovanie/slides.html">А04</a> · <a href="../a06-kachestvo/slides.html">А06</a></p>
+</section>
+  </div>
+  <div class="footer-bar">
+    <button id="prev" type="button">←</button>
+    <span id="counter"></span>
+    <div id="progress-track"><div id="progress"></div></div>
+    <button id="next" type="button">→</button>
+  </div>
+  <div class="help" id="help">
+    <div class="help-card">
+      <p><kbd>←</kbd> <kbd>→</kbd> <kbd>пробел</kbd> — слайды</p>
+      <p><kbd>F</kbd> — полный экран</p>
+      <p><kbd>N</kbd> — заметки докладчика</p>
+    </div>
+  </div>
+  <script src="../../js/slides.js"></script>
+  <script src="../../js/widgets.js"></script>
+</body>
+</html>

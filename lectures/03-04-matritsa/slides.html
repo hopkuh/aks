@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ф03б · Матрица — слайды</title>
+  <link rel="stylesheet" href="../../css/course.css" />
+</head>
+<body class="mode-slides">
+  <header class="topbar">
+    <div class="brand">Ф03б · Матрица <small>стрелки · F полноэкран · N заметки · ? справка</small></div>
+        <nav class="nav">
+      <a href="../../index.html">Лекции</a>
+      <a href="../../practice.html">Практика</a>
+      <a href="../../glossary.html">Глоссарий</a>
+      <a href="../../exam.html">Экзамен</a>
+      <a href="../../literature.html">Литература</a>
+      <a href="notes.html">Конспект</a>
+      <a href="SOURCES.md">Источники</a>
+    </nav>
+  </header>
+  <div class="deck">
+<section class="slide slide--title is-active">
+  <h1>Матрица и экспозиция</h1>
+  <p>Ф03б · размер · Байер · ISO · треугольник</p>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Фотографическая матрица</p>
+  <p class="defn">Прибор, преобразующий световой поток в электрический сигнал. Стоит, как правило, за затвором. Фиксирует изображение в цифровой камере.</p>
+  <figure class="fig fig-lg"><img src="images/s15_01.jpeg" alt=""></figure>
+</section>
+
+<section class="slide">
+  <h2>Пять операций сенсора</h2>
+  <ol>
+    <li>поглотить фотоны</li>
+    <li>превратить в заряд</li>
+    <li>накопить</li>
+    <li>превратить в напряжение</li>
+    <li>передать дальше</li>
+  </ol>
+  <figure class="fig fig-lg">
+        <img src="images/schemes/f03b-sensor-ops.png" alt="Пять операций сенсора">
+        
+      </figure>
+</section>
+
+<section class="slide">
+  <h2>Характеристики</h2>
+  <ul>
+    <li>тип (ПЗС / КМОП — «устарело» как главный ярлык)</li>
+    <li>физический размер</li>
+    <li>разрешение</li>
+    <li>сигнал/шум</li>
+    <li>эквивалент ISO</li>
+    <li>динамический диапазон</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>ПЗС и КМОП</h2>
+  <ul>
+    <li>ПЗС — заряд к общему выходу</li>
+    <li>КМОП — преобразование в пикселе</li>
+    <li>Ещё: Live-MOS, Super CCD, SIMD WDR…</li>
+  </ul>
+  <p class="caveat">Сейчас почти везде КМОП. Back-illuminated / Exmor — как выжали площадь фотодиода</p>
+  <figure class="fig fig-lg">
+        <img src="images/schemes/f01-ccd-cmos.png" alt="ПЗС и КМОП">
+        
+      </figure>
+</section>
+
+<section class="slide">
+  <h2>Как получают цвет</h2>
+  <ul>
+    <li>три матрицы (3CCD)</li>
+    <li>мозаика фильтров: RGGB, RGBW, X-Trans…</li>
+    <li>полноцветный пиксель</li>
+  </ul>
+  <div class="gallery"><img src="images/s19_01.jpg" alt=""><img src="images/s19_02.jpg" alt=""></div>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Фильтр Байера</p>
+  <p class="defn">Мозаика цветных фильтров над фотодиодами: 50% зелёных, 25% красных, 25% синих. Цвет собирает интерполяция.</p>
+  <figure class="fig fig-lg">
+        <img src="images/schemes/f03b-bayer.png" alt="Фильтр Байера: красный, зелёный, синий">
+        
+      </figure>
+</section>
+
+<section class="slide">
+  <h2>Демозаика</h2>
+  <div class="gallery"><img src="images/s21_01.jpg" alt=""><img src="images/s21_02.png" alt=""><img src="images/s21_03.png" alt=""><img src="images/s21_04.png" alt=""></div>
+  <p class="caveat">Усреднение соседей · расчёт недостающих каналов · sharpening</p>
+</section>
+
+<section class="slide">
+  <h2>Физический размер</h2>
+  <p>Самая важная характеристика матрицы — миллиметры, не мегапиксели.</p>
+  <figure class="fig fig-lg">
+        <img src="images/schemes/f03b-snr-pixel.png" alt="Крупный и мелкий пиксель на одной площади">
+        
+      </figure>
+</section>
+
+<section class="slide">
+  <h2>Кроп-фактор</h2>
+  <p class="formula">кроп = d<sub>24×36</sub> / d<sub>факт</sub><span class="eq-note">диагональ полного кадра 43,27 мм</span></p>
+  <div class="gallery"><img src="images/s23_01.png" alt=""><img src="images/s23_02.png" alt=""></div>
+</section>
+
+<section class="slide">
+  <h2>Оптическое разрешение матрицы</h2>
+  <p>Способность воспроизвести близко расположенные объекты. Линейное — минимальное расстояние. На практике: пиксели по сторонам и общее число.</p>
+  <figure class="fig fig-lg"><img src="images/s24_01.jpg" alt=""></figure>
+</section>
+
+<section class="slide">
+  <h2>Шумы</h2>
+  <ul>
+    <li>Темновой ток — термоэмиссия в «яму» без света</li>
+    <li>Тепловой — хаос носителей</li>
+    <li>Структурный / случайный / линейчатый</li>
+  </ul>
+  <p>SNR — фототок к темновому. Больше площадь пикселя — лучше.</p>
+  <div class="gallery"><img src="images/s25_01.jpg" alt=""><img src="images/s25_02.jpg" alt=""><img src="images/s25_03.jpg" alt=""><img src="images/s25_04.jpg" alt=""></div>
+</section>
+
+<section class="slide">
+  <h2>Чувствительность матрицы ≠ ISO</h2>
+  <p>Квантовая эффективность: электроны / упавшие фотоны. Порог — когда фототок ещё выше темнового.</p>
+  <p>ISO в цифре — передаточная функция матрица + усилитель + АЦП. Максимум «настоящей» чувствительности задаёт размер пикселя; дальше — усиление.</p>
+</section>
+
+<section class="slide">
+  <h2>Экспозиционный индекс EI</h2>
+  <p>Числа файла сопоставимы с плёнкой той же ISO при тех же K и t. К кремнию относится косвенно.</p>
+  <figure class="fig fig-lg"><img src="images/s27_01.jpeg" alt=""></figure>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Динамический диапазон</p>
+  <p class="defn">Способность воспроизводить различия яркостей с одинаковой степенью контраста. В EV: от шума в тенях до насыщения ячейки в светах. Глаз ~14 EV, камеры сейчас примерно 6–15.</p>
+  <figure class="fig fig-lg">
+        <img src="images/schemes/f03b-dynamic-range.png" alt="Динамический диапазон: тени, рабочий диапазон, клиппинг">
+        
+      </figure>
+</section>
+
+<section class="slide">
+  <h2>Глубина цвета</h2>
+  <p>Сколько полутонов на канал — разрядность АЦП. 8 бит × 3 = 24 бита ≈ 16,7 млн цветов.</p>
+  <figure class="fig fig-lg"><img src="images/s29_01.jpg" alt=""></figure>
+</section>
+
+<section class="slide">
+  <h2>Цветопередача</h2>
+  <p>Две камеры на одну сцену — разные RGB даже при одном ББ. Охват камеры меньше глаза, бумаги — меньше камеры и монитора.</p>
+  <figure class="fig fig-lg"><img src="images/s30_01.jpg" alt=""></figure>
+</section>
+
+<section class="slide">
+  <h2>Процессор и АЦП</h2>
+  <ul>
+    <li>фокус · АЦП · файл и сжатие · запись</li>
+    <li>дискретизация · квантование · кодирование</li>
+  </ul>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Экспозиция</p>
+  <p class="defn">Количество излучения на приёмнике. Для видимого света:</p>
+  <p class="formula">H = E · t<span class="eq-note">освещённость × выдержка · люкс-секунда</span></p>
+  <figure class="fig fig-lg"><img src="images/s33_01.jpg" alt=""></figure>
+</section>
+
+<section class="slide">
+  <h2>Нормально экспонированное</h2>
+  <p>Верное сочетание теней, светов и середины; детали не выбиты. Для техники ещё: наилучшее пространственное разрешение по полю кадра.</p>
+  <p class="formula">1 стоп = ×2 по свету<span class="eq-note">удвоение или уполовинивание H на матрице</span></p>
+</section>
+
+<section class="slide">
+  <h2>Треугольник экспозиции</h2>
+  <figure class="fig fig-lg">
+        <img src="images/schemes/f03b-triangle.png" alt="Треугольник экспозиции: диафрагма, выдержка, ISO">
+        
+      </figure>
+</section>
+
+<section class="slide">
+  <h2>Экспонометр</h2>
+  <p>Замеряет свет и выдаёт экспопару (t и K).</p>
+  <ul>
+    <li>ручной — падающий на объект</li>
+    <li>встроенный — отражённый от объекта</li>
+  </ul>
+  <p>Режимы: матричный / интеллектуальный · центровзвешенный (~70% центра) · точечный (2–8%). Сравнение с 18% серого.</p>
+</section>
+
+<section class="slide">
+  <h2>Режимы съёмки</h2>
+  <ul>
+    <li>Auto · P · A/Av · S/Tv · M · B</li>
+  </ul>
+  <figure class="fig fig-lg"><img src="images/s40_01.jpeg" alt=""></figure>
+</section>
+
+<section class="slide">
+  <h2>Вопросы</h2>
+  <ol>
+    <li>Пять операций сенсора?</li>
+    <li>Почему ISO ≠ чувствительность кремния?</li>
+    <li>Зачем два зелёных в Байере?</li>
+    <li>Чем клиппинг отличается от шума в тенях?</li>
+    <li>Падающий vs отражённый замер?</li>
+  </ol>
+</section>
+
+<section class="slide slide--title">
+  <h1>Спасибо</h1>
+  <p><a href="notes.html">Конспект</a> · <a href="../../glossary.html">словарь</a></p>
+</section>
+  </div>
+  <div class="footer-bar">
+    <button id="prev" type="button">←</button>
+    <span id="counter"></span>
+    <div id="progress-track"><div id="progress"></div></div>
+    <button id="next" type="button">→</button>
+  </div>
+  <div class="help" id="help">
+    <div class="help-card">
+      <p><kbd>←</kbd> <kbd>→</kbd> <kbd>пробел</kbd> — слайды</p>
+      <p><kbd>F</kbd> — полный экран</p>
+      <p><kbd>N</kbd> — заметки докладчика</p>
+    </div>
+  </div>
+  <script src="../../js/slides.js"></script>
+</body>
+</html>

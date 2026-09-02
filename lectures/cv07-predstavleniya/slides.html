@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CV07 представления — слайды</title>
+  <link rel="stylesheet" href="../../css/course.css" />
+</head>
+<body class="mode-slides">
+  <header class="topbar">
+    <div class="brand">CV07 · NeRF и 3DGS <small>стрелки · F полноэкран · N заметки · ? справка</small></div>
+        <nav class="nav">
+      <a href="../../index.html">Лекции</a>
+      <a href="../../practice.html">Практика</a>
+      <a href="../../glossary.html">Глоссарий</a>
+      <a href="../../exam.html">Экзамен</a>
+      <a href="../../literature.html">Литература</a>
+      <a href="notes.html">Конспект</a>
+      <a href="SOURCES.md">Источники</a>
+      <a href="../cv06-oblako/slides.html">CV06</a>
+    </nav>
+  </header>
+  <div class="deck">
+<section class="slide slide--title is-active"><h1>NeRF и Gaussian splatting</h1><p>CV07 · луч · эллипсоид · vs орто кадастра</p></section>
+
+<section class="slide"><h2>NeRF-идея</h2><svg class="scheme" viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg"><rect width="800" height="340" fill="#141b24"/>
+    <circle cx="80" cy="80" r="8" fill="#e2b56a"/>
+    <line x1="80" y1="80" x2="700" y2="240" stroke="#6ec3d8" stroke-width="2"/>
+    <circle cx="220" cy="110" r="11" fill="#86c99a" opacity="0.5"/>
+    <circle cx="340" cy="140" r="16" fill="#86c99a" opacity="0.45"/>
+    <circle cx="480" cy="175" r="22" fill="#86c99a" opacity="0.4"/>
+    <circle cx="620" cy="215" r="14" fill="#86c99a" opacity="0.35"/>
+    <text x="80" y="64" fill="#e2b56a" font-size="14">луч</text>
+    <text x="400" y="300" text-anchor="middle" fill="#93a1b3" font-size="14">C = Σ T<sub>i</sub> α<sub>i</sub> c<sub>i</sub> · объёмный рендеринг</text>
+    </svg></section>
+
+<section class="slide"><h2>Интеграл</h2>
+    <p class="formula">C(r) = ∫ T(t) σ(r(t)) c(r(t), d) dt · T(t) = exp(−∫σ ds)</p>
+    <p>Нужны позы камер (снова бандл). Mildenhall et al., ECCV 2020. matthewtancik.com/nerf</p></section>
+
+<section class="slide"><h2>3D Gaussian</h2><svg class="scheme" viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg"><rect width="800" height="340" fill="#141b24"/>
+    <ellipse cx="400" cy="160" rx="120" ry="50" fill="none" stroke="#e2b56a" stroke-width="2" transform="rotate(-25 400 160)"/>
+    <ellipse cx="400" cy="160" rx="40" ry="18" fill="#e2b56a" opacity="0.35" transform="rotate(-25 400 160)"/>
+    <text x="400" y="300" text-anchor="middle" fill="#93a1b3" font-size="14">примитив: среднее μ, ковариация Σ, цвет, непрозрачность · splatting на экран</text>
+    </svg></section>
+
+<section class="slide"><h2>Где ломается метрика</h2>
+    <ul>
+      <li>floater’ы, каша на проводах, дыры при малом перекрытии</li>
+      <li>Нет встроенной СК заказчика и контрольных точек</li>
+      <li>Красивый viewer ≠ орто 1:2000</li>
+    </ul>
+    <p>Kerbl et al., 2023. repo-sam.inria.fr/fungraph/3d-gaussian-splatting</p></section>
+
+<section class="slide"><h2>Зачем калибровка снова</h2>
+    <p>Луч в NeRF идёт из S через пиксель. Кривой K — кривой луч — каша объёма. Сначала COLMAP, потом поле.</p></section>
+
+<section class="slide"><h2>Splatting vs mesh</h2>
+    <p>Эллипсоид рисуется быстро; топология «стенка-крыша» не обязана быть честной. Mesh + текстура ближе к Ф08. Орто — ещё ближе к ГОСТ.</p></section>
+
+<section class="slide"><h2>Артефакты 3DGS</h2>
+    <ul>
+      <li>floaters в небе</li>
+      <li>провода и антенны</li>
+      <li>мало видов → дыры, как в ФГМ</li>
+    </ul></section>
+
+<section class="slide"><h2>Эссе на зачёт</h2>
+    <p>Два экрана: splat двора и орто в МСК. Что отдадите в кадастр и почему. Формул volume rendering наизусть не требуется — схема луча требуется.</p></section>
+
+<section class="slide"><h2>Экзамен CV</h2>
+    <p>Покажи эпиполяру / бандл / splat-vs-орто на своих данных. Не архитектуры 2024 наизусть.</p></section>
+  </div>
+  <div class="footer-bar">
+    <button id="prev" type="button">←</button>
+    <span id="counter"></span>
+    <div id="progress-track"><div id="progress"></div></div>
+    <button id="next" type="button">→</button>
+  </div>
+  <div class="help" id="help">
+    <div class="help-card">
+      <p><kbd>←</kbd> <kbd>→</kbd> <kbd>пробел</kbd> — слайды</p>
+      <p><kbd>F</kbd> — полный экран</p>
+      <p><kbd>N</kbd> — заметки докладчика</p>
+    </div>
+  </div>
+  <script src="../../js/slides.js"></script>
+  <script src="../../js/widgets.js"></script>
+</body>
+</html>

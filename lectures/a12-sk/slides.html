@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>А12 · СК — слайды</title>
+  <link rel="stylesheet" href="../../css/course.css" />
+</head>
+<body class="mode-slides">
+  <header class="topbar">
+    <div class="brand">А12 · Системы координат и орто <small>стрелки · F полноэкран · N заметки · ? справка</small></div>
+        <nav class="nav">
+      <a href="../../index.html">Лекции</a>
+      <a href="../../practice.html">Практика</a>
+      <a href="../../glossary.html">Глоссарий</a>
+      <a href="../../exam.html">Экзамен</a>
+      <a href="../../literature.html">Литература</a>
+      <a href="notes.html">Конспект</a>
+      <a href="SOURCES.md">Источники</a>
+      <a href="../a11-gnss/slides.html">А11</a>
+      <a href="../09-fotogrammetriya/slides.html">Ф09</a>
+    </nav>
+  </header>
+  <div class="deck">
+<section class="slide slide--title is-active">
+  <h1>СК, проекции, орто</h1>
+  <p>А12 · пара 1,5 ч · геоид · Гаусса–Крюгера · ГСК-2011 · ортофотоплан</p>
+</section>
+
+<section class="slide">
+  <h2>На пару</h2>
+  <ul>
+    <li>Физическая поверхность → геоид → эллипсоид → плоскость карты</li>
+    <li>Искажения проекций: углы, площади, длины</li>
+    <li>Гаусса–Крюгера, UTM, Web Mercator — кому что нельзя</li>
+    <li>ГСК-2011, МСК, WGS-84</li>
+    <li>Что нужно для орто кроме JPEG</li>
+  </ul>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Геоид</p>
+  <p class="defn">Уровенная поверхность поля силы тяжести, близкая к среднему уровню моря. Отвесные линии к ней ортогональны.</p>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Земной эллипсоид</p>
+  <p class="defn">Математическая модель: вращение эллипса. На нём считают геодезические широту и долготу. Нормаль эллипсоида ≠ отвес (уклонение отвеса).</p>
+</section>
+
+<section class="slide">
+  <h2>Высоты</h2>
+  <ul>
+    <li>в России отсчёт от нуля Кронштадтского футштока (балтийская система)</li>
+    <li>геодезическая высота — над эллипсоидом</li>
+    <li>нормальная / ортометрическая — к геоиду / квазигеоиду</li>
+    <li>H борта GNSS и H на плане — разные оси, пока не сделали переход</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Шар ещё живёт в навигации</h2>
+  <p>Экватор длиннее меридиана ~67 км (&lt; 0,2%). Для топоплана 1:2000 шар недостаточен: нужны эллипсоид и проекция.</p>
+</section>
+
+<section class="slide">
+  <h2>Проекция всегда врёт</h2>
+  <p>Развернуть эллипсоид на плоскость без складок нельзя. Классификация по характеру искажений:</p>
+  <ul>
+    <li>равноугольные (конформные) — углы локально верны</li>
+    <li>равновеликие — площади</li>
+    <li>произвольные — компромисс</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Рабочие проекции</h2>
+  <ul>
+    <li>Меркатор — море, локсодромия = прямая</li>
+    <li>Гаусса–Крюгера — поперечный цилиндр, зоны 6°, топография РФ</li>
+    <li>UTM — то же семейство, k₀ = 0,9996, false easting 500&nbsp;000</li>
+    <li>Web Mercator EPSG:3857 — веб-карты; площади на севере чудовищны</li>
+  </ul>
+  <p>Топоплан 1:2000 в 3857 не сдают.</p>
+</section>
+
+<section class="slide">
+  <h2>Оси не перепутать</h2>
+  <ul>
+    <li>Гаусса–Крюгера (отечественная традиция): X на север, Y на восток с номером зоны в миллионах</li>
+    <li>UTM: E, N</li>
+    <li>перепутать X/Y — типичный брак орто</li>
+  </ul>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Локсодромия</p>
+  <p class="defn">Линия постоянного путевого угла. На Меркаторе — прямая. Не кратчайшая.</p>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Ортодромия</p>
+  <p class="defn">Кратчайшая на сфере — дуга большого круга. На Меркаторе — кривая.</p>
+</section>
+
+<section class="slide">
+  <h2>СК России (смысл, не дата приказа)</h2>
+  <ul>
+    <li>СК-42, СК-95 — эллипсоид Красовского, архив</li>
+    <li>ПЗ-90.11 — навигация, оборона</li>
+    <li>ГСК-2011 — основные геодезические работы</li>
+    <li>МСК субъекта — кадастр и градостроительство</li>
+    <li>WGS-84 — ГНСС и «гуглокарты»</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Переход</h2>
+  <ul>
+    <li>7 параметров Гельмерта / ГОСТ</li>
+    <li>WKT, PROJ, EPSG-коды</li>
+    <li>ключи МСК — из региональной документации, не с форума</li>
+    <li>RTK в WGS без перехода в МСК кадастр не примет</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>ПВО здесь</h2>
+  <p>Опознаки в СК объекта (А04). Пункты ГГС, реперы, каталог. Блок АФС вписывают в ту СК, что в ТЗ.</p>
+</section>
+
+<section class="slide">
+  <h2>Как из двух кадров получается карта</h2>
+  <div data-widget="pipeline"></div>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Ортофотоплан</p>
+  <p class="defn">Фотограмметрическое изображение местности в ортогональной проекции, приведённое к заданным масштабу и системе координат. Строится из ориентированных снимков и ЦМР/ЦММ той же СК. Это продукт сдачи, а не склейка JPEG в графическом редакторе.</p>
+</section>
+
+<section class="slide">
+  <h2>Что нужно для орто — чеклист в тетрадь</h2>
+  <ul>
+    <li>уравненный блок снимков или элементы внешнего ориентирования каждого кадра</li>
+    <li>элементы внутреннего ориентирования (f, главная точка, дисторсия)</li>
+    <li>ЦМР или ЦММ в той же системе координат, что орто</li>
+    <li>«подтянуть по четырём углам» без ЦМР — аффинная пародия: вертикали зданий ложатся</li>
+  </ul>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">ЦМР и ЦММ</p>
+  <p class="defn">ЦМР — цифровая модель рельефа земной поверхности (часто без домов и крон). ЦММ / ЦМП — модель видимой местности, с растительностью и крышами. True ortho дополнительно «ставит» фасады: другой класс работ и другая цена, чем обычный ортофотоплан.</p>
+</section>
+
+<section class="slide">
+  <h2>Накидной монтаж ≠ орто</h2>
+  <p>Монтаж — контроль покрытия (А06). Орто — метрический продукт в СК. Нормы: ГОСТ Р 59328, ГОСТ Р 59562, ГКИНП 02-036-02.</p>
+</section>
+
+<section class="slide">
+  <h2>Вопросы</h2>
+  <ol>
+    <li>Чем геоид отличается от эллипсоида?</li>
+    <li>Почему Web Mercator нельзя сдавать как топоплан 1:2000?</li>
+    <li>ГСК-2011 и МСК: что кому?</li>
+    <li>Какие данные нужны для орто кроме JPEG?</li>
+    <li>Чем ортофотоплан отличается от накидного монтажа?</li>
+  </ol>
+</section>
+
+<section class="slide slide--title">
+  <h1>Спасибо</h1>
+  <p><a href="notes.html">Конспект</a> · <a href="https://epsg.io/">epsg.io</a></p>
+</section>
+  </div>
+  <div class="footer-bar">
+    <button id="prev" type="button">←</button>
+    <span id="counter"></span>
+    <div id="progress-track"><div id="progress"></div></div>
+    <button id="next" type="button">→</button>
+  </div>
+  <div class="help" id="help">
+    <div class="help-card">
+      <p><kbd>←</kbd> <kbd>→</kbd> <kbd>пробел</kbd> — слайды</p>
+      <p><kbd>F</kbd> — полный экран</p>
+      <p><kbd>N</kbd> — заметки докладчика</p>
+    </div>
+  </div>
+  <script src="../../js/slides.js"></script>
+  <script src="../../js/widgets.js"></script>
+</body>
+</html>

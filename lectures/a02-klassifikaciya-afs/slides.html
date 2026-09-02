@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>А02 · Классификация АФС — слайды</title>
+  <link rel="stylesheet" href="../../css/course.css" />
+</head>
+<body class="mode-slides">
+  <header class="topbar">
+    <div class="brand">А02 · Классификация АФС <small>стрелки · F полноэкран · N заметки · ? справка</small></div>
+        <nav class="nav">
+      <a href="../../index.html">Лекции</a>
+      <a href="../../practice.html">Практика</a>
+      <a href="../../glossary.html">Глоссарий</a>
+      <a href="../../exam.html">Экзамен</a>
+      <a href="../../literature.html">Литература</a>
+      <a href="notes.html">Конспект</a>
+      <a href="SOURCES.md">Источники</a>
+      <a href="../a01-vvedenie/slides.html">А01</a>
+      <a href="../a04-planirovanie/slides.html">А04</a>
+    </nav>
+  </header>
+  <div class="deck">
+<section class="slide slide--title is-active">
+  <h1>Классификация АФС</h1>
+  <p>А02 · покрытие · наклон · активные · каналы</p>
+</section>
+
+<section class="slide">
+  <h2>На пару</h2>
+  <ul>
+    <li>Одиночная / маршрут / площадь — про покрытие, не про камеру</li>
+    <li>Плановая vs перспективная: порог α = 3° из ГОСТ</li>
+    <li>Пассивные и активные: что светит</li>
+    <li>Панхром, мульти, гипер — геометрия vs вещество</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Четыре оси</h2>
+  <figure class="fig fig-lg">
+        <img src="images/schemes/a02-class-afs.png" alt="Классификация АФС">
+        
+      </figure>
+</section>
+
+<section class="slide">
+  <h2>Зачем покрытие</h2>
+  <div data-widget="pipeline"></div>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Одиночная (одинарная) АФС</p>
+  <p class="defn">Один кадр или несколько кадров <em>без</em> взаимного перекрытия. Стереопары нет, блока нет. Подходит для обзора, инспекции, «фото с воздуха» — не для орто и ЦММ «по учебнику».</p>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Маршрутная АФС</p>
+  <p class="defn">Один заход: кадры перекрываются вдоль линии полёта (продольное перекрытие P<sub>x</sub>). Полоса местности. Без поперечных маршрутов это ещё не площадной блок.</p>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Площадная АФС</p>
+  <p class="defn">Участок длиннее и шире одного кадра; ряд параллельных маршрутов, обычно широтных. Самый частый вид топосъёмки. Нужны и P<sub>x</sub> вдоль маршрута, и P<sub>y</sub> между маршрутами — иначе маршруты не связать.</p>
+  <div class="gallery"><img src="images/s02_01.jpeg" alt=""><img src="images/s02_02.jpeg" alt=""><img src="images/s02_03.png" alt=""><img src="images/s02_04.png" alt=""></div>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Плановая АФС</p>
+  <p class="defn">Ось аэрофотоаппарата в надир; отклонение от отвеса α ≤ 3°. Кадровый фотограмметрический снимок при таком наклоне. Это «карта с воздуха»: орто и стерео по учебнику, базисы B<sub>x</sub> работают. Порог 3° — ГОСТ / учебник, не «на глаз».</p>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Перспективная АФС</p>
+  <p class="defn">Заданный наклон оси, α &gt; 3° (острый угол к горизонту). Виды, мониторинг фасадов, 3D кварталов. Формулы надирной АФС с базисом «как на карте» начинают врать — это конвергентная история Ф07.</p>
+  <div class="gallery"><img src="images/s06_01.png" alt=""><img src="images/s06_02.jpeg" alt=""></div>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Пассивные методы</p>
+  <p class="defn">Регистрируют излучение объекта или отражённое природное (Солнце): цветная аэрофотосъёмка, ближний ИК, тепловой ИК. Ночью без Солнца в видимом — темно; тепло видит своё излучение поверхности.</p>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Активные методы</p>
+  <p class="defn">Система сама подсвечивает и принимает возврат: лазерная аэросъёмка (лидар), радиолокация. День/ночь, облака (для РЛС) — другие правила, чем у ЦФК. Это тоже дистанционка с воздуха, но не «фотоаппарат» семестра 3.</p>
+  <div class="gallery"><img src="images/s07_01.png" alt=""><img src="images/s07_02.jpeg" alt=""><img src="images/s07_03.jpeg" alt=""><img src="images/s07_04.jpeg" alt=""></div>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Панхроматическая съёмка</p>
+  <p class="defn">Один широкий канал (часто весь видимый ± немного УФ). Серый снимок, обычно острее геометрически: вся энергия в один приёмник, меньше шума на пиксель. Для отождествления и орто часто лучше, чем один узкий цветной канал.</p>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Мультиспектральная съёмка</p>
+  <p class="defn">Больше одного канала (R, G, B, NIR…). Дешифрирование и индексы (NDVI) живут здесь. Геометрия блока обычно строится по панхрому или по одному острому каналу, цвет натягивают потом.</p>
+  <div class="gallery"><img src="images/s08_01.jpeg" alt=""><img src="images/s08_02.png" alt=""><img src="images/s08_03.jpeg" alt=""><img src="images/s08_04.jpeg" alt=""></div>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Гиперспектральная съёмка</p>
+  <p class="defn">Сотни узких каналов (ориентир &gt; 100). Спектральная сигнатура вещества, не «ещё один RGB». Цена, объём данных, калибровка — другой класс работ. На топоплан 1:2000 гиперспектр не обязателен.</p>
+</section>
+
+<section class="slide">
+  <h2>Диапазон электромагнитного спектра</h2>
+  <ul>
+    <li>УФ — атмосфера режет, на АФС редко</li>
+    <li>видимый — глаз, орто, дешифрирование «как карта»</li>
+    <li>ближний ИК — растительность, вода «чёрная»</li>
+    <li>тепловой ИК — своё излучение, утечки, не топоплан</li>
+    <li>СВЧ / РЛС — другая физика, А09</li>
+  </ul>
+  <p>Одна сцена в разных окнах — разные слои вещества (Ф06, оптика среды).</p>
+</section>
+
+<section class="slide">
+  <h2>Вопросы</h2>
+  <ol>
+    <li>Чем маршрутная съёмка отличается от площадной?</li>
+    <li>Порог α между плановой и перспективной? Откуда цифра?</li>
+    <li>Лидар — активный или пассивный? Цветная АФС?</li>
+    <li>Панхром vs мультиспектр: что обычно лучше для геометрии, что для дешифрирования?</li>
+    <li>Зачем гиперспектр, если каналов «слишком много»?</li>
+  </ol>
+</section>
+
+<section class="slide slide--title">
+  <h1>Спасибо</h1>
+  <p><a href="notes.html">Конспект</a> · дальше считать — <a href="../a04-planirovanie/slides.html">А04</a></p>
+</section>
+  </div>
+  <div class="footer-bar">
+    <button id="prev" type="button">←</button>
+    <span id="counter"></span>
+    <div id="progress-track"><div id="progress"></div></div>
+    <button id="next" type="button">→</button>
+  </div>
+  <div class="help" id="help">
+    <div class="help-card">
+      <p><kbd>←</kbd> <kbd>→</kbd> <kbd>пробел</kbd> — слайды</p>
+      <p><kbd>F</kbd> — полный экран</p>
+      <p><kbd>N</kbd> — заметки докладчика</p>
+    </div>
+  </div>
+  <script src="../../js/slides.js"></script>
+  <script src="../../js/widgets.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CV03 две камеры — слайды</title>
+  <link rel="stylesheet" href="../../css/course.css" />
+</head>
+<body class="mode-slides">
+  <header class="topbar">
+    <div class="brand">CV03 · эпиполяра <small>стрелки · F полноэкран · N заметки · ? справка</small></div>
+        <nav class="nav">
+      <a href="../../index.html">Лекции</a>
+      <a href="../../practice.html">Практика</a>
+      <a href="../../glossary.html">Глоссарий</a>
+      <a href="../../exam.html">Экзамен</a>
+      <a href="../../literature.html">Литература</a>
+      <a href="notes.html">Конспект</a>
+      <a href="SOURCES.md">Источники</a>
+      <a href="../cv02-sootvetstviya/slides.html">CV02</a>
+      <a href="../cv04-sfm/slides.html">CV04</a>
+    </nav>
+  </header>
+  <div class="deck">
+<section class="slide slide--title is-active"><h1>Две камеры</h1><p>CV03 · эпиполяра · F · E · триангуляция</p></section>
+
+<section class="slide slide--definition"><p class="term">Эпиполярная геометрия</p>
+    <p class="defn">Точка X, центры S₁ S₂ и проекции x₁ x₂ лежат в одной плоскости. На втором кадре x₂ лежит на эпиполяре ℓ₂ = F x₁.</p></section>
+
+<section class="slide"><h2>Плоскость трёх точек и базиса</h2><svg class="scheme" viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg"><rect width="800" height="340" fill="#141b24"/>
+    <circle cx="160" cy="80" r="7" fill="#e2b56a"/>
+    <circle cx="520" cy="90" r="7" fill="#e2b56a"/>
+    <text x="148" y="64" fill="#e2b56a" font-size="14">S1</text>
+    <text x="508" y="74" fill="#e2b56a" font-size="14">S2</text>
+    <line x1="160" y1="80" x2="520" y2="90" stroke="#93a1b3" stroke-dasharray="4 3"/>
+    <text x="320" y="70" fill="#93a1b3" font-size="13">базис B</text>
+    <circle cx="400" cy="40" r="6" fill="#86c99a"/>
+    <text x="412" y="36" fill="#86c99a" font-size="14">X</text>
+    <line x1="160" y1="80" x2="400" y2="40" stroke="#6ec3d8"/>
+    <line x1="520" y1="90" x2="400" y2="40" stroke="#6ec3d8"/>
+    <rect x="80" y="160" width="180" height="120" fill="#1e2733" stroke="#6ec3d8"/>
+    <rect x="480" y="170" width="180" height="120" fill="#1e2733" stroke="#6ec3d8"/>
+    <circle cx="150" cy="210" r="4" fill="#86c99a"/>
+    <line x1="500" y1="190" x2="640" y2="270" stroke="#e07a73" stroke-width="2"/>
+    <text x="170" y="214" fill="#86c99a" font-size="12">x1</text>
+    <text x="560" y="188" fill="#e07a73" font-size="12">ℓ2 = F x1</text>
+    <text x="170" y="300" fill="#93a1b3" font-size="13">кадр 1</text>
+    <text x="570" y="310" fill="#93a1b3" font-size="13">кадр 2</text>
+    </svg></section>
+
+<section class="slide"><h2>F и E</h2>
+    <p class="formula">x₂ᵀ F x₁ = 0 · F 3×3, rank 2, 7 степеней</p>
+    <p class="formula">E = K₂ᵀ F K₁ · x̂₂ᵀ E x̂₁ = 0<span class="eq-note">калиброванные нормированные координаты</span></p>
+    <p>8-точечный алгоритм Хартли: линейно, потом проекция на rank 2 (SVD).</p></section>
+
+<section class="slide"><h2>Триангуляция</h2>
+    <p>Лучи S₁x₁ и S₂x₂ в мире почти пересекаются. Невязка — та же идея, что ошибка репроекции.</p>
+    <p class="formula">Z / f = − B / p<span class="eq-note">нормальная пара Ф07; общий случай — косые лучи, DLT/mid-point</span></p></section>
+
+<section class="slide"><h2>Эпиполюс</h2>
+    <p>e₂ — проекция S₁ на кадр 2. Все эпиполяры проходят через e. Если e внутри кадра — сильная конвергенция (Ф07 стенд), не плановая АФС.</p></section>
+
+<section class="slide"><h2>Ректификация</h2>
+    <p>Повернуть кадры так, что эпиполяры горизонтальны. Тогда поиск соответствий — 1D вдоль строки. Подготовка к SGBM (CV05).</p></section>
+
+<section class="slide"><h2>Четыре гипотезы из E</h2>
+    <p>Разложение E → R, t: четыре пары. Живая — та, где точки перед обеими камерами (cheirality). В фотограмметрии тот же смысл: объект в передней полусфере.</p></section>
+
+<section class="slide"><h2>Нормализация Хартли</h2>
+    <p>8-точка без центрирования точек — численно гниль. Сдвиг+масштаб пикселей к ~√2, потом H обратно. Не пропускать в коде «на коленке».</p></section>
+
+<section class="slide"><h2>Практика</h2>
+    <ul>
+      <li>Нарисовать ℓ на учебной стереопаре</li>
+      <li>Среднее расстояние точек до эпиполяры (px)</li>
+      <li>Марки линейки сем. 3 vs триангуляция</li>
+    </ul></section>
+
+<section class="slide"><h2>Источники</h2><ul>
+    <li>Hartley, Zisserman. Multiple View Geometry. гл. 9–12. robots.ox.ac.uk/~vgg/hzbook</li>
+    <li>OpenCV epipolar geometry</li>
+    <li>Чибуничев — взаимное ориентирование</li>
+    </ul></section>
+  </div>
+  <div class="footer-bar">
+    <button id="prev" type="button">←</button>
+    <span id="counter"></span>
+    <div id="progress-track"><div id="progress"></div></div>
+    <button id="next" type="button">→</button>
+  </div>
+  <div class="help" id="help">
+    <div class="help-card">
+      <p><kbd>←</kbd> <kbd>→</kbd> <kbd>пробел</kbd> — слайды</p>
+      <p><kbd>F</kbd> — полный экран</p>
+      <p><kbd>N</kbd> — заметки докладчика</p>
+    </div>
+  </div>
+  <script src="../../js/slides.js"></script>
+  <script src="../../js/widgets.js"></script>
+</body>
+</html>

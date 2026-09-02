@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 520" width="1100" height="520">
+  <defs>
+    <linearGradient id="visband" x1="0" x2="1">
+      <stop offset="0%" stop-color="#5b4dff"/>
+      <stop offset="50%" stop-color="#3dce6a"/>
+      <stop offset="100%" stop-color="#e04a4a"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="#141b24"/>
+  <text x="40" y="34" fill="#e2b56a" font-size="20" font-family="Segoe UI, sans-serif" font-weight="600">???????????????? ????????? ?? ?</text>
+
+  <line x1="80" y1="430" x2="1040" y2="430" stroke="#93a1b3"/>
+  <line x1="80" y1="70" x2="80" y2="430" stroke="#93a1b3"/>
+  <text x="28" y="80" fill="#93a1b3" font-size="12">???.</text>
+  <text x="560" y="458" fill="#93a1b3" font-size="14" text-anchor="middle">?, ??</text>
+  <text x="80" y="448" fill="#93a1b3" font-size="12" text-anchor="middle">400</text>
+  <text x="320" y="448" fill="#93a1b3" font-size="12" text-anchor="middle">500</text>
+  <text x="560" y="448" fill="#93a1b3" font-size="12" text-anchor="middle">600</text>
+  <text x="800" y="448" fill="#93a1b3" font-size="12" text-anchor="middle">800</text>
+  <text x="1020" y="448" fill="#93a1b3" font-size="12" text-anchor="middle">1000</text>
+  <rect x="80" y="70" width="240" height="360" fill="url(#visband)" opacity="0.12"/>
+  <text x="200" y="88" fill="#e2b56a" font-size="12" text-anchor="middle">???????</text>
+
+  <path d="M80,400 C160,220 280,140 400,150 C560,170 720,280 800,380" fill="none" stroke="#93a1b3" stroke-width="3"/>
+  <path d="M90,400 C140,180 200,160 250,280 C280,360 300,400 340,420" fill="none" stroke="#5b8cff" stroke-width="2.4"/>
+  <path d="M220,420 C280,200 360,140 430,200 C480,260 520,400 560,420" fill="none" stroke="#3dce6a" stroke-width="2.4"/>
+  <path d="M480,420 C540,240 620,150 700,200 C760,250 800,380 840,420" fill="none" stroke="#e07a73" stroke-width="2.4"/>
+  <path d="M720,420 C780,240 860,140 940,180 C1000,220 1040,320 1040,400" fill="none" stroke="#e2b56a" stroke-width="2.6"/>
+  <g stroke="#86c99a" stroke-width="1.6">
+    <line x1="140" y1="430" x2="140" y2="210"/>
+    <line x1="200" y1="430" x2="200" y2="190"/>
+    <line x1="270" y1="430" x2="270" y2="230"/>
+    <line x1="340" y1="430" x2="340" y2="200"/>
+    <line x1="410" y1="430" x2="410" y2="240"/>
+    <line x1="490" y1="430" x2="490" y2="180"/>
+    <line x1="570" y1="430" x2="570" y2="220"/>
+    <line x1="650" y1="430" x2="650" y2="250"/>
+    <line x1="740" y1="430" x2="740" y2="200"/>
+    <line x1="830" y1="430" x2="830" y2="230"/>
+    <line x1="920" y1="430" x2="920" y2="210"/>
+    <line x1="1000" y1="430" x2="1000" y2="260"/>
+  </g>
+
+  <text x="390" y="118" fill="#93a1b3" font-size="14">??????? � ???? ??????? ?????</text>
+  <rect x="80" y="478" width="14" height="14" fill="#93a1b3"/>
+  <text x="100" y="490" fill="#93a1b3" font-size="13">???????</text>
+  <rect x="220" y="478" width="14" height="14" fill="#5b8cff"/>
+  <rect x="238" y="478" width="14" height="14" fill="#3dce6a"/>
+  <rect x="256" y="478" width="14" height="14" fill="#e07a73"/>
+  <text x="278" y="490" fill="#e9eef4" font-size="13">RGB</text>
+  <rect x="360" y="478" width="14" height="14" fill="#e2b56a"/>
+  <text x="380" y="490" fill="#e2b56a" font-size="13">NIR</text>
+  <rect x="460" y="478" width="14" height="14" fill="#86c99a"/>
+  <text x="480" y="490" fill="#86c99a" font-size="13">??????????? � ????? ?????? ??????</text>
+</svg>

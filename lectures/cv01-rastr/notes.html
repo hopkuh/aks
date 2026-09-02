@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CV01 · Изображение как массив — конспект</title>
+  <link rel="stylesheet" href="../../css/course.css" />
+</head>
+<body class="mode-page">
+  <header class="topbar">
+    <div class="brand">CV01 · растр</div>
+        <nav class="nav">
+      <a href="../../index.html">Лекции</a>
+      <a href="../../practice.html">Практика</a>
+      <a href="../../glossary.html">Глоссарий</a>
+      <a href="../../exam.html">Экзамен</a>
+      <a href="../../literature.html">Литература</a>
+      <a href="slides.html">Слайды</a>
+      <a href="notes.html" aria-current="page">Конспект</a>
+      <a href="../cv02-sootvetstviya/notes.html">CV02</a>
+    </nav>
+  </header>
+  <main class="wrap wrap-wide">
+
+    <h1>Изображение как массив</h1>
+    <p class="lead">Первая пара CV: без нейросетей. Снимок — сетка чисел. Свёртка, градиент, пирамида. Мост: <a href="../04-atsp-grafika/notes.html">Ф04</a>, гистограмма <a href="../a06-kachestvo/notes.html">А06</a>, серия <a href="../../practice-s3.html">ЦФК</a>.</p>
+    <h2>Определения</h2>
+    <p>Цифровое изображение I[m,n] — отсчёты непрерывной яркости после апертуры пикселя и квантования. Теорема отсчётов: детали мельче ~2 пикселей дают алиасинг. «Больше мегапикселей» без ФПМ оптики не значит «точнее».</p>
+    <p class="formula">(I ∗ K)[x,y] = Σ<sub>i,j</sub> I[x−i,y−j] K[i,j]</p>
+    <p>Гаусс сепарабелен: два 1D прохода. Собель — оценка производной. Модуль градиента — карта границ.</p>
+    <p class="formula">|∇I| = √(I<sub>x</sub>² + I<sub>y</sub>²)</p>
+    <h2>Пирамида</h2>
+    <p>Сгладить гауссом → взять каждый второй пиксель. DoG между уровнями ≈ лапласиан — детектор блобов для SIFT (CV02).</p>
+    <h2>Практика</h2>
+    <p>На своём JPEG/RAW серии ЦФК: своё ядро, кроп 100%, вывод «коррелятор потеряет / найдёт край». Шарп из камеры — враг отождествления.</p>
+    <h2>Литература</h2>
+    <ul>
+      <li>Szeliski R. Computer Vision. 2nd ed. <a href="https://szeliski.org/Book/">szeliski.org/Book</a></li>
+      <li><a href="https://docs.opencv.org/4.x/d4/d13/tutorial_py_filtering.html">OpenCV Filtering</a> · <a href="https://docs.opencv.org/4.x/d5/d0f/tutorial_py_gradients.html">Gradients</a></li>
+    </ul>
+        
+  </main>
+  <script src="../../js/widgets.js"></script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ф06 · Цвет — слайды</title>
+  <link rel="stylesheet" href="../../css/course.css" />
+</head>
+<body class="mode-slides">
+  <header class="topbar">
+    <div class="brand">Ф06 · Теория цвета <small>стрелки · F полноэкран · N заметки · ? справка</small></div>
+        <nav class="nav">
+      <a href="../../index.html">Лекции</a>
+      <a href="../../practice.html">Практика</a>
+      <a href="../../glossary.html">Глоссарий</a>
+      <a href="../../exam.html">Экзамен</a>
+      <a href="../../literature.html">Литература</a>
+      <a href="notes.html">Конспект</a>
+      <a href="SOURCES.md">Источники</a>
+      <a href="../05-formaty/slides.html">Ф05</a>
+    </nav>
+  </header>
+  <div class="deck">
+<section class="slide slide--title is-active">
+  <h1>Цвет и свет</h1>
+  <p>Ф06 · спектр · RGB / CMYK · ББ · модель ≠ пространство</p>
+</section>
+
+<section class="slide">
+  <h2>Зачем резать на каналы</h2>
+  <p>Образ последователен только после растра. Дальше — физика волны.</p>
+  <div class="gallery"><img src="images/s03_01.jpg" alt=""><img src="images/s03_02.png" alt=""><img src="images/s03_03.jpg" alt=""><img src="images/s03_04.jpg" alt=""></div>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Свет</p>
+  <p class="defn">ЭМИ, которое видит глаз: ≈ 380–400 нм … 760–780 нм. И волна, и фотоны.</p>
+</section>
+
+<section class="slide">
+  <h2>Один объект — разные диапазоны</h2>
+  <figure class="fig fig-lg"><img src="images/s11_01.jpg" alt=""></figure>
+  <p class="caveat">Туманность, сад, рентген — один приём: длина волны выбирает вещество</p>
+</section>
+
+<section class="slide">
+  <h2>Ньютон, 1672</h2>
+  <p>Дисперсия: n зависит от частоты. Спектральный цвет — узкая полоса. Смесь двух может дать ощущение третьего.</p>
+  <div class="gallery"><img src="images/s19_01.jpg" alt=""><img src="images/s19_02.jpg" alt=""><img src="images/s19_03.jpeg" alt=""><img src="images/s19_04.png" alt=""></div>
+</section>
+
+<section class="slide">
+  <h2>Круг Ньютона</h2>
+  <p>Оттенки есть, яркости и насыщенности — нет. Лучи и пигменты смешиваются по-разному.</p>
+  <div class="gallery"><img src="images/s24_01.jpg" alt=""><img src="images/s24_02.jpg" alt=""><img src="images/s24_03.jpg" alt=""><img src="images/s24_04.jpg" alt=""></div>
+</section>
+
+<section class="slide">
+  <h2>Аддитивный / субтрактивный</h2>
+  <figure class="fig fig-lg">
+        <img src="images/schemes/f06-additive-subtractive.png" alt="RGB свет и CMYK краски">
+        
+      </figure>
+</section>
+
+<section class="slide">
+  <h2>Основные</h2>
+  <ul>
+    <li>RGB — экран, матрица, Байер</li>
+    <li>RYB — живопись</li>
+    <li>CMYK — печать; K отдельно: дешевле, приводка, контраст текста</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Юнг и Максвелл</h2>
+  <p>Три типа рецепторов, не струна на каждую частоту. Связка с Ф01: три фильтра, Автохром, Байер.</p>
+  <div class="gallery"><img src="images/s34_01.png" alt=""><img src="images/s34_02.gif" alt=""><img src="images/s34_03.png" alt=""></div>
+</section>
+
+<section class="slide">
+  <h2>Небо и закат</h2>
+  <p>Короткие волны рассеиваются сильнее. На закате путь через атмосферу длиннее — остаётся красное. Это не хроматическая аберрация объектива.</p>
+  <div class="gallery"><img src="images/s41_01.png" alt=""><img src="images/s41_02.png" alt=""></div>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Цветовая температура</p>
+  <p class="defn">Температура абсолютно чёрного тела с тем же цветовым тоном, что у источника. Кельвины, не «тепло/холод» художника один в один.</p>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Баланс белого</p>
+  <p class="defn">Сдвиг каналов, чтобы белый остался белым при данном свете. Глаз делает цветопостоянство сам; AWB на закате врёт. RAW — пересчитать позже.</p>
+</section>
+
+<section class="slide">
+  <h2>Колбочки</h2>
+  <p>Максимумы L/M/S. Палочки — сумерки, цвета почти нет.</p>
+  <div class="gallery"><img src="images/s56_01.png" alt=""><img src="images/s56_02.png" alt=""></div>
+</section>
+
+<section class="slide">
+  <h2>Как говорим о цвете</h2>
+  <p>Оттенок · насыщенность · яркость — не «мало красного». Геринг: оппонентные пары (восприятие, не три колбочки).</p>
+</section>
+
+<section class="slide">
+  <h2>Модель ≠ пространство</h2>
+  <figure class="fig fig-lg">
+        <img src="images/schemes/f06-model-space.png" alt="Цветовая модель RGB и охваты пространств">
+        
+      </figure>
+</section>
+
+<section class="slide">
+  <h2>sRGB, Adobe RGB, печать</h2>
+  <div class="gallery"><img src="images/s61_01.png" alt=""><img src="images/s61_02.png" alt=""></div>
+  <p class="caveat">Охват устройства — какие цвета модели достижимы</p>
+</section>
+
+<section class="slide">
+  <h2>HSV и YUV</h2>
+  <p>HSV — крутить «теплее / бледнее». YUV — яркость отдельно, отсюда JPEG.</p>
+  <div class="gallery"><img src="images/s62_01.png" alt=""><img src="images/s62_02.png" alt=""><img src="images/s62_03.png" alt=""><img src="images/s62_04.png" alt=""></div>
+</section>
+
+<section class="slide">
+  <h2>Вопросы</h2>
+  <ol>
+    <li>Аддитивный vs субтрактивный?</li>
+    <li>Зачем K в CMYK?</li>
+    <li>Модель vs пространство — sRGB и Adobe RGB?</li>
+    <li>Что делает ББ? Почему RAW удобнее?</li>
+    <li>Зачем JPEG уходит в YCbCr?</li>
+  </ol>
+</section>
+
+<section class="slide slide--title">
+  <h1>Спасибо</h1>
+  <p><a href="notes.html">Конспект</a> · <a href="../../glossary.html">словарь</a></p>
+</section>
+  </div>
+  <div class="footer-bar">
+    <button id="prev" type="button">←</button>
+    <span id="counter"></span>
+    <div id="progress-track"><div id="progress"></div></div>
+    <button id="next" type="button">→</button>
+  </div>
+  <div class="help" id="help">
+    <div class="help-card">
+      <p><kbd>←</kbd> <kbd>→</kbd> <kbd>пробел</kbd> — слайды</p>
+      <p><kbd>F</kbd> — полный экран</p>
+      <p><kbd>N</kbd> — заметки докладчика</p>
+    </div>
+  </div>
+  <script src="../../js/slides.js"></script>
+</body>
+</html>

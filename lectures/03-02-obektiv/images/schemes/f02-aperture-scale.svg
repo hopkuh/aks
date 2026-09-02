@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 380" width="960" height="380">
+  <defs>
+    <marker id="ac" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#6ec3d8"/></marker>
+    <marker id="ag" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#e2b56a"/></marker>
+    <marker id="aw" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#93a1b3"/></marker>
+  </defs>
+  <rect width="100%" height="100%" fill="#141b24"/>
+
+  <text x="40" y="36" fill="#e2b56a" font-size="20" font-family="Segoe UI, PT Sans, sans-serif" font-weight="600" text-anchor="start">Диафрагменное число n₀ = f / D</text>
+
+  <text x="40" y="64" fill="#93a1b3" font-size="14" font-family="Segoe UI, PT Sans, sans-serif" font-weight="600" text-anchor="start">шаг √2 · соседние значения — вдвое по свету</text>
+
+  <circle cx="90" cy="190" r="58.0" fill="none" stroke="#6ec3d8" stroke-width="3"/>
+  <text x="90" y="280" fill="#e9eef4" font-size="16" font-family="Segoe UI, PT Sans, sans-serif" font-weight="600" text-anchor="middle">1,4</text>
+  <circle cx="200" cy="190" r="41.42857142857143" fill="none" stroke="#6ec3d8" stroke-width="3"/>
+  <text x="200" y="280" fill="#e9eef4" font-size="16" font-family="Segoe UI, PT Sans, sans-serif" font-weight="600" text-anchor="middle">2</text>
+  <circle cx="310" cy="190" r="29.59183673469388" fill="none" stroke="#6ec3d8" stroke-width="3"/>
+  <text x="310" y="280" fill="#e9eef4" font-size="16" font-family="Segoe UI, PT Sans, sans-serif" font-weight="600" text-anchor="middle">2,8</text>
+  <circle cx="420" cy="190" r="21.137026239067062" fill="none" stroke="#6ec3d8" stroke-width="3"/>
+  <text x="420" y="280" fill="#e9eef4" font-size="16" font-family="Segoe UI, PT Sans, sans-serif" font-weight="600" text-anchor="middle">4</text>
+  <circle cx="530" cy="190" r="15.0978758850479" fill="none" stroke="#6ec3d8" stroke-width="3"/>
+  <text x="530" y="280" fill="#e9eef4" font-size="16" font-family="Segoe UI, PT Sans, sans-serif" font-weight="600" text-anchor="middle">5,6</text>
+  <circle cx="640" cy="190" r="10.784197060748502" fill="none" stroke="#6ec3d8" stroke-width="3"/>
+  <text x="640" y="280" fill="#e9eef4" font-size="16" font-family="Segoe UI, PT Sans, sans-serif" font-weight="600" text-anchor="middle">8</text>
+  <circle cx="750" cy="190" r="10" fill="none" stroke="#6ec3d8" stroke-width="3"/>
+  <text x="750" y="280" fill="#e9eef4" font-size="16" font-family="Segoe UI, PT Sans, sans-serif" font-weight="600" text-anchor="middle">11</text>
+  <circle cx="860" cy="190" r="10" fill="none" stroke="#6ec3d8" stroke-width="3"/>
+  <text x="860" y="280" fill="#e9eef4" font-size="16" font-family="Segoe UI, PT Sans, sans-serif" font-weight="600" text-anchor="middle">16</text>
+
+  <text x="40" y="340" fill="#93a1b3" font-size="14" font-family="Segoe UI, PT Sans, sans-serif" font-weight="600" text-anchor="start">на оправе пишут 1:n₀ · меньше число — больше относительное отверстие</text>
+
+
+</svg>

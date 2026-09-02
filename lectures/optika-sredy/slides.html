@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Оптика среды — слайды</title>
+  <link rel="stylesheet" href="../../css/course.css" />
+</head>
+<body class="mode-slides">
+  <header class="topbar">
+    <div class="brand">Отражение · рассеяние · индексы <small>стрелки · F полноэкран · N заметки · ? справка</small></div>
+        <nav class="nav">
+      <a href="../../index.html">Лекции</a>
+      <a href="../../practice.html">Практика</a>
+      <a href="../../glossary.html">Глоссарий</a>
+      <a href="../../exam.html">Экзамен</a>
+      <a href="../../literature.html">Литература</a>
+      <a href="notes.html">Конспект</a>
+      <a href="SOURCES.md">Источники</a>
+      <a href="../p-pilot-afs/slides.html">пилот</a>
+      <a href="../a05-kontrast/slides.html">А05</a>
+    </nav>
+  </header>
+  <div class="deck">
+<section class="slide slide--title is-active">
+  <h1>Отражение, рассеяние, поглощение</h1>
+  <p>Сквозная пара · яркость · дымка · спектральные индексы</p>
+</section>
+
+<section class="slide">
+  <h2>На пару</h2>
+  <ul>
+    <li>Сенсор видит T · L<sub>земля</sub> + L<sub>path</sub>, не «цвет объекта»</li>
+    <li>Поглощение: e<sup>−τ</sup>. Рассеяние Рэлея ∼ 1/λ<sup>4</sup> и Ми</li>
+    <li>ρ(λ), Ламберт vs блик vs BRDF</li>
+    <li>Контраст объекта к фону — функция канала</li>
+    <li>NDVI / NDWI / NDBI / NBR — нормированная разность, не класс кадастра</li>
+  </ul>
+  <div class="speaker-notes">Живые виджеты: Бугер и NDVI. Физика — эта пара; К04 pptx Лобанова — алгебра и картинки индексов.</div>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Цепочка пассивной съёмки</p>
+  <p class="defn">Солнце → атмосфера вниз → поверхность (ρ, BRDF) → атмосфера вверх → оптика → пиксель. Плюс свет, который до земли не дошёл.</p>
+</section>
+
+<section class="slide">
+  <h2>Два потока в объектив</h2>
+  <svg class="scheme" viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg"><rect width="800" height="360" fill="#141b24"/>
+  <circle cx="80" cy="70" r="28" fill="#e2b56a"/>
+  <text x="80" y="76" text-anchor="middle" fill="#141b24" font-size="14" font-weight="700">Солнце</text>
+  <path d="M110 80 L200 160" stroke="#e2b56a" stroke-width="3"/>
+  <rect x="200" y="40" width="160" height="200" fill="#1e2733" stroke="#6ec3d8"/>
+  <text x="280" y="130" text-anchor="middle" fill="#6ec3d8" font-size="16">атмосфера</text>
+  <text x="280" y="154" text-anchor="middle" fill="#93a1b3" font-size="13">T, Lpath, τ</text>
+  <path d="M360 160 L470 230" stroke="#86c99a" stroke-width="3"/>
+  <rect x="470" y="210" width="140" height="50" fill="#3a5220"/>
+  <text x="540" y="240" text-anchor="middle" fill="#e9eef4" font-size="14">ρ(λ)</text>
+  <path d="M500 210 L620 120" stroke="#86c99a" stroke-width="3"/>
+  <path d="M240 90 L620 90" stroke="#e07a73" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="430" y="80" fill="#e07a73" font-size="13">Lpath (дымка)</text>
+  <polygon points="620,70 604,100 636,100" fill="#e2b56a"/>
+  <text x="648" y="92" fill="#e2b56a" font-size="14">камера</text>
+</svg>
+</section>
+
+<section class="slide">
+  <h2>Уравнение на сенсоре</h2>
+  <p class="formula">L<sub>сенсор</sub> = T · L<sub>земля</sub> + L<sub>path</sub></p>
+  <ul>
+    <li>T — пропускание столба (мультипликативно)</li>
+    <li>L<sub>path</sub> — путевое излучение, аддитивная дымка</li>
+    <li>Чёрный на земле становится серым в кадре</li>
+  </ul>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Поглощение</p>
+  <p class="defn">Фотон исчез. Полосы O₂, H₂O, CO₂, O₃ — окна прозрачности. У листа — хлорофилл в красном; у воды — NIR.</p>
+</section>
+
+<section class="slide">
+  <h2>Бугер – Ламберт – Бер</h2>
+  <p class="formula">I = I<sub>0</sub> e<sup>−τ</sup> · τ = k · s</p>
+  <div data-widget="beer"></div>
+</section>
+
+<section class="slide">
+  <h2>Окна (ориентир, не зубрить нм)</h2>
+  <table class="data">
+    <thead><tr><th>Диапазон</th><th>Зачем</th><th>Губит</th></tr></thead>
+    <tbody>
+      <tr><td>VIS 0,4–0,7 мкм</td><td>геометрия, глаз</td><td>Рэлей, дымка</td></tr>
+      <tr><td>NIR ~0,8 мкм</td><td>растительность</td><td>вода в атмосфере на краях</td></tr>
+      <tr><td>SWIR 1,6 / 2,2</td><td>почва, гари, влага</td><td>полосы H₂O</td></tr>
+      <tr><td>TIR 8–14 мкм</td><td>температура</td><td>не «цвет», Планк</td></tr>
+      <tr><td>СВЧ / РЛС</td><td>сквозняк облаков</td><td>другая физика, А09</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Рассеяние Рэлея</p>
+  <p class="defn">Частицы ≪ λ. Сечение ∼ 1/λ⁴. Синее небо, красный закат, голубая дымка. Синий канал АФС садится первым.</p>
+</section>
+
+<section class="slide">
+  <h2>Кто крадёт синий канал</h2>
+  <svg class="scheme" viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg"><rect width="800" height="360" fill="#141b24"/>
+  <text x="40" y="40" fill="#93a1b3" font-size="14">относительная сила рассеяния ∼ 1/λ⁴</text>
+  <rect x="80" y="80" width="40" height="200" fill="#6ec3d8"/>
+  <rect x="200" y="140" width="40" height="140" fill="#86c99a"/>
+  <rect x="320" y="190" width="40" height="90" fill="#e2b56a"/>
+  <rect x="440" y="220" width="40" height="60" fill="#e07a73"/>
+  <text x="100" y="300" text-anchor="middle" fill="#93a1b3" font-size="13">синий</text>
+  <text x="220" y="300" text-anchor="middle" fill="#93a1b3" font-size="13">зелёный</text>
+  <text x="340" y="300" text-anchor="middle" fill="#93a1b3" font-size="13">красный</text>
+  <text x="460" y="300" text-anchor="middle" fill="#93a1b3" font-size="13">NIR</text>
+  <text x="560" y="160" fill="#e9eef4" font-size="15">Ми: пыль, дымка «белая»</text>
+  <text x="560" y="188" fill="#93a1b3" font-size="14">слабее зависит от λ</text>
+</svg>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Атмосферная дымка</p>
+  <p class="defn">В кадре — в основном L<sub>path</sub>: аддитив. Гистограмма уехала, Вебер упал. Photoshop «dehaze» ≠ атмосферная коррекция DOS/Sen2Cor.</p>
+</section>
+
+<section class="slide">
+  <h2>Контраст после дымки</h2>
+  <p class="formula">k′ ≈ k · T / (1 + L<sub>path</sub> /(T B<sub>фон</sub>))</p>
+  <p class="caveat">T↓ и L<sub>path</sub>↑ убивают k. На самолёте это повод не вылетать, не «кривые на весь блок».</p>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">ρ(λ)</p>
+  <p class="defn">Коэффициент спектрального отражения — доля возвращённого потока на длине волны. Кривая — паспорт материала, не картинка Instagram.</p>
+</section>
+
+<section class="slide">
+  <h2>Три кривые, которые надо узнать с листа</h2>
+  <svg class="scheme" viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg"><rect width="800" height="360" fill="#141b24"/>
+  <line x1="60" y1="300" x2="760" y2="300" stroke="#93a1b3"/>
+  <line x1="60" y1="300" x2="60" y2="40" stroke="#93a1b3"/>
+  <text x="400" y="330" fill="#93a1b3" font-size="13">λ → RED  NIR</text>
+  <text x="20" y="40" fill="#93a1b3" font-size="13">ρ</text>
+  <polyline fill="none" stroke="#86c99a" stroke-width="3" points="80,240 180,250 280,260 360,240 420,80 560,70 720,90"/>
+  <polyline fill="none" stroke="#e2b56a" stroke-width="2" points="80,220 400,180 720,140"/>
+  <polyline fill="none" stroke="#6ec3d8" stroke-width="2" points="80,200 300,230 500,280 720,290"/>
+  <line x1="340" y1="50" x2="340" y2="300" stroke="#e07a73" stroke-dasharray="4 3"/>
+  <line x1="430" y1="50" x2="430" y2="300" stroke="#c9923a" stroke-dasharray="4 3"/>
+  <text x="620" y="70" fill="#86c99a" font-size="14">лист (красный край)</text>
+  <text x="620" y="150" fill="#e2b56a" font-size="14">почва</text>
+  <text x="620" y="270" fill="#6ec3d8" font-size="14">вода</text>
+</svg>
+</section>
+
+<section class="slide">
+  <h2>Ламберт, зеркало, BRDF</h2>
+  <div class="columns-3">
+    <div>
+      <h3>Ламберт</h3>
+      <p>Яркость не зависит от ракурса. Удобная ложь орто.</p>
+    </div>
+    <div>
+      <h3>Блик</h3>
+      <p>Вода, крыша, стекло. Клиппинг, дыра коррелятора.</p>
+    </div>
+    <div>
+      <h3>BRDF</h3>
+      <p>ρ(ω<sub>i</sub>, ω<sub>r</sub>). Разные маршруты — разный тон той же крыши.</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <h2>Вебер по каналам</h2>
+  <p class="formula">k(λ) = (B<sub>объект</sub> − B<sub>фон</sub>) / B<sub>фон</sub></p>
+  <ul>
+    <li>Техника в зелени: панхром серый, NIR — тёмное на светлом</li>
+    <li>Берег: вода в NIR «чёрная»</li>
+    <li>TIR ночью — другой сюжет, не ρ Солнца</li>
+  </ul>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Спектральный индекс</p>
+  <p class="defn">Комбинация каналов, чтобы отделить объект от фона. Нормировка на сумму ослабляет освещённость и тень.</p>
+</section>
+
+<section class="slide">
+  <h2>Зачем делить на сумму</h2>
+  <p>Лес на солнце: NIR=90, RED=10 → разность 80, NDVI=0,80</p>
+  <p>Тот же лес в тени: NIR=45, RED=5 → разность 40, NDVI=0,80</p>
+  <p class="caveat">К04: «не влияют условия освещения» — в первом приближении. Атмосфера и BRDF всё ещё врут.</p>
+</section>
+
+<section class="slide">
+  <h2>NDVI живьём</h2>
+  <p class="formula">NDVI = (NIR − RED) / (NIR + RED)</p>
+  <div data-widget="ndvi"></div>
+</section>
+
+<section class="slide">
+  <h2>Семья нормированных разностей</h2>
+  <table class="data">
+    <thead><tr><th>Индекс</th><th>Формула</th><th>Кому светит</th></tr></thead>
+    <tbody>
+      <tr><td>NDVI</td><td>(NIR−RED)/(NIR+RED)</td><td>зелень vs почва/вода</td></tr>
+      <tr><td>NDWI</td><td>(G−NIR)/(G+NIR)</td><td>вода (Макфетерс)</td></tr>
+      <tr><td>NDBI</td><td>(SWIR−NIR)/(SWIR+NIR)</td><td>застройка</td></tr>
+      <tr><td>NBR</td><td>(NIR−SWIR)/(NIR+SWIR)</td><td>гари</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="slide">
+  <h2>Чего индекс не делает</h2>
+  <ul>
+    <li>Не ставит кадастровую границу участка</li>
+    <li>Порог «лес» пляшет по сезону и сенсору</li>
+    <li>JPEG с Байера — не NIR, NDVI из него — фальшивка</li>
+    <li>Дешифрирование А07 — чтение сюжета, индекс — один слой</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Вопросы</h2>
+  <ol>
+    <li>T vs L<sub>path</sub>: что умножает, что прибавляет?</li>
+    <li>Почему синий «дымнее»?</li>
+    <li>Зачем нормировать VI?</li>
+    <li>Объект, слившийся в RGB и видный в NIR?</li>
+    <li>Индекс = дешифрирование?</li>
+  </ol>
+</section>
+
+<section class="slide slide--title">
+  <h1>Дальше</h1>
+  <p><a href="notes.html">Конспект</a> · <a href="../p-pilot-afs/slides.html">пилотируемая АФС</a> · <a href="../a05-kontrast/slides.html">А05</a></p>
+</section>
+  </div>
+  <div class="footer-bar">
+    <button id="prev" type="button">←</button>
+    <span id="counter"></span>
+    <div id="progress-track"><div id="progress"></div></div>
+    <button id="next" type="button">→</button>
+  </div>
+  <div class="help" id="help">
+    <div class="help-card">
+      <p><kbd>←</kbd> <kbd>→</kbd> <kbd>пробел</kbd> — слайды</p>
+      <p><kbd>F</kbd> — полный экран</p>
+      <p><kbd>N</kbd> — заметки докладчика</p>
+    </div>
+  </div>
+  <script src="../../js/slides.js"></script>
+  <script src="../../js/widgets.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CV01 растр — слайды</title>
+  <link rel="stylesheet" href="../../css/course.css" />
+</head>
+<body class="mode-slides">
+  <header class="topbar">
+    <div class="brand">CV01 · растр и свёртка <small>стрелки · F полноэкран · N заметки · ? справка</small></div>
+        <nav class="nav">
+      <a href="../../index.html">Лекции</a>
+      <a href="../../practice.html">Практика</a>
+      <a href="../../glossary.html">Глоссарий</a>
+      <a href="../../exam.html">Экзамен</a>
+      <a href="../../literature.html">Литература</a>
+      <a href="notes.html">Конспект</a>
+      <a href="SOURCES.md">Источники</a>
+      <a href="../cv02-sootvetstviya/slides.html">CV02</a>
+    </nav>
+  </header>
+  <div class="deck">
+<section class="slide slide--title is-active"><h1>Изображение как массив</h1><p>CV01 · растр · свёртка · градиент · пирамиды</p></section>
+
+<section class="slide"><h2>Мост в АКС</h2><ul>
+    <li>Ф04: дискретизация и квантование уже были</li>
+    <li>А06: гистограмма и K — про тот же массив</li>
+    <li>Серия ЦФК: свой фильтр, не Instagram</li>
+    </ul><div class="speaker-notes">Без нейросетей. Ядро — линейный оператор на сетке.</div></section>
+
+<section class="slide slide--definition"><p class="term">Цифровое изображение</p>
+    <p class="defn">Функция I(x,y) на дискретной сетке. Пиксель — отсчёт, не «квадратик краски». Объектов нет, пока вы их не вычислили.</p></section>
+
+<section class="slide"><h2>Сетка</h2><svg class="scheme" viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg"><rect width="800" height="340" fill="#141b24"/>
+    <g stroke="#2a3544" fill="none">
+      <rect x="40" y="40" width="36" height="36"/><rect x="76" y="40" width="36" height="36"/><rect x="112" y="40" width="36" height="36"/><rect x="148" y="40" width="36" height="36"/><rect x="184" y="40" width="36" height="36"/><rect x="220" y="40" width="36" height="36"/><rect x="256" y="40" width="36" height="36"/><rect x="292" y="40" width="36" height="36"/><rect x="328" y="40" width="36" height="36"/><rect x="364" y="40" width="36" height="36"/><rect x="40" y="76" width="36" height="36"/><rect x="76" y="76" width="36" height="36"/><rect x="112" y="76" width="36" height="36"/><rect x="148" y="76" width="36" height="36"/><rect x="184" y="76" width="36" height="36"/><rect x="220" y="76" width="36" height="36"/><rect x="256" y="76" width="36" height="36"/><rect x="292" y="76" width="36" height="36"/><rect x="328" y="76" width="36" height="36"/><rect x="364" y="76" width="36" height="36"/><rect x="40" y="112" width="36" height="36"/><rect x="76" y="112" width="36" height="36"/><rect x="112" y="112" width="36" height="36"/><rect x="148" y="112" width="36" height="36"/><rect x="184" y="112" width="36" height="36"/><rect x="220" y="112" width="36" height="36"/><rect x="256" y="112" width="36" height="36"/><rect x="292" y="112" width="36" height="36"/><rect x="328" y="112" width="36" height="36"/><rect x="364" y="112" width="36" height="36"/><rect x="40" y="148" width="36" height="36"/><rect x="76" y="148" width="36" height="36"/><rect x="112" y="148" width="36" height="36"/><rect x="148" y="148" width="36" height="36"/><rect x="184" y="148" width="36" height="36"/><rect x="220" y="148" width="36" height="36"/><rect x="256" y="148" width="36" height="36"/><rect x="292" y="148" width="36" height="36"/><rect x="328" y="148" width="36" height="36"/><rect x="364" y="148" width="36" height="36"/><rect x="40" y="184" width="36" height="36"/><rect x="76" y="184" width="36" height="36"/><rect x="112" y="184" width="36" height="36"/><rect x="148" y="184" width="36" height="36"/><rect x="184" y="184" width="36" height="36"/><rect x="220" y="184" width="36" height="36"/><rect x="256" y="184" width="36" height="36"/><rect x="292" y="184" width="36" height="36"/><rect x="328" y="184" width="36" height="36"/><rect x="364" y="184" width="36" height="36"/><rect x="40" y="220" width="36" height="36"/><rect x="76" y="220" width="36" height="36"/><rect x="112" y="220" width="36" height="36"/><rect x="148" y="220" width="36" height="36"/><rect x="184" y="220" width="36" height="36"/><rect x="220" y="220" width="36" height="36"/><rect x="256" y="220" width="36" height="36"/><rect x="292" y="220" width="36" height="36"/><rect x="328" y="220" width="36" height="36"/><rect x="364" y="220" width="36" height="36"/></g>
+    <rect x="184" y="148" width="36" height="36" fill="#e2b56a" opacity="0.5" stroke="#e2b56a"/>
+    <text x="202" y="172" text-anchor="middle" fill="#141b24" font-size="12">I</text>
+    <text x="420" y="80" fill="#93a1b3" font-size="14">ось x → столбцы</text>
+    <text x="40" y="28" fill="#93a1b3" font-size="14">y ↓ строки (в массиве часто так)</text>
+    <text x="420" y="160" fill="#e9eef4" font-size="15">свёртка: окрестность вокруг I</text>
+    </svg></section>
+
+<section class="slide"><h2>Дискретизация</h2>
+    <p class="formula">I[m,n] = (f ∗ Π)(m Δx, n Δy)<span class="eq-note">Π — апертура пикселя; теорема отсчётов: мелкое &lt; 2 px — алиасинг</span></p>
+    <p>Мегапиксели без ФПМ не спасают (А05/А06).</p></section>
+
+<section class="slide slide--definition"><p class="term">Свёртка</p>
+    <p class="defn">Каждый пиксель — взвешенная сумма соседей. Линейный фильтр. Ядро K размера (2k+1)×(2k+1).</p></section>
+
+<section class="slide"><h2>Формула</h2>
+    <p class="formula">(I ∗ K)[x,y] = Σ<sub>i</sub> Σ<sub>j</sub> I[x−i, y−j] K[i,j]</p>
+    <p>Сепарабельность: K = u vᵀ — два прохода 1D вместо одного 2D. Гаусс сепарабелен.</p></section>
+
+<section class="slide"><h2>Собель</h2><svg class="scheme" viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg"><rect width="800" height="340" fill="#141b24"/>
+    <text x="40" y="36" fill="#93a1b3" font-size="14">ядро Собеля X · оценка ∂I/∂x</text>
+    <rect x="80" y="70" width="46" height="46" fill="#1e2733" stroke="#6ec3d8"/><text x="103" y="100" text-anchor="middle" fill="#e9eef4" font-size="16">-1</text><rect x="130" y="70" width="46" height="46" fill="#1e2733" stroke="#6ec3d8"/><text x="153" y="100" text-anchor="middle" fill="#e9eef4" font-size="16">0</text><rect x="180" y="70" width="46" height="46" fill="#1e2733" stroke="#6ec3d8"/><text x="203" y="100" text-anchor="middle" fill="#e9eef4" font-size="16">1</text><rect x="80" y="120" width="46" height="46" fill="#1e2733" stroke="#6ec3d8"/><text x="103" y="150" text-anchor="middle" fill="#e9eef4" font-size="16">-2</text><rect x="130" y="120" width="46" height="46" fill="#1e2733" stroke="#6ec3d8"/><text x="153" y="150" text-anchor="middle" fill="#e9eef4" font-size="16">0</text><rect x="180" y="120" width="46" height="46" fill="#1e2733" stroke="#6ec3d8"/><text x="203" y="150" text-anchor="middle" fill="#e9eef4" font-size="16">2</text><rect x="80" y="170" width="46" height="46" fill="#1e2733" stroke="#6ec3d8"/><text x="103" y="200" text-anchor="middle" fill="#e9eef4" font-size="16">-1</text><rect x="130" y="170" width="46" height="46" fill="#1e2733" stroke="#6ec3d8"/><text x="153" y="200" text-anchor="middle" fill="#e9eef4" font-size="16">0</text><rect x="180" y="170" width="46" height="46" fill="#1e2733" stroke="#6ec3d8"/><text x="203" y="200" text-anchor="middle" fill="#e9eef4" font-size="16">1</text>
+    <text x="280" y="160" fill="#e2b56a" font-size="40">∗</text>
+    <text x="360" y="120" fill="#93a1b3" font-size="14">изображение</text>
+    <text x="360" y="200" fill="#86c99a" font-size="14">карта границ по вертикальным рёбрам</text>
+    </svg></section>
+
+<section class="slide"><h2>Градиент</h2>
+    <p class="formula">|∇I| = √(I<sub>x</sub>² + I<sub>y</sub>²) · θ = atan2(I<sub>y</sub>, I<sub>x</sub>)</p>
+    <p>Модуль — сила границы. Угол — ориентация. Харрис и SIFT живут отсюда.</p></section>
+
+<section class="slide"><h2>Гаусс и пирамида</h2>
+    <p class="formula">G<sub>σ</sub> = (1/(2πσ²)) e<sup>−(x²+y²)/(2σ²)</sup></p>
+    <ul>
+      <li>сгладить → проредить ×2 → следующий уровень</li>
+      <li>DoG ≈ LoG — блобы для SIFT</li>
+      <li>Крупное ядро без пирамиды — дорого и глупо</li>
+    </ul></section>
+
+<section class="slide"><h2>Квантование</h2>
+    <p class="formula">N уровней = 2<sup>b</sup><span class="eq-note">8 бит → 256; 12 бит → 4096. K из А06 живёт здесь</span></p>
+    <p>Обрезка в 0 и 255 — дыры теней и клиппинг. Шум квантования ≈ шаг / √12.</p></section>
+
+<section class="slide"><h2>Цвет как три массива</h2>
+    <ul>
+      <li>Байер: один фильтр на пиксель, демозаика — уже свёртка</li>
+      <li>Свёртка по каналам раздельно ≠ свёртка в Lab</li>
+      <li>NIR — четвёртый массив, его нет в JPEG телефона</li>
+    </ul></section>
+
+<section class="slide"><h2>Граничные условия ядра</h2>
+    <ul>
+      <li>zero / replicate / reflect / wrap</li>
+      <li>На АФС край кадра — и так хуже (виньетка, дисторсия)</li>
+      <li>Не сравнивайте ГРИП, обрезав 20 px без протокола</li>
+    </ul></section>
+
+<section class="slide"><h2>Связь с ФПМ</h2>
+    <p>Свёртка с гауссом σ — умножение спектра на e<sup>−2π²σ²ν²</sup>. Мелкое гасится. Шарп JPEG — обратное, плюс ореолы как ложные Харрисы.</p></section>
+
+<section class="slide"><h2>Что сломает отождествление</h2>
+    <ul>
+      <li>Unsharp mask JPEG — ложные точки (качество кадра)</li>
+      <li>Сильный гаусс — убивает текстуру коррелятора</li>
+      <li>Медиана — края крыш «плывут»</li>
+    </ul></section>
+
+<section class="slide"><h2>Практика</h2><ul>
+    <li>Свой K на кадре ЦФК, кроп 100%</li>
+    <li>Гистограмма до/после — связь с K из А06</li>
+    <li>Не сдавать скрин фильтра телефона</li>
+    </ul></section>
+
+<section class="slide"><h2>Источники</h2><ul>
+    <li>Szeliski, Computer Vision, гл. filtering — szeliski.org/Book</li>
+    <li>OpenCV: Smoothing, Gradients</li>
+    <li>Ф04, Ф05, А06</li>
+    </ul></section>
+  </div>
+  <div class="footer-bar">
+    <button id="prev" type="button">←</button>
+    <span id="counter"></span>
+    <div id="progress-track"><div id="progress"></div></div>
+    <button id="next" type="button">→</button>
+  </div>
+  <div class="help" id="help">
+    <div class="help-card">
+      <p><kbd>←</kbd> <kbd>→</kbd> <kbd>пробел</kbd> — слайды</p>
+      <p><kbd>F</kbd> — полный экран</p>
+      <p><kbd>N</kbd> — заметки докладчика</p>
+    </div>
+  </div>
+  <script src="../../js/slides.js"></script>
+  <script src="../../js/widgets.js"></script>
+</body>
+</html>

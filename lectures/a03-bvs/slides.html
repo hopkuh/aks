@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>А03 · БВС — слайды</title>
+  <link rel="stylesheet" href="../../css/course.css" />
+</head>
+<body class="mode-slides">
+  <header class="topbar">
+    <div class="brand">А03 · Классификация БВС <small>стрелки · F полноэкран · N заметки · ? справка</small></div>
+        <nav class="nav">
+      <a href="../../index.html">Лекции</a>
+      <a href="../../practice.html">Практика</a>
+      <a href="../../glossary.html">Глоссарий</a>
+      <a href="../../exam.html">Экзамен</a>
+      <a href="../../literature.html">Литература</a>
+      <a href="notes.html">Конспект</a>
+      <a href="SOURCES.md">Источники</a>
+      <a href="../a04-planirovanie/slides.html">А04</a>
+      <a href="../a05-kontrast/slides.html">А05</a>
+    </nav>
+  </header>
+  <div class="deck">
+<section class="slide slide--title is-active">
+  <h1>Устройство и классификация БВС</h1>
+  <p>А03 · пара 1,5 ч · БВС ≠ GPS пульта · крыло vs коптер</p>
+</section>
+
+<section class="slide">
+  <h2>На пару</h2>
+  <ul>
+    <li>БВС, БПЛА, БАС — формулировки билета</li>
+    <li>Космос / пилотируемый / БВС: охват, разрешение, «сняли в нужный день»</li>
+    <li>Классификация: аэродинамика, крыло, масса, двигатель</li>
+    <li>Узлы: рама, FC, GNSS, ESC, подвес</li>
+    <li>Почему с БВС ставят 80×60, а не 60×30</li>
+  </ul>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">БВС</p>
+  <p class="defn">Беспилотное воздушное судно — воздушное судно, которым в полёте управляет пилот, находящийся вне борта.</p>
+</section>
+
+<section class="slide">
+  <h2>Рядом стоящие слова</h2>
+  <ul>
+    <li>БПЛА — аппарат без экипажа; автоматика / оператор / смесь</li>
+    <li>БАС — система: судно + пункт управления + связь</li>
+    <li>в ГОСТ и билетах чаще БВС; в разговоре — дрон, коптер</li>
+    <li>не всё без пилота — квадрокоптер: есть крыло, VTOL, аэростат</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Космос / самолёт / БВС</h2>
+  <table class="data">
+    <thead><tr><th></th><th>Космос</th><th>Пилотируемая АФС</th><th>БВС</th></tr></thead>
+    <tbody>
+      <tr><td>охват</td><td>огромный</td><td>большой</td><td>малый</td></tr>
+      <tr><td>GSD</td><td>метры… десятки см</td><td>см</td><td>см</td></tr>
+      <tr><td>масштаб карт</td><td>примерно до 1:10&nbsp;000</td><td>1:25&nbsp;000–1:500</td><td>крупный, клочок</td></tr>
+      <tr><td>срок</td><td>виток / заказ</td><td>слоты аэродрома</td><td>«сегодня в 11:00»</td></tr>
+    </tbody>
+  </table>
+  <p class="caveat">«Точность 5 см» на рекламе — продукт при нормальном ПВО, не магия DJI.</p>
+</section>
+
+<section class="slide">
+  <h2>Классификация</h2>
+  <ul>
+    <li>принцип: аэростатические / аэродинамические / реактивные</li>
+    <li>крыло: гибкое, фиксированное, вращающееся</li>
+    <li>самолётный vs мультиротор vs VTOL</li>
+    <li>взлёт: разбег, с руки, вертикаль</li>
+    <li>двигатель: электро / ДВС (крыло на бензине — часы, не минуты)</li>
+    <li>взлётная масса: порог &lt; 250 г — правовой, не аэродинамический</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Крыло vs коптер для АФС</h2>
+  <div class="columns">
+    <div>
+      <h3>Самолёт</h3>
+      <ul>
+        <li>долго, далеко, экономия батареи</li>
+        <li>нужен коридор, не зависнет</li>
+        <li>траектория менее стабильна</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Мультиротор</h3>
+      <ul>
+        <li>висение, точка, фасад, карьер</li>
+        <li>проще учиться</li>
+        <li>ветер ≳ 8 м/с уже против</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <h2>Из чего собран</h2>
+  <ul>
+    <li>рама · полётный контроллер · IMU</li>
+    <li>GNSS навигационный (пульт) ≠ геодезический RTK/PPK</li>
+    <li>моторы, ESC, аккумулятор</li>
+    <li>радиолиния: частота, дальность, задержка</li>
+    <li>камера + подвес (демпфер) · FPV по желанию</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Полезная нагрузка</h2>
+  <ul>
+    <li>фото / видео — основной продукт АФС</li>
+    <li>лидар — отдельный бюджет и калибровка</li>
+    <li>тепло — мониторинг, не топоплан 1:500</li>
+  </ul>
+  <p>От типа GNSS зависит, сколько опознаков носить в поле.</p>
+</section>
+
+<section class="slide">
+  <h2>Ограничения полёта</h2>
+  <ul>
+    <li>температура, ветер, осадки, время батареи</li>
+    <li>min/max скорость крыла</li>
+    <li>дальность радиолинии и визуальный контакт</li>
+    <li>ИВП: представление на временный режим — ориентир 5 рабочих дней (процедуры — А10)</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Особенность АФС с БВС</h2>
+  <ul>
+    <li>ниже облаков: ровный свет, но дешёвой ЦФК нужен свет</li>
+    <li>нестабильная траектория → ёлочка, пропуски</li>
+    <li>перекрытия: минимум &gt; 60/40, спокойнее &gt; 80/60</li>
+    <li>смаз и выдержка — те же формулы А04</li>
+    <li>калибровка: лаборатория vs самокалибровка в блоке</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Безопасность (минимум)</h2>
+  <ul>
+    <li>симулятор до живого винта</li>
+    <li>не «собрал из AliExpress и сразу над людьми»</li>
+    <li>готовое решение дороже, но предсказуемее для курсовой</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Вопросы</h2>
+  <ol>
+    <li>БВС и БПЛА — в чём разница формулировок?</li>
+    <li>Когда крыло выгоднее коптера для АФС?</li>
+    <li>Зачем геодезический GNSS, если «на дроне уже GPS»?</li>
+    <li>Почему с БВС перекрытия часто 80%, а не 60%?</li>
+    <li>Что такое ИВП и за сколько дней подают представление?</li>
+  </ol>
+</section>
+
+<section class="slide slide--title">
+  <h1>Спасибо</h1>
+  <p><a href="notes.html">Конспект</a> · право — <a href="../a10-ivp/slides.html">А10</a></p>
+</section>
+  </div>
+  <div class="footer-bar">
+    <button id="prev" type="button">←</button>
+    <span id="counter"></span>
+    <div id="progress-track"><div id="progress"></div></div>
+    <button id="next" type="button">→</button>
+  </div>
+  <div class="help" id="help">
+    <div class="help-card">
+      <p><kbd>←</kbd> <kbd>→</kbd> <kbd>пробел</kbd> — слайды</p>
+      <p><kbd>F</kbd> — полный экран</p>
+      <p><kbd>N</kbd> — заметки докладчика</p>
+    </div>
+  </div>
+  <script src="../../js/slides.js"></script>
+</body>
+</html>

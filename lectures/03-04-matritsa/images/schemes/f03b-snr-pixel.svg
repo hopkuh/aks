@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 380" width="960" height="380">
+  <defs>
+    <marker id="ac" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#6ec3d8"/></marker>
+    <marker id="ag" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#e2b56a"/></marker>
+    <marker id="aw" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#93a1b3"/></marker>
+  </defs>
+  <rect width="100%" height="100%" fill="#141b24"/>
+
+  <text x="40" y="36" fill="#e2b56a" font-size="20" font-family="Segoe UI, PT Sans, sans-serif" font-weight="600" text-anchor="start">Одна площадь матрицы, разный шаг пикселя</text>
+
+  <rect x="60" y="80" width="380" height="220" fill="none" stroke="#6ec3d8" stroke-width="2"/>
+  <rect x="90" y="110" width="320" height="160" fill="#2a3544"/>
+  <text x="250" y="330" fill="#e9eef4" font-size="14" font-family="Segoe UI, PT Sans, sans-serif" font-weight="600" text-anchor="middle">крупный пиксель · больше фотонов</text>
+
+  <rect x="520" y="80" width="380" height="220" fill="none" stroke="#6ec3d8" stroke-width="2"/>
+<rect x="548" y="108" width="44" height="44" fill="#2a3544" stroke="#141b24"/><rect x="548" y="160" width="44" height="44" fill="#2a3544" stroke="#141b24"/><rect x="548" y="212" width="44" height="44" fill="#2a3544" stroke="#141b24"/><rect x="600" y="108" width="44" height="44" fill="#2a3544" stroke="#141b24"/><rect x="600" y="160" width="44" height="44" fill="#2a3544" stroke="#141b24"/><rect x="600" y="212" width="44" height="44" fill="#2a3544" stroke="#141b24"/><rect x="652" y="108" width="44" height="44" fill="#2a3544" stroke="#141b24"/><rect x="652" y="160" width="44" height="44" fill="#2a3544" stroke="#141b24"/><rect x="652" y="212" width="44" height="44" fill="#2a3544" stroke="#141b24"/><rect x="704" y="108" width="44" height="44" fill="#2a3544" stroke="#141b24"/><rect x="704" y="160" width="44" height="44" fill="#2a3544" stroke="#141b24"/><rect x="704" y="212" width="44" height="44" fill="#2a3544" stroke="#141b24"/><rect x="756" y="108" width="44" height="44" fill="#2a3544" stroke="#141b24"/><rect x="756" y="160" width="44" height="44" fill="#2a3544" stroke="#141b24"/><rect x="756" y="212" width="44" height="44" fill="#2a3544" stroke="#141b24"/><rect x="808" y="108" width="44" height="44" fill="#2a3544" stroke="#141b24"/><rect x="808" y="160" width="44" height="44" fill="#2a3544" stroke="#141b24"/><rect x="808" y="212" width="44" height="44" fill="#2a3544" stroke="#141b24"/>
+  <text x="710" y="330" fill="#e9eef4" font-size="14" font-family="Segoe UI, PT Sans, sans-serif" font-weight="600" text-anchor="middle">мелкий пиксель · раньше шум</text>
+
+
+</svg>

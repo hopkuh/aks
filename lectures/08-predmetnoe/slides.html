@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ф08 · Моделирование — слайды</title>
+  <link rel="stylesheet" href="../../css/course.css" />
+</head>
+<body class="mode-slides">
+  <header class="topbar">
+    <div class="brand">Ф08 · Предметное моделирование <small>стрелки · F полноэкран · N заметки · ? справка</small></div>
+        <nav class="nav">
+      <a href="../../index.html">Лекции</a>
+      <a href="../../practice.html">Практика</a>
+      <a href="../../glossary.html">Глоссарий</a>
+      <a href="../../exam.html">Экзамен</a>
+      <a href="../../literature.html">Литература</a>
+      <a href="notes.html">Конспект</a>
+      <a href="SOURCES.md">Источники</a>
+      <a href="../07-stereo/slides.html">Ф07</a>
+      <a href="../09-fotogrammetriya/slides.html">Ф09</a>
+      <a href="../a01-vvedenie/slides.html">А01</a>
+    </nav>
+  </header>
+  <div class="deck">
+<section class="slide slide--title is-active">
+  <h1>Предметное моделирование</h1>
+  <p>Ф08 · стенд · виды моделей · съёмка · ретопология</p>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Фотограмметрия</p>
+  <p class="defn">Форма, размеры, положение — по фото. Бытовой выход пары — замкнутая 3D-копия, не рендер «из головы».</p>
+</section>
+
+<section class="slide">
+  <h2>Камера</h2>
+  <p>Большая матрица, крупный пиксель, оптика, процессор. На практике — та, что есть.</p>
+  <figure class="fig"><img src="images/s02_01.jpg" alt=""></figure>
+</section>
+
+<section class="slide">
+  <h2>Домашний стенд</h2>
+  <p>Штатив · свет · рассеиватель · тросик · фон · поворотный стол</p>
+  <div class="gallery"><img src="images/s04_01.jpeg" alt=""><img src="images/s04_02.jpeg" alt=""><img src="images/s04_03.jpeg" alt=""><img src="images/s04_04.jpeg" alt=""></div>
+</section>
+
+<section class="slide">
+  <h2>Виды моделей</h2>
+  <figure class="fig fig-lg">
+        <img src="images/schemes/f08-model-types.png" alt="Виды 3D-моделей">
+        
+      </figure>
+  <p class="caveat">Автомат из фото → триангуляция + текстура</p>
+</section>
+
+<section class="slide">
+  <h2>Цепочка</h2>
+  <figure class="fig fig-lg">
+        <img src="images/schemes/f08-pipeline.png" alt="Съёмка, соответствия, облако, сетка, текстура, ретопология">
+        
+      </figure>
+</section>
+
+<section class="slide">
+  <h2>Параллакс</h2>
+  <p class="formula">p = X<sub>1</sub> − X<sub>2</sub></p>
+  <p class="formula">Z / f = − B / p<span class="eq-note">нормальная пара</span></p>
+  <div class="gallery"><img src="images/s22_01.png" alt=""><img src="images/s22_02.png" alt=""></div>
+</section>
+
+<section class="slide">
+  <h2>Объект</h2>
+  <ul>
+    <li>матовый, цветной, простая геометрия</li>
+    <li>не стекло, металл, шерсть, монотон</li>
+    <li>не менять f и фокус · выключить автоповорот</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Съёмка</h2>
+  <p>Траектории вокруг. Лишние кадры лучше дыр между маршрутами. Рёбра — чаще.</p>
+  <div class="gallery"><img src="images/s27_01.png" alt=""><img src="images/s27_02.png" alt=""><img src="images/s27_03.png" alt=""><img src="images/s27_04.png" alt=""></div>
+</section>
+
+<section class="slide">
+  <h2>Ретопология</h2>
+  <p>Шум вниз, полигоны вниз (млн → тысячи), UV, карты нормалей вместо «ещё треугольников».</p>
+  <div class="gallery"><img src="images/s32_01.png" alt=""><img src="images/s32_02.png" alt=""></div>
+</section>
+
+<section class="slide">
+  <h2>Одни снимки ≠ одна модель</h2>
+  <p>Разное ПО и пресеты. Ошибка взаимного ориентирования ломает грани. Проще переснять, чем сутки тыкать маркеры.</p>
+</section>
+
+<section class="slide">
+  <h2>Вопросы</h2>
+  <ol>
+    <li>Какой тип модели выдаёт Metashape?</li>
+    <li>Почему стекло не строится?</li>
+    <li>Что нельзя менять в серии?</li>
+    <li>Зачем ретопология?</li>
+  </ol>
+</section>
+
+<section class="slide slide--title">
+  <h1>Спасибо</h1>
+  <p><a href="notes.html">Конспект</a> · <a href="../a01-vvedenie/slides.html">семестр 4 · А01</a></p>
+</section>
+  </div>
+  <div class="footer-bar">
+    <button id="prev" type="button">←</button>
+    <span id="counter"></span>
+    <div id="progress-track"><div id="progress"></div></div>
+    <button id="next" type="button">→</button>
+  </div>
+  <div class="help" id="help">
+    <div class="help-card">
+      <p><kbd>←</kbd> <kbd>→</kbd> <kbd>пробел</kbd> — слайды</p>
+      <p><kbd>F</kbd> — полный экран</p>
+      <p><kbd>N</kbd> — заметки докладчика</p>
+    </div>
+  </div>
+  <script src="../../js/slides.js"></script>
+</body>
+</html>

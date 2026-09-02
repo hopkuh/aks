@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Лекции — курс АКС / АФС</title>
+  <link rel="stylesheet" href="css/course.css" />
+</head>
+<body class="mode-page">
+  <header class="topbar">
+    <div class="brand">Курс АКС / АФС <small>Дрыга Д. О.</small></div>
+    <nav class="nav">
+      <a href="index.html" aria-current="page">Лекции</a>
+      <a href="practice.html">Практика</a>
+      <a href="glossary.html">Глоссарий</a>
+      <a href="exam.html">Экзамен</a>
+      <a href="literature.html">Литература</a>
+    </nav>
+  </header>
+
+  <main class="wrap wrap-wide" data-hub>
+    <h1>Лекции</h1>
+
+    <div class="sem-pills" role="tablist" aria-label="Семестр">
+      <button type="button" class="sem-pill" data-sem="s3"><span class="n">Семестр 3</span><strong>Фотоаппарат</strong></button>
+      <button type="button" class="sem-pill" data-sem="s4"><span class="n">Семестр 4</span><strong>АФС с БВС</strong></button>
+      <button type="button" class="sem-pill" data-sem="s5"><span class="n">Семестр 5</span><strong>Пилотируемая АФС</strong></button>
+      <button type="button" class="sem-pill" data-sem="s6"><span class="n">Семестр 6</span><strong>Космическая съёмка</strong></button>
+      <button type="button" class="sem-pill" data-sem="s7"><span class="n">Семестр 7</span><strong>РЛС — радиолокация</strong></button>
+      <button type="button" class="sem-pill" data-sem="s8"><span class="n">Семестр 8</span><strong>Основы компьютерного зрения</strong></button>
+    </div>
+
+    <article class="sem sem-panel" data-panel="s3">
+      <h2>Семестр 3 · Фотоаппарат</h2>
+      <table class="plan">
+        <thead>
+          <tr><th>Нед.</th><th>Тема</th><th>Ключевые термины</th><th>ДЗ</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Фотоаппарат. Введение<span class="topic-links"><a href="lectures/03-01-fotoapparat/slides.html">слайды</a> · <a href="lectures/03-01-fotoapparat/notes.html">конспект</a></span></td>
+            <td>история фото- и аэрофотосъёмки; устройство фотоаппарата</td>
+            <td class="hw">Найти камеру, выписать паспорт. Один сюжет в P, A/Av, S/Tv, M. Для A, S и ISO — три положения. Выдержка на движении, диафрагма на объектах на разной дистанции.</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Объектив<span class="topic-links"><a href="lectures/03-02-obektiv/slides.html">слайды</a> · <a href="lectures/03-02-obektiv/notes.html">конспект</a></span></td>
+            <td>тонкая линза, относительное отверстие, ГРИП, кроп-фактор, аберрации, дисторсия</td>
+            <td class="hw">Посчитать K<sub>f</sub> своей матрицы и физическое f. ГРИП на трёх диафрагмах при фокусе 2 м. Гиперфокал. Не подставлять эквивалентное f в масштаб.</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Затвор<span class="topic-links"><a href="lectures/03-03-zatvor/slides.html">слайды</a> · <a href="lectures/03-03-zatvor/notes.html">конспект</a></span></td>
+            <td>выдержка, КПД затвора, шторно-щелевой эффект, global / rolling</td>
+            <td class="hw">Подвижный объект на 1/60, 1/250, 1/1000. Рука или вентилятор вдоль кадра — найти rolling shutter. Записать, какой затвор у вашей камеры.</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Матрица и экспозиция<span class="topic-links"><a href="lectures/03-04-matritsa/slides.html">слайды</a> · <a href="lectures/03-04-matritsa/notes.html">конспект</a></span></td>
+            <td>ISO, Байер, SNR, динамический диапазон, треугольник экспозиции, режимы</td>
+            <td class="hw">Штатив, ISO 100 / 800 / 3200, кроп 100%. Один кадр с клиппингом светов и один «чуть тёмный» RAW. Написать, чем платит каждая ручка треугольника.</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Стереофотосъёмка · основы фотограмметрии<span class="topic-links"><a href="lectures/07-stereo/slides.html">слайды</a> · <a href="lectures/07-stereo/notes.html">конспект</a> · <a href="lectures/09-fotogrammetriya/slides.html">Ф09</a> · <a href="lectures/09-fotogrammetriya/notes.html">конспект</a></span></td>
+            <td>параллакс, перекрытие, кадровый снимок, внутреннее и внешнее ориентирование</td>
+            <td class="hw">Два кадра линейки на базисе, параллакс руками. Назвать случай съёмки стенда. Три марки не на одной прямой. Кадр ≠ сканер — один пример.</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>Предметное моделирование<span class="topic-links"><a href="lectures/08-predmetnoe/slides.html">слайды</a> · <a href="lectures/08-predmetnoe/notes.html">конспект</a></span></td>
+            <td>фотограмметрия, виды 3D-моделей, технологическая цепочка</td>
+            <td class="hw">Выбрать предмет. Набросать три сеанса и число кадров на круг при P<sub>x</sub> = 66%. Что нельзя менять в серии. Почему стекло не строится.</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td>Качество кадра · АЦП · форматы<span class="topic-links"><a href="lectures/10-kachestvo-kadra/slides.html">слайды</a> · <a href="lectures/10-kachestvo-kadra/notes.html">конспект</a> · <a href="lectures/04-atsp-grafika/slides.html">Ф04</a> · <a href="lectures/04-atsp-grafika/notes.html">конспект</a> · <a href="lectures/05-formaty/slides.html">Ф05</a> · <a href="lectures/05-formaty/notes.html">конспект</a></span></td>
+            <td>ФПМ кадра, дискретизация, сжатие, метаданные</td>
+            <td class="hw">Один сюжет RAW и JPEG: вес, битность, кроп 100%. Пригоден ли JPEG к отождествлению. Сколько оттенков даёт 3×8 бит RGB.</td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td>Теория цвета и света<span class="topic-links"><a href="lectures/06-cvet/slides.html">слайды</a> · <a href="lectures/06-cvet/notes.html">конспект</a></span></td>
+            <td>спектр, ББ, RGB / HSV / CMYK, модель и пространство</td>
+            <td class="hw">Белый лист при двух источниках света, сравнить ББ в RAW и JPEG. Назвать модель и пространство своих файлов. Где RGB, где CMYK.</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+    <article class="sem sem-panel" data-panel="s4">
+      <h2>Семестр 4 · АФС с БВС</h2>
+      <table class="plan">
+        <thead>
+          <tr><th>Нед.</th><th>Тема</th><th>Ключевые термины</th><th>ДЗ</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Вводная лекция про АФС<span class="topic-links"><a href="lectures/a01-vvedenie/slides.html">слайды</a> · <a href="lectures/a01-vvedenie/notes.html">конспект</a></span></td>
+            <td>АФС, АКС, ДЗЗ, масштаб, спектральный диапазон</td>
+            <td class="hw">На своём примере развести ДЗЗ / АКС / АФС. Найти три продукта сдачи АФС, не «красивые фото». Масштаб 1:2000 и GSD 5 см — одно и то же?</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Классификация АФС<span class="topic-links"><a href="lectures/a02-klassifikaciya-afs/slides.html">слайды</a> · <a href="lectures/a02-klassifikaciya-afs/notes.html">конспект</a></span></td>
+            <td>одиночная / маршрутная / площадная; плановая / перспективная; активные / пассивные</td>
+            <td class="hw">Классифицировать учебный вылет: охват, спектр, плановая/перспектива, актив/пассив. Лидар — какой метод?</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Планирование АФС<span class="topic-links"><a href="lectures/a04-planirovanie/slides.html">слайды</a> · <a href="lectures/a04-planirovanie/notes.html">конспект</a></span></td>
+            <td>GSD, перекрытия, базисы, калибровка, ПВО, ТЗ</td>
+            <td class="hw">По варианту курсовой посчитать H<sub>ф</sub> и B<sub>x</sub>. Чем H<sub>ф</sub> отличается от высоты над аэродромом. Зачем ПВО, если на борту RTK.</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Устройство и классификация БВС<span class="topic-links"><a href="lectures/a03-bvs/slides.html">слайды</a> · <a href="lectures/a03-bvs/notes.html">конспект</a></span></td>
+            <td>элементы БВС, ограничения, безопасность</td>
+            <td class="hw">Схема своего борта: тип, нагрузка, три ограничения для АФС. Когда крыло выгоднее коптера. БВС ≠ БАС — одной фразой.</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Контраст<span class="topic-links"><a href="lectures/a05-kontrast/slides.html">слайды</a> · <a href="lectures/a05-kontrast/notes.html">конспект</a></span></td>
+            <td>яркость, контраст, ФПМ, цветовое отличие</td>
+            <td class="hw">Два кадра участка: гистограмма и σ. Где коррелятор не найдёт точки. Чем ФПМ отличается от «контраста гистограммы».</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>Оценка качества материалов АФС<span class="topic-links"><a href="lectures/a06-kachestvo/slides.html">слайды</a> · <a href="lectures/a06-kachestvo/notes.html">конспект</a></span></td>
+            <td>«ёлочка», перекрытия, экспозиция, резкость</td>
+            <td class="hw">По накидному монтажу (своему или учебному) отметить ёлочку, дыры перекрытий, смаз. Формула K и запрет 0 и G−1.</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td>Правовые аспекты БВС<span class="topic-links"><a href="lectures/a10-ivp/slides.html">слайды</a> · <a href="lectures/a10-ivp/notes.html">конспект</a></span></td>
+            <td>учёт, разрешение на АФС, ИВП</td>
+            <td class="hw">Для своего участка: нужен ли ИВП, какой режим, отдельно ли разрешение на АФС. Где смотреть запретные зоны. Нормы сверить с действующей редакцией.</td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td>ПВО, СК, орто · ГНСС<span class="topic-links"><a href="lectures/a12-sk/slides.html">слайды</a> · <a href="lectures/a12-sk/notes.html">конспект</a> · <a href="lectures/a11-gnss/slides.html">ГНСС</a> · <a href="lectures/a11-gnss/notes.html">конспект</a></span></td>
+            <td>геоид, ГСК-2011, ортофотоплан, псевдодальность, RTK, метка затвора</td>
+            <td class="hw">Какая СК сдачи участка. Почему Web Mercator не топоплан. Чем RTK не заменяет опознак. Где в логе метка затвора.</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+    <article class="sem sem-panel" data-panel="s5">
+      <h2>Семестр 5 · Пилотируемая АФС</h2>
+      <table class="plan">
+        <thead>
+          <tr><th>Нед.</th><th>Тема</th><th>Ключевые термины</th><th>ДЗ</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Отражение, рассеяние, поглощение, индексы<span class="topic-links"><a href="lectures/optika-sredy/slides.html">слайды</a> · <a href="lectures/optika-sredy/notes.html">конспект</a></span></td>
+            <td>T, L<sub>path</sub>, Рэлей, ρ(λ), NDVI</td>
+            <td class="hw">Окно прозрачности для видимого и NIR. Зачем NDVI, если уже есть RGB. Где дымка — аддитивная L<sub>path</sub>.</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Пилотируемая АФС<span class="topic-links"><a href="lectures/p-pilot-afs/slides.html">слайды</a> · <a href="lectures/p-pilot-afs/notes.html">конспект</a></span></td>
+            <td>авионика, FMC, отворот, pushbroom, CIR</td>
+            <td class="hw">Пять отличий самолётной АФС от БВС: H<sub>ф</sub>, FMC, отворот, кадр/сканер, экипаж. Pushbroom — почему не «широкий кадр».</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Атмосфера и окна<span class="topic-links"><a href="lectures/a-atmosfera/slides.html">слайды</a> · <a href="lectures/a-atmosfera/notes.html">конспект</a></span></td>
+            <td>диапазоны, рефракция</td>
+            <td class="hw">Три атмосферных эффекта на контраст кадра. Какое окно для тепла, какое для РЛС.</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Дешифрирование<span class="topic-links"><a href="lectures/a07-deshifrirovanie/slides.html">слайды</a> · <a href="lectures/a07-deshifrirovanie/notes.html">конспект</a></span></td>
+            <td>признаки, легенда</td>
+            <td class="hw">Легенда на 8 объектов учебного орто. Что не видно с орто и уходит в полевое дешифрирование.</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td class="muted-cell">каркас</td>
+            <td></td>
+            <td class="hw muted-cell">—</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td class="muted-cell">каркас</td>
+            <td></td>
+            <td class="hw muted-cell">—</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td class="muted-cell">каркас</td>
+            <td></td>
+            <td class="hw muted-cell">—</td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td class="muted-cell">каркас</td>
+            <td></td>
+            <td class="hw muted-cell">—</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+    <article class="sem sem-panel" data-panel="s6">
+      <h2>Семестр 6 · Космическая съёмка</h2>
+      <table class="plan">
+        <thead>
+          <tr><th>Нед.</th><th>Тема</th><th>Ключевые термины</th><th>ДЗ</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td class="muted-cell">Носители и орбиты КА</td>
+            <td>КЛА, солнечно-синхронная орбита, полоса обзора</td>
+            <td class="hw muted-cell">каркас</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td class="muted-cell">Сенсоры космической съёмки</td>
+            <td>кадр, сканер, pushbroom, панхром, MSI</td>
+            <td class="hw muted-cell">каркас</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td class="muted-cell">Геопривязка и RPC</td>
+            <td>RPC, ephemeris, ортоуровень</td>
+            <td class="hw muted-cell">каркас</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td class="muted-cell">Предобработка и растровая алгебра</td>
+            <td>радиометрия, атмосфера, индексы</td>
+            <td class="hw muted-cell">каркас</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td class="muted-cell">каркас</td>
+            <td></td>
+            <td class="hw muted-cell">—</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td class="muted-cell">каркас</td>
+            <td></td>
+            <td class="hw muted-cell">—</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td class="muted-cell">каркас</td>
+            <td></td>
+            <td class="hw muted-cell">—</td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td class="muted-cell">каркас</td>
+            <td></td>
+            <td class="hw muted-cell">—</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+    <article class="sem sem-panel" data-panel="s7">
+      <h2>Семестр 7 · РЛС — радиолокация</h2>
+      <table class="plan">
+        <thead>
+          <tr><th>Нед.</th><th>Тема</th><th>Ключевые термины</th><th>ДЗ</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Радиолокационная съёмка<span class="topic-links"><a href="lectures/a09-rls/slides.html">слайды</a> · <a href="lectures/a09-rls/notes.html">конспект</a></span></td>
+            <td>SAR, длина волны, наклонная дальность</td>
+            <td class="hw">Чем РСА не фото. Наклонная дальность vs дальность по земле. Зачем синтезировать апертуру.</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td class="muted-cell">Диапазоны и поляризация</td>
+            <td>X / C / L / P, HH, VV, кросс-пол</td>
+            <td class="hw muted-cell">каркас</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td class="muted-cell">Геометрия РСА и искажения</td>
+            <td>foreslope, layover, shadow</td>
+            <td class="hw muted-cell">каркас</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td class="muted-cell">Спекл и интерферометрия</td>
+            <td>спекл, InSAR, когерентность</td>
+            <td class="hw muted-cell">каркас</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td class="muted-cell">каркас</td>
+            <td></td>
+            <td class="hw muted-cell">—</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td class="muted-cell">каркас</td>
+            <td></td>
+            <td class="hw muted-cell">—</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td class="muted-cell">каркас</td>
+            <td></td>
+            <td class="hw muted-cell">—</td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td class="muted-cell">каркас</td>
+            <td></td>
+            <td class="hw muted-cell">—</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+    <article class="sem sem-panel" data-panel="s8">
+      <h2>Семестр 8 · Основы компьютерного зрения</h2>
+      <table class="plan">
+        <thead>
+          <tr><th>Нед.</th><th>Тема</th><th>Ключевые термины</th><th>ДЗ</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Растр, свёртка, пирамиды<span class="topic-links"><a href="lectures/cv01-rastr/slides.html">слайды</a> · <a href="lectures/cv01-rastr/notes.html">конспект</a></span></td>
+            <td>ядро, градиент, гауссова пирамида</td>
+            <td class="hw">Свой фильтр и гистограмма на серии ЦФК. Какой фильтр помогает отождествлению, какой рисует ореол.</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Соответствия<span class="topic-links"><a href="lectures/cv02-sootvetstviya/slides.html">слайды</a> · <a href="lectures/cv02-sootvetstviya/notes.html">конспект</a></span></td>
+            <td>Харрис, SIFT, ORB, RANSAC, гомография</td>
+            <td class="hw">Два кадра стенда: панорама (гомография ок) и стереопара (гомография врёт). Рисунок inliers RANSAC.</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Две камеры<span class="topic-links"><a href="lectures/cv03-dve-kamery/slides.html">слайды</a> · <a href="lectures/cv03-dve-kamery/notes.html">конспект</a></span></td>
+            <td>эпиполяра, F, E, триангуляция</td>
+            <td class="hw">Эпиполяры через выбранную точку. Расстояние до эпиполяры в px. Триангуляция марок vs линейка сем. 3.</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>SfM и бандл<span class="topic-links"><a href="lectures/cv04-sfm/slides.html">слайды</a> · <a href="lectures/cv04-sfm/notes.html">конспект</a></span></td>
+            <td>инкрементальный SfM, bundle adjustment</td>
+            <td class="hw">COLMAP на тех же снимках стенда: число камер и median reprojection error vs Metashape. Почему расходятся.</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Глубина и сегментация<span class="topic-links"><a href="lectures/cv05-glubina/slides.html">слайды</a> · <a href="lectures/cv05-glubina/notes.html">конспект</a></span></td>
+            <td>MVS, диспаратность, семантика</td>
+            <td class="hw">Карта диспаратности или маска «крыша / земля / растительность» на орто. Где семантика врёт на тенях.</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>Облако как данные<span class="topic-links"><a href="lectures/cv06-oblako/slides.html">слайды</a> · <a href="lectures/cv06-oblako/notes.html">конспект</a></span></td>
+            <td>mesh, нормали, PointNet</td>
+            <td class="hw">Вырезать двор на облаке, оценить плотность, простой сегмент «здание / земля». Сравнить с маской недели 9.</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td>Представления сцены<span class="topic-links"><a href="lectures/cv07-predstavleniya/slides.html">слайды</a> · <a href="lectures/cv07-predstavleniya/notes.html">конспект</a></span></td>
+            <td>NeRF, 3D Gaussian splatting</td>
+            <td class="hw">Эссе на страницу: что сдать кадастру и где splat врёт метрически. Свои кадры или чужой splat рядом со своим орто.</td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td>Зачёт CV<span class="topic-links"><a href="cv.html#exam">программа</a></span></td>
+            <td>свои данные, эпиполяра, бандл, семантика vs орто</td>
+            <td class="hw">Подготовить три артефакта с своих снимков: эпиполяра или RANSAC, ошибка бандла, семантика или splat vs орто.</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+  </main>
+  <script src="js/hub.js"></script>
+</body>
+</html>

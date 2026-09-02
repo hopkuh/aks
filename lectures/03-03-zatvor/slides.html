@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ф03а · Затвор — слайды</title>
+  <link rel="stylesheet" href="../../css/course.css" />
+</head>
+<body class="mode-slides">
+  <header class="topbar">
+    <div class="brand">Ф03а · Затвор <small>стрелки · F полноэкран · N заметки · ? справка</small></div>
+        <nav class="nav">
+      <a href="../../index.html">Лекции</a>
+      <a href="../../practice.html">Практика</a>
+      <a href="../../glossary.html">Глоссарий</a>
+      <a href="../../exam.html">Экзамен</a>
+      <a href="../../literature.html">Литература</a>
+      <a href="notes.html">Конспект</a>
+      <a href="SOURCES.md">Источники</a>
+    </nav>
+  </header>
+  <div class="deck">
+<section class="slide slide--title is-active">
+  <h1>Затвор</h1>
+  <p>Ф03а · выдержка · КПД · типы<br><span class="muted">матрица — следующая пара</span></p>
+</section>
+
+<section class="slide">
+  <h2>Элементы ЦФК</h2>
+  <figure class="fig fig-lg"><img src="images/s02_01.jpeg" alt=""></figure>
+  <p class="caveat">Затвор ограничивает время экспонирования</p>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Затвор</p>
+  <p class="defn">Устройство, ограничивающее продолжительность действия света на светочувствительный слой (матрицу). Задаёт выдержку.</p>
+  <p class="caveat">Когда пластины экспонировали часами, роль затвора выполняла крышка объектива</p>
+</section>
+
+<section class="slide">
+  <h2>Выдержка t</h2>
+  <p>Интервал, пока свет экспонирует участок приёмника. На диске часто знаменатель: 2000 = 1/2000 с.</p>
+  <figure class="fig fig-lg"><img src="images/s04_01.gif" alt=""></figure>
+</section>
+
+<section class="slide">
+  <h2>Ряд выдержек</h2>
+  <p>1 · 1/2 · 1/4 · 1/8 · 1/15 · 1/30 · 1/60 · 1/125 · 1/250 · 1/500 · 1/1000… Соседние ≈ ×2 по свету.</p>
+  <p>B (Bulb) — от руки.</p>
+  <div class="gallery"><img src="images/s05_01.jpg" alt=""><img src="images/s05_02.jpg" alt=""><img src="images/s05_03.png" alt=""></div>
+</section>
+
+<section class="slide">
+  <h2>Характеристики затворов</h2>
+  <ul>
+    <li>КПД — отношение эффективной выдержки к полной (ГОСТ 19821-83)</li>
+    <li>точность и диапазон выдержек</li>
+    <li>степень искажения изображения</li>
+    <li>надёжность в разных условиях</li>
+  </ul>
+  <p class="formula">КПД = t<sub>эфф</sub> / t<sub>полн</sub><span class="eq-note">центральный на коротких падает · щелевой обычно выше</span></p>
+  <div class="gallery"><img src="images/s06_01.jpg" alt=""><img src="images/s06_02.jpg" alt=""></div>
+</section>
+
+<section class="slide">
+  <h2>Где стоит</h2>
+  <ul>
+    <li>Фокальные — у кадрового окна</li>
+    <li>Апертурные: межлинзовые, залинзовые, фронтальные</li>
+  </ul>
+  <figure class="fig fig-lg">
+        <img src="images/schemes/f03a-shutter-types.png" alt="Где стоит затвор: центральный, шторно-щелевой, электронный">
+        
+      </figure>
+</section>
+
+<section class="slide">
+  <h2>Классификация</h2>
+  <div class="columns">
+    <div>
+      <h3>Пропускание света</h3>
+      <ul>
+        <li>центральные</li>
+        <li>шторные / шторно-щелевые / ламельные</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Принцип</h3>
+      <ul>
+        <li>механические</li>
+        <li>электронные</li>
+        <li>электронно-механические</li>
+        <li>ЖК</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <h2>Центральный</h2>
+  <ul>
+    <li>Весь кадр сразу · мало искажений · вспышка в любой момент</li>
+    <li>Термоустойчивость</li>
+    <li>Короткие выдержки ограничены (ориентир 1/500…1/4000)</li>
+    <li>КПД на коротких падает: лепестки ещё едут</li>
+  </ul>
+  <figure class="fig fig-lg">
+        <img src="images/schemes/f03a-central-shutter.png" alt="Центральный затвор">
+        
+      </figure>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Шторно-щелевой затвор</p>
+  <p class="defn">Две шторки у кадрового окна. На коротких выдержках кадр не открыт целиком: вторая шторка стартует, пока первая ещё едет. Экспонирует узкая щель, бегущая по кадру. Время для точки — номинальная выдержка; время пробежать кадр — больше.</p>
+</section>
+
+<section class="slide">
+  <h2>Следствия щели</h2>
+  <ul>
+    <li>до ~1/8000 с</li>
+    <li>быстро едущий объект наклоняется (пропеллер, поезд)</li>
+    <li>вспышка короче пробега щели — освещена только полоса</li>
+    <li>при АФС строки — разные моменты: снимок ближе к сканерному</li>
+  </ul>
+  <figure class="fig">
+        <img src="images/schemes/f03a-slit.png" alt="Щель шторно-щелевого затвора">
+      </figure>
+</section>
+
+<section class="slide">
+  <h2>Живая схема: глобальный и щель</h2>
+  <div data-widget="shutter"></div>
+</section>
+
+<section class="slide">
+  <h2>Электронно-механический (EFCS)</h2>
+  <p>Электронная передняя шторка, механическая задняя. Меньше вибрация и износ. На очень коротких — ошибки экспозиции по полю.</p>
+  <figure class="fig fig-lg"><img src="images/s11_01.gif" alt=""></figure>
+</section>
+
+<section class="slide">
+  <h2>Электронный скользящий затвор</h2>
+  <p>Бесшумный, не изнашивается, до 1/32 000 с. Строки по очереди — тот же класс искажений, что у щели.</p>
+  <figure class="fig fig-lg">
+        <img src="images/schemes/f03a-global-rolling.png" alt="Глобальный и скользящий затвор">
+        
+      </figure>
+</section>
+
+<section class="slide slide--definition">
+  <p class="term">Электронный глобальный затвор</p>
+  <p class="defn">Все пиксели начинают и кончают экспозицию вместе. Геометрия кадра честная: это кадровый снимок в смысле ГОСТ. На КМОП дорого и шумно относительно rolling.</p>
+  <div class="gallery"><img src="images/s13_01.jpg" alt=""><img src="images/s13_02.gif" alt=""></div>
+</section>
+
+<section class="slide">
+  <h2>С доски</h2>
+  <ol>
+    <li>Что это и какую функцию выполняет?</li>
+    <li>Какие виды бывают?</li>
+    <li>Какие параметры важны?</li>
+    <li>На что влияет выдержка?</li>
+    <li>Выдержка точки vs время пробега шторок?</li>
+  </ol>
+</section>
+
+<section class="slide slide--title">
+  <h1>Спасибо</h1>
+  <p><a href="notes.html">Конспект</a> · <a href="../03-04-matritsa/slides.html">далее: матрица</a></p>
+</section>
+  </div>
+  <div class="footer-bar">
+    <button id="prev" type="button">←</button>
+    <span id="counter"></span>
+    <div id="progress-track"><div id="progress"></div></div>
+    <button id="next" type="button">→</button>
+  </div>
+  <div class="help" id="help">
+    <div class="help-card">
+      <p><kbd>←</kbd> <kbd>→</kbd> <kbd>пробел</kbd> — слайды</p>
+      <p><kbd>F</kbd> — полный экран</p>
+      <p><kbd>N</kbd> — заметки докладчика</p>
+    </div>
+  </div>
+  <script src="../../js/slides.js"></script>
+  <script src="../../js/widgets.js"></script>
+</body>
+</html>

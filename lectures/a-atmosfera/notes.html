@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Атмосфера и спектральные диапазоны — конспект</title>
+  <link rel="stylesheet" href="../../css/course.css" />
+</head>
+<body class="mode-page">
+  <header class="topbar">
+    <div class="brand">Семестр 5 · недели 1–2 <small>конспект · черновик pptx</small></div>
+        <nav class="nav">
+      <a href="../../index.html">Лекции</a>
+      <a href="../../practice.html">Практика</a>
+      <a href="../../glossary.html">Глоссарий</a>
+      <a href="../../exam.html">Экзамен</a>
+      <a href="../../literature.html">Литература</a>
+      <a href="slides.html">Слайды</a>
+      <a href="notes.html" aria-current="page">Конспект</a>
+      <a href="../a02-klassifikaciya-afs/notes.html">А02</a>
+      <a href="../06-cvet/notes.html">Ф06</a>
+    </nav>
+  </header>
+  <main class="wrap">
+    <h1>Атмосфера и диапазоны съёмки</h1>
+    <p class="lead">Pptx <code>А06_Атмосфера_СДЕЛАТЬ</code> — картинки спектра. Физика T, дымки, ρ(λ) и индексов — на паре <a href="../optika-sredy/notes.html">отражение и рассеяние</a>. Ниже — окна и зачем атмосфера геометрии.</p>
+
+    <h2>Зачем атмосфера фотограмметристу</h2>
+    <p>Съёмка всегда через среду: рассеяние, поглощение, рефракция смещают луч и сажают контраст (ФПМ атмосферы — звено произведения на <a href="../a05-kontrast/notes.html">А05</a>). Окна прозрачности задают, какие каналы вообще доходят. Тепловой ИК видит Гольфстрим; СВЧ/РЛС — складчатость под растительностью; оптика — то, к чему привык глаз.</p>
+    <p>Классификация систем ДЗЗ по диапазону ЭМ-спектра на слайде 12 — мост к <a href="../a02-klassifikaciya-afs/notes.html">А02</a> (пассив/актив, мульти/гипер) и к <a href="../a09-rls/notes.html">А09</a>.</p>
+    <p>Космический снимок на этой паре — иллюстрация диапазона, не замена АФС: другое GSD, другая модель камеры (часто сканер), RPC — семестр 6.</p>
+    <p class="formula">L<sub>сенсор</sub> = T · L<sub>земля</sub> + L<sub>path</sub><span class="eq-note">T — пропускание; L<sub>path</sub> — дымка</span></p>
+    <p class="formula">I = I<sub>0</sub> · e<sup>−τ</sup>, τ = k · s</p>
+    <div data-widget="beer"></div>
+
+    <h2>Вопросы</h2>
+    <ol class="q-list">
+      <li>Как атмосфера портит и радиометрию, и геометрию?</li>
+      <li>Приведите по одному продукту в видимом, тепловом и радиолокационном диапазоне.</li>
+    </ol>
+
+    <h2>Литература</h2>
+    <ul>
+      <li><a href="../../../../Литература/АКС/Савиных_Стеценко_Аэрокосмическая фотосъемка.pdf">Савиных, Кучко, Стеценко. Аэрокосмическая фотосъемка</a></li>
+      <li><a href="../06-cvet/notes.html">Ф06</a> — спектр и прозрачность среды</li>
+    </ul>
+  </main>
+  <script src="../../js/widgets.js"></script>
+</body>
+</html>

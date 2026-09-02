@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Курс компьютерного зрения — программа</title>
+  <link rel="stylesheet" href="css/course.css" />
+</head>
+<body class="mode-page">
+  <header class="topbar">
+    <div class="brand">Курс CV <small>черновик · 16 недель</small></div>
+        <nav class="nav">
+      <a href="index.html">Лекции</a>
+      <a href="practice.html">Практика</a>
+      <a href="glossary.html">Глоссарий</a>
+      <a href="exam.html">Экзамен</a>
+      <a href="literature.html">Литература</a>
+    </nav>
+  </header>
+  <main class="wrap wrap-wide">
+    <h1>Основы компьютерного зрения</h1>
+    <p class="lead">Семестр 8. Не замена ГОСТ и коллинеарности. Семь пар с конспектом и слайдами. В АКС студент сдаёт орто в СК заказчика; здесь — алгоритм и метрику на своих снимках.</p>
+
+    <div class="pack-grid">
+      <a class="pack-card" href="lectures/cv01-rastr/notes.html"><h2>CV01</h2><p>Растр, свёртка, пирамиды</p></a>
+      <a class="pack-card" href="lectures/cv02-sootvetstviya/notes.html"><h2>CV02</h2><p>Харрис, SIFT, RANSAC, H</p></a>
+      <a class="pack-card" href="lectures/cv03-dve-kamery/notes.html"><h2>CV03</h2><p>Эпиполяра, F, E, засечка</p></a>
+      <a class="pack-card" href="lectures/cv04-sfm/notes.html"><h2>CV04</h2><p>SfM и бандл</p></a>
+      <a class="pack-card" href="lectures/cv05-glubina/notes.html"><h2>CV05</h2><p>MVS и сегментация</p></a>
+      <a class="pack-card" href="lectures/cv06-oblako/notes.html"><h2>CV06</h2><p>Облако как данные</p></a>
+      <a class="pack-card" href="lectures/cv07-predstavleniya/notes.html"><h2>CV07</h2><p>NeRF-идея и 3DGS</p></a>
+    </div>
+
+    <div class="note-callout">
+      <strong>Две дисциплины, один снимок.</strong> Язык пар: «в Metashape это бандл, в статье — SfM; ошибка репроекции — та же невязка засечки». Вход: линейная алгебра, Python, <a href="lectures/09-fotogrammetriya/notes.html">Ф09</a>. Не вход: GAN и трансформеры «с нуля». Выход: пайплайн на <em>своих</em> снимках стенда / учебного вылета + метрика. Шаблон данных АКС: <a href="practice-s3.html">сем. 3</a> и <a href="practice-s4.html">сем. 4</a>.
+    </div>
+
+    <nav class="toc">
+      <a href="#split">1. Что чьё</a>
+      <a href="#hours">2. Часы и зачётные единицы</a>
+      <a href="#prereq">3. Вход</a>
+      <a href="#plan">4. Календарь 16 недель</a>
+      <a href="#b1">5. Блок 1. Изображение как массив</a>
+      <a href="#b2">6. Блок 2. Соответствия</a>
+      <a href="#b3">7. Блок 3. Две камеры</a>
+      <a href="#b4">8. Блок 4. Много видов</a>
+      <a href="#b5">9. Блок 5. Глубина и сегментация</a>
+      <a href="#b6">10. Блок 6. 3D как данные</a>
+      <a href="#b7">11. Блок 7. Представления сцены</a>
+      <a href="#exam">12. Экзамен CV</a>
+      <a href="#pilot">13. Пилот на 4–6 пар</a>
+      <a href="#lit">14. Литература сводкой</a>
+    </nav>
+
+    <h2 id="split">1. Что остаётся АКС и что забирает CV</h2>
+    <table class="plan">
+      <thead><tr><th>АКС</th><th>CV</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>ГОСТ, ТЗ, ИВП, ПВО, СК, паспорт качества, ошибка на контрольных. Сплаттинг не заменяет ортофотоплан 1:2000</td>
+          <td>Алгоритм, обучение (если дойдёте), метрика на разметке, воспроизводимость. «Красивый вид в браузере» — демо, не отчёт геодезиста</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Один набор снимков на весь курс CV: сначала стенд семестра 3, потом учебный вылет семестра 4. Каждый блок добавляет слой обработки к тем же файлам. Стек: Python, OpenCV, COLMAP как эталон SfM, в конце готовый splat-viewer. Растеризатор гауссиан с нуля в первом семестре CV не пишем.</p>
+
+    <h2 id="hours">2. Объём</h2>
+    <p>Ориентир под российский учебный план: <strong>16 недель</strong>, в неделю 1 пара лекции (2 акад. ч) и 1 пара практики (2 акад. ч), плюс СРС. Итого:</p>
+    <table class="plan">
+      <thead>
+        <tr><th>Вид</th><th>Часы</th><th>Примечание</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Лекции</td><td>32</td><td>16 × 2 акад. ч; живая пара 1,5 ч часовни + 0,5 ч на вопросы — как удобно кафедре</td></tr>
+        <tr><td>Практика / лаб</td><td>32</td><td>свой код на тех же снимках</td></tr>
+        <tr><td>СРС</td><td>44</td><td>чтение глав, доводка пайплайна, отчёт</td></tr>
+        <tr><td>Итого</td><td>108</td><td>≈ 3 з.е. (36 ч = 1 з.е.). Можно сжать до 2 з.е., выкинув блок 6–7 в факультатив</td></tr>
+      </tbody>
+    </table>
+    <p>Если курс — факультатив без второй пары: 16 × 2 ч лекции + 48 ч СРС ≈ 80 ч (чуть больше 2 з.е.); тогда блоки 6–7 только обзорно.</p>
+
+    <h2 id="prereq">3. Входные требования</h2>
+    <ul>
+      <li>Матрицы, SVD, однородные координаты — уровень первого курса линейной алгебры</li>
+      <li>Python 3: NumPy, чтение файлов, venv. Jupyter или обычные скрипты — на выбор, не пять фреймворков</li>
+      <li>АКС: пройдены Ф04–Ф05 (растр, квантование), Ф07 (стерео), Ф09 (центральная проекция). Идеально — снятый стенд Ф08</li>
+      <li>Не требуется: PyTorch «с нуля», теория информации, GPU-кластер. Для блока 7 достаточно Colab с GPU на одну демонстрацию</li>
+    </ul>
+
+    <h2 id="plan">4. Календарный план</h2>
+    <table class="plan">
+      <thead>
+        <tr><th>Нед.</th><th>Блок</th><th>Лекция (2 ч)</th><th>Практика (2 ч)</th><th>СРС (ориентир)</th><th>Артефакт к концу блока</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1–2</td><td>1</td><td>Растр, свёртка, градиент, пирамиды</td><td>Фильтр на серии ЦФК</td><td>6 ч · Szeliski ch. 3</td><td>Свой фильтр + гистограмма; связь с K из А06</td></tr>
+        <tr><td>3–4</td><td>2</td><td>Харрис, SIFT/ORB, RANSAC, гомография</td><td>Соответствия на стереопаре стенда</td><td>6 ч</td><td>Панорама vs стерео: когда гомографии мало</td></tr>
+        <tr><td>5–6</td><td>3</td><td>Эпиполяра, F/E, триангуляция</td><td>Эпиполяры на учебной паре</td><td>6 ч · Hartley–Zisserman ch. 9–12</td><td>Рисунок эпиполяр + RMSE триангуляции</td></tr>
+        <tr><td>7–9</td><td>4</td><td>SfM, бандл, облако, Poisson</td><td>COLMAP на тех же снимках vs Metashape</td><td>8 ч</td><td>Сравнение ошибки репроекции; не «нажать Align»</td></tr>
+        <tr><td>10–12</td><td>5</td><td>Stereo matching, MVS, сегментация 2D</td><td>Маска на орто участка</td><td>8 ч</td><td>ЦММ vs семантика; мост к А07</td></tr>
+        <tr><td>13–14</td><td>6</td><td>Mesh, нормали, идея PointNet</td><td>Класс на облаке, не на JPEG</td><td>5 ч</td><td>Сегмент «здание / земля» на облаке вылета</td></tr>
+        <tr><td>15–16</td><td>7</td><td>NeRF-идея, 3D Gaussian splatting</td><td>Готовый splat двора vs орто</td><td>5 ч</td><td>Эссе: что сдавать кадастру и почему не splat</td></tr>
+      </tbody>
+    </table>
+    <p>Неделя 16: зачёт / экзамен CV (см. §12), не сравнение архитектур 2024 наизусть.</p>
+
+    <h2 id="b1">5. Блок 1. Изображение как массив (нед. 1–2, 8 ауд. ч)</h2>
+    <p><strong>Содержание.</strong> Изображение — функция на сетке. Дискретизация и квантование уже были на <a href="lectures/04-atsp-grafika/notes.html">Ф04</a>: здесь — свёртка, ядро, сепарабельность, градиенты Собеля/Шарра, гауссова пирамида, разностная пирамида. Без нейросетей. Гистограмма и клиппинг — тот же язык, что <a href="lectures/a06-kachestvo/notes.html">показатель K</a> и <a href="lectures/10-kachestvo-kadra/notes.html">качество кадра</a>.</p>
+    <p><strong>Мост в АКС.</strong> Ф04–Ф05, гистограмма А06. Студент на своей серии ЦФК показывает, какой фильтр повышает пригодность к отождествлению, а какой рисует ореолы, которые коррелятор примет за точки.</p>
+    <p><strong>Практика.</strong> Прочитать RAW/JPEG, посчитать гистограмму, свой ядро (не только <code>cv2.GaussianBlur</code>), сохранить кроп 100%. Запрет: сдавать только скрин Instagram-фильтра.</p>
+    <p><strong>Чтение.</strong></p>
+    <ul>
+      <li>Szeliski R. <em>Computer Vision: Algorithms and Applications</em>. 2nd ed. Springer, 2022 — гл. про filtering. Бесплатный черновик: <a href="https://szeliski.org/Book/">szeliski.org/Book</a></li>
+      <li>Gonzalez R., Woods R. <em>Digital Image Processing</em> — свёртка и гистограмма (любое издание кафедры)</li>
+      <li>OpenCV: <a href="https://docs.opencv.org/4.x/d4/d13/tutorial_py_filtering.html">Smoothing Images</a>, <a href="https://docs.opencv.org/4.x/d5/d0f/tutorial_py_gradients.html">Image Gradients</a></li>
+      <li>Конспект: <a href="lectures/04-atsp-grafika/notes.html">Ф04</a>, <a href="lectures/05-formaty/notes.html">Ф05</a></li>
+    </ul>
+
+    <h2 id="b2">6. Блок 2. Соответствия (нед. 3–4, 8 ауд. ч)</h2>
+    <p><strong>Содержание.</strong> Угол Харриса. Дескриптор: идея SIFT (масштаб, ориентация, 128D) vs ORB (быстрый, патентно спокойнее для кода). Сопоставление, отношение расстояний Лоу. RANSAC. Гомография плоскости. Когда сцена не плоскость — гомография врёт, нужна фундаментальная матрица (блок 3).</p>
+    <p><strong>Мост в АКС.</strong> Отождествление на <a href="lectures/07-stereo/notes.html">Ф07</a>, связующие точки Metashape, коррелятор. Студент объясняет дыру модели Ф08 языком «нет повторяемой текстуры / повторные структуры / мало базиса».</p>
+    <p><strong>Практика.</strong> Два кадра стенда: (а) панорама с узловым вращением — гомография ок; (б) базис как в стерео — гомография ломает глубину. Рисунок inliers/outliers RANSAC.</p>
+    <p><strong>Чтение.</strong></p>
+    <ul>
+      <li>Harris C., Stephens M. A combined corner and edge detector. Alvey Vision Conference, 1988. PDF: <a href="https://www.bmva.org/bmvc/1988/avc-88-023.pdf">bmva.org</a></li>
+      <li>Lowe D. Distinctive image features from scale-invariant keypoints. <em>IJCV</em>, 2004. <a href="https://www.cs.ubc.ca/~lowe/papers/ijcv04.pdf">cs.ubc.ca/~lowe/papers/ijcv04.pdf</a></li>
+      <li>Rublee et al. ORB: an efficient alternative to SIFT or SURF. ICCV, 2011. <a href="https://ieeexplore.ieee.org/document/6126544">IEEE</a> · обзор OpenCV: <a href="https://docs.opencv.org/4.x/d1/d89/tutorial_py_orb.html">ORB</a></li>
+      <li>Fischler M., Bolles R. Random Sample Consensus. <em>CACM</em> 24(6), 1981. DOI: <a href="https://doi.org/10.1145/358669.358692">10.1145/358669.358692</a> · PDF SRI: <a href="https://www.sri.com/wp-content/uploads/2021/12/ransac-publication.pdf">ransac-publication.pdf</a></li>
+      <li>OpenCV: <a href="https://docs.opencv.org/4.x/d1/de0/tutorial_py_feature_homography.html">Feature Matching + Homography</a></li>
+      <li>Szeliski, гл. про feature detection / matching</li>
+    </ul>
+
+    <h2 id="b3">7. Блок 3. Геометрия двух камер (нед. 5–6, 8 ауд. ч)</h2>
+    <p><strong>Содержание.</strong> Эпиполярная геометрия. Фундаментальная матрица F (пиксели) и существенная E (калиброванные камеры). 8-точечный алгоритм (идея). Триангуляция. Нормализация Хартли. Связь с взаимным ориентированием: в фотограмметрии другие параметры, та же геометрия лучей.</p>
+    <p><strong>Мост в АКС.</strong> Параллакс Ф07, коллинеарность Ф09, «кадр ≠ сканер». Формула Z/f = −B/p — частный случай нормальной пары; общая триангуляция — косые лучи.</p>
+    <p><strong>Практика.</strong> На учебной стереопаре нарисовать эпиполяры через выбранную точку. Оценить качество F по расстоянию точки до эпиполяры (px). Триангуляция нескольких марок с известным базисом vs линейка сем. 3.</p>
+    <p><strong>Чтение.</strong></p>
+    <ul>
+      <li>Hartley R., Zisserman A. <em>Multiple View Geometry in Computer Vision</em>. 2nd ed. Cambridge UP, 2004 — гл. 9–12. Сайт книги: <a href="https://www.robots.ox.ac.uk/~vgg/hzbook/">robots.ox.ac.uk/~vgg/hzbook</a></li>
+      <li>OpenCV: <a href="https://docs.opencv.org/4.x/da/de9/tutorial_py_epipolar_geometry.html">Epipolar Geometry</a>, <a href="https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html">calib3d</a></li>
+      <li>Чибуничев — взаимное ориентирование, засечка: <a href="../../Литература/Фотограмметрия/00_Чибуничев_Фотограмметрия_2022.pdf">диск</a></li>
+      <li>Luhmann et al. Close-Range Photogrammetry — <a href="../../Литература/Фотограмметрия/Luhmann T., Robson S., Kyle S., Boehm J. - Close-Range Photogrammetry and 3D Imaging - 2023.pdf">диск</a></li>
+    </ul>
+
+    <h2 id="b4">8. Блок 4. Много видов: SfM и бандл (нед. 7–9, 12 ауд. ч)</h2>
+    <p><strong>Содержание.</strong> Инкрементальный SfM: соответствие → ориентирование новой камеры → триангуляция → bundle adjustment. Шкала и калибровка. Плотное облако vs редкое. Poisson / Delaunay — обзор, не реализация с нуля. COLMAP как эталонная реализация, не «магия».</p>
+    <p><strong>Мост в АКС.</strong> Уравнивание блока, Ф08, планирование перекрытий А04 (зачем 80% на БВС — устойчивость графа камер). Ошибка репроекции в отчёте сем. 3 — тот же residual, что в бандле.</p>
+    <p><strong>Практика.</strong> Прогнать COLMAP на снимках стенда. Сравнить число камер и median reprojection error с отчётом Metashape. Объяснить расхождение пресетов (не баг). Не цель — обогнать Metashape по красоте сетки.</p>
+    <p><strong>Чтение.</strong></p>
+    <ul>
+      <li>Schönberger J. L., Frahm J.-M. Structure-from-Motion Revisited. CVPR, 2016. <a href="https://openaccess.thecvf.com/content_cvpr_2016/papers/Schonberger_Structure-from-Motion_Revisited_CVPR_2016_paper.pdf">CVF PDF</a> — основа COLMAP</li>
+      <li>Документация: <a href="https://colmap.github.io/">colmap.github.io</a> · репозиторий <a href="https://github.com/colmap/colmap">github.com/colmap/colmap</a></li>
+      <li>Triggs et al. Bundle Adjustment — A Modern Synthesis. 1999/2000. Обзор: <a href="https://www.cs.jhu.edu/~misha/ReadingSeminar/Papers/Triggs00.pdf">курс JHU PDF</a></li>
+      <li>Metashape manual: <a href="https://www.agisoft.com/pdf/metashape-pro_2_0_en.pdf">PDF</a> — чтобы переводить кнопки на язык бандла</li>
+      <li>Szeliski, гл. Structure from motion</li>
+    </ul>
+
+    <h2 id="b5">9. Блок 5. Глубина, MVS, сегментация 2D (нед. 10–12, 12 ауд. ч)</h2>
+    <p><strong>Содержание.</strong> Плотное стерео (блок-матчинг, идея semi-global). Multi-view stereo: согласованность фотометрии по многим видам. Семантическая сегментация 2D: идея сверточной сети как классификатор пикселя; для курса достаточно готовой модели (DeepLab / SegFormer из torchvision или ONNX) на орто, без обучения с нуля на ImageNet.</p>
+    <p><strong>Мост в АКС.</strong> ЦММ vs ЦМР; дешифрирование <a href="lectures/a07-deshifrirovanie/notes.html">А07</a> (если каркас сем. 5 уже открыт). Орто — это уже геометрия А12; сегментация по орто ближе к тематической карте, чем к измерению высоты.</p>
+    <p><strong>Практика.</strong> (а) карта диспаратности на стереопаре или depth из COLMAP/OpenMVS; (б) маска «крыша / земля / растительность» на орто учебного участка. Сравнить границу здания на маске с ребром на ЦММ: где семантика врёт на тенях.</p>
+    <p><strong>Чтение.</strong></p>
+    <ul>
+      <li>Hirschmüller H. Stereo processing by semiglobal matching and mutual information. <em>PAMI</em>, 2008. OpenCV SGBM: <a href="https://docs.opencv.org/4.x/d2/d85/classcv_1_1StereoSGBM.html">StereoSGBM</a></li>
+      <li>Schönberger et al. Pixelwise View Selection for Unstructured Multi-View Stereo. ECCV, 2016 (COLMAP MVS). <a href="https://demuc.de/papers/schoenberger2016mvs.pdf">demuc.de PDF</a></li>
+      <li>OpenMVS: <a href="https://github.com/cdcseacave/openMVS">github.com/cdcseacave/openMVS</a></li>
+      <li>Long J., Shelhamer E., Darrell T. Fully Convolutional Networks for Semantic Segmentation. CVPR, 2015. <a href="https://openaccess.thecvf.com/content_cvpr_2015/papers/Long_Fully_Convolutional_Networks_2015_CVPR_paper.pdf">CVF PDF</a> — идея «пиксель-класс»</li>
+      <li>Обзор сегментации в OpenCV / dnn: <a href="https://docs.opencv.org/4.x/d2/d58/tutorial_table_of_content_dnn.html">DNN tutorials</a></li>
+    </ul>
+
+    <h2 id="b6">10. Блок 6. 3D как данные (нед. 13–14, 8 ауд. ч)</h2>
+    <p><strong>Содержание.</strong> Облако vs mesh, нормали, voxel downsample. Идея PointNet: перестановка точек, max-pooling как симметрия. Не реализовывать PointNet с нуля обязательно: достаточно прогнать готовую классификацию/сегментацию на учебном облаке или сделать правило «высота + нормаль = земля» как baseline.</p>
+    <p><strong>Мост в АКС.</strong> Ретопология Ф08, ЦММ. Класс «опора ЛЭП / здание» на облаке, не на JPEG — иначе это снова 2D.</p>
+    <p><strong>Практика.</strong> CloudCompare или Open3D: вырезать двор, оценить плотность точек, простой сегмент. Сравнить с маской блока 5.</p>
+    <p><strong>Чтение.</strong></p>
+    <ul>
+      <li>Qi C. R. et al. PointNet: Deep Learning on Point Sets. CVPR, 2017. <a href="https://openaccess.thecvf.com/content_cvpr_2017/papers/Qi_PointNet_Deep_Learning_CVPR_2017_paper.pdf">CVF PDF</a></li>
+      <li>Open3D: <a href="https://www.open3d.org/docs/">документация</a></li>
+      <li>CloudCompare: <a href="https://www.cloudcompare.org/">cloudcompare.org</a></li>
+      <li>Luhmann / Чибуничев — качество поверхности по фото</li>
+    </ul>
+
+    <h2 id="b7">11. Блок 7. Представления сцены: NeRF и Gaussian splatting (нед. 15–16, 8 ауд. ч)</h2>
+    <p><strong>Содержание.</strong> NeRF: луч, объём, интеграл цвета и плотности; зачем много видов и зачем калибровка камер (снова бандл). 3D Gaussian splatting: эллипсоид как примитив, splatting на экран, артефакты (floater’ы, каша на тонких конструкциях, дыры при малом перекрытии). Сравнение с mesh+текстура и с ортофотопланом.</p>
+    <p><strong>Мост в АКС.</strong> Зачем true ortho и кадастровая метрика, если splat «красивее». Ответ: система координат, контрольные точки, однозначный масштаб, архив, ГОСТ. Сплат — визуализация и иногда плотная геометрия для графики, не замена топоплана 1:2000.</p>
+    <p><strong>Практика.</strong> Не писать растеризатор. Прогнать готовый пайплайн (официальный код 3DGS или splat-viewer) на 20–40 кадрах двора <em>или</em> посмотреть чужой splat + свой орто рядом. Эссе 1–2 страницы: что отдать заказчику кадастра и где splat врёт метрически.</p>
+    <p><strong>Чтение.</strong></p>
+    <ul>
+      <li>Mildenhall B. et al. NeRF: Representing Scenes as Neural Radiance Fields. ECCV, 2020. <a href="https://www.matthewtancik.com/nerf">matthewtancik.com/nerf</a> · статья <a href="https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123460211.pdf">ECCV PDF</a></li>
+      <li>Kerbl B. et al. 3D Gaussian Splatting for Real-Time Radiance Field Rendering. SIGGRAPH / <em>ACM TOG</em>, 2023. Проект: <a href="https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/">INRIA</a> · статья <a href="https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/3d_gaussian_splatting_high.pdf">PDF</a></li>
+      <li>Tewari et al. Advances in Neural Rendering. STAR / Eurographics — обзорный вход, если NeRF-статья тяжеловата: искать «neural rendering STAR»</li>
+      <li>Орто и СК курса: <a href="lectures/a12-sk/notes.html">А12</a>, <a href="practice-s4.html">отчёт участка</a></li>
+    </ul>
+
+    <h2 id="exam">12. Экзамен / зачёт CV</h2>
+    <p>Формат: 15–20 минут у доски или у ноутбука. Студент открывает <em>свои</em> данные и показывает три вещи из разных блоков (на выбор преподавателя):</p>
+    <ol>
+      <li>эпиполяра на стереопаре или inliers RANSAC;</li>
+      <li>бандл: ошибка репроекции COLMAP vs Metashape и <em>почему</em> они могут различаться;</li>
+      <li>сегментация или splat vs орто: где метод врёт.</li>
+    </ol>
+    <p>Не экзамен: пересказ архитектур 2024, выучить формулы volume rendering наизусть без картинки луча, сдать чужой COLMAP log.</p>
+    <p>Оценка кода: воспроизводимость (README, seed, версии), не «у меня на машине работало».</p>
+
+    <h2 id="pilot">13. Пилот на 4–6 пар (если полный семестр не открывают)</h2>
+    <p>Только блоки 2–3: соответствия + эпиполяра на снимках стенда. 12–18 ауд. ч. Этого достаточно, чтобы язык «гомография / F / бандл» перестал быть магией Metashape. Блоки 4–7 не начинать без Ф09.</p>
+    <p><strong>Не трогать, пока нет:</strong> Gaussian splatting в зачёте АКС; полный NeRF-семестр без Ф09; отдельный сайт «лабораторки Three.js» вместо закрытого лекционного пакета АКС.</p>
+
+    <h2 id="lit">14. Сводка литературы</h2>
+    <h3>Учебники CV</h3>
+    <ul>
+      <li>Szeliski R. Computer Vision: Algorithms and Applications. 2nd ed. <a href="https://szeliski.org/Book/">szeliski.org/Book</a></li>
+      <li>Hartley R., Zisserman A. Multiple View Geometry in Computer Vision. 2nd ed. <a href="https://www.robots.ox.ac.uk/~vgg/hzbook/">VGG HZ book</a></li>
+      <li>Forsyth D., Ponce J. Computer Vision: A Modern Approach — запасная глава про камеру</li>
+    </ul>
+    <h3>Фотограмметрия (диск АКС — мост, не «вместо Хартли»)</h3>
+    <ul>
+      <li><a href="../../Литература/Фотограмметрия/00_Чибуничев_Фотограмметрия_2022.pdf">Чибуничев А. Г. Фотограмметрия</a>. МИИГАиК, 2022</li>
+      <li><a href="../../Литература/Фотограмметрия/Luhmann T., Robson S., Kyle S., Boehm J. - Close-Range Photogrammetry and 3D Imaging - 2023.pdf">Luhmann et al. Close-Range Photogrammetry and 3D Imaging</a>. 2023</li>
+      <li><a href="../../Литература/Фотограмметрия/ФГМ термины 2020.pdf">ГОСТ Р 51833-2001</a></li>
+    </ul>
+    <h3>ПО и эталоны</h3>
+    <ul>
+      <li><a href="https://docs.opencv.org/4.x/">OpenCV 4.x documentation</a></li>
+      <li><a href="https://colmap.github.io/">COLMAP</a></li>
+      <li><a href="https://www.agisoft.com/pdf/metashape-pro_2_0_en.pdf">Agisoft Metashape User Manual</a></li>
+      <li><a href="https://www.open3d.org/">Open3D</a></li>
+    </ul>
+    <h3>Ключевые статьи (блоки 4–7)</h3>
+    <ul>
+      <li>Schönberger, Frahm. Structure-from-Motion Revisited. CVPR 2016. <a href="https://openaccess.thecvf.com/content_cvpr_2016/papers/Schonberger_Structure-from-Motion_Revisited_CVPR_2016_paper.pdf">PDF</a></li>
+      <li>Mildenhall et al. NeRF. ECCV 2020. <a href="https://www.matthewtancik.com/nerf">проект</a></li>
+      <li>Kerbl et al. 3D Gaussian Splatting. 2023. <a href="https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/">проект INRIA</a></li>
+      <li>Qi et al. PointNet. CVPR 2017. <a href="https://openaccess.thecvf.com/content_cvpr_2017/papers/Qi_PointNet_Deep_Learning_CVPR_2017_paper.pdf">PDF</a></li>
+    </ul>
+    <p>Кафедральный список АКС (экзамен Алтынова и т. п.) этот курс <em>не</em> расширяет. Вопросы АКС: <a href="exam.html">exam.html</a>.</p>
+  </main>
+</body>
+</html>

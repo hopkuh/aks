@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 460" width="1100" height="460">
+  <rect width="100%" height="100%" fill="#141b24"/>
+  <text x="40" y="34" fill="#e2b56a" font-size="20" font-family="Segoe UI, sans-serif" font-weight="600">Продольная хроматическая аберрация</text>
+  <text x="40" y="58" fill="#93a1b3" font-size="15" font-family="Segoe UI, sans-serif" >коэффициент преломления зависит от длины волны: n = n(λ)</text>
+  <line x1="40" y1="240" x2="1060" y2="240" stroke="#2a3544" stroke-width="2"/>
+  <line x1="60" y1="150" x2="280" y2="150" stroke="#7aa6ff" stroke-width="2"/>
+  <line x1="60" y1="330" x2="280" y2="330" stroke="#7aa6ff" stroke-width="2"/>
+  <line x1="60" y1="130" x2="280" y2="130" stroke="#e07a73" stroke-width="2" opacity="0.85"/>
+  <line x1="60" y1="350" x2="280" y2="350" stroke="#e07a73" stroke-width="2" opacity="0.85"/>
+  <ellipse cx="300" cy="240" rx="22" ry="120" fill="#141b24" stroke="#6ec3d8" stroke-width="3"/>
+  <text x="300" y="104" fill="#6ec3d8" font-size="14" font-family="Segoe UI, sans-serif" text-anchor="middle">линза</text>
+  <line x1="280" y1="150" x2="620" y2="240" stroke="#7aa6ff" stroke-width="2.2"/>
+  <line x1="280" y1="330" x2="620" y2="240" stroke="#7aa6ff" stroke-width="2.2"/>
+  <circle cx="620" cy="240" r="6" fill="#7aa6ff"/>
+  <text x="620" y="214" fill="#7aa6ff" font-size="15" font-family="Segoe UI, sans-serif" text-anchor="middle">синие лучи</text>
+  <text x="620" y="272" fill="#7aa6ff" font-size="13" font-family="Segoe UI, sans-serif" text-anchor="middle">сходятся ближе</text>
+  <line x1="280" y1="130" x2="860" y2="240" stroke="#e07a73" stroke-width="2.2"/>
+  <line x1="280" y1="350" x2="860" y2="240" stroke="#e07a73" stroke-width="2.2"/>
+  <circle cx="860" cy="240" r="6" fill="#e07a73"/>
+  <text x="860" y="214" fill="#e07a73" font-size="15" font-family="Segoe UI, sans-serif" text-anchor="middle">красные лучи</text>
+  <text x="860" y="272" fill="#e07a73" font-size="13" font-family="Segoe UI, sans-serif" text-anchor="middle">сходятся дальше</text>
+  <text x="40" y="420" fill="#93a1b3" font-size="15" font-family="Segoe UI, sans-serif" >Для синего света n больше — линза сильнее — фокус ближе к объективу. Для красного — наоборот.</text>
+</svg>
