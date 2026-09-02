@@ -27,6 +27,8 @@
 | s25_* | 25 | Дагерротип | общественное достояние? | уточнить |
 | s26_* | 26 | Ранние портреты | общественное достояние? | уточнить |
 | s27–s30 | 27–30 | Оборудование, пластины, желатина, цветная плёнка | уточнить | черновик |
+| sasson-kodak-1975.jpg | 42 | Стивен Сассун с прототипом Kodak 1975 | [Хабр / ЛАНИТ, «Эволюция цифровой фотографии»](https://habr.com/ru/companies/lanit/articles/478848/) · файл `00cf361c1264be9bc693ebd110f704af.jpg` | учебное цитирование |
+| s32_50.jpg | 43 | Sony Digital Mavica MVC-FD5 | исторические фото | уточнить |
 | s32_* | 32 | Sasson / Kodak, Sony MVC-FD5 | исторические фото | уточнить |
 | s33_53.jpg | 33 | UltraCam X | Vexcel / Microsoft, продукт | не для публичного хостинга без разрешения |
 | s34–s38 | 34–38 | Классификация камер | смесь стоков и схем | уточнить |
@@ -58,7 +60,9 @@
 | autochrome-dancer.jpg | [EgyptianDancerAutochrome](https://commons.wikimedia.org/wiki/File:EgyptianDancerAutochrome.jpg) | 1915 · на слайде запасной кадр |
 | kodachrome-ii.jpg | [Kodachrome II - Film for colour slides](https://commons.wikimedia.org/wiki/File:Kodachrome_II_-_Film_for_colour_slides.jpg) | кассета 135 |
 | talbot-portrait.jpg | [William Henry Fox Talbot, by John Moffat, 1864](https://commons.wikimedia.org/wiki/File:William_Henry_Fox_Talbot,_by_John_Moffat,_1864.jpg) | портрет |
-| talbot-process-1841.jpg | [The Process of Talbotype … Royal Society](https://commons.wikimedia.org/wiki/File:The_Process_of_Talbotype_(formerly_called_Calotype)_Photogenic_Drawing,_Communicated_to_the_Royal_Society.jpg) | сообщение 1841, не сам бланк патента 8842 |
+| roger-bacon.jpg | [Roger Bacon.jpeg](https://commons.wikimedia.org/wiki/File:Roger_Bacon.jpeg) | портрет |
+| leonardo-self.jpg | [Leonardo self.jpg](https://commons.wikimedia.org/wiki/File:Leonardo_self.jpg) | красный мел, Турин |
+| sony-ccd.jpg | [CCD SONY ICX493AQA sensor side](https://commons.wikimedia.org/wiki/File:CCD_SONY_ICX493AQA_sensor_side.jpg) | пример ПЗС-матрицы, не Fairchild 1973 |
 
 Схемы `images/schemes/f01-*.svg` — свои, фон `#141b24`.
 
