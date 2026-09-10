@@ -48,6 +48,25 @@ export function projectPinhole(pointCamera, fMm, sensor) {
   };
 }
 
+export function projectThroughCenter(point, center, forward, imageDistance) {
+  const direction = {
+    x: point.x - center.x,
+    y: point.y - center.y,
+    z: point.z - center.z,
+  };
+  const objectDistance =
+    direction.x * forward.x +
+    direction.y * forward.y +
+    direction.z * forward.z;
+  if (objectDistance <= 1e-12 || imageDistance <= 0) return null;
+  const scale = -imageDistance / objectDistance;
+  return {
+    x: center.x + direction.x * scale,
+    y: center.y + direction.y * scale,
+    z: center.z + direction.z * scale,
+  };
+}
+
 export function gsdFromHeight(heightM, pixelMm, fMm) {
   return (heightM * pixelMm) / fMm;
 }

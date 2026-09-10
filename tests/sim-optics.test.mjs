@@ -5,6 +5,7 @@ import {
   circleOfConfusionLimit,
   dofBounds,
   projectPinhole,
+  projectThroughCenter,
   gsdFromHeight,
   heightFromGsd,
   groundFootprint,
@@ -40,6 +41,33 @@ test("physical image is inverted in both axes", () => {
   const p = projectPinhole({ x: 2, y: 1, z: 10 }, 50, SENSORS.ff);
   assert.ok(p.xMm < 0);
   assert.ok(p.yMm < 0);
+});
+
+test("both stereo rays continue through S to their sensor planes", () => {
+  const point = { x: 1.4, y: 0.9, z: 9 };
+  const forward = { x: 0, y: 0, z: 1 };
+  for (const centerX of [-0.6, 0.6]) {
+    const center = { x: centerX, y: 1.55, z: 0 };
+    const image = projectThroughCenter(point, center, forward, 0.035);
+    assert.ok(image);
+    assert.ok(Math.abs(image.z + 0.035) < 1e-12);
+    const objectVector = {
+      x: point.x - center.x,
+      y: point.y - center.y,
+      z: point.z - center.z,
+    };
+    const imageVector = {
+      x: image.x - center.x,
+      y: image.y - center.y,
+      z: image.z - center.z,
+    };
+    const crossLength = Math.hypot(
+      objectVector.y * imageVector.z - objectVector.z * imageVector.y,
+      objectVector.z * imageVector.x - objectVector.x * imageVector.z,
+      objectVector.x * imageVector.y - objectVector.y * imageVector.x
+    );
+    assert.ok(crossLength < 1e-12);
+  }
 });
 
 test("near and far depth-of-field boundaries surround focus", () => {

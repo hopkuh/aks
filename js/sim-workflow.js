@@ -8,6 +8,7 @@ import {
   normalizedToPixel,
   pixelToNormalized,
   projectCalibrated,
+  projectThroughCenter,
   triangulateRectified,
   exposureOffsetEv,
   makeBrownCalibrationObservations,
@@ -246,10 +247,10 @@ export function mountWorkflowSim(root) {
     const matrixWidth = SENSOR.widthMm * RAY_DISPLAY;
     const matrixHeight = SENSOR.heightMm * RAY_DISPLAY;
     const cameraData = [
-      { camera: leftCamera, color: 0x6ec3d8 },
-      { camera: rightCamera, color: 0xe07a73 },
+      { camera: leftCamera, color: 0x6ec3d8, index: "₁", side: "левой" },
+      { camera: rightCamera, color: 0xe07a73, index: "₂", side: "правой" },
     ];
-    for (const { camera, color } of cameraData) {
+    for (const { camera, color, index, side } of cameraData) {
       camera.updateWorldMatrix(true, false);
       const center = camera.position.clone();
       const forward = new THREE.Vector3(0, 0, -1)
@@ -270,6 +271,9 @@ export function mountWorkflowSim(root) {
       matrix.position.copy(matrixCenter);
       matrix.quaternion.copy(camera.quaternion);
       matrix.renderOrder = 8;
+      const matrixLabel = makeLabel(`Матрица ${side} камеры`);
+      matrixLabel.position.set(0, matrixHeight / 2 + 0.13, 0);
+      matrix.add(matrixLabel);
       projectionGroup.add(matrix);
       const frame = new THREE.LineSegments(
         new THREE.EdgesGeometry(matrixGeometry),
@@ -285,16 +289,20 @@ export function mountWorkflowSim(root) {
       );
       centerMarker.position.copy(center);
       centerMarker.renderOrder = 10;
+      const centerLabel = makeLabel(`S${index} — центр проекции`);
+      centerLabel.position.y = 0.2;
+      centerMarker.add(centerLabel);
       projectionGroup.add(centerMarker);
 
       for (const vertex of vertices) {
-        const direction = vertex.clone().sub(center);
-        const objectDistance = direction.dot(forward);
-        if (objectDistance <= 0.001) continue;
-        const imagePoint = center.clone().addScaledVector(
-          direction,
-          -focalDisplay / objectDistance
+        const projected = projectThroughCenter(
+          vertex,
+          center,
+          forward,
+          focalDisplay
         );
+        if (!projected) continue;
+        const imagePoint = new THREE.Vector3(projected.x, projected.y, projected.z);
         const ray = makeProjectionLine([vertex, center, imagePoint], color);
         ray.renderOrder = 10;
         projectionGroup.add(ray);
