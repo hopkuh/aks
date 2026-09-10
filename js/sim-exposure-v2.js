@@ -5,7 +5,7 @@ import {
   createHouse,
   createCar,
   createPerson,
-} from "./sim-scene.js?v=20260907-2";
+} from "./sim-scene.js?v=20260910-1";
 import { exposureOffsetEv } from "./sim-optics.js";
 
 const STOPS = {

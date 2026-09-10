@@ -1,6 +1,6 @@
 import * as THREE from "three";
 import { createViewport, addViewportHelp, makeLabel } from "./sim-viewport.js?v=20260907-2";
-import { createCalibrationScene } from "./sim-scene.js?v=20260907-2";
+import { createCalibrationScene, boundsCorners } from "./sim-scene.js?v=20260910-1";
 import {
   cameraIntrinsics,
   distortNormalized,
@@ -16,6 +16,7 @@ import {
 
 const IMAGE = { width: 600, height: 400 };
 const SENSOR = { widthMm: 36, heightMm: 24 };
+const RAY_DISPLAY = 0.018;
 const STOPS = {
   aperture: [1.4, 2, 2.8, 4, 5.6, 8, 11, 16],
   shutter: [1 / 4000, 1 / 2000, 1 / 1000, 1 / 500, 1 / 250, 1 / 125, 1 / 60, 1 / 30, 1 / 15, 1 / 8, 1 / 4, 1 / 2, 1],
@@ -32,6 +33,18 @@ function makeCanvas() {
   canvas.width = IMAGE.width;
   canvas.height = IMAGE.height;
   return canvas;
+}
+
+function makeProjectionLine(points, color) {
+  return new THREE.Line(
+    new THREE.BufferGeometry().setFromPoints(points),
+    new THREE.LineBasicMaterial({
+      color,
+      transparent: true,
+      opacity: 0.78,
+      depthTest: false,
+    })
+  );
 }
 
 function copyCanvas(source, target) {
@@ -100,6 +113,8 @@ export function mountWorkflowSim(root) {
   const action = root.querySelector("[data-wf-action]");
   const showParams = root.querySelector("[data-wf-show-params]");
   const paramsPanel = root.querySelector("[data-wf-params-panel]");
+  const showRays = root.querySelector("[data-wf-rays]");
+  const rayObject = root.querySelector("[data-wf-ray-object]");
   const stepButtons = [...root.querySelectorAll("[data-wf-step]")];
   const stepPanels = [...root.querySelectorAll("[data-wf-step-panel]")];
   const canvases = {
@@ -156,6 +171,10 @@ export function mountWorkflowSim(root) {
   );
   stereoRig.add(baselineLine);
   scene.add(stereoRig);
+  const projectionGroup = new THREE.Group();
+  projectionGroup.name = "Проектирующие лучи";
+  projectionGroup.visible = false;
+  scene.add(projectionGroup);
 
   const cloud = new THREE.Group();
   cloud.visible = false;
@@ -206,6 +225,90 @@ export function mountWorkflowSim(root) {
     });
   }
 
+  function clearProjectionGroup() {
+    projectionGroup.traverse((object) => {
+      if (object === projectionGroup) return;
+      object.geometry?.dispose();
+      if (Array.isArray(object.material)) object.material.forEach((item) => item.dispose());
+      else object.material?.dispose();
+    });
+    projectionGroup.clear();
+  }
+
+  function rebuildProjectionRays(p = params()) {
+    clearProjectionGroup();
+    projectionGroup.visible = showRays.checked;
+    if (!projectionGroup.visible) return;
+    const selected = objects[rayObject.value];
+    if (!selected) return;
+    const vertices = boundsCorners(selected);
+    const focalDisplay = p.focalMm * RAY_DISPLAY;
+    const matrixWidth = SENSOR.widthMm * RAY_DISPLAY;
+    const matrixHeight = SENSOR.heightMm * RAY_DISPLAY;
+    const cameraData = [
+      { camera: leftCamera, color: 0x6ec3d8 },
+      { camera: rightCamera, color: 0xe07a73 },
+    ];
+    for (const { camera, color } of cameraData) {
+      camera.updateWorldMatrix(true, false);
+      const center = camera.position.clone();
+      const forward = new THREE.Vector3(0, 0, -1)
+        .applyQuaternion(camera.quaternion)
+        .normalize();
+      const matrixCenter = center.clone().addScaledVector(forward, -focalDisplay);
+      const matrixGeometry = new THREE.PlaneGeometry(matrixWidth, matrixHeight);
+      const matrix = new THREE.Mesh(
+        matrixGeometry,
+        new THREE.MeshBasicMaterial({
+          color,
+          side: THREE.DoubleSide,
+          transparent: true,
+          opacity: 0.17,
+          depthWrite: false,
+        })
+      );
+      matrix.position.copy(matrixCenter);
+      matrix.quaternion.copy(camera.quaternion);
+      matrix.renderOrder = 8;
+      projectionGroup.add(matrix);
+      const frame = new THREE.LineSegments(
+        new THREE.EdgesGeometry(matrixGeometry),
+        new THREE.LineBasicMaterial({ color, depthTest: false })
+      );
+      frame.position.copy(matrixCenter);
+      frame.quaternion.copy(camera.quaternion);
+      frame.renderOrder = 9;
+      projectionGroup.add(frame);
+      const centerMarker = new THREE.Mesh(
+        new THREE.SphereGeometry(0.075, 14, 10),
+        new THREE.MeshBasicMaterial({ color, depthTest: false })
+      );
+      centerMarker.position.copy(center);
+      centerMarker.renderOrder = 10;
+      projectionGroup.add(centerMarker);
+
+      for (const vertex of vertices) {
+        const direction = vertex.clone().sub(center);
+        const objectDistance = direction.dot(forward);
+        if (objectDistance <= 0.001) continue;
+        const imagePoint = center.clone().addScaledVector(
+          direction,
+          -focalDisplay / objectDistance
+        );
+        const ray = makeProjectionLine([vertex, center, imagePoint], color);
+        ray.renderOrder = 10;
+        projectionGroup.add(ray);
+        const imageMarker = new THREE.Mesh(
+          new THREE.SphereGeometry(0.018, 8, 6),
+          new THREE.MeshBasicMaterial({ color: 0xffcc72, depthTest: false })
+        );
+        imageMarker.position.copy(imagePoint);
+        imageMarker.renderOrder = 11;
+        projectionGroup.add(imageMarker);
+      }
+    }
+  }
+
   function configureCameras(p = params()) {
     const z = 11 - p.distanceM;
     for (const camera of [leftCamera, rightCamera]) {
@@ -226,6 +329,7 @@ export function mountWorkflowSim(root) {
       leftCamera.position,
       rightCamera.position,
     ]);
+    rebuildProjectionRays(p);
   }
 
   function setMotion(time) {
@@ -247,6 +351,7 @@ export function mountWorkflowSim(root) {
     );
     stereoRig.visible = false;
     cloud.visible = false;
+    projectionGroup.visible = false;
     ctx.save();
     ctx.globalCompositeOperation = "lighter";
     ctx.globalAlpha = 1 / samples;
@@ -257,6 +362,7 @@ export function mountWorkflowSim(root) {
     }
     ctx.restore();
     stereoRig.visible = true;
+    projectionGroup.visible = showRays.checked;
     return samples;
   }
 
@@ -272,6 +378,7 @@ export function mountWorkflowSim(root) {
     applyNoise(rightBase, p.iso);
     copyCanvas(leftBase, canvases.left);
     copyCanvas(rightBase, canvases.right);
+    rebuildProjectionRays(p);
     captured = true;
     calibrated = false;
     calibration = null;
@@ -499,7 +606,12 @@ export function mountWorkflowSim(root) {
     });
     const hidden = [];
     scene.traverse((object) => {
-      if (object.isLine || object === stereoRig || object === cloud) {
+      if (
+        object.isLine ||
+        object === stereoRig ||
+        object === cloud ||
+        object === projectionGroup
+      ) {
         hidden.push([object, object.visible]);
         object.visible = false;
       }
@@ -600,6 +712,8 @@ export function mountWorkflowSim(root) {
   showParams.addEventListener("change", () => {
     paramsPanel.hidden = !showParams.checked;
   });
+  showRays.addEventListener("change", () => rebuildProjectionRays());
+  rayObject.addEventListener("change", () => rebuildProjectionRays());
   Object.values(controls).forEach((control) => control.addEventListener("input", () => {
     syncLabels();
     captured = false;
@@ -624,6 +738,7 @@ export function mountWorkflowSim(root) {
       syncLabels();
     },
     dispose() {
+      clearProjectionGroup();
       captureRenderer.dispose();
       viewport.dispose();
     },

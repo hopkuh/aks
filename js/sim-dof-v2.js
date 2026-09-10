@@ -1,6 +1,6 @@
 import * as THREE from "three";
 import { createViewport, addViewportHelp, makeLabel } from "./sim-viewport.js?v=20260907-2";
-import { createCalibrationScene } from "./sim-scene.js?v=20260907-2";
+import { createCalibrationScene } from "./sim-scene.js?v=20260910-1";
 import {
   SENSORS,
   circleOfConfusionLimit,

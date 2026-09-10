@@ -129,7 +129,6 @@ export function createFan() {
   const rotor = new THREE.Group();
   rotor.name = "rotor";
   rotor.position.set(0, 1.34, 0);
-  rotor.rotation.y = Math.PI / 2;
   const hub = mesh(new THREE.SphereGeometry(0.12, 16, 12), material(0xe2b56a));
   rotor.add(hub);
   const bladeMat = material(0x6ec3d8);

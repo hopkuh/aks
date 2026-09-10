@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <title>Симуляторы — курс АКС / АФС</title>
-  <link rel="stylesheet" href="css/course.css?v=20260907-2" />
+  <link rel="stylesheet" href="css/course.css?v=20260910-1" />
   <link rel="stylesheet" href="vendor/leaflet/leaflet.css" />
   <link rel="stylesheet" href="vendor/leaflet/leaflet.draw.css" />
   <script type="importmap">
@@ -237,6 +237,21 @@
           <label class="sim-check sim-params-switch">
             <input type="checkbox" data-wf-show-params checked> Показывать параметры камеры
           </label>
+          <div class="sim-ray-controls">
+            <label class="sim-check">
+              <input type="checkbox" data-wf-rays> Проектирующие лучи P → S → p
+            </label>
+            <label>Объект
+              <select class="sim-select" data-wf-ray-object>
+                <option value="palletMiddle">Средняя палетка</option>
+                <option value="fan">Вентилятор</option>
+                <option value="car">Машина</option>
+                <option value="personNear">Ближний человек</option>
+                <option value="house">Дом</option>
+              </select>
+            </label>
+            <p class="muted">Матрицы увеличены для наглядности с сохранением пропорций.</p>
+          </div>
           <div data-wf-params-panel>
             <div class="sim-workflow-controls">
             <label class="sim-range">f <span data-wf-fval>35 мм</span>
@@ -385,10 +400,10 @@
 
     const mounts = [
       ["camera", camRoot, "./js/sim-camera-v2.js?v=20260907-2", "mountCameraSim"],
-      ["dof", dofRoot, "./js/sim-dof-v2.js?v=20260907-2", "mountDofSim"],
-      ["exposure", expRoot, "./js/sim-exposure-v2.js?v=20260907-2", "mountExposureSim"],
+      ["dof", dofRoot, "./js/sim-dof-v2.js?v=20260910-1", "mountDofSim"],
+      ["exposure", expRoot, "./js/sim-exposure-v2.js?v=20260910-1", "mountExposureSim"],
       ["photo", pgRoot, "./js/sim-photo-v2.js?v=20260907-2", "mountPhotoSim"],
-      ["workflow", wfRoot, "./js/sim-workflow.js?v=20260907-2", "mountWorkflowSim"],
+      ["workflow", wfRoot, "./js/sim-workflow.js?v=20260910-1", "mountWorkflowSim"],
       ["afs", afsRoot, "./js/sim-afs-v2.js?v=20260907-2", "mountAfsSim"],
     ];
     const loadAll = async () => {

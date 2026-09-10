@@ -1555,6 +1555,27 @@ body.mode-sim {
   margin: 0 0 12px;
   color: var(--text);
 }
+.sim-ray-controls {
+  display: grid;
+  gap: 7px;
+  margin: 0 0 14px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: #18212b;
+}
+.sim-ray-controls > label:not(.sim-check) {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.sim-ray-controls .muted {
+  margin: 0;
+  font-size: 11px;
+}
 .sim-workflow-controls .sim-range,
 .sim-workflow-side .sim-more .sim-range {
   justify-content: space-between;
