@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>Симуляторы — курс АКС / АФС</title>
+  <link rel="stylesheet" href="css/course.css?v=20260907-2" />
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css" />
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.draw.css" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "./vendor/three/three.module.js",
+      "three/addons/": "./vendor/three/addons/"
+    }
+  }
+  </script>
+</head>
+<body class="mode-sim">
+  <header class="topbar">
+    <div class="brand">Курс АКС / АФС <small>симуляторы</small></div>
+    <nav class="nav">
+      <a href="index.html">Лекции</a>
+      <a href="practice.html">Практика</a>
+      <a href="simulators.html" aria-current="page">Симуляторы</a>
+      <a href="glossary.html">Глоссарий</a>
+      <a href="exam.html">Экзамен</a>
+      <a href="literature.html">Литература</a>
+    </nav>
+  </header>
+
+  <main class="sim-page">
+    <header class="sim-head">
+      <h1>Симуляторы</h1>
+      <p>Учебные модели, не реклама камер. Крутите параметры и смотрите, что меняется в геометрии, в кадре и в плане полёта.</p>
+      <p class="sim-run">Открывать только по адресу <code>http://127.0.0.1:8765/simulators.html</code>. Двойной щелчок по файлу и превью Cursor оставляют холсты пустыми. Запуск: <code>start.bat</code> в папке <code>web</code> или <code>python -m http.server 8765</code> из этой папки.</p>
+    </header>
+
+    <div id="sim-need-http" class="sim-need-http" hidden>
+      <strong>Скрипты не загрузились.</strong>
+      Страницу нельзя открывать как файл с диска. Запустите <code>web\start.bat</code> и зайдите на
+      <a href="http://127.0.0.1:8765/simulators.html">http://127.0.0.1:8765/simulators.html</a>.
+    </div>
+
+    <nav class="sim-tabs" aria-label="Симулятор">
+      <a href="#camera" class="is-on">Камера</a>
+      <a href="#dof">ГРИП</a>
+      <a href="#exposure">Экспозиция</a>
+      <a href="#photo">Фотограмметрия</a>
+      <a href="#workflow">Полный цикл</a>
+      <a href="#afs">Задание АФС</a>
+    </nav>
+
+    <section id="camera" class="sim-panel is-on">
+      <div class="sim-layout">
+        <div class="sim-stage">
+          <div class="sim-canvas" data-canvas></div>
+          <div class="sim-labels" data-labels></div>
+          <div class="sim-toolbar">
+            <div class="sim-seg" role="group" aria-label="Тип камеры">
+              <button type="button" data-type="mirrorless" class="is-on">Беззеркалка</button>
+              <button type="button" data-type="dslr">Зеркалка</button>
+            </div>
+            <label class="sim-range">Разбор <span data-explode-val>0 %</span>
+              <input type="range" data-explode min="0" max="1" step="0.01" value="0">
+            </label>
+            <label class="sim-check"><input type="checkbox" data-rays> Ход лучей к матрице</label>
+          </div>
+        </div>
+        <aside class="sim-side">
+          <p class="sim-kicker">Элемент</p>
+          <h2 data-title>Тушка</h2>
+          <p data-text>Несветопроницаемый корпус. Держит байонет, затвор, матрицу и электронику в фиксированной геометрии.</p>
+          <p class="sim-kicker">Состав</p>
+          <div class="sim-parts" data-parts></div>
+          <p class="muted">Клик по детали — выбрать. Выбранная подсвечена контуром, остальные полупрозрачны. ЛКМ — вращать сцену, ПКМ — сдвиг, колесо — масштаб. Зеркало и пентапризма есть только у зеркалки.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="dof" class="sim-panel">
+      <div class="sim-layout sim-layout--dof">
+        <div class="sim-dof-views">
+          <div class="sim-stage sim-stage--photo">
+            <canvas data-photo class="sim-photo"></canvas>
+          </div>
+          <div class="sim-stage sim-stage--photo">
+            <div class="sim-canvas" data-dof-3d></div>
+          </div>
+          <div class="sim-toolbar sim-toolbar--static">
+            <div class="sim-seg" role="group" aria-label="Матрица">
+              <button type="button" data-sensor="ff" class="is-on">36×24</button>
+              <button type="button" data-sensor="apsc">APS-C</button>
+              <button type="button" data-sensor="m43">M4/3</button>
+              <button type="button" data-sensor="inch1">1″</button>
+            </div>
+            <label class="sim-range">f <span data-fval>35 мм</span>
+              <input type="range" data-f min="24" max="135" step="1" value="35">
+            </label>
+            <label class="sim-range">K <span data-kval>f/2.8</span>
+              <input type="range" data-k min="1.4" max="16" step="0.1" value="2.8">
+            </label>
+            <label class="sim-range">R <span data-rval>4.5 м</span>
+              <input type="range" data-r min="2.5" max="14" step="0.1" value="4.5">
+            </label>
+          </div>
+        </div>
+        <aside class="sim-side">
+          <p class="sim-kicker">Глубина резкости</p>
+          <div data-read></div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="exposure" class="sim-panel">
+      <div class="sim-layout">
+        <div class="sim-dof-views">
+          <div class="sim-stage sim-stage--photo">
+            <canvas data-exp-photo class="sim-photo"></canvas>
+          </div>
+          <div class="sim-toolbar sim-toolbar--static">
+            <div class="sim-seg" role="group" aria-label="Сцена">
+              <button type="button" data-exp-scene="table" class="is-on">Лаборатория</button>
+              <button type="button" data-exp-scene="street">Улица</button>
+            </div>
+            <div class="sim-seg" role="group" aria-label="Режим">
+              <button type="button" data-exp-mode="M" class="is-on">M</button>
+              <button type="button" data-exp-mode="A">A</button>
+              <button type="button" data-exp-mode="S">S</button>
+              <button type="button" data-exp-mode="P">P</button>
+            </div>
+            <label class="sim-range">K <span data-exp-kval>f/2.8</span>
+              <input type="range" data-exp-k min="0" max="7" step="1" value="2">
+            </label>
+            <label class="sim-range">t <span data-exp-tval>1/125 с</span>
+              <input type="range" data-exp-t min="0" max="12" step="1" value="5">
+            </label>
+            <label class="sim-range">ISO <span data-exp-isoval>100</span>
+              <input type="range" data-exp-iso min="0" max="6" step="1" value="0">
+            </label>
+            <button type="button" class="sim-part" data-exp-snap>Кадр</button>
+            <button type="button" class="sim-part is-on" data-exp-live>Live</button>
+          </div>
+        </div>
+        <aside class="sim-side">
+          <p class="sim-kicker">Треугольник экспозиции</p>
+          <div data-exp-read></div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="photo" class="sim-panel">
+      <div class="sim-layout">
+        <div class="sim-dof-views">
+          <div class="sim-stage sim-stage--photo">
+            <div class="sim-canvas" data-pg-canvas></div>
+            <div class="sim-labels" data-pg-labels></div>
+          </div>
+          <div class="sim-toolbar sim-toolbar--static">
+            <label class="sim-range sim-range--pri">f <span data-pg-fval>50 мм</span>
+              <input type="range" data-pg-f min="24" max="85" step="1" value="50">
+            </label>
+            <label class="sim-range sim-range--pri">D <span data-pg-dval>8,0 м</span>
+              <input type="range" data-pg-d min="3" max="18" step="0.1" value="8">
+            </label>
+            <div class="sim-seg" role="group" aria-label="Объект">
+              <button type="button" data-pg-obj="house">Дом</button>
+              <button type="button" data-pg-obj="person" class="is-on">Человек</button>
+              <button type="button" data-pg-obj="car">Машина</button>
+            </div>
+            <button type="button" class="sim-part" data-pg-snap>Кадр</button>
+            <details class="sim-more">
+              <summary>ЭВО и второй снимок</summary>
+              <label class="sim-range">сдвиг X <input type="range" data-pg-x min="-4" max="4" step="0.1" value="0"></label>
+              <label class="sim-range">высота S <input type="range" data-pg-y min="0.8" max="4" step="0.1" value="1.6"></label>
+              <label class="sim-range">κ <input type="range" data-pg-yaw min="-40" max="40" step="1" value="0"></label>
+              <label class="sim-range">ω <input type="range" data-pg-pitch min="-25" max="15" step="1" value="-6"></label>
+              <label class="sim-check"><input type="checkbox" data-pg-stereo> Второй снимок</label>
+            </details>
+          </div>
+        </div>
+        <aside class="sim-side">
+          <p class="sim-kicker">Снимок на матрице</p>
+          <p class="muted" data-pg-xyz></p>
+          <canvas data-pg-shot class="sim-shot"></canvas>
+          <div data-pg-read></div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="workflow" class="sim-panel">
+      <div class="sim-layout">
+        <div class="sim-dof-views">
+          <div class="sim-stage sim-stage--workflow">
+            <div class="sim-canvas" data-wf-canvas></div>
+            <div class="sim-labels" data-wf-labels></div>
+          </div>
+          <div class="sim-workflow-output">
+            <section data-wf-step-panel="capture" class="is-on">
+              <h2>Синхронная стереосъёмка</h2>
+              <div class="sim-stereo-pair">
+                <figure><canvas data-wf-left></canvas><figcaption>Левый снимок</figcaption></figure>
+                <figure><canvas data-wf-right></canvas><figcaption>Правый снимок</figcaption></figure>
+              </div>
+            </section>
+            <section data-wf-step-panel="calibration">
+              <h2>Калибровка камеры</h2>
+              <canvas data-wf-calibration class="sim-process-canvas"></canvas>
+            </section>
+            <section data-wf-step-panel="stereo">
+              <h2>Соответствующие точки и эпиполярные линии</h2>
+              <div class="sim-stereo-pair">
+                <figure><canvas data-wf-match-left></canvas><figcaption>Левый снимок</figcaption></figure>
+                <figure><canvas data-wf-match-right></canvas><figcaption>Правый снимок</figcaption></figure>
+              </div>
+            </section>
+            <section data-wf-step-panel="orientation">
+              <h2>Взаимное ориентирование и триангуляция</h2>
+              <div class="sim-reconstruction-table" data-wf-table></div>
+            </section>
+            <section data-wf-step-panel="depth">
+              <h2>Карта глубины и разреженное облако</h2>
+              <canvas data-wf-depth class="sim-process-canvas"></canvas>
+            </section>
+          </div>
+        </div>
+        <aside class="sim-side sim-workflow-side">
+          <p class="sim-kicker">Полный учебный цикл</p>
+          <div class="sim-workflow-steps" role="group" aria-label="Этап обработки">
+            <button type="button" data-wf-step="capture" class="is-on"><span>1</span> Съёмка</button>
+            <button type="button" data-wf-step="calibration"><span>2</span> Калибровка</button>
+            <button type="button" data-wf-step="stereo"><span>3</span> Соответствия</button>
+            <button type="button" data-wf-step="orientation"><span>4</span> Ориентирование</button>
+            <button type="button" data-wf-step="depth"><span>5</span> Глубина</button>
+          </div>
+          <label class="sim-check sim-params-switch">
+            <input type="checkbox" data-wf-show-params checked> Показывать параметры камеры
+          </label>
+          <div data-wf-params-panel>
+            <div class="sim-workflow-controls">
+            <label class="sim-range">f <span data-wf-fval>35 мм</span>
+              <input type="range" data-wf-f min="24" max="70" step="1" value="35">
+            </label>
+            <label class="sim-range">K <span data-wf-kval>f/5.6</span>
+              <input type="range" data-wf-k min="0" max="7" step="1" value="4">
+            </label>
+            <label class="sim-range">t <span data-wf-tval>1/250 с</span>
+              <input type="range" data-wf-t min="0" max="12" step="1" value="4">
+            </label>
+            <label class="sim-range">ISO <span data-wf-isoval>100</span>
+              <input type="range" data-wf-iso min="0" max="6" step="1" value="0">
+            </label>
+            <label class="sim-range">Базис B <span data-wf-bval>1,20 м</span>
+              <input type="range" data-wf-b min="0.2" max="2.5" step="0.05" value="1.2">
+            </label>
+            <label class="sim-range">D до мир <span data-wf-dval>10,0 м</span>
+              <input type="range" data-wf-d min="6" max="18" step="0.2" value="10">
+            </label>
+            </div>
+            <details class="sim-more" open>
+              <summary>Искажения объектива</summary>
+              <label class="sim-range">k₁ <span data-wf-k1val>−0,12</span>
+                <input type="range" data-wf-k1 min="-0.3" max="0.3" step="0.01" value="-0.12">
+              </label>
+              <label class="sim-range">k₂ <span data-wf-k2val>0,03</span>
+                <input type="range" data-wf-k2 min="-0.1" max="0.1" step="0.005" value="0.03">
+              </label>
+              <label class="sim-range">p₁ <span data-wf-p1val>0,002</span>
+                <input type="range" data-wf-p1 min="-0.01" max="0.01" step="0.001" value="0.002">
+              </label>
+              <label class="sim-range">p₂ <span data-wf-p2val>−0,001</span>
+                <input type="range" data-wf-p2 min="-0.01" max="0.01" step="0.001" value="-0.001">
+              </label>
+            </details>
+          </div>
+          <button type="button" class="sim-primary" data-wf-action>Снять стереопару</button>
+          <div data-wf-read></div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="afs" class="sim-panel">
+      <div class="sim-layout">
+        <div class="sim-dof-views">
+          <div class="sim-stage sim-stage--photo sim-stage--afs">
+            <div data-afs-map class="sim-afs-map" aria-label="Интерактивная карта задания АФС"></div>
+          </div>
+          <div class="sim-toolbar sim-toolbar--static">
+            <div class="sim-seg" role="group" aria-label="Тип БВС">
+              <button type="button" data-afs-uav="copter" class="is-on">Коптер</button>
+              <button type="button" data-afs-uav="wing">Крыло</button>
+              <button type="button" data-afs-uav="copterFF">Коптер FF</button>
+            </div>
+            <div class="sim-seg" role="group" aria-label="Участок">
+              <button type="button" data-afs-site="field" class="is-on">Поле</button>
+              <button type="button" data-afs-site="quarry">Карьер</button>
+              <button type="button" data-afs-site="road">Полоса</button>
+            </div>
+            <div class="sim-seg" role="group" aria-label="Режим точек">
+              <button type="button" data-afs-mode="gcp" class="is-on">Опорные</button>
+              <button type="button" data-afs-mode="chk">Контрольные</button>
+            </div>
+            <label class="sim-range">GSD <span data-afs-gsdval>5,0 см</span>
+              <input type="range" data-afs-gsd min="1" max="20" step="0.5" value="5">
+            </label>
+            <label class="sim-range">P<sub>x</sub> <span data-afs-pxval>80 %</span>
+              <input type="range" data-afs-px min="55" max="90" step="1" value="80">
+            </label>
+            <label class="sim-range">P<sub>y</sub> <span data-afs-pyval>60 %</span>
+              <input type="range" data-afs-py min="30" max="80" step="1" value="60">
+            </label>
+            <button type="button" class="sim-part" data-afs-auto>ПВО по схеме</button>
+            <button type="button" class="sim-part" data-afs-clear>Снять точки</button>
+          </div>
+        </div>
+        <aside class="sim-side">
+          <p class="sim-kicker">План задания</p>
+          <div data-afs-read></div>
+          <p class="muted">Панель слева на карте рисует, редактирует и удаляет контур. Щелчок внутри контура ставит точку; перетаскивание меняет её положение, правый щелчок удаляет.</p>
+          <div class="sim-afs-pts" data-afs-pts></div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    window.__simBoot = false;
+    window.addEventListener("DOMContentLoaded", () => {
+      setTimeout(() => {
+        if (!window.__simBoot) {
+          const el = document.getElementById("sim-need-http");
+          if (el) el.hidden = false;
+        }
+      }, 700);
+    });
+  </script>
+  <script src="vendor/leaflet/leaflet.js"></script>
+  <script src="vendor/leaflet/leaflet.draw.js"></script>
+  <script type="module">
+    window.__simBoot = true;
+
+    const panels = [...document.querySelectorAll(".sim-panel")];
+    const tabs = [...document.querySelectorAll(".sim-tabs a")];
+    const camRoot = document.querySelector("#camera");
+    const dofRoot = document.querySelector("#dof");
+    const expRoot = document.querySelector("#exposure");
+    const pgRoot = document.querySelector("#photo");
+    const wfRoot = document.querySelector("#workflow");
+    const afsRoot = document.querySelector("#afs");
+
+    const fail = (root, msg) => {
+      const stage = root?.querySelector(".sim-stage");
+      if (!stage) return;
+      const p = document.createElement("p");
+      p.className = "sim-fail";
+      p.textContent = msg;
+      stage.prepend(p);
+    };
+
+    const instances = {};
+
+    const show = (id) => {
+      const key = (id || "camera").replace("#", "");
+      panels.forEach((p) => p.classList.toggle("is-on", p.id === key));
+      tabs.forEach((t) => t.classList.toggle("is-on", t.getAttribute("href") === `#${key}`));
+      Object.entries(instances).forEach(([name, instance]) => {
+        if (name === key) {
+          instance?.wake?.();
+          instance?.resize?.();
+        } else {
+          instance?.sleep?.();
+        }
+      });
+    };
+
+    tabs.forEach((t) => {
+      t.addEventListener("click", (e) => {
+        e.preventDefault();
+        const href = t.getAttribute("href");
+        history.replaceState(null, "", href);
+        show(href);
+      });
+    });
+
+    const mounts = [
+      ["camera", camRoot, "./js/sim-camera-v2.js?v=20260907-2", "mountCameraSim"],
+      ["dof", dofRoot, "./js/sim-dof-v2.js?v=20260907-2", "mountDofSim"],
+      ["exposure", expRoot, "./js/sim-exposure-v2.js?v=20260907-2", "mountExposureSim"],
+      ["photo", pgRoot, "./js/sim-photo-v2.js?v=20260907-2", "mountPhotoSim"],
+      ["workflow", wfRoot, "./js/sim-workflow.js?v=20260907-2", "mountWorkflowSim"],
+      ["afs", afsRoot, "./js/sim-afs-v2.js?v=20260907-2", "mountAfsSim"],
+    ];
+    const loadAll = async () => {
+      for (const [name, root, path, exportName] of mounts) {
+        try {
+          const module = await import(path);
+          instances[name] = root ? module[exportName](root) : null;
+        } catch (error) {
+          console.error(error);
+          fail(root, `Симулятор «${name}» не загрузился. Откройте страницу по HTTP и проверьте консоль браузера.`);
+        }
+      }
+      show(location.hash || "#camera");
+    };
+    show(location.hash || "#camera");
+    window.addEventListener("hashchange", () => show(location.hash));
+    loadAll();
+    window.addEventListener("beforeunload", () => {
+      Object.values(instances).forEach((instance) => instance?.dispose?.());
+    });
+  </script>
+</body>
+</html>

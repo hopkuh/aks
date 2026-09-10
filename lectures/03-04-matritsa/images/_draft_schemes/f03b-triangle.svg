@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" width="900" height="420">
+  <rect width="100%" height="100%" fill="#141b24"/>
+
+  <text x="40" y="36" fill="#e2b56a" font-size="18" font-family="Segoe UI, sans-serif">Треугольник экспозиции</text>
+  <polygon points="450,80 700,360 200,360" fill="none" stroke="#6ec3d8" stroke-width="3"/>
+  <text x="410" y="70" fill="#e2b56a" font-size="18" font-family="Segoe UI, sans-serif">ISO · шум</text>
+  <text x="80" y="390" fill="#e2b56a" font-size="18" font-family="Segoe UI, sans-serif">K · ГРИП, дифракция</text>
+  <text x="620" y="390" fill="#e2b56a" font-size="18" font-family="Segoe UI, sans-serif">t · смаз</text>
+  <text x="330" y="250" fill="#93a1b3" font-size="15" font-family="Segoe UI, sans-serif">H = E · t</text>
+
+</svg>

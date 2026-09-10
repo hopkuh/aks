@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" width="900" height="360">
+  <rect width="100%" height="100%" fill="#141b24"/>
+
+  <text x="40" y="36" fill="#e2b56a" font-size="18" font-family="Segoe UI, sans-serif">Одна площадь, разные Мп</text>
+  <rect x="80" y="80" width="320" height="200" fill="none" stroke="#6ec3d8" stroke-width="2"/>
+  <rect x="100" y="100" width="280" height="160" fill="#2a3544"/>
+  <text x="140" y="310" fill="#93a1b3" font-size="14" font-family="Segoe UI, sans-serif">крупный пиксель · больше фотонов</text>
+  <rect x="500" y="80" width="320" height="200" fill="none" stroke="#6ec3d8" stroke-width="2"/>
+  <rect x="520" y="100" width="40" height="40" fill="#2a3544" stroke="#141b24"/><rect x="520" y="148" width="40" height="40" fill="#2a3544" stroke="#141b24"/><rect x="520" y="196" width="40" height="40" fill="#2a3544" stroke="#141b24"/><rect x="568" y="100" width="40" height="40" fill="#2a3544" stroke="#141b24"/><rect x="568" y="148" width="40" height="40" fill="#2a3544" stroke="#141b24"/><rect x="568" y="196" width="40" height="40" fill="#2a3544" stroke="#141b24"/><rect x="616" y="100" width="40" height="40" fill="#2a3544" stroke="#141b24"/><rect x="616" y="148" width="40" height="40" fill="#2a3544" stroke="#141b24"/><rect x="616" y="196" width="40" height="40" fill="#2a3544" stroke="#141b24"/><rect x="664" y="100" width="40" height="40" fill="#2a3544" stroke="#141b24"/><rect x="664" y="148" width="40" height="40" fill="#2a3544" stroke="#141b24"/><rect x="664" y="196" width="40" height="40" fill="#2a3544" stroke="#141b24"/><rect x="712" y="100" width="40" height="40" fill="#2a3544" stroke="#141b24"/><rect x="712" y="148" width="40" height="40" fill="#2a3544" stroke="#141b24"/><rect x="712" y="196" width="40" height="40" fill="#2a3544" stroke="#141b24"/><rect x="760" y="100" width="40" height="40" fill="#2a3544" stroke="#141b24"/><rect x="760" y="148" width="40" height="40" fill="#2a3544" stroke="#141b24"/><rect x="760" y="196" width="40" height="40" fill="#2a3544" stroke="#141b24"/>
+  <text x="530" y="310" fill="#93a1b3" font-size="14" font-family="Segoe UI, sans-serif">мелкий пиксель · SNR раньше падает</text>
+
+</svg>

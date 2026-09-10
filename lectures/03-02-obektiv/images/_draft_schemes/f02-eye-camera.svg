@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" width="900" height="320">
+  <rect width="100%" height="100%" fill="#141b24"/>
+
+  <text x="40" y="36" fill="#e2b56a" font-size="18" font-family="Segoe UI, sans-serif">Глаз и камера — аналогия, не тождество</text>
+  <text x="80" y="100" fill="#6ec3d8" font-size="16" font-family="Segoe UI, sans-serif">хрусталик → объектив</text>
+  <text x="80" y="140" fill="#6ec3d8" font-size="16" font-family="Segoe UI, sans-serif">зрачок → диафрагма</text>
+  <text x="80" y="180" fill="#6ec3d8" font-size="16" font-family="Segoe UI, sans-serif">сетчатка → матрица</text>
+  <text x="80" y="220" fill="#6ec3d8" font-size="16" font-family="Segoe UI, sans-serif">аккомодация → фокусировка</text>
+  <text x="80" y="280" fill="#93a1b3" font-size="14" font-family="Segoe UI, sans-serif">глаз достраивает картинку · объектив строит одно поле на плоском кадре</text>
+
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" width="900" height="380">
+  <rect width="100%" height="100%" fill="#141b24"/>
+
+  <text x="40" y="36" fill="#e2b56a" font-size="18" font-family="Segoe UI, sans-serif">Типы затворов</text>
+  <rect x="50" y="80" width="240" height="200" rx="10" fill="none" stroke="#6ec3d8"/>
+  <circle cx="170" cy="170" r="50" fill="none" stroke="#e2b56a" stroke-width="3"/>
+  <path d="M170,120 L170,220 M130,170 L210,170" stroke="#e2b56a" stroke-width="2"/>
+  <text x="90" y="310" fill="#e9eef4" font-size="14" font-family="Segoe UI, sans-serif">центральный</text>
+  <rect x="330" y="80" width="240" height="200" rx="10" fill="none" stroke="#6ec3d8"/>
+  <rect x="360" y="140" width="180" height="70" fill="#2a3544"/>
+  <rect x="430" y="140" width="40" height="70" fill="#e2b56a"/>
+  <text x="370" y="310" fill="#e9eef4" font-size="14" font-family="Segoe UI, sans-serif">шторно-щелевой</text>
+  <rect x="610" y="80" width="240" height="200" rx="10" fill="none" stroke="#6ec3d8"/>
+  <rect x="640" y="110" width="180" height="16" fill="#2a3544"/><rect x="640" y="132" width="180" height="16" fill="#1e2a38"/><rect x="640" y="154" width="180" height="16" fill="#2a3544"/><rect x="640" y="176" width="180" height="16" fill="#1e2a38"/><rect x="640" y="198" width="180" height="16" fill="#2a3544"/><rect x="640" y="220" width="180" height="16" fill="#1e2a38"/>
+  <text x="655" y="310" fill="#e9eef4" font-size="14" font-family="Segoe UI, sans-serif">электронный</text>
+
+</svg>

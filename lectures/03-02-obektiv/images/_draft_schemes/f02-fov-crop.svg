@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" width="900" height="420">
+  <rect width="100%" height="100%" fill="#141b24"/>
+
+  <text x="40" y="36" fill="#e2b56a" font-size="18" font-family="Segoe UI, sans-serif">Угол поля зрения и кроп</text>
+  <circle cx="120" cy="220" r="10" fill="#6ec3d8"/>
+  <text x="70" y="200" fill="#6ec3d8" font-size="13" font-family="Segoe UI, sans-serif">объектив</text>
+  <path d="M130,220 L780,80" stroke="#e2b56a" fill="none"/>
+  <path d="M130,220 L780,360" stroke="#e2b56a" fill="none"/>
+  <rect x="520" y="130" width="220" height="180" fill="none" stroke="#e9eef4" stroke-width="2"/>
+  <text x="545" y="122" fill="#e9eef4" font-size="13" font-family="Segoe UI, sans-serif">полный кадр 36×24</text>
+  <rect x="575" y="165" width="110" height="90" fill="none" stroke="#6ec3d8" stroke-width="2"/>
+  <text x="585" y="270" fill="#6ec3d8" font-size="13" font-family="Segoe UI, sans-serif">кроп</text>
+  <text x="40" y="400" fill="#93a1b3" font-size="14" font-family="Segoe UI, sans-serif">f не меняется · 2ω ≈ 2 arctan(d / 2f) · d — сторона или диагональ кадра</text>
+
+</svg>
