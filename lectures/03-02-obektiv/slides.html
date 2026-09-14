@@ -23,7 +23,7 @@
   <div class="deck">
 <section class="slide slide--title is-active">
   <h1>Объектив</h1>
-  <p>Дрыга Данила Олегович<br><span class="muted">Ф02 · линза · фокусное · диафрагма · ГРИП · аберрации</span></p>
+  <p>Дрыга Данила Олегович<br><span class="muted">Ф02 · линза · фокусное расстояние · диафрагма · ГРИП · аберрации</span></p>
 </section>
 
 <section class="slide">
@@ -43,160 +43,119 @@
 </section>
 
 <section class="slide">
-  <h2>Две оптики</h2>
-  <div class="columns">
-    <div>
-      <h3>Физическая</h3>
-      <ul>
-        <li>интерференция</li>
-        <li>дифракция</li>
-        <li>дисперсия</li>
-        <li>поляризация</li>
-      </ul>
-      <div class="gallery"><img src="images/s04_01.png" alt=""><img src="images/s04_02.gif" alt=""></div>
-    </div>
-    <div>
-      <h3>Геометрическая</h3>
-      <ul>
-        <li>отражение</li>
-        <li>преломление</li>
-        <li>линзы</li>
-      </ul>
-      <figure class="fig"><img src="images/s05_01.png" alt=""></figure>
-    </div>
+  <h2>Физические свойства света</h2>
+  <figure class="fig fig-lg f02-photo">
+    <img src="images/f02-light-phenomena.png" alt="Интерференция, дифракция, дисперсия, поляризация, отражение, преломление и рассеивание света">
+  </figure>
+  <div class="f02-phenomena-labels" aria-hidden="true">
+    <span>Интерференция</span><span>Дифракция</span><span>Дисперсия</span><span>Поляризация</span>
+    <span>Отражение</span><span>Преломление</span><span>Рассеивание</span>
   </div>
 </section>
 
 <section class="slide slide--definition">
   <p class="term">Объектив</p>
-  <p class="defn">Оптическое устройство, строящее изображение в плоскости приёмника по закону <strong>центральной проекции</strong> (действительное изображение).</p>
-  <figure class="fig"><img src="images/s06_02.jpg" alt=""></figure>
-  <p class="caveat">Все проектирующие лучи через одну точку S — центр проекции. При визуальном наблюдении роль объектива выполняет глаз.</p>
+  <p class="defn">Объектив — оптическое устройство, которое строит действительное изображение в плоскости приёмника.</p>
+  <figure class="fig fig-lg f02-photo">
+    <img src="images/f02-camera-lens.png" alt="Фотографический объектив">
+  </figure>
 </section>
 
 <section class="slide">
   <h2>Глаз и камера</h2>
   <figure class="fig fig-lg">
-        <img src="images/schemes/f02-eye-camera.png" alt="Аналогия глаза и камеры">
-        
-      </figure>
+    <img src="images/schemes/f02-eye-camera.svg" alt="Аналогия глаза и камеры">
+  </figure>
   <p class="caveat">Аналогия помогает запомнить роли. Это не тождество: глаз перефокусируется непрерывно.</p>
 </section>
 
 <section class="slide">
-  <h2>Из чего состоит</h2>
-  <ul>
-    <li>Линзы и/или зеркала</li>
-    <li>Диафрагмы</li>
-    <li>Оправа — держит всё в расчётном положении</li>
-  </ul>
-  <figure class="fig fig-lg"><img src="images/s07_01.jpg" alt=""></figure>
+  <h2>Из чего состоит объектив</h2>
+  <div class="columns f02-parts-layout">
+    <ul>
+      <li><strong>Линзы и/или зеркала</strong> — строят изображение.</li>
+      <li><strong>Диафрагма</strong> — ограничивает количество света.</li>
+      <li><strong>Оправа</strong> — держит всё в расчётном положении.</li>
+    </ul>
+    <figure class="fig fig-lg f02-photo">
+      <img src="images/f02-lens-cutaway.png" alt="Продольный разрез объектива: линзы, диафрагма и оправа">
+    </figure>
+  </div>
 </section>
 
 <section class="slide">
   <h2>Параметры объектива</h2>
-  <ul>
-    <li>главное фокусное (и можно ли его менять)</li>
-    <li>диапазон относительных отверстий</li>
-    <li>светосила</li>
-    <li>угол поля зрения</li>
-    <li>разрешающая способность</li>
-    <li>уровень аберраций</li>
-  </ul>
-  <figure class="fig"><img src="images/s08_01.jpeg" alt=""></figure>
+  <div class="columns f02-parameters-layout">
+    <ul>
+      <li>Главное фокусное расстояние</li>
+      <li>Диапазон диафрагменных чисел</li>
+      <li>Светосила</li>
+      <li>Угол поля зрения</li>
+      <li>Разрешающая способность</li>
+      <li>Уровень аберраций</li>
+    </ul>
+    <div class="f02-static-figure" data-f02-parameters></div>
+  </div>
 </section>
 
-<section class="slide">
-  <h2>Как строится изображение</h2>
-  <figure class="fig fig-lg"><img src="images/s09_01.png" alt=""></figure>
+<section class="slide slide--widget">
+  <h2>Три способа формирования изображения</h2>
+  <div data-f02-image-slider></div>
 </section>
 
-<section class="slide">
-  <h2>Как строится изображение</h2>
-  <div class="gallery"><img src="images/s10_01.png" alt=""><img src="images/s10_02.png" alt=""></div>
-</section>
-
-<section class="slide">
-  <h2>Как строится изображение</h2>
-  <div class="gallery"><img src="images/s11_01.png" alt=""><img src="images/s11_02.png" alt=""><img src="images/s11_03.png" alt=""></div>
+<section class="slide slide--widget">
+  <h2>Построение изображения</h2>
+  <div data-f02-build></div>
 </section>
 
 <section class="slide slide--definition">
-  <p class="term">Линза</p>
-  <p class="defn">Кусок стекла или другого прозрачного материала со сферическими поверхностями — либо сферической и плоской.</p>
-  <figure class="fig fig-lg"><img src="images/s12_01.png" alt=""></figure>
+  <h2>Линза</h2>
+  <p class="defn">Линза — прозрачное оптическое тело, ограниченное двумя преломляющими поверхностями, из которых хотя бы одна обычно сферическая.</p>
+  <div class="f02-static-figure" data-f02-lens></div>
 </section>
 
-<section class="slide">
-  <h2>Ось, вершины, главные плоскости</h2>
-  <ul>
-    <li>Главная оптическая ось — через центры кривизны</li>
-    <li>Главные плоскости H, H′</li>
-    <li>Узловые точки — пересечение главных плоскостей с осью</li>
-    <li>Фокусы F и F′ — параллельный пучок сходится на оси</li>
-  </ul>
-  <figure class="fig"><img src="images/s14_01.jpg" alt=""></figure>
-  <p class="caveat">Луч преломляется на каждой поверхности. Главная плоскость упрощает модель.</p>
-</section>
-
-<section class="slide">
-  <h2>Фокальная плоскость и фокусное</h2>
-  <p>Фокальная плоскость — через F или F′, перпендикулярно оси. Это изображение бесконечно удалённой плоскости.</p>
-  <p>Фокусное — от главной точки до фокуса: HF и H′F′.</p>
-  <figure class="fig"><img src="images/s15_01.jpg" alt=""></figure>
+<section class="slide slide--widget">
+  <h2>Основные элементы оптической системы</h2>
+  <div data-f02-elements></div>
 </section>
 
 <section class="slide">
   <h2>Типы линз</h2>
-  <ul>
-    <li>двояковыпуклые / двояковогнутые</li>
-    <li>плоско-выпуклые / плоско-вогнутые</li>
-    <li>собирающий и рассеивающий мениск</li>
-  </ul>
-  <figure class="fig fig-lg">
-        <img src="images/schemes/f02-lens-types.png" alt="Типы линз">
-        
-      </figure>
+  <div class="f02-static-figure" data-f02-lens-types></div>
 </section>
 
-<section class="slide">
+<section class="slide slide--widget">
   <h2>Предмет относительно F и 2F</h2>
-  <ol>
-    <li>далеко</li>
-    <li>на 2F</li>
-    <li>между F и 2F</li>
-    <li>между линзой и F — мнимое</li>
-  </ol>
-  <figure class="fig fig-lg">
-        <img src="images/schemes/f02-object-f-2f.png" alt="Предмет относительно F и 2F">
-        
-      </figure>
+  <div data-f02-object-distance></div>
+</section>
+
+<section class="slide f02-image-only">
+  <div class="f02-static-figure" data-f02-static-lens></div>
 </section>
 
 <section class="slide">
-  <h2>Тонкая линза</h2>
-  <p class="formula">1/a + 1/a′ = 1/f<span class="eq-note">a — до предмета · a′ — до изображения · f — фокусное</span></p>
-  <figure class="fig fig-lg">
-        <img src="images/schemes/f02-thin-lens.png" alt="Формула тонкой линзы: предмет, фокусы, изображение">
-        
-      </figure>
-</section>
-
-<section class="slide slide--definition">
-  <p class="term">Главное фокусное f</p>
-  <p class="defn">Расстояние вдоль оси от задней главной точки объектива до задней фокальной плоскости.</p>
-  <p>Задаёт угол зрения и увеличение предмета в данной точке съёмки.</p>
+  <h2>Главное фокусное расстояние</h2>
+  <p class="defn">Главное фокусное расстояние f — расстояние от задней главной плоскости объектива H′ до заднего фокуса F′.</p>
+  <div class="f02-static-figure" data-f02-focal></div>
 </section>
 
 <section class="slide">
-  <h2>Постоянное и переменное f</h2>
-  <ul>
-    <li>Fix — одно фокусное. Аэрофотоаппараты: f известно точно</li>
-    <li>Зум / вариообъектив / трансфокатор — компоненты едут, резкость сохраняется</li>
-    <li>Кратность зума:</li>
-  </ul>
-  <p class="formula">f<sub>max</sub> / f<sub>min</sub><span class="eq-note">20–100 мм → 5× · цифровой зум — интерполяция, не оптика</span></p>
-  <figure class="fig"><img src="images/s20_01.png" alt=""></figure>
+  <h2>Постоянное и переменное фокусное расстояние</h2>
+  <div class="columns">
+    <div class="card">
+      <h3>Объектив с постоянным фокусным расстоянием</h3>
+      <p>Имеет одно значение f. В аэрофотоаппарате оно определяется калибровкой.</p>
+    </div>
+    <div class="card">
+      <h3>Объектив с переменным фокусным расстоянием</h3>
+      <p>Группы линз перемещаются и изменяют f. Трансфокатор сохраняет фокусировку при изменении масштаба.</p>
+    </div>
+  </div>
+  <div class="eq-block">
+    <p class="eq-title">Кратность изменения фокусного расстояния</p>
+    <p class="formula">f<sub>max</sub> / f<sub>min</sub></p>
+    <p class="eq-where">20–100 мм → 5×. Цифровой зум — интерполяция, а не изменение оптики.</p>
+  </div>
 </section>
 
 <section class="slide">
@@ -219,7 +178,7 @@
 <section class="slide slide--table">
   <h2>По углу поля зрения</h2>
   <table class="data">
-    <thead><tr><th>f (экв. 35 мм)</th><th>Группа</th><th>Типично</th></tr></thead>
+    <thead><tr><th>Эквивалентное фокусное расстояние</th><th>Группа</th><th>Типично</th></tr></thead>
     <tbody>
       <tr><td>&lt; 21 мм</td><td>сверхширокоугольные</td><td>архитектура</td></tr>
       <tr><td>21–35 мм</td><td>широкоугольные</td><td>ландшафт</td></tr>
@@ -228,68 +187,86 @@
       <tr><td>135–300+ мм</td><td>телеобъективы</td><td>спорт, природа</td></tr>
     </tbody>
   </table>
-  <p class="caveat">Таблица — про угол, не про физическое f на кропе</p>
+  <p class="caveat">Таблица описывает угол поля зрения, а не физическое фокусное расстояние объектива.</p>
 </section>
 
 <section class="slide">
-  <h2>Фокусное и смаз</h2>
-  <p class="formula">t ≲ 1/f<span class="eq-note">с рук, кадр 24×36 · f в миллиметрах</span></p>
-  <p>Длиннее фокусное — сильнее «прыгает» картинка.</p>
-  <div class="gallery"><img src="images/s26_01.png" alt=""><img src="images/s26_02.png" alt=""></div>
-</section>
-
-<section class="slide">
-  <h2>Размер сенсора</h2>
-  <figure class="fig fig-lg"><img src="images/s27_01.png" alt=""></figure>
+  <h2>Фокусное расстояние и смаз</h2>
+  <div class="eq-block">
+    <p class="eq-title">Смещение изображения при повороте камеры</p>
+    <p class="formula">Δx ≈ f · Δθ</p>
+    <p class="eq-where">где Δx — смещение изображения на матрице, f — фокусное расстояние, Δθ — малый угол поворота камеры в радианах</p>
+  </div>
+  <figure class="fig fig-lg f02-photo">
+    <img src="images/f02-focal-motion-blur.png" alt="При одинаковом угловом движении камеры телеобъектив даёт более заметный смаз, чем широкоугольный объектив">
+  </figure>
+  <div class="f02-pair-labels"><span>Малое фокусное расстояние</span><span>Большое фокусное расстояние</span></div>
 </section>
 
 <section class="slide slide--definition">
   <p class="term">Кроп-фактор</p>
-  <p class="defn">Отношение диагонали стандартного кадра 24×36 мм к диагонали используемого кадрового окна. Меняется поле зрения, не физическое f оптики.</p>
-  <p class="formula">кроп = d<sub>24×36</sub> / d<sub>матрицы</sub><span class="eq-note">поле уже, фокусное оптики то же</span></p>
+  <p class="defn">Кроп-фактор — отношение диагонали стандартного кадра 24×36 мм к диагонали используемого кадрового окна. Меняется поле зрения, а не физическое фокусное расстояние объектива.</p>
+  <p class="formula">кроп = d<sub>24×36</sub> / d<sub>матрицы</sub><span class="eq-note">поле зрения уже, фокусное расстояние объектива не меняется</span></p>
+  <div class="f02-static-figure" data-f02-crop></div>
 </section>
 
 <section class="slide slide--definition">
-  <p class="term">Эквивалентное фокусное (ЭФР)</p>
-  <p class="defn">Какое f имел бы объектив на кадре 24×36 мм при том же угле обзора. Диагональ полного кадра — 43,27 мм.</p>
-  <p class="formula">f<sub>экв</sub> = f · кроп<span class="eq-note">в масштаб АФС подставляют физическое f, не эквивалент</span></p>
+  <p class="term">Эквивалентное фокусное расстояние (ЭФР)</p>
+  <p class="defn">Эквивалентное фокусное расстояние показывает, какое фокусное расстояние имел бы объектив на кадре 24×36 мм при том же угле поля зрения. Диагональ полного кадра — 43,27 мм.</p>
+  <p class="formula">f<sub>экв</sub> = f · кроп<span class="eq-note">в масштаб АФС подставляют физическое фокусное расстояние f, а не ЭФР</span></p>
+  <div class="f02-static-figure" data-f02-efr></div>
 </section>
 
 <section class="slide">
   <h2>По способу фокусировки</h2>
-  <ul>
-    <li>Автофокусный — мотор и интерфейс с камерой</li>
-    <li>Ручной</li>
-    <li>Фикс-фокус — на заводе на гиперфокал или бесконечность</li>
-  </ul>
+  <div class="columns-3 f02-focus-modes">
+    <div class="card"><h3>Автоматическая фокусировка</h3><p>Камера измеряет резкость и перемещает линзы приводом.</p></div>
+    <div class="card"><h3>Ручная фокусировка</h3><p>Оператор перемещает линзы и совмещает плоскость резкости с объектом.</p></div>
+    <div class="card"><h3>Фиксированная фокусировка</h3><p>Положение линз задают при настройке камеры и во время съёмки не изменяют.</p></div>
+  </div>
+  <p class="caveat"><strong>В фотограмметрической аэрофотосъёмке используют только фиксированную фокусировку.</strong> Это не то же самое, что объектив с постоянным фокусным расстоянием: способ фокусировки и возможность изменять фокусное расстояние — разные свойства.</p>
 </section>
 
 <section class="slide slide--definition">
   <p class="term">Диафрагма</p>
-  <p class="defn">Элемент оптической системы, ограничивающий световые пучки. <strong>Апертурная</strong> диафрагма стоит вблизи центра системы: задаёт диаметр входного зрачка D, освещённость кадра и ГРИП. <strong>Полевая</strong> диафрагма задаёт размер кадра (кадровое окно).</p>
-  <figure class="fig fig-lg">
-        <img src="images/schemes/f02-diaphragm.png" alt="Диафрагма в объективе">
-        
-      </figure>
-  <p class="caveat">Диафрагмирование отсекает краевые лучи → меньше геометрических аберраций, сильнее дифракция. Дисторсию почти не лечит.</p>
-</section>
-
-<section class="slide">
-  <h2>Диафрагма: резкость и дифракция</h2>
-  <div class="gallery"><img src="images/s32_01.jpeg" alt=""><img src="images/s32_02.png" alt=""><img src="images/s32_03.png" alt=""></div>
+  <p class="defn">Диафрагма — элемент оптической системы, который ограничивает световой пучок. Меньшее отверстие увеличивает глубину резко изображаемого пространства, но усиливает дифракцию.</p>
+  <div class="columns f02-diaphragm-effects">
+    <div>
+      <h3>Глубина резко изображаемого пространства</h3>
+      <figure class="fig f02-photo"><img src="images/f02-depth-of-field.png" alt="Открытая диафрагма даёт малую глубину резкости, закрытая — большую"></figure>
+      <div class="f02-pair-labels"><span>Открытая диафрагма</span><span>Закрытая диафрагма</span></div>
+    </div>
+    <div>
+      <h3>Дифракция</h3>
+      <div class="f02-static-figure" data-f02-diffraction></div>
+    </div>
+  </div>
 </section>
 
 <section class="slide slide--definition">
   <p class="term">Относительное отверстие 1/n₀</p>
-  <p class="defn">Отношение диаметра входного отверстия D к фокусному f. Оптическая мера светопропускания: яркость изображения на матрице.</p>
-  <p class="formula">1/n₀ = D / f<span class="eq-note">на оправе пишут 1:2,8</span></p>
+  <p class="defn">Относительное отверстие — отношение диаметра входного отверстия D к фокусному расстоянию f. Оно определяет геометрическую яркость изображения на матрице.</p>
+  <div class="eq-block">
+    <p class="eq-title">Относительное отверстие объектива</p>
+    <p class="formula">1 / n₀ = D / f</p>
+    <p class="eq-where">где D — диаметр входного зрачка, f — фокусное расстояние, n₀ — диафрагменное число</p>
+  </div>
+  <p>Фокусное расстояние входит в знаменатель, потому что при большем f тот же световой поток распределяется по изображению большего линейного масштаба. Чтобы сохранить относительное отверстие, диаметр D должен увеличиваться пропорционально f.</p>
 </section>
 
 <section class="slide">
-  <h2>Геометрическое и эффективное</h2>
-  <p>Эффективное учитывает поглощение и рассеяние в стекле. Без просветления потери до десятков процентов.</p>
-  <p>Просветление — тонкие плёнки на границе воздух–стекло (интерференция; ещё поляризация, микротекстура, градиент n).</p>
-  <div class="gallery"><img src="images/s34_01.png" alt=""><img src="images/s34_02.jpeg" alt=""><img src="images/s34_03.svg" alt=""></div>
+  <h2>Геометрическая и эффективная светосила</h2>
+  <div class="eq-block">
+    <p class="eq-title">Геометрическая светосила идеального объектива</p>
+    <p class="formula">S<sub>г</sub> = π / (4n₀²) = πD² / (4f²)</p>
+    <p class="eq-where">где S<sub>г</sub> — отношение освещённости изображения осевой точки к яркости объекта без потерь, D — диаметр входного зрачка, f — фокусное расстояние, n₀ = f / D — диафрагменное число</p>
+  </div>
+  <div class="eq-block">
+    <p class="eq-title">Эффективная светосила реального объектива</p>
+    <p class="formula">S<sub>эф</sub> = τ · S<sub>г</sub> = τπ / (4n₀²)</p>
+    <p class="eq-where">где τ — коэффициент пропускания объектива от 0 до 1; он учитывает отражение, поглощение и рассеивание света</p>
+  </div>
+  <p class="caveat">Формулы записаны для осевой точки изображения в воздухе. Просветляющие покрытия увеличивают τ, уменьшая отражение на границах стекла.</p>
 </section>
 
 <section class="slide">
@@ -393,7 +370,7 @@
 
 <section class="slide slide--definition">
   <p class="term">Светосила</p>
-  <p class="defn">Отношение освещённости изображения к яркости объекта. Зависит от качества оптики, диаметра и фокусного.</p>
+  <p class="defn">Светосила — отношение освещённости изображения к яркости объекта. Она зависит от качества оптики, диаметра входного зрачка и фокусного расстояния.</p>
   <div class="gallery"><img src="images/s42_01.svg" alt=""><img src="images/s42_02.png" alt=""><img src="images/s42_03.png" alt=""></div>
   <p class="caveat">Объектив «съедает» часть света: геометрическая и эффективная светосила не обязаны совпадать</p>
 </section>
@@ -423,7 +400,7 @@
 <section class="slide">
   <p class="term">Формула тонкой линзы</p>
   <div class="eq-block">
-    <p class="eq-title">Связь фокусного, предмета и изображения</p>
+    <p class="eq-title">Связь фокусного расстояния, предмета и изображения</p>
     <p class="formula">1 / f = 1 / R + 1 / d</p>
     <p class="eq-where">где f — фокусное расстояние, R — расстояние от главной плоскости до предмета, d — расстояние от главной плоскости до изображения (сопряжённый отрезок). Для предмета на конечной дистанции d &gt; f. Пример: f = 100 мм, R = 1 м → d ≈ 111 мм.</p>
   </div>
@@ -524,7 +501,7 @@
 </section>
 
 <section class="slide">
-  <h2>Перспектива ≠ фокусное</h2>
+  <h2>Перспектива ≠ фокусное расстояние</h2>
   <p>Перспектива меняется с точкой съёмки, не с кольцом зума.</p>
   <figure class="fig fig-lg"><img src="images/s68_01.gif" alt=""></figure>
 </section>
@@ -563,7 +540,7 @@
     <li>ЭФР и масштаб АФС — почему не одно число?</li>
     <li>ГРИП: от чего и зачем гиперфокал?</li>
     <li>Какую аберрацию калибруют в фотограмметрии?</li>
-    <li>Чем рабочий отрезок отличается от фокусного?</li>
+    <li>Чем рабочий отрезок отличается от фокусного расстояния?</li>
   </ol>
 </section>
 
@@ -587,5 +564,6 @@
   </div>
   <script src="../../js/slides.js"></script>
   <script src="../../js/widgets.js"></script>
+  <script src="f02.js"></script>
 </body>
 </html>

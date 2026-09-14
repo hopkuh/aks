@@ -1635,9 +1635,280 @@ body.mode-sim {
   .sim-lab-steps { grid-template-columns: 1fr 1fr; }
 }
 
+.theme-toggle {
+  flex: 0 0 auto;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 5px 10px;
+  color: var(--text);
+  background: var(--panel);
+  font: 600 12px/1.2 var(--font);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--accent-2);
+  outline-offset: 2px;
+}
+
+/* Ф02: крупные технические схемы и интерактивные построения */
+.f02-full-figure img {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+.f02-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #fff;
+  border: 2px solid var(--line);
+}
+.f02-phenomena-labels {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 7px;
+}
+.f02-phenomena-labels span {
+  padding: 7px 5px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--text);
+  background: var(--panel);
+  font-size: clamp(11px, 1.05vw, 15px);
+  font-weight: 700;
+  text-align: center;
+}
+.f02-pair-labels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  color: var(--text);
+  font-size: clamp(13px, 1.2vw, 17px);
+  font-weight: 700;
+  text-align: center;
+}
+.f02-focus-modes {
+  flex: 1 1 auto;
+  min-height: 0;
+  align-items: stretch;
+}
+.f02-focus-modes .card p {
+  font-size: clamp(16px, 1.65vw, 21px);
+}
+.f02-diaphragm-effects {
+  align-items: stretch;
+}
+.f02-diaphragm-effects > div {
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
+  gap: 8px;
+}
+.f02-diaphragm-effects h3 {
+  margin: 0;
+  font-size: clamp(17px, 1.8vw, 24px);
+}
+.f02-diaphragm-effects .f02-static-figure,
+.f02-diaphragm-effects .fig {
+  flex: 1 1 auto;
+}
+.f02-static-figure {
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+  border: 2px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
+}
+.f02-static-figure svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+.f02-parts-layout,
+.f02-parameters-layout {
+  grid-template-columns: minmax(290px, .72fr) minmax(0, 1.28fr);
+  align-items: stretch;
+}
+.f02-parts-layout > ul,
+.f02-parameters-layout > ul {
+  align-self: center;
+}
+.slide .card {
+  height: 100%;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel);
+}
+.slide .card h3 {
+  margin-top: 0;
+  color: var(--accent);
+  font-size: clamp(20px, 2.1vw, 28px);
+}
+.f02-image-only {
+  padding-block: 12px;
+}
+.f02-image-only .fig img {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+.f02-interactive {
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 0;
+  flex-direction: column;
+  gap: 9px;
+  padding: 12px;
+  border: 2px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
+  color: #000;
+}
+.f02-interactive svg {
+  display: block;
+  width: 100%;
+  flex: 1 1 auto;
+  min-height: 0;
+  border-radius: 9px;
+  background: #fff;
+}
+.f02-image-slider img {
+  display: block;
+  width: 100%;
+  flex: 1 1 auto;
+  min-height: 0;
+  object-fit: contain;
+  border: 1px solid #111;
+  border-radius: 9px;
+  background: #fff;
+}
+.f02-controls {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(260px, 2fr);
+  gap: 18px;
+  align-items: center;
+}
+.f02-controls label,
+.f02-readout,
+.f02-stage-label {
+  color: #000;
+  font: 600 clamp(14px, 1.35vw, 18px)/1.3 var(--font);
+}
+.f02-controls input[type="range"] {
+  width: 100%;
+}
+.f02-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.f02-chip {
+  border: 2px solid #111;
+  border-radius: 999px;
+  padding: 7px 12px;
+  color: #000;
+  background: #fff;
+  font: 700 14px/1 var(--font);
+  cursor: pointer;
+}
+.f02-chip.is-active {
+  color: #fff;
+  background: #000;
+}
+.f02-readout {
+  min-height: 2.6em;
+  margin: 0;
+}
+@media (max-width: 800px) {
+  .f02-phenomena-labels {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .f02-parts-layout,
+  .f02-parameters-layout {
+    grid-template-columns: 1fr;
+  }
+  .f02-controls {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}
+
+html[data-slide-theme="light"] {
+  color-scheme: light;
+  --bg: #ffffff;
+  --bg-2: #ffffff;
+  --panel: #ffffff;
+  --line: rgba(0, 0, 0, 0.62);
+  --text: #000000;
+  --muted: #222222;
+  --accent: #000000;
+  --accent-2: #003c66;
+  --ok: #005a2b;
+  --warn: #8a0000;
+  --shadow: 0 16px 42px rgba(0, 0, 0, 0.18);
+}
+html[data-slide-theme="light"] body.mode-slides {
+  color: var(--text);
+  background: var(--bg);
+}
+html[data-slide-theme="light"] body.mode-slides .topbar {
+  background: rgba(255, 255, 255, 0.97);
+  border-bottom-color: var(--line);
+}
+html[data-slide-theme="light"] body.mode-slides .footer-bar {
+  background: #ffffff;
+  border-top: 1px solid var(--line);
+}
+html[data-slide-theme="light"] body.mode-slides .formula {
+  color: var(--text);
+  background: #ffffff;
+  border-color: #000000;
+  box-shadow: none;
+}
+html[data-slide-theme="light"] body.mode-slides #progress-track {
+  background: #b8b8b8;
+}
+html[data-slide-theme="light"] body.mode-slides .help {
+  background: rgba(0, 0, 0, 0.38);
+}
+html[data-slide-theme="light"] body.mode-slides .help-card kbd {
+  color: var(--text);
+  background: #ffffff;
+}
+html[data-slide-theme="light"] body.mode-slides .formula-watermark {
+  color: rgba(0, 0, 0, 0.1);
+}
+html[data-slide-theme="light"] body.mode-slides input {
+  accent-color: var(--accent);
+}
+html[data-slide-theme="light"] body.mode-slides .fig img,
+html[data-slide-theme="light"] body.mode-slides .gallery img {
+  border: 1px solid var(--line);
+}
+html[data-slide-theme="light"] body.mode-slides .scheme,
+html[data-slide-theme="light"] body.mode-slides .widget,
+html[data-slide-theme="light"] body.mode-slides .widget svg,
+html[data-slide-theme="light"] body.mode-slides .widget canvas,
+html[data-slide-theme="light"] body.mode-slides .layers-stage img,
+html[data-slide-theme="light"] body.mode-slides .layers-stage svg {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+}
+html[data-slide-theme="light"] body.mode-slides .speaker-notes {
+  border: 1px solid #dfc789;
+}
+
 @media print {
   body.mode-slides { overflow: visible; height: auto; }
-  .topbar, .footer-bar, .help { display: none !important; }
+  .topbar, .footer-bar, .help, .theme-toggle { display: none !important; }
   .deck { height: auto; padding: 0; }
   .slide { display: block !important; height: auto; page-break-after: always; }
 }

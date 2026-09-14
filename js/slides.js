@@ -2,6 +2,47 @@
   const slides = [...document.querySelectorAll(".slide")];
   if (!slides.length) return;
 
+  const THEME_KEY = "aks-slides-theme";
+  const storedTheme = (() => {
+    try {
+      return localStorage.getItem(THEME_KEY);
+    } catch {
+      return null;
+    }
+  })();
+  let theme = storedTheme === "light" ? "light" : "dark";
+  const themeButton = document.createElement("button");
+  themeButton.type = "button";
+  themeButton.className = "theme-toggle";
+
+  const applyTheme = (nextTheme, persist = true) => {
+    theme = nextTheme === "light" ? "light" : "dark";
+    document.documentElement.dataset.slideTheme = theme;
+    const light = theme === "light";
+    themeButton.textContent = light ? "☾ Тёмная" : "☀ Светлая";
+    themeButton.title = light ? "Включить тёмную тему" : "Включить светлую тему";
+    themeButton.setAttribute("aria-label", themeButton.title);
+    themeButton.setAttribute("aria-pressed", String(light));
+    if (persist) {
+      try {
+        localStorage.setItem(THEME_KEY, theme);
+      } catch {
+        // Тема продолжит работать в текущей вкладке без сохранения.
+      }
+    }
+  };
+
+  applyTheme(theme, false);
+  document.querySelector(".topbar .nav")?.appendChild(themeButton);
+  themeButton.addEventListener("click", () => {
+    applyTheme(theme === "dark" ? "light" : "dark");
+  });
+  window.addEventListener("storage", (event) => {
+    if (event.key === THEME_KEY && (event.newValue === "light" || event.newValue === "dark")) {
+      applyTheme(event.newValue, false);
+    }
+  });
+
   const AKS = [
     { id: "03-01-fotoapparat", short: "Ф01", title: "Фотоаппарат" },
     { id: "p-cfk", short: "ЦФК", title: "Практика ЦФК" },
@@ -108,7 +149,7 @@
 
   if (help) {
     const extra = document.createElement("p");
-    extra.innerHTML = "<kbd>←</kbd> на первом слайде и <kbd>→</kbd> на последнем — соседняя лекция";
+    extra.innerHTML = "<kbd>←</kbd> на первом слайде и <kbd>→</kbd> на последнем — соседняя лекция<br><kbd>T</kbd> — светлая / тёмная тема";
     help.querySelector(".help-card")?.appendChild(extra);
   }
 
@@ -123,6 +164,7 @@
     } else if (e.key === "Home") show(0);
     else if (e.key === "End") show(slides.length - 1);
     else if (e.key === "n" || e.key === "N") document.body.classList.toggle("show-notes");
+    else if (e.key === "t" || e.key === "T") applyTheme(theme === "dark" ? "light" : "dark");
     else if (e.key === "f" || e.key === "F") {
       if (!document.fullscreenElement) document.documentElement.requestFullscreen?.();
       else document.exitFullscreen?.();
