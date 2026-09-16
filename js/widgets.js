@@ -202,8 +202,8 @@
         <g data-scene></g>
       </svg>
       <div class="widget-controls widget-controls--compact">
-        <label>K <span data-kval></span>
-          <input type="range" data-k min="1.4" max="16" step="0.1" value="2.8">
+        <label>Диафрагменное число <span data-kval></span>
+          <input type="range" data-k min="0" max="8" step="1" value="2">
         </label>
         <label>R <span data-rval></span>
           <input type="range" data-r min="0.8" max="8" step="0.1" value="2.5">
@@ -225,13 +225,14 @@
     const M1 = 8.2;
     const axisY = 400;
     const topY = 70;
+    const apertureStops = [1.4, 2, 2.8, 4, 5.6, 8, 11, 16, 22];
     const xOf = (m) => {
       if (!Number.isFinite(m)) return X1;
       const t = (Math.min(M1, Math.max(M0, m)) - M0) / (M1 - M0);
       return X0 + t * (X1 - X0);
     };
     const draw = () => {
-      const K = Number(kEl.value);
+      const K = apertureStops[Number(kEl.value)];
       const R = Number(rEl.value);
       const fMm = Number(fEl.value);
       const f = fMm / 1000;
@@ -240,9 +241,8 @@
       const denFar = Hm - R + f;
       const farInf = denFar <= 1e-9 || R >= Hm * 0.98;
       const R2 = farInf ? Infinity : (Hm * R) / denFar;
-      const Dmm = fMm / K;
       const delta = farInf ? Infinity : Math.max(0, R2 - R1);
-      root.querySelector("[data-kval]").textContent = `f/${K.toFixed(1)}`;
+      root.querySelector("[data-kval]").textContent = `f/${String(K).replace(".", ",")}`;
       root.querySelector("[data-rval]").textContent = `${R.toFixed(1)} м`;
       root.querySelector("[data-fval]").textContent = `${fMm} мм`;
       const x1 = xOf(R1);
@@ -286,14 +286,13 @@
         <rect x="${camX + 6}" y="${camY - 10}" width="18" height="20" rx="3" fill="#1a222c" stroke="#6ec3d8" stroke-width="2"/>
         <circle cx="${camX + 22}" cy="${camY}" r="5" fill="#141b24" stroke="#6ec3d8"/>
         <text x="${camX - 10}" y="${camY - 30}" fill="#e2b56a" font-size="15" text-anchor="middle">камера</text>
-        <text x="${camX - 10}" y="${camY + 52}" fill="#6ec3d8" font-size="13" text-anchor="middle">D = ${Dmm.toFixed(0)} мм · диаметр отверстия</text>
         <path d="M${camX + 24} ${camY} L${xR} ${lineTop}" stroke="#6ec3d8" stroke-width="1.5" opacity="0.95"/>
         <path d="M${camX + 24} ${camY} L${xR} ${lineBot}" stroke="#6ec3d8" stroke-width="1.5" opacity="0.95"/>
       `;
       const r2txt = farInf ? "∞" : `${R2.toFixed(2)} м`;
       const dTxt = farInf ? "∞" : `${delta.toFixed(2)} м`;
       root.querySelector("[data-out]").innerHTML =
-        `R₁ = <strong>${R1.toFixed(2)} м</strong> · R₂ = <strong>${r2txt}</strong> · ГРИП = <strong>${dTxt}</strong> · H = ${Hm.toFixed(1)} м · D = f/K · c = 0,02 мм`;
+        `R₁ = <strong>${R1.toFixed(2)} м</strong> · R₂ = <strong>${r2txt}</strong> · ГРИП = <strong>${dTxt}</strong> · дистанция фокусировки = <strong>${R.toFixed(1)} м</strong> · фокусное расстояние = <strong>${fMm} мм</strong>`;
     };
     [kEl, rEl, fEl].forEach((el) => el.addEventListener("input", draw));
     draw();

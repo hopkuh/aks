@@ -16,3 +16,25 @@
 | 73–75 | s73–s75 | байонет, рабочий отрезок, тесты | ixbt / продукты — не копировать публично без права |
 
 Черновики своих схем (не из pptx): `images/_draft_schemes/preview.html`.
+
+## Дополнительно (Ф02, 2026)
+
+| Файл | Источник |
+|---|---|
+| `f02-camera-projection.png` | схема центральной проекции (камера–цилиндр–домик), учебная иллюстрация к слайду «Объектив» |
+| `f02-aperture-compare.jpg` | Wikimedia Commons — Blenden links 8.0 / rechts 2.8 |
+| `f02-aperture-helios.gif` | Wikimedia Commons — Aperture Helios 44M-4 |
+| `f02-focus-stacking.jpg` | Wikimedia Commons — Focus stacking Tachinid fly |
+| `f02-why-lens.jpg` | внешний сток (Яндекс.Картинки), уточнить лицензию перед публичной выкладкой |
+| `images/wiki/f02-wiki-extube.png` | Commons — ExTubeMacro.png (схема удлинительных колец) |
+| `images/wiki/f02-wiki-extubes.jpg` | Commons — ExtensionTube5733.jpg |
+| `images/wiki/f02-wiki-macro-lens.jpg` | Commons — Minolta AF 100mm Macro |
+| `images/wiki/f02-wiki-spherical.svg` | Commons — Lens5.svg (сферическая аберрация) |
+| `images/wiki/f02-wiki-coma.svg` | Commons — Lens-coma.svg |
+| `images/wiki/f02-wiki-chromatic.svg` | Commons — Lens6a.svg |
+| `images/wiki/f02-wiki-distortion-types.png` | Commons — Distorton_barrel_and_pincushion.svg |
+| `images/wiki/f02-wiki-distortion-lens.png` | Commons — Lens_distorsion.svg |
+
+Конспект: `notes.html` (согласован со слайдами; Википедия — справочно).
+
+Снимок версии до правок 2026-09-17: `lectures/03-02-obektiv/_snapshots/`.
