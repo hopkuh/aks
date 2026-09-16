@@ -187,6 +187,40 @@
     <text class="strong" x="835" y="550">H′F′ = f</text>
     <text class="label" x="800" y="75">Задняя главная плоскость</text>`);
 
+  mountSvg("[data-f02-f-compare]", "0 0 1280 520", "Фокусное объектива и фокусное снимка", `
+    <rect x="20" y="18" width="610" height="480" rx="14" class="panel"/>
+    <rect x="650" y="18" width="610" height="480" rx="14" class="panel"/>
+    <text class="strong" x="48" y="55">f объектива</text>
+    <text class="small" x="48" y="82">от узловой точки N′ до фокуса F′</text>
+    <path class="axis" d="M60 260H600"/>
+    <path class="lens" d="M250 100q-55 160 0 320q55-160 0-320z"/>
+    <circle cx="270" cy="260" r="7" fill="#111"/><text class="strong" x="255" y="240">N′</text>
+    <path class="ray-a" d="M60 140H250L430 260M60 200H250L430 260M60 260H430M60 320H250L430 260M60 380H250L430 260"/>
+    <circle cx="430" cy="260" r="8" fill="#c7352c"/><text class="strong" x="418" y="238">F′</text>
+    <path d="M430 110V410" stroke="#777" stroke-width="2" stroke-dasharray="7 5"/>
+    <text class="small" x="440" y="130">фокальная</text>
+    <text class="small" x="440" y="152">плоскость</text>
+    <path d="M270 340H430" stroke="#111" stroke-width="3" marker-start="url(#f02-arrow)" marker-end="url(#f02-arrow)"/>
+    <text class="strong" x="320" y="370">f</text>
+    <text class="label" x="48" y="460">Свойство объектива как изделия.</text>
+    <text class="label" x="48" y="485">Не зависит от положения матрицы.</text>
+
+    <text class="strong" x="678" y="55">c снимка (фотограмметрия)</text>
+    <text class="small" x="678" y="82">от центра проекции S до плоскости снимка</text>
+    <path class="axis" d="M690 260H1230"/>
+    <path class="lens" d="M850 110q-50 150 0 300q50-150 0-300z"/>
+    <circle cx="870" cy="260" r="7" fill="#111"/><text class="strong" x="848" y="240">S ≡ N′</text>
+    <rect x="1120" y="120" width="12" height="280" fill="#4d8da8"/>
+    <text class="small" x="1140" y="145">плоскость</text>
+    <text class="small" x="1140" y="167">снимка</text>
+    <path class="ray-b" d="M700 140L870 260L1126 150M700 260H1126M700 380L870 260L1126 370"/>
+    <circle cx="1126" cy="260" r="6" fill="#c7352c"/>
+    <path d="M870 340H1120" stroke="#c7352c" stroke-width="4" marker-start="url(#f02-arrow)" marker-end="url(#f02-arrow)"/>
+    <text class="strong" x="960" y="375">c ≈ f снимка</text>
+    <text class="label" x="678" y="460">Именно c берут в пересечении лучей.</text>
+    <text class="label" x="678" y="485">Уточняют калибровкой вместе с cₓ, cᵧ.</text>
+  `);
+
   mountSvg("[data-f02-fov-triangle]", "0 0 560 480", "Прямоугольные треугольники поля зрения", `
     <text class="strong" x="28" y="40">tan ω = (d/2) / f</text>
     <!-- optical axis -->
