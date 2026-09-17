@@ -176,6 +176,90 @@
     <text class="label" x="40" y="590">Луч «через F → параллельно оси» на этих схемах не используют.</text>
   `);
 
+  mountSvg("[data-f02-camera-proj]", "0 0 1400 640", "Центральная проекция в камере", `
+    <rect width="1400" height="640" fill="#fff"/>
+    <!-- optical axis -->
+    <path d="M70 330H1330" stroke="#999" stroke-width="2" stroke-dasharray="10 8"/>
+
+    <!-- ===== camera body (isometric) ===== -->
+    <!-- back face -->
+    <path d="M70 210L170 155V455L70 510Z" fill="#9ec9dc" fill-opacity=".55" stroke="#126a91" stroke-width="3"/>
+    <!-- side -->
+    <path d="M170 155L310 200V500L170 455Z" fill="#7eb6ce" fill-opacity=".7" stroke="#126a91" stroke-width="3"/>
+    <!-- front -->
+    <path d="M70 210L210 255V555L70 510Z" fill="#b7dceb" fill-opacity=".75" stroke="#126a91" stroke-width="3"/>
+    <!-- top -->
+    <path d="M70 210L170 155L310 200L210 255Z" fill="#cfe8f2" fill-opacity=".85" stroke="#126a91" stroke-width="3"/>
+    <!-- shutter dial -->
+    <ellipse cx="200" cy="198" rx="28" ry="14" fill="#c7352c" stroke="#8a1f18" stroke-width="2"/>
+    <ellipse cx="200" cy="188" rx="28" ry="14" fill="#e25a52" stroke="#8a1f18" stroke-width="2"/>
+
+    <!-- lens barrel -->
+    <ellipse cx="280" cy="355" rx="22" ry="70" fill="#7bc47f" fill-opacity=".55" stroke="#2f7a3a" stroke-width="3"/>
+    <path d="M280 285H360" stroke="#2f7a3a" stroke-width="3"/>
+    <path d="M280 425H360" stroke="#2f7a3a" stroke-width="3"/>
+    <ellipse cx="360" cy="355" rx="22" ry="70" fill="#a8dfa9" fill-opacity=".8" stroke="#2f7a3a" stroke-width="3"/>
+    <ellipse cx="360" cy="355" rx="12" ry="38" fill="#dff5e0" stroke="#2f7a3a" stroke-width="2"/>
+
+    <!-- sensor plane inside camera -->
+    <path d="M118 245L155 225V445L118 465Z" fill="#cfd6db" fill-opacity=".85" stroke="#555" stroke-width="2.5"/>
+    <text class="small" x="52" y="250">матрица</text>
+
+    <!-- tiny inverted house on sensor (peak down) -->
+    <path d="M128 355L148 355L148 380L138 395L128 380Z" fill="#c7352c" fill-opacity=".75" stroke="#111" stroke-width="1.5"/>
+    <path d="M148 355L158 342V368L148 380L148 355Z" fill="#1677b8" fill-opacity=".7" stroke="#111" stroke-width="1.5"/>
+    <path d="M138 395L148 380L158 368L148 382Z" fill="#e2b56a" fill-opacity=".85" stroke="#111" stroke-width="1.5"/>
+    <circle cx="138" cy="395" r="3.5" fill="#111"/>
+    <text class="strong" x="108" y="408">q</text>
+
+    <!-- optical centre C -->
+    <circle cx="360" cy="355" r="8" fill="#111"/>
+    <text class="strong" x="372" y="340">C</text>
+
+    <!-- ===== virtual image plane ===== -->
+    <path d="M560 140L720 95V475L560 520Z" fill="#d8dee3" fill-opacity=".45" stroke="#666" stroke-width="3"/>
+    <text class="small" x="560" y="80">виртуальная плоскость</text>
+    <!-- axes on virtual plane -->
+    <path d="M575 470L575 390" stroke="#111" stroke-width="3" marker-end="url(#f02-arrow)"/>
+    <path d="M575 470L655 448" stroke="#111" stroke-width="3" marker-end="url(#f02-arrow)"/>
+    <text class="strong" x="560" y="385">y</text>
+    <text class="strong" x="665" y="455">x</text>
+
+    <!-- upright miniature house on virtual plane -->
+    <path d="M610 300L630 275L650 300V350L610 350Z" fill="#c7352c" fill-opacity=".75" stroke="#111" stroke-width="2"/>
+    <path d="M630 275L650 300L650 350L680 325V275L650 250Z" fill="#1677b8" fill-opacity=".7" stroke="#111" stroke-width="2"/>
+    <path d="M630 275L650 250L680 275L650 300Z" fill="#e2b56a" fill-opacity=".85" stroke="#111" stroke-width="2"/>
+    <circle cx="630" cy="275" r="4" fill="#111"/>
+    <text class="strong" x="638" y="262">q</text>
+
+    <!-- ===== object house ===== -->
+    <!-- left (red) face -->
+    <path d="M980 250L1080 200V420L980 470Z" fill="#c7352c" fill-opacity=".78" stroke="#111" stroke-width="3"/>
+    <!-- right (blue) face -->
+    <path d="M1080 200L1220 250V470L1080 420Z" fill="#1677b8" fill-opacity=".72" stroke="#111" stroke-width="3"/>
+    <!-- roof left -->
+    <path d="M980 250L1050 120L1080 200Z" fill="#a82a24" fill-opacity=".85" stroke="#111" stroke-width="3"/>
+    <!-- roof right (yellow) -->
+    <path d="M1050 120L1220 250L1080 200Z" fill="#e2b56a" fill-opacity=".9" stroke="#111" stroke-width="3"/>
+    <!-- peak Q -->
+    <circle cx="1050" cy="120" r="8" fill="#111"/>
+    <text class="strong" x="1062" y="112">Q</text>
+    <circle cx="980" cy="250" r="4" fill="#111"/>
+    <circle cx="1220" cy="250" r="4" fill="#111"/>
+    <circle cx="980" cy="470" r="4" fill="#111"/>
+    <circle cx="1220" cy="470" r="4" fill="#111"/>
+
+    <!-- ===== projection rays through C ===== -->
+    <path d="M1050 120L360 355L138 395" fill="none" stroke="#111" stroke-width="2.5"/>
+    <path d="M1220 250L360 355L158 342" fill="none" stroke="#555" stroke-width="1.8"/>
+    <path d="M980 250L360 355L128 355" fill="none" stroke="#555" stroke-width="1.8"/>
+    <path d="M980 470L360 355L128 380" fill="none" stroke="#555" stroke-width="1.8"/>
+    <path d="M1220 470L360 355L148 380" fill="none" stroke="#555" stroke-width="1.8"/>
+
+    <text class="label" x="980" y="540">предмет</text>
+    <text class="label" x="250" y="600">Все лучи проходят через центр проекции C · на матрице изображение перевёрнуто</text>
+  `);
+
   mountSvg("[data-f02-focal]", "0 0 1400 560", "Главное фокусное расстояние", `
     <path class="axis" d="M45 285H1350"/>
     <path class="lens" d="M550 55q-125 230 0 460h210q125-230 0-460z"/>
