@@ -296,6 +296,83 @@
     <text class="label" x="28" y="90">полный угол поля = 2ω</text>
   `);
 
+  document.querySelectorAll("[data-f02-fov-build]").forEach((root) => {
+    root.classList.add("f02-interactive");
+    const controls = document.createElement("div");
+    controls.className = "f02-controls";
+    const { label, range, caption } = makeRange(1, 7, 1, 1, "");
+    const readout = document.createElement("p");
+    readout.className = "f02-readout";
+    readout.setAttribute("aria-live", "polite");
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("viewBox", "0 0 1280 520");
+    svg.setAttribute("role", "img");
+    controls.append(label, readout);
+    root.append(controls, svg);
+
+    const Sx = 280;
+    const Sy = 260;
+    const Mx = 980;
+    const yTop = 90;
+    const yBot = 430;
+    const stages = [
+      "Оптическая ось",
+      "Центр проекции S",
+      "Плоскость матрицы",
+      "Лучи к краям кадра",
+      "Угол поля зрения 2ω",
+      "Фокусное расстояние f",
+      "Размер кадра d"
+    ];
+
+    const render = () => {
+      const stage = Number(range.value);
+      caption.textContent = `${stage} / 7 · ${stages[stage - 1]}`;
+      readout.textContent = "";
+
+      const axis = `<path class="axis" d="M60 ${Sy}H1220"/>`;
+      const pointS = `
+        <circle cx="${Sx}" cy="${Sy}" r="10" fill="#111"/>
+        <text class="strong" x="${Sx - 50}" y="${Sy - 18}">S</text>`;
+      const matrix = `
+        <path d="M${Mx} ${yTop}V${yBot}" stroke="#4d8da8" stroke-width="10"/>
+        <text class="small" x="${Mx + 16}" y="${yTop + 10}">матрица</text>`;
+      const rays = `
+        <path d="M${Sx} ${Sy}H${Mx}V${yTop}Z" fill="#1677b8" fill-opacity=".08" stroke="none"/>
+        <path d="M${Sx} ${Sy}H${Mx}V${yBot}Z" fill="#c7352c" fill-opacity=".08" stroke="none"/>
+        <path d="M${Sx} ${Sy}L${Mx} ${yTop}" stroke="#1677b8" stroke-width="4"/>
+        <path d="M${Sx} ${Sy}L${Mx} ${yBot}" stroke="#c7352c" stroke-width="4"/>
+        <path d="M${Mx - 22} ${Sy}V${Sy - 22}H${Mx}" fill="none" stroke="#111" stroke-width="2"/>
+        <path d="M${Mx - 22} ${Sy}V${Sy + 22}H${Mx}" fill="none" stroke="#111" stroke-width="2"/>`;
+      const angles = `
+        <path d="M${Sx + 70} ${Sy}A70 70 0 0 0 ${Sx + 58} ${Sy - 55}" fill="none" stroke="#1677b8" stroke-width="3"/>
+        <path d="M${Sx + 70} ${Sy}A70 70 0 0 1 ${Sx + 58} ${Sy + 55}" fill="none" stroke="#c7352c" stroke-width="3"/>
+        <text class="strong" x="${Sx + 90}" y="${Sy - 40}" style="fill:#1677b8">ω</text>
+        <text class="strong" x="${Sx + 90}" y="${Sy + 55}" style="fill:#c7352c">ω</text>
+        <text class="strong" x="${Sx + 40}" y="${Sy - 100}">2ω</text>`;
+      const focal = `
+        <path d="M${Sx} ${Sy + 150}H${Mx}" stroke="#111" stroke-width="3" marker-start="url(#f02-arrow)" marker-end="url(#f02-arrow)"/>
+        <text class="strong" x="${(Sx + Mx) / 2 - 10}" y="${Sy + 185}">f</text>`;
+      const frameD = `
+        <path d="M${Mx + 40} ${yTop}V${yBot}" stroke="#111" stroke-width="3" marker-start="url(#f02-arrow)" marker-end="url(#f02-arrow)"/>
+        <text class="strong" x="${Mx + 55}" y="${Sy + 8}">d</text>
+        <text class="small" x="${Mx + 55}" y="${(Sy + yTop) / 2}">d/2</text>
+        <text class="small" x="${Mx + 55}" y="${(Sy + yBot) / 2}">d/2</text>`;
+
+      svg.innerHTML = `${defs}
+        <rect width="1280" height="520" fill="#fff"/>
+        ${stage >= 1 ? axis : ""}
+        ${stage >= 2 ? pointS : ""}
+        ${stage >= 3 ? matrix : ""}
+        ${stage >= 4 ? rays : ""}
+        ${stage >= 5 ? angles : ""}
+        ${stage >= 6 ? focal : ""}
+        ${stage >= 7 ? frameD : ""}`;
+    };
+    range.addEventListener("input", render);
+    render();
+  });
+
   mountSvg("[data-f02-crop]", "0 0 1280 430", "Кроп-фактор и размер кадрового окна", `
     <rect x="220" y="80" width="420" height="280" fill="#f5f8fa" stroke="#1677b8" stroke-width="7"/>
     <rect x="290" y="127" width="280" height="186" fill="#fff" stroke="#111" stroke-width="5"/>
@@ -446,17 +523,17 @@
       "Линза и оптическая ось",
       "Радиусы кривизны R₁, R₂",
       "Фокусы F и F′",
-      "Радиусы убираем — остаются ось, линза, фокусы",
-      "Появляется предмет",
-      "1-й луч: параллельно оси → через F′",
-      "2-й луч: через оптический центр",
-      "3-й луч + изображение в пересечении"
+      "Линза, ось и фокусы",
+      "Предмет",
+      "Луч, параллельный оси",
+      "Луч через оптический центр",
+      "Третий луч и изображение"
     ];
 
     const render = () => {
       const stage = Number(range.value);
-      caption.textContent = `${stage} / 8`;
-      readout.textContent = stages[stage - 1];
+      caption.textContent = `${stage} / 8 · ${stages[stage - 1]}`;
+      readout.textContent = "";
 
       const lens = lensShape(Lx, Ay, 340);
       const axis = `<path class="axis" d="M40 ${Ay}H1240"/>`;
@@ -476,22 +553,16 @@
         <text class="strong" x="${Fpx - 12}" y="${Ay - 16}">F′</text>`;
       const object = `
         <path class="object" d="M${Ox} ${Ay}V${Oy}" marker-end="url(#f02-arrow)"/>
-        <text class="strong" x="${Ox - 70}" y="${Ay + 36}">предмет</text>`;
-      const ray1 = `
-        <path class="ray-a" d="M${Ox} ${Oy}H${Lx}L${Ix} ${Iy}"/>
-        <text class="label" x="${Ox + 40}" y="${Oy - 16}">∥ оси</text>`;
-      const ray2 = `
-        <path class="ray-b" d="M${Ox} ${Oy}L${Ix} ${Iy}"/>
-        <text class="label" x="${(Ox + Lx) / 2 - 20}" y="${(Oy + Ay) / 2 + 28}">через центр</text>`;
+        <text class="strong" x="${Ox - 20}" y="${Ay + 36}">A</text>`;
+      const ray1 = `<path class="ray-a" d="M${Ox} ${Oy}H${Lx}L${Ix} ${Iy}"/>`;
+      const ray2 = `<path class="ray-b" d="M${Ox} ${Oy}L${Ix} ${Iy}"/>`;
       // 3rd ray: through F, then parallel to axis after lens
       const y3 = Oy + (Ay - Oy) * (Lx - Ox) / (Fx - Ox);
-      const ray3 = `
-        <path class="ray-c" d="M${Ox} ${Oy}L${Fx} ${Ay}L${Lx} ${y3}H${Ix}"/>
-        <text class="label" x="${Lx + 24}" y="${y3 + 28}">после линзы ∥ оси</text>`;
+      const ray3 = `<path class="ray-c" d="M${Ox} ${Oy}L${Fx} ${Ay}L${Lx} ${y3}H${Ix}"/>`;
       const image = `
         <path class="image" d="M${Ix} ${Ay}V${Iy}" marker-end="url(#f02-arrow)"/>
         <circle cx="${Ix}" cy="${Iy}" r="8" fill="#c7352c"/>
-        <text class="strong" x="${Ix - 40}" y="${Iy + 40}">изображение</text>`;
+        <text class="strong" x="${Ix + 12}" y="${Iy + 8}">A′</text>`;
 
       const showRadii = stage === 2 || stage === 3;
       const showFoci = stage >= 3;

@@ -1764,7 +1764,9 @@ body.mode-sim {
   height: 100%;
   background: #fff;
 }
-.f02-interactive {
+.f02-readout:empty {
+  display: none;
+}
   display: flex;
   flex: 1 1 auto;
   min-height: 0;
