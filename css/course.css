@@ -303,6 +303,17 @@ body.mode-slides .topbar { position: fixed; left: 0; right: 0; top: 0; }
 @keyframes in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 
 .slide h2 { margin: 0; font-size: clamp(28px, 4vw, 44px); border: 0; }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 .kicker { display: none; }
 /* leftover class; kickers removed from lecture slides */
 .slide p, .slide li { font-size: clamp(18px, 2.1vw, 26px); }

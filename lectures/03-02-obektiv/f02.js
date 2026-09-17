@@ -221,43 +221,43 @@
     <text class="label" x="678" y="485">Уточняют калибровкой вместе с cₓ, cᵧ.</text>
   `);
 
-  mountSvg("[data-f02-card-optics]", "0 0 1280 620", "Карточка оптики", `
+  mountSvg("[data-f02-card-optics]", "0 0 1280 620", "Оптика объектива", `
     <rect width="1280" height="620" fill="#fff"/>
     <path class="axis" d="M40 300H1240"/>
-    <!-- thick lens -->
+    <!-- thick lens + principal planes -->
     <path class="lens" d="M500 90q-50 210 0 420h140q50-210 0-420z"/>
     <path d="M520 70V530" stroke="#126a91" stroke-width="5"/>
     <path d="M620 70V530" stroke="#126a91" stroke-width="5"/>
-    <text class="strong" x="500" y="55">H · N</text>
-    <text class="strong" x="600" y="55">H′ · N′ · S</text>
+    <text class="strong" x="500" y="58">H</text>
+    <text class="strong" x="600" y="58">H′</text>
     <!-- foci -->
     <circle cx="340" cy="300" r="9" fill="#111"/>
     <text class="strong" x="322" y="275">F</text>
     <circle cx="800" cy="300" r="9" fill="#c7352c"/>
-    <text class="strong" x="782" y="275">F′</text>
+    <text class="strong" x="790" y="275">F′</text>
+    <!-- nodal / projection points on planes -->
+    <circle cx="520" cy="300" r="10" fill="#111"/>
+    <text class="strong" x="498" y="340">N</text>
     <circle cx="620" cy="300" r="10" fill="#111"/>
+    <text class="strong" x="598" y="340">N′</text>
+    <text class="strong" x="635" y="275" style="fill:#1677b8">S</text>
     <!-- object / image / sensor -->
     <path class="object" d="M120 300V160" marker-end="url(#f02-arrow)"/>
     <text class="strong" x="95" y="145">A</text>
     <rect x="1048" y="110" width="14" height="380" fill="#4d8da8"/>
+    <text class="small" x="1070" y="100">матрица</text>
     <path class="image" d="M1055 300V430" marker-end="url(#f02-arrow)"/>
     <text class="strong" x="1075" y="445">A′</text>
     <!-- two clear rays only -->
     <path class="ray-a" d="M120 160H520L620 195L1055 430"/>
     <path class="ray-b" d="M120 160L520 300L620 300L1055 430"/>
-    <!-- dimensions inside frame -->
-    <path d="M620 360H800" stroke="#111" stroke-width="4" marker-start="url(#f02-arrow)" marker-end="url(#f02-arrow)"/>
-    <text class="strong" x="670" y="395">f</text>
+    <!-- focal distances on the figure -->
+    <path d="M620 380H800" stroke="#111" stroke-width="4" marker-start="url(#f02-arrow)" marker-end="url(#f02-arrow)"/>
+    <text class="strong" x="690" y="415">f</text>
     <path d="M620 500H1055" stroke="#c7352c" stroke-width="4" marker-start="url(#f02-arrow)" marker-end="url(#f02-arrow)"/>
-    <text class="strong" x="780" y="545" style="fill:#c7352c">a′</text>
+    <text class="strong" x="800" y="545" style="fill:#c7352c">a′</text>
     <path d="M620 120H1048" stroke="#1677b8" stroke-width="4" marker-start="url(#f02-arrow)" marker-end="url(#f02-arrow)"/>
-    <text class="strong" x="780" y="105" style="fill:#1677b8">c</text>
-    <!-- legend box inside -->
-    <rect x="40" y="520" width="420" height="80" rx="10" fill="#f4f8fb" stroke="#111" stroke-width="2"/>
-    <text class="label" x="55" y="550">f — главное · H′ → F′</text>
-    <text class="label" x="55" y="578">a′ — сопряжённое · H′ → A′</text>
-    <text class="label" x="250" y="550" style="fill:#1677b8">c — снимок · S → матрица</text>
-    <text class="small" x="250" y="578">в воздухе N≡H, N′≡H′≡S</text>
+    <text class="strong" x="800" y="105" style="fill:#1677b8">c</text>
   `);
 
   mountSvg("[data-f02-fov-triangle]", "0 0 560 480", "Прямоугольные треугольники поля зрения", `
