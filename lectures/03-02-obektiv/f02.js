@@ -221,6 +221,58 @@
     <text class="label" x="678" y="485">Уточняют калибровкой вместе с cₓ, cᵧ.</text>
   `);
 
+  mountSvg("[data-f02-card-optics]", "0 0 1280 560", "Главные плоскости, узловые точки, фокусы и три расстояния", `
+    <path class="axis" d="M20 240H1260"/>
+    <!-- thick lens between H and H' -->
+    <path class="lens" d="M455 55q-36 185 0 370h155q36-185 0-370z"/>
+    <path d="M485 40V440" stroke="#126a91" stroke-width="4"/>
+    <path d="M580 40V440" stroke="#126a91" stroke-width="4"/>
+    <text class="strong" x="458" y="30">H</text>
+    <text class="strong" x="555" y="30">H′</text>
+    <text class="small" x="430" y="460">N · узловая = нодальная</text>
+    <text class="small" x="530" y="460">N′ · узловая</text>
+    <text class="small" x="530" y="482">S · центр проекции</text>
+    <!-- foci -->
+    <circle cx="310" cy="240" r="8" fill="#111"/>
+    <text class="strong" x="288" y="218">F</text>
+    <text class="small" x="268" y="205">передний фокус</text>
+    <circle cx="760" cy="240" r="8" fill="#c7352c"/>
+    <text class="strong" x="742" y="218">F′</text>
+    <text class="small" x="728" y="205">задний фокус</text>
+    <circle cx="580" cy="240" r="9" fill="#111"/>
+    <text class="strong" x="592" y="225">S≡N′</text>
+    <!-- object / image -->
+    <path class="object" d="M95 240V130"/>
+    <path d="M85 130L95 148L105 130" fill="none" stroke="#111" stroke-width="4"/>
+    <text class="strong" x="72" y="118">A</text>
+    <path class="image" d="M1020 240V355"/>
+    <path d="M1010 355L1020 337L1030 355" fill="none" stroke="#c7352c" stroke-width="4"/>
+    <text class="strong" x="1038" y="365">A′</text>
+    <!-- sensor at sharp image for this focus -->
+    <rect x="1014" y="85" width="12" height="310" fill="#4d8da8"/>
+    <text class="small" x="1035" y="100">снимок</text>
+    <text class="small" x="1035" y="120">(матрица)</text>
+    <!-- construction rays -->
+    <path class="ray-a" d="M95 130H485L580 165L1020 355"/>
+    <path class="ray-b" d="M95 130L485 240L580 240L1020 355"/>
+    <path class="ray-c" d="M95 130L310 240"/>
+    <path class="ray-c virtual" d="M310 240L485 295"/>
+    <path class="ray-c" d="M485 295H580L1020 295"/>
+    <!-- f principal H'→F' -->
+    <path d="M580 400H760" stroke="#111" stroke-width="3" marker-start="url(#f02-arrow)" marker-end="url(#f02-arrow)"/>
+    <text class="strong" x="625" y="430">① f · главное</text>
+    <!-- front f -->
+    <path d="M310 55H485" stroke="#777" stroke-width="2" marker-start="url(#f02-arrow)" marker-end="url(#f02-arrow)"/>
+    <text class="small" x="360" y="48">f</text>
+    <!-- a' conjugate H'→A' -->
+    <path d="M580 505H1020" stroke="#c7352c" stroke-width="3" marker-start="url(#f02-arrow)" marker-end="url(#f02-arrow)"/>
+    <text class="strong" x="700" y="540" style="fill:#c7352c">② a′ · сопряжённое</text>
+    <!-- c snapshot S→sensor -->
+    <path d="M580 70H1014" stroke="#1677b8" stroke-width="3" marker-start="url(#f02-arrow)" marker-end="url(#f02-arrow)"/>
+    <text class="strong" x="720" y="62" style="fill:#1677b8">③ c · фокусное снимка</text>
+    <text class="label" x="20" y="540">В воздухе N≡H, N′≡H′. При ∞: A′ на F′ ⇒ a′=f; если матрица в F′, то ещё c≈f. Здесь предмет ближе ∞ ⇒ a′&gt;f, при резкости c=a′.</text>
+  `);
+
   mountSvg("[data-f02-fov-triangle]", "0 0 560 480", "Прямоугольные треугольники поля зрения", `
     <text class="strong" x="28" y="40">tan ω = (d/2) / f</text>
     <!-- optical axis -->
