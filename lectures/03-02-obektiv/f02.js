@@ -221,56 +221,43 @@
     <text class="label" x="678" y="485">Уточняют калибровкой вместе с cₓ, cᵧ.</text>
   `);
 
-  mountSvg("[data-f02-card-optics]", "0 0 1280 560", "Главные плоскости, узловые точки, фокусы и три расстояния", `
-    <path class="axis" d="M20 240H1260"/>
-    <!-- thick lens between H and H' -->
-    <path class="lens" d="M455 55q-36 185 0 370h155q36-185 0-370z"/>
-    <path d="M485 40V440" stroke="#126a91" stroke-width="4"/>
-    <path d="M580 40V440" stroke="#126a91" stroke-width="4"/>
-    <text class="strong" x="458" y="30">H</text>
-    <text class="strong" x="555" y="30">H′</text>
-    <text class="small" x="430" y="460">N · узловая = нодальная</text>
-    <text class="small" x="530" y="460">N′ · узловая</text>
-    <text class="small" x="530" y="482">S · центр проекции</text>
+  mountSvg("[data-f02-card-optics]", "0 0 1280 620", "Карточка оптики", `
+    <rect width="1280" height="620" fill="#fff"/>
+    <path class="axis" d="M40 300H1240"/>
+    <!-- thick lens -->
+    <path class="lens" d="M500 90q-50 210 0 420h140q50-210 0-420z"/>
+    <path d="M520 70V530" stroke="#126a91" stroke-width="5"/>
+    <path d="M620 70V530" stroke="#126a91" stroke-width="5"/>
+    <text class="strong" x="500" y="55">H · N</text>
+    <text class="strong" x="600" y="55">H′ · N′ · S</text>
     <!-- foci -->
-    <circle cx="310" cy="240" r="8" fill="#111"/>
-    <text class="strong" x="288" y="218">F</text>
-    <text class="small" x="268" y="205">передний фокус</text>
-    <circle cx="760" cy="240" r="8" fill="#c7352c"/>
-    <text class="strong" x="742" y="218">F′</text>
-    <text class="small" x="728" y="205">задний фокус</text>
-    <circle cx="580" cy="240" r="9" fill="#111"/>
-    <text class="strong" x="592" y="225">S≡N′</text>
-    <!-- object / image -->
-    <path class="object" d="M95 240V130"/>
-    <path d="M85 130L95 148L105 130" fill="none" stroke="#111" stroke-width="4"/>
-    <text class="strong" x="72" y="118">A</text>
-    <path class="image" d="M1020 240V355"/>
-    <path d="M1010 355L1020 337L1030 355" fill="none" stroke="#c7352c" stroke-width="4"/>
-    <text class="strong" x="1038" y="365">A′</text>
-    <!-- sensor at sharp image for this focus -->
-    <rect x="1014" y="85" width="12" height="310" fill="#4d8da8"/>
-    <text class="small" x="1035" y="100">снимок</text>
-    <text class="small" x="1035" y="120">(матрица)</text>
-    <!-- construction rays -->
-    <path class="ray-a" d="M95 130H485L580 165L1020 355"/>
-    <path class="ray-b" d="M95 130L485 240L580 240L1020 355"/>
-    <path class="ray-c" d="M95 130L310 240"/>
-    <path class="ray-c virtual" d="M310 240L485 295"/>
-    <path class="ray-c" d="M485 295H580L1020 295"/>
-    <!-- f principal H'→F' -->
-    <path d="M580 400H760" stroke="#111" stroke-width="3" marker-start="url(#f02-arrow)" marker-end="url(#f02-arrow)"/>
-    <text class="strong" x="625" y="430">① f · главное</text>
-    <!-- front f -->
-    <path d="M310 55H485" stroke="#777" stroke-width="2" marker-start="url(#f02-arrow)" marker-end="url(#f02-arrow)"/>
-    <text class="small" x="360" y="48">f</text>
-    <!-- a' conjugate H'→A' -->
-    <path d="M580 505H1020" stroke="#c7352c" stroke-width="3" marker-start="url(#f02-arrow)" marker-end="url(#f02-arrow)"/>
-    <text class="strong" x="700" y="540" style="fill:#c7352c">② a′ · сопряжённое</text>
-    <!-- c snapshot S→sensor -->
-    <path d="M580 70H1014" stroke="#1677b8" stroke-width="3" marker-start="url(#f02-arrow)" marker-end="url(#f02-arrow)"/>
-    <text class="strong" x="720" y="62" style="fill:#1677b8">③ c · фокусное снимка</text>
-    <text class="label" x="20" y="540">В воздухе N≡H, N′≡H′. При ∞: A′ на F′ ⇒ a′=f; если матрица в F′, то ещё c≈f. Здесь предмет ближе ∞ ⇒ a′&gt;f, при резкости c=a′.</text>
+    <circle cx="340" cy="300" r="9" fill="#111"/>
+    <text class="strong" x="322" y="275">F</text>
+    <circle cx="800" cy="300" r="9" fill="#c7352c"/>
+    <text class="strong" x="782" y="275">F′</text>
+    <circle cx="620" cy="300" r="10" fill="#111"/>
+    <!-- object / image / sensor -->
+    <path class="object" d="M120 300V160" marker-end="url(#f02-arrow)"/>
+    <text class="strong" x="95" y="145">A</text>
+    <rect x="1048" y="110" width="14" height="380" fill="#4d8da8"/>
+    <path class="image" d="M1055 300V430" marker-end="url(#f02-arrow)"/>
+    <text class="strong" x="1075" y="445">A′</text>
+    <!-- two clear rays only -->
+    <path class="ray-a" d="M120 160H520L620 195L1055 430"/>
+    <path class="ray-b" d="M120 160L520 300L620 300L1055 430"/>
+    <!-- dimensions inside frame -->
+    <path d="M620 360H800" stroke="#111" stroke-width="4" marker-start="url(#f02-arrow)" marker-end="url(#f02-arrow)"/>
+    <text class="strong" x="670" y="395">f</text>
+    <path d="M620 500H1055" stroke="#c7352c" stroke-width="4" marker-start="url(#f02-arrow)" marker-end="url(#f02-arrow)"/>
+    <text class="strong" x="780" y="545" style="fill:#c7352c">a′</text>
+    <path d="M620 120H1048" stroke="#1677b8" stroke-width="4" marker-start="url(#f02-arrow)" marker-end="url(#f02-arrow)"/>
+    <text class="strong" x="780" y="105" style="fill:#1677b8">c</text>
+    <!-- legend box inside -->
+    <rect x="40" y="520" width="420" height="80" rx="10" fill="#f4f8fb" stroke="#111" stroke-width="2"/>
+    <text class="label" x="55" y="550">f — главное · H′ → F′</text>
+    <text class="label" x="55" y="578">a′ — сопряжённое · H′ → A′</text>
+    <text class="label" x="250" y="550" style="fill:#1677b8">c — снимок · S → матрица</text>
+    <text class="small" x="250" y="578">в воздухе N≡H, N′≡H′≡S</text>
   `);
 
   mountSvg("[data-f02-fov-triangle]", "0 0 560 480", "Прямоугольные треугольники поля зрения", `
@@ -416,7 +403,7 @@
     root.classList.add("f02-interactive");
     const controls = document.createElement("div");
     controls.className = "f02-controls";
-    const { label, range, caption } = makeRange(1, 3, 1, 1, "");
+    const { label, range, caption } = makeRange(1, 8, 1, 1, "");
     const readout = document.createElement("p");
     readout.className = "f02-readout";
     readout.setAttribute("aria-live", "polite");
@@ -426,29 +413,105 @@
     controls.append(label, readout);
     root.append(controls, svg);
 
+    // Geometry: lens at Lx=640, axis y=320, f=200 → F=440, F'=840
+    const Lx = 640;
+    const Ay = 320;
+    const f = 200;
+    const Fx = Lx - f;
+    const Fpx = Lx + f;
+    // curvature centers for illustration
+    const C1x = Lx - 90;
+    const C2x = Lx + 90;
+    const Rdraw = 250;
+    // object tip
+    const Ox = 160;
+    const Oy = 170;
+    // image tip from ray1∩ray2: parallel→F' and through center
+    // ray1 after lens: from (Lx, Oy) toward F' then continue; tip at intersection with ray2
+    // ray2: line Ox,Oy → Lx,Ay extended
+    // For parallel ray: before lens y=Oy, after lens goes through F'
+    // Parametrize after lens: (Lx, Oy) to (Fpx, Ay) direction, extend to meet central ray
+    // Central ray: (Ox,Oy)-(Lx,Ay), slope = (Ay-Oy)/(Lx-Ox)
+    const s2 = (Ay - Oy) / (Lx - Ox);
+    // After lens parallel ray slope toward F': (Ay-Oy)/(Fpx-Lx)
+    const s1 = (Ay - Oy) / (Fpx - Lx);
+    // Line1: y - Oy = s1*(x - Lx)
+    // Line2: y - Oy = s2*(x - Ox)  wait central through (Lx,Ay): y - Ay = s2*(x - Lx)
+    // Intersection: Oy + s1*(x-Lx) = Ay + s2*(x-Lx)
+    // (s1-s2)*(x-Lx) = Ay - Oy
+    const Ix = Lx + (Ay - Oy) / (s1 - s2);
+    const Iy = Ay + s2 * (Ix - Lx);
+
     const stages = [
-      ["1 / 3 · Луч, параллельный оси", "После линзы луч проходит через задний фокус F′."],
-      ["2 / 3 · Луч через оптический центр", "В модели тонкой линзы центральный луч не меняет направления."],
-      ["3 / 3 · Изображение предмета", "Пересечение характерных лучей задаёт вершину перевёрнутого действительного изображения."]
+      "Линза и оптическая ось",
+      "Радиусы кривизны R₁, R₂",
+      "Фокусы F и F′",
+      "Радиусы убираем — остаются ось, линза, фокусы",
+      "Появляется предмет",
+      "1-й луч: параллельно оси → через F′",
+      "2-й луч: через оптический центр",
+      "3-й луч + изображение в пересечении"
     ];
+
     const render = () => {
       const stage = Number(range.value);
-      caption.textContent = stages[stage - 1][0];
-      readout.textContent = stages[stage - 1][1];
-      const ray1 = `<path class="ray-a" d="M150 170H640L1000 447"/><text class="label" x="300" y="151">Параллельно главной оптической оси</text>`;
-      const ray2 = `<path class="ray-b" d="M150 170L640 330L1000 447"/><text class="label" x="365" y="285">Через оптический центр</text>`;
-      const ray3 = `<path class="ray-c" d="M150 170L432 330L640 448H1000"/><text class="label" x="700" y="477">После линзы — параллельно оси</text>`;
+      caption.textContent = `${stage} / 8`;
+      readout.textContent = stages[stage - 1];
+
+      const lens = lensShape(Lx, Ay, 340);
+      const axis = `<path class="axis" d="M40 ${Ay}H1240"/>`;
+      const radii = `
+        <circle cx="${C1x}" cy="${Ay}" r="${Rdraw}" fill="none" stroke="#126a91" stroke-width="2" stroke-dasharray="8 6" opacity=".7"/>
+        <circle cx="${C2x}" cy="${Ay}" r="${Rdraw}" fill="none" stroke="#126a91" stroke-width="2" stroke-dasharray="8 6" opacity=".7"/>
+        <circle cx="${C1x}" cy="${Ay}" r="6" fill="#126a91"/><circle cx="${C2x}" cy="${Ay}" r="6" fill="#126a91"/>
+        <text class="strong" x="${C1x - 18}" y="${Ay - 14}">C₁</text>
+        <text class="strong" x="${C2x - 8}" y="${Ay - 14}">C₂</text>
+        <path d="M${C1x} ${Ay}L${Lx - 55} ${Ay - 120}" stroke="#126a91" stroke-width="2"/>
+        <path d="M${C2x} ${Ay}L${Lx + 55} ${Ay - 120}" stroke="#126a91" stroke-width="2"/>
+        <text class="label" x="${(C1x + Lx) / 2 - 40}" y="${Ay - 130}">R₁</text>
+        <text class="label" x="${(C2x + Lx) / 2}" y="${Ay - 130}">R₂</text>`;
+      const foci = `
+        <circle cx="${Fx}" cy="${Ay}" r="8" fill="#111"/><circle cx="${Fpx}" cy="${Ay}" r="8" fill="#111"/>
+        <text class="strong" x="${Fx - 18}" y="${Ay - 16}">F</text>
+        <text class="strong" x="${Fpx - 12}" y="${Ay - 16}">F′</text>`;
+      const object = `
+        <path class="object" d="M${Ox} ${Ay}V${Oy}" marker-end="url(#f02-arrow)"/>
+        <text class="strong" x="${Ox - 70}" y="${Ay + 36}">предмет</text>`;
+      const ray1 = `
+        <path class="ray-a" d="M${Ox} ${Oy}H${Lx}L${Ix} ${Iy}"/>
+        <text class="label" x="${Ox + 40}" y="${Oy - 16}">∥ оси</text>`;
+      const ray2 = `
+        <path class="ray-b" d="M${Ox} ${Oy}L${Ix} ${Iy}"/>
+        <text class="label" x="${(Ox + Lx) / 2 - 20}" y="${(Oy + Ay) / 2 + 28}">через центр</text>`;
+      // 3rd ray: through F, then parallel to axis after lens
+      const y3 = Oy + (Ay - Oy) * (Lx - Ox) / (Fx - Ox);
+      const ray3 = `
+        <path class="ray-c" d="M${Ox} ${Oy}L${Fx} ${Ay}L${Lx} ${y3}H${Ix}"/>
+        <text class="label" x="${Lx + 24}" y="${y3 + 28}">после линзы ∥ оси</text>`;
+      const image = `
+        <path class="image" d="M${Ix} ${Ay}V${Iy}" marker-end="url(#f02-arrow)"/>
+        <circle cx="${Ix}" cy="${Iy}" r="8" fill="#c7352c"/>
+        <text class="strong" x="${Ix - 40}" y="${Iy + 40}">изображение</text>`;
+
+      const showRadii = stage === 2 || stage === 3;
+      const showFoci = stage >= 3;
+      const showObject = stage >= 5;
+      const showR1 = stage >= 6;
+      const showR2 = stage >= 7;
+      const showR3 = stage >= 8;
+      const showImage = stage >= 8;
+
       svg.innerHTML = `${defs}
         <rect width="1280" height="560" fill="#fff"/>
-        <path class="axis" d="M45 330H1235"/>
-        ${lensShape(640, 330, 340)}
-        <circle cx="432" cy="330" r="7" fill="#111"/><circle cx="848" cy="330" r="7" fill="#111"/>
-        <text class="strong" x="415" y="310">F</text><text class="strong" x="832" y="310">F′</text>
-        <path class="object" d="M150 330V175" marker-end="url(#f02-arrow)"/>
-        <text class="strong" x="80" y="365">Предмет</text>
-        ${stage >= 1 ? ray1 : ""}${stage >= 2 ? ray2 : ""}${stage >= 3 ? ray3 : ""}
-        ${stage >= 3 ? `<path class="image" d="M1000 330V442" marker-end="url(#f02-arrow)"/><text class="strong" x="940" y="485">Изображение</text><circle cx="1000" cy="447" r="8" fill="#c7352c"/>` : ""}
-        <text class="label" x="548" y="530">Собирающая тонкая линза</text>`;
+        ${axis}
+        ${lens}
+        ${showRadii ? radii : ""}
+        ${showFoci ? foci : ""}
+        ${showObject ? object : ""}
+        ${showR1 ? ray1 : ""}
+        ${showR2 ? ray2 : ""}
+        ${showR3 ? ray3 : ""}
+        ${showImage ? image : ""}`;
     };
     range.addEventListener("input", render);
     render();

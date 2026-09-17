@@ -2174,6 +2174,16 @@ html[data-slide-theme="light"] body.mode-slides .data--grid td {
   columns: 2;
   column-gap: 48px;
 }
+.slide--image-only .f02-static-figure.fig-full {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+}
+.slide--image-only .f02-static-figure.fig-full svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
 .slide--image-only.is-active {
   display: flex;
   flex-direction: column;
