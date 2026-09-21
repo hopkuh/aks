@@ -2407,8 +2407,9 @@ html[data-slide-theme="light"] body.mode-slides .speaker-notes {
 }
 .hub-qr img {
   display: block;
-  width: 160px;
-  height: 160px;
+  width: min(320px, 70vw);
+  height: auto;
+  aspect-ratio: 1;
   background: #fff;
   border-radius: 8px;
 }
