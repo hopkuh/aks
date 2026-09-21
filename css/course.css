@@ -1998,11 +1998,13 @@ body.mode-sim {
   font-size: clamp(14px, 1.35vw, 18px);
   line-height: 1.35;
 }
-  grid-template-columns: minmax(0, 1.35fr) minmax(220px, 0.65fr);
+.f02-dof-coc-combo {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(260px, 0.7fr);
   align-items: stretch;
   flex: 1 1 auto;
   min-height: 0;
-  gap: 16px;
+  gap: 12px;
 }
 .f02-dof-coc-combo .f02-dof-hero {
   min-height: 0;
@@ -2416,4 +2418,46 @@ html[data-slide-theme="light"] body.mode-slides .speaker-notes {
 }
 .hub-qr a {
   color: inherit;
+}
+
+.f02-aperture-number-layout {
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  align-items: start;
+  gap: 20px;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+.f02-aperture-wiki-figs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 0;
+}
+.f02-aperture-wiki-figs .fig {
+  margin: 0;
+}
+.f02-aperture-wiki-figs img {
+  max-height: 220px;
+  width: 100%;
+  object-fit: contain;
+  background: #fff;
+}
+.f02-dof-coc-combo[data-f02-dof-combo] {
+  grid-template-columns: minmax(0, 1.6fr) minmax(280px, 0.75fr);
+}
+.f02-dof-coc-combo .f02-controls {
+  grid-column: 1 / -1;
+}
+.f02-dof-coc-combo .f02-dof-hero,
+.f02-dof-coc-combo .f02-coc-side {
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+.f02-dof-coc-combo .f02-dof-hero svg,
+.f02-dof-coc-combo .f02-coc-side svg {
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  flex: 1 1 auto;
 }

@@ -999,7 +999,7 @@
     render();
   });
 
-  document.querySelectorAll("[data-f02-dof-rays]").forEach((root) => {
+  document.querySelectorAll("[data-f02-dof-combo]").forEach((root) => {
     root.classList.add("f02-interactive");
     const stops = [1.4, 2, 2.8, 4, 5.6, 8, 11, 16, 22];
     const controls = document.createElement("div");
@@ -1007,27 +1007,38 @@
     const { label, range, caption } = makeRange(0, stops.length - 1, 1, 3, "");
     const readout = document.createElement("p");
     readout.className = "f02-readout";
-    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    svg.setAttribute("viewBox", "0 0 1280 520");
-    svg.setAttribute("preserveAspectRatio", "xMidYMid meet");
+    const left = document.createElement("div");
+    left.className = "f02-dof-hero";
+    const right = document.createElement("div");
+    right.className = "f02-coc-side";
+    const svgL = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    const svgR = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svgL.setAttribute("viewBox", "0 0 1280 520");
+    svgL.setAttribute("preserveAspectRatio", "xMidYMid meet");
+    svgR.setAttribute("viewBox", "0 0 520 520");
+    svgR.setAttribute("preserveAspectRatio", "xMidYMid meet");
     controls.append(label, readout);
-    root.append(controls, svg);
+    left.append(svgL);
+    right.append(svgR);
+    root.append(controls, left, right);
     const rayY = (x1, y1, x2, y2, x) => y1 + ((y2 - y1) * (x - x1)) / (x2 - x1);
     const render = () => {
       const n = stops[Number(range.value)];
       const aperture = Math.max(14, 58 / Math.sqrt(n / 1.4));
+      const cocNear = Math.max(6, aperture * 0.72);
+      const cocFar = Math.max(5, aperture * 0.55);
+      const cocFocus = 4;
       caption.textContent = `Диафрагменное число n₀ = ${String(n).replace(".", ",")}`;
-      readout.textContent = "Резкими отображаются только объекты в плоскости фокусировки. Остальные отображаются кружком нерезкости; если он мал — изображение кажется резким.";
+      readout.textContent = "";
       const lensX = 700;
       const sensorX = 1020;
       const axisY = 260;
-      // Все точки на оси: без «зеркального» разноса вверх/вниз. Кружки на матрице слегка разводят по вертикали только для читаемости.
       const objects = [
-        { x: 120, y: axisY, label: "Дальняя", color: "#1677b8", imgX: sensorX - 140, imgY: axisY, showY: axisY + 55 },
-        { x: 300, y: axisY, label: "Фокус", color: "#21834f", imgX: sensorX, imgY: axisY, showY: axisY },
-        { x: 470, y: axisY, label: "Ближняя", color: "#c7352c", imgX: sensorX + 150, imgY: axisY, showY: axisY - 55 }
+        { x: 120, y: axisY, label: "Дальняя", color: "#1677b8", imgX: sensorX - 140, imgY: axisY, showY: axisY + 70, coc: cocFar },
+        { x: 300, y: axisY, label: "Фокус", color: "#21834f", imgX: sensorX, imgY: axisY, showY: axisY, coc: cocFocus },
+        { x: 470, y: axisY, label: "Ближняя", color: "#c7352c", imgX: sensorX + 150, imgY: axisY, showY: axisY - 70, coc: cocNear }
       ];
-      const rays = objects.map((o, idx) => {
+      const rays = objects.map((o) => {
         const topLens = axisY - aperture;
         const botLens = axisY + aperture;
         const yTopAtSensor = rayY(lensX, topLens, o.imgX, o.imgY, sensorX);
@@ -1038,30 +1049,47 @@
         if (o.imgX > sensorX) {
           afterTop = `L${sensorX} ${yTopAtSensor}`;
           afterBot = `L${sensorX} ${yBotAtSensor}`;
-          virtual = `<path d="M${lensX} ${topLens}L${o.imgX} ${o.imgY}M${lensX} ${botLens}L${o.imgX} ${o.imgY}" fill="none" stroke="${o.color}" stroke-width="2.5" stroke-dasharray="10 8" opacity=".75"/>
-            <circle cx="${o.imgX}" cy="${o.imgY}" r="6" fill="${o.color}" fill-opacity=".25" stroke="${o.color}" stroke-width="2"/>`;
+          virtual = `<path d="M${lensX} ${topLens}L${o.imgX} ${o.imgY}M${lensX} ${botLens}L${o.imgX} ${o.imgY}" fill="none" stroke="${o.color}" stroke-width="2.5" stroke-dasharray="10 8" opacity=".75"/>`;
         } else if (o.imgX < sensorX) {
           afterTop = `L${o.imgX} ${o.imgY}L${sensorX} ${yTopAtSensor}`;
           afterBot = `L${o.imgX} ${o.imgY}L${sensorX} ${yBotAtSensor}`;
-          virtual = `<circle cx="${o.imgX}" cy="${o.imgY}" r="6" fill="${o.color}" fill-opacity=".25" stroke="${o.color}" stroke-width="2"/>`;
         } else {
           afterTop = `L${sensorX} ${axisY}`;
           afterBot = `L${sensorX} ${axisY}`;
         }
-        const labelY = 205;
+        const spotY = o.showY;
         return `<circle cx="${o.x}" cy="${o.y}" r="11" fill="${o.color}" stroke="#111" stroke-width="1"/>
-          <text class="strong" x="${o.x}" y="${labelY}" text-anchor="middle" style="fill:${o.color}">${o.label}</text>
+          <text class="strong" x="${o.x}" y="205" text-anchor="middle" style="fill:${o.color}">${o.label}</text>
           <path d="M${o.x} ${o.y}L${lensX} ${topLens}${afterTop}" fill="none" stroke="${o.color}" stroke-width="3.5"/>
           <path d="M${o.x} ${o.y}L${lensX} ${botLens}${afterBot}" fill="none" stroke="${o.color}" stroke-width="3.5"/>
-          ${virtual}`;
+          ${virtual}
+          <circle cx="${sensorX + 7}" cy="${spotY}" r="${o.coc}" fill="${o.color}" fill-opacity=".28" stroke="${o.color}" stroke-width="3"/>`;
       }).join("");
-      svg.innerHTML = `${defs}<rect width="1280" height="520" fill="#fff"/><path class="axis" d="M30 260H1250"/>
+      svgL.innerHTML = `${defs}<rect width="1280" height="520" fill="#fff"/><path class="axis" d="M30 260H1250"/>
         ${rays}${lensShape(lensX, axisY, 380)}
         <path d="M${lensX - 30} 40V${axisY - aperture}M${lensX - 30} ${axisY + aperture}V480" stroke="#111" stroke-width="14"/>
         <rect x="${sensorX}" y="55" width="14" height="410" fill="#4d8da8"/>
         <text class="strong" x="650" y="36">Диафрагма</text>
-        <text class="strong" x="${sensorX + 24}" y="78">Матрица</text>
-        <text class="label" x="40" y="500">Кружки нерезкости на матрице — на следующем слайде</text>`;
+        <text class="strong" x="${sensorX + 24}" y="78">Матрица</text>`;
+
+      svgR.innerHTML = `${defs}<rect width="520" height="520" fill="#fff"/>
+        <rect x="36" y="40" width="16" height="440" fill="#4d8da8"/>
+        <text class="strong" x="70" y="58">Матрица</text>
+        <g transform="translate(120 70)">
+          <circle cx="70" cy="70" r="${cocNear}" fill="#c7352c" fill-opacity=".28" stroke="#c7352c" stroke-width="3"/>
+          <text class="strong" x="160" y="55" style="fill:#c7352c">Ближняя</text>
+          <text class="label" x="160" y="88">кружок нерезкости</text>
+        </g>
+        <g transform="translate(120 210)">
+          <circle cx="70" cy="70" r="${cocFocus}" fill="#21834f" fill-opacity=".9" stroke="#21834f" stroke-width="3"/>
+          <text class="strong" x="160" y="55" style="fill:#21834f">Плоскость наводки</text>
+          <text class="label" x="160" y="88">≈ точка</text>
+        </g>
+        <g transform="translate(120 350)">
+          <circle cx="70" cy="70" r="${cocFar}" fill="#1677b8" fill-opacity=".28" stroke="#1677b8" stroke-width="3"/>
+          <text class="strong" x="160" y="55" style="fill:#1677b8">Дальняя</text>
+          <text class="label" x="160" y="88">кружок нерезкости</text>
+        </g>`;
     };
     range.addEventListener("input", render);
     render();
@@ -1096,27 +1124,6 @@
     <path class="ray-a" d="M90 340H280L526 470"/>
     <path d="M280 470H520" stroke="#c7352c" stroke-width="3" marker-start="url(#f02-arrow)" marker-end="url(#f02-arrow)"/>
     <text class="small" x="350" y="465">a′ больше</text>
-  `);
-
-  mountSvg("[data-f02-coc-three]", "0 0 1100 420", "Три кружка нерезкости на матрице", `
-    <rect x="40" y="40" width="14" height="340" fill="#4d8da8"/>
-    <text class="strong" x="70" y="60">Матрица</text>
-    <g transform="translate(200 120)">
-      <circle cx="80" cy="90" r="8" fill="#21834f" fill-opacity=".9" stroke="#21834f" stroke-width="3"/>
-      <text class="strong" x="160" y="70" style="fill:#21834f">Плоскость наводки</text>
-      <text class="label" x="160" y="100">кружок ≈ точка</text>
-    </g>
-    <g transform="translate(200 20)">
-      <circle cx="80" cy="90" r="34" fill="#c7352c" fill-opacity=".28" stroke="#c7352c" stroke-width="3"/>
-      <text class="strong" x="160" y="70" style="fill:#c7352c">Ближе плоскости наводки</text>
-      <text class="label" x="160" y="100">большой кружок нерезкости</text>
-    </g>
-    <g transform="translate(200 240)">
-      <circle cx="80" cy="90" r="26" fill="#1677b8" fill-opacity=".28" stroke="#1677b8" stroke-width="3"/>
-      <text class="strong" x="160" y="70" style="fill:#1677b8">Дальше плоскости наводки</text>
-      <text class="label" x="160" y="100">кружок; если ≤ c — кажется резким</text>
-    </g>
-    <text class="label" x="40" y="400">Допустимый кружок нерезкости c задаёт порог: всё, что меньше c, считают резким.</text>
   `);
 
   mountSvg("[data-f02-f-lens]", "0 0 1280 420", "Фокусное расстояние объектива", `
@@ -1209,16 +1216,40 @@
     root.append(controls, svg, modes);
     const render = () => {
       const offset = Number(range.value);
-      const blur = Math.max(3, Math.abs(offset) * 0.42);
+      const Lx = 580 + offset;
+      const Sy = 190;
+      const Ox = 80;
+      const tipY = 70;
+      const Sx = 1087;
+      // Ideal focus: offset = 0 → rays meet on the sensor (inverted tip).
+      const meetX = Sx - offset * 1.35;
+      const meetY = 310;
+      const aperture = 95;
+      const top = Sy - aperture;
+      const bot = Sy + aperture;
+      const yAt = (x1, y1, x2, y2, x) => y1 + ((y2 - y1) * (x - x1)) / ((x2 - x1) || 1e-6);
+      const yTopS = yAt(Lx, top, meetX, meetY, Sx);
+      const yBotS = yAt(Lx, bot, meetX, meetY, Sx);
+      const yMidS = yAt(Lx, Sy, meetX, meetY, Sx);
+      const blur = Math.max(2.5, Math.abs(yTopS - yBotS) / 2);
       caption.textContent = `Смещение фокусирующей группы: ${offset > 0 ? "+" : ""}${offset} усл. ед.`;
       readout.textContent = Math.abs(offset) < 5
-        ? "Изображение сфокусировано: кружок нерезкости минимален."
-        : "Изображение расфокусировано: переместите группу к положению нулевой ошибки.";
+        ? "Изображение сфокусировано: лучи сходятся на матрице."
+        : "Изображение расфокусировано: схождение не на матрице — на приёмнике кружок.";
+      const virtual = Math.abs(meetX - Sx) > 8
+        ? `<path d="M${Lx} ${top}L${meetX} ${meetY}M${Lx} ${bot}L${meetX} ${meetY}" fill="none" stroke="#c7352c" stroke-width="2.5" stroke-dasharray="9 7" opacity=".7"/>
+           <circle cx="${meetX}" cy="${meetY}" r="6" fill="#c7352c" fill-opacity=".25" stroke="#c7352c" stroke-width="2"/>`
+        : "";
       svg.innerHTML = `${defs}<rect width="1280" height="360" fill="#fff"/><path class="axis" d="M35 190H1240"/>
-        <path class="object" d="M80 190V60" marker-end="url(#f02-arrow)"/>
-        ${lensShape(580 + offset, 190, 260)}<rect x="1080" y="40" width="14" height="300" fill="#4d8da8"/>
-        <path class="ray-a" d="M80 60H${580 + offset}L1080 ${190 - blur}M80 60L${580 + offset} 190L1080 ${190 + blur}"/>
-        <circle cx="1087" cy="190" r="${blur}" fill="#c7352c" fill-opacity=".32"/>`;
+        <path class="object" d="M${Ox} ${Sy}V${tipY}" marker-end="url(#f02-arrow)"/>
+        ${lensShape(Lx, Sy, 260)}
+        <rect x="1080" y="40" width="14" height="300" fill="#4d8da8"/>
+        <path class="ray-a" d="M${Ox} ${tipY}L${Lx} ${top}L${Sx} ${yTopS}"/>
+        <path class="ray-a" d="M${Ox} ${tipY}L${Lx} ${bot}L${Sx} ${yBotS}"/>
+        <path class="ray-b" d="M${Ox} ${tipY}L${Lx} ${Sy}L${Sx} ${yMidS}"/>
+        ${virtual}
+        <circle cx="${Sx}" cy="${(yTopS + yBotS) / 2}" r="${blur}" fill="#c7352c" fill-opacity=".32" stroke="#c7352c" stroke-width="2"/>
+        <text class="small" x="1040" y="36">матрица</text>`;
     };
     range.addEventListener("input", render);
     render();
