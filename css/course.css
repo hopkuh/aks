@@ -2396,26 +2396,29 @@ html[data-slide-theme="light"] body.mode-slides .speaker-notes {
 }
 
 .hub-qr {
-  margin: 3rem 0 1.5rem;
+  margin: 2rem 0 1rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--line, #d0d5dd);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: .6rem;
+  justify-content: center;
+  gap: .75rem;
   text-align: center;
+  min-height: calc(100vh - 6rem);
 }
 .hub-qr img {
   display: block;
-  width: min(320px, 70vw);
-  height: auto;
-  aspect-ratio: 1;
+  width: min(92vw, 92vh);
+  height: min(92vw, 92vh);
+  max-width: 100%;
+  object-fit: fill;
   background: #fff;
   border-radius: 8px;
 }
 .hub-qr p {
   margin: 0;
-  font-size: .95rem;
+  font-size: clamp(1.1rem, 2.2vw, 1.6rem);
 }
 .hub-qr a {
   color: inherit;
