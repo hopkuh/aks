@@ -2392,3 +2392,28 @@ html[data-slide-theme="light"] body.mode-slides .speaker-notes {
   .deck { height: auto; padding: 0; }
   .slide { display: block !important; height: auto; page-break-after: always; }
 }
+
+.hub-qr {
+  margin: 3rem 0 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line, #d0d5dd);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .6rem;
+  text-align: center;
+}
+.hub-qr img {
+  display: block;
+  width: 160px;
+  height: 160px;
+  background: #fff;
+  border-radius: 8px;
+}
+.hub-qr p {
+  margin: 0;
+  font-size: .95rem;
+}
+.hub-qr a {
+  color: inherit;
+}
