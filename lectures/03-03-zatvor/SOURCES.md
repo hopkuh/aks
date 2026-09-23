@@ -11,3 +11,5 @@
 | 7–13 | s07–s13 | типы затворов, щель, rolling/global | уточнить; гифки анимаций |
 
 Черновики своих схем: `images/_draft_schemes/preview.html`.
+
+- f03a-leaf-shutter.jpg — Wikimedia Commons: Leaf SHUT 8603 (leaf shutter)
