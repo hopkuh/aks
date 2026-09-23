@@ -369,13 +369,87 @@ body.mode-slides .topbar { position: fixed; left: 0; right: 0; top: 0; }
 .slide--defn-lg:not(.slide--dense) .defn {
   font-size: clamp(20px, 2.4vw, 30px);
 }
-.data th.data-head-lg {
-  font-size: clamp(18px, 2.2vw, 28px);
-  text-transform: none;
-  letter-spacing: 0;
-  font-weight: 800;
-  color: var(--text);
-  padding: 12px 14px;
+.data--bordered {
+  border: 1px solid rgba(255,255,255,0.28);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.data--bordered th,
+.data--bordered td {
+  border: 1px solid rgba(255,255,255,0.22);
+}
+.data--bordered tr:last-child td { border-bottom: 1px solid rgba(255,255,255,0.22); }
+
+.slide-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  min-height: 0;
+}
+.slide-stack > .columns {
+  flex: 0 0 auto;
+}
+.slide-stack > .fig,
+.slide-stack > .fig-wide {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+.fig-wide {
+  width: 100%;
+}
+.fig-wide img {
+  max-height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.slide-color-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(200px, 0.8fr);
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 12px 18px;
+  flex: 1;
+  min-height: 0;
+}
+.slide-color-layout .color-text { grid-column: 1; grid-row: 1; }
+.slide-color-layout .color-side {
+  grid-column: 2;
+  grid-row: 1;
+  min-height: 0;
+}
+.slide-color-layout .color-main {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slide-color-layout .color-main img {
+  max-height: 100%;
+  max-width: min(100%, 920px);
+  width: auto;
+  object-fit: contain;
+  background: transparent;
+}
+.slide-color-layout .color-side img {
+  max-height: 180px;
+  width: auto;
+  margin-left: auto;
+  display: block;
+  background: transparent;
+}
+
+.slide--pair-fit .columns { gap: 14px; }
+.slide--pair-fit .fig { flex: 1 1 auto; min-height: 0; }
+.slide--pair-fit .fig img { max-height: 42vh; }
+
+.defn-full {
+  max-width: none !important;
+  width: 100%;
+  font-size: clamp(20px, 2.35vw, 30px);
+  margin: 4px 0 10px;
 }
 .fig--plain img,
 .gallery--plain img {

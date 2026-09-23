@@ -35,8 +35,8 @@
 
 <section class="slide">
   <h2>Пять операций сенсора</h2>
-  <div class="columns columns--text-first">
-    <div>
+  <div class="slide-stack">
+    <div class="columns columns--text-first">
       <ol>
         <li>поглотить фотоны</li>
         <li>превратить в заряд</li>
@@ -44,11 +44,13 @@
         <li>превратить в напряжение</li>
         <li>передать дальше</li>
       </ol>
+      <figure class="fig fig--plain">
+        <img src="images/s15_01.jpeg" alt="Матрица в разрезе / общий вид">
+      </figure>
     </div>
-    <div class="gallery gallery--plain">
-      <img src="images/s15_01.jpeg" alt="Матрица в разрезе / общий вид">
+    <figure class="fig fig-wide fig--plain">
       <img src="images/schemes/f03b-sensor-ops.png" alt="Пять операций сенсора">
-    </div>
+    </figure>
   </div>
 </section>
 
@@ -97,9 +99,9 @@
   </figure>
 </section>
 
-<section class="slide slide--dense slide--defn-lg">
+<section class="slide slide--dense">
   <h2>КМОП-матрица</h2>
-  <p class="defn">КМОП-матрица (CMOS, Complementary Metal Oxide Semiconductor — комплементарная структура металл–оксид–полупроводник) выполнена по КМОП-технологии. Каждый пиксель снабжён усилителем считывания; выборка сигнала с выбранного пикселя выполняется произвольно, как в микросхемах памяти.</p>
+  <p class="defn defn-full">КМОП-матрица (CMOS, Complementary Metal Oxide Semiconductor — комплементарная структура металл–оксид–полупроводник) выполнена по КМОП-технологии. Каждый пиксель снабжён усилителем считывания; выборка сигнала с выбранного пикселя выполняется произвольно, как в микросхемах памяти.</p>
   <div class="columns columns--text-wide">
     <ol class="legend-list">
       <li>светочувствительный элемент (фотодиод);</li>
@@ -142,7 +144,7 @@
 <section class="slide">
   <h2>ПЗС и КМОП: сравнение</h2>
   <div class="columns columns--text-wide">
-    <table class="data">
+    <table class="data data--bordered">
       <thead>
         <tr><th></th><th class="data-head-lg">ПЗС</th><th class="data-head-lg">КМОП</th></tr>
       </thead>
@@ -162,15 +164,17 @@
 
 <section class="slide">
   <h2>Формирование цветного изображения</h2>
-  <div class="columns columns--text-first">
-    <div>
+  <div class="slide-color-layout">
+    <div class="color-text">
       <p>Сам сенсель (пиксель) фиксирует только яркость (светлоту) в одном широком спектральном диапазоне и не различает цвета. Конкретные цвета получают, как правило, с помощью светофильтров и линз, пропускающих излучение в заданном диапазоне спектра.</p>
       <p class="caveat">Чувствительность матрицы — квантовая эффективность и порог, при котором фототок превышает темновой ток.</p>
     </div>
-    <div class="gallery gallery--plain">
-      <img src="images/s10_tricolor.png" alt="Разложение на цветовые каналы">
+    <figure class="color-side fig--plain">
       <img src="images/s_sensitivity.jpg" alt="Чувствительность матрицы">
-    </div>
+    </figure>
+    <figure class="color-main fig--plain">
+      <img src="images/s10_tricolor.png" alt="Разложение на цветовые каналы">
+    </figure>
   </div>
 </section>
 
@@ -195,19 +199,19 @@
   </ol>
 </section>
 
-<section class="slide slide--dense">
+<section class="slide slide--dense slide--pair-fit">
   <h2>3CCD и Foveon</h2>
   <div class="columns">
     <div>
       <h3>3CCD</h3>
-      <p>Световой поток разделяется призмой на три спектральные составляющие; каждая регистрируется отдельной матрицей. На каждый пиксель — полное измерение трёх каналов без мозаичной интерполяции.</p>
+      <p>Световой поток разделяется призмой на три спектральные составляющие; каждая регистрируется отдельной матрицей. На каждый пиксель приходится полное измерение трёх каналов без мозаичной интерполяции.</p>
       <figure class="fig fig--plain">
         <img src="images/s19_01.jpg" alt="3CCD">
       </figure>
     </div>
     <div>
       <h3>Foveon</h3>
-      <p>Трёхслойный сенсор: фотоны разных длин волн поглощаются на разной глубине кремния. Цвет в одном столбце пикселей без цветной мозаики на поверхности.</p>
+      <p>Трёхслойный сенсор: фотоны разных длин волн поглощаются на разной глубине кремния. Цветовые каналы формируются в одном столбце пикселей без цветной мозаики на поверхности.</p>
       <figure class="fig fig--plain">
         <img src="images/s14_foveon.jpg" alt="Foveon X3">
       </figure>
@@ -250,7 +254,6 @@
 
 <section class="slide">
   <h2>Стандартные размеры матриц</h2>
-  <p class="caveat">В обозначениях вида 1″, 1/2,3″ «дюйм» условен: примерно 16&nbsp;мм диагонали на единицу обозначения, это не длина по линейке.</p>
   <figure class="fig fig-lg fig--plain">
     <img src="images/schemes/f04-sensor-sizes.png" alt="Стандартные физические размеры матриц">
   </figure>
