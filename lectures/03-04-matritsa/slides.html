@@ -35,10 +35,7 @@
 
 <section class="slide">
   <h2>Пять операций сенсора</h2>
-  <div class="columns">
-    <figure class="fig fig-lg">
-      <img src="images/s15_01.jpeg" alt="Матрица в разрезе / общий вид">
-    </figure>
+  <div class="columns columns--text-first">
     <div>
       <ol>
         <li>поглотить фотоны</li>
@@ -47,9 +44,10 @@
         <li>превратить в напряжение</li>
         <li>передать дальше</li>
       </ol>
-      <figure class="fig">
-        <img src="images/schemes/f03b-sensor-ops.png" alt="Пять операций сенсора">
-      </figure>
+    </div>
+    <div class="gallery gallery--plain">
+      <img src="images/s15_01.jpeg" alt="Матрица в разрезе / общий вид">
+      <img src="images/schemes/f03b-sensor-ops.png" alt="Пять операций сенсора">
     </div>
   </div>
 </section>
@@ -57,10 +55,7 @@
 <section class="slide slide--dense">
   <h2>Устройство одного пикселя матрицы</h2>
   <p class="caveat">Пример субпикселя ПЗС-матрицы с карманом n-типа. Схема — на примере красного фотодетектора.</p>
-  <div class="columns">
-    <figure class="fig fig-lg fig--light">
-      <img src="images/s03_1_subpixel.png" alt="Схема субпикселя ПЗС-матрицы с карманом n-типа">
-    </figure>
+  <div class="columns columns--text-first">
     <ol class="legend-list">
       <li>фотоны света, прошедшие через объектив фотоаппарата;</li>
       <li>микролинза субпикселя;</li>
@@ -71,6 +66,9 @@
       <li>зона потенциальной ямы (карман n-типа), где собираются электроны из зоны генерации носителей заряда;</li>
       <li>кремниевая подложка p-типа.</li>
     </ol>
+    <figure class="fig fig-lg fig--light fig--plain">
+      <img src="images/s03_1_subpixel.png" alt="Схема субпикселя ПЗС-матрицы с карманом n-типа">
+    </figure>
   </div>
 </section>
 
@@ -91,21 +89,18 @@
   </div>
 </section>
 
-<section class="slide slide--dense">
+<section class="slide slide--defn-lg">
   <h2>ПЗС-матрица</h2>
   <p class="defn">ПЗС-матрица (CCD, Charge Coupled Device — прибор с зарядовой связью) состоит из светочувствительных фотодиодов, выполнена на основе кремния и использует технологию приборов с зарядовой связью: накопленный заряд переносится к общему узлу считывания.</p>
-  <figure class="fig fig-lg">
-    <img src="images/schemes/f01-ccd-cmos.png" alt="Схема ПЗС-матрицы">
+  <figure class="fig fig-lg fig--plain">
+    <img src="images/s06_ccd.jpg" alt="ПЗС-матрица">
   </figure>
 </section>
 
-<section class="slide slide--dense">
+<section class="slide slide--dense slide--defn-lg">
   <h2>КМОП-матрица</h2>
   <p class="defn">КМОП-матрица (CMOS, Complementary Metal Oxide Semiconductor — комплементарная структура металл–оксид–полупроводник) выполнена по КМОП-технологии. Каждый пиксель снабжён усилителем считывания; выборка сигнала с выбранного пикселя выполняется произвольно, как в микросхемах памяти.</p>
-  <div class="columns">
-    <figure class="fig fig-lg fig--light">
-      <img src="images/s05_cmos.png" alt="Эквивалентная схема ячейки КМОП-матрицы">
-    </figure>
+  <div class="columns columns--text-wide">
     <ol class="legend-list">
       <li>светочувствительный элемент (фотодиод);</li>
       <li>затвор;</li>
@@ -115,6 +110,9 @@
       <li>вертикальная шина, передающая сигнал процессору;</li>
       <li>сигнал сброса.</li>
     </ol>
+    <figure class="fig fig-lg fig--light fig--plain">
+      <img src="images/s07_cmos.png" alt="Эквивалентная схема ячейки КМОП-матрицы">
+    </figure>
   </div>
 </section>
 
@@ -143,37 +141,44 @@
 
 <section class="slide">
   <h2>ПЗС и КМОП: сравнение</h2>
-  <table class="data">
-    <thead>
-      <tr><th></th><th>ПЗС</th><th>КМОП</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>Считывание</td><td>перенос заряда к общему выходу</td><td>усиление в пикселе, произвольная выборка</td></tr>
-      <tr><td>Энергопотребление</td><td>выше</td><td>ниже в статике</td></tr>
-      <tr><td>Шум / однородность</td><td>обычно выше однородность</td><td>разброс характеристик пикселей</td></tr>
-      <tr><td>Производство</td><td>дороже</td><td>дешевле, совмещается с цифровой логикой</td></tr>
-      <tr><td>Применение сейчас</td><td>специализированные системы</td><td>большинство фото- и видеокамер</td></tr>
-    </tbody>
-  </table>
+  <div class="columns columns--text-wide">
+    <table class="data">
+      <thead>
+        <tr><th></th><th class="data-head-lg">ПЗС</th><th class="data-head-lg">КМОП</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Считывание</td><td>перенос заряда к общему выходу</td><td>усиление в пикселе, произвольная выборка</td></tr>
+        <tr><td>Энергопотребление</td><td>выше</td><td>ниже в статике</td></tr>
+        <tr><td>Шум / однородность</td><td>обычно выше однородность</td><td>разброс характеристик пикселей</td></tr>
+        <tr><td>Производство</td><td>дороже</td><td>дешевле, совмещается с цифровой логикой</td></tr>
+        <tr><td>Применение сейчас</td><td>специализированные системы</td><td>большинство фото- и видеокамер</td></tr>
+      </tbody>
+    </table>
+    <figure class="fig fig-lg fig--plain">
+      <img src="images/schemes/f01-ccd-cmos.png" alt="ПЗС и КМОП">
+    </figure>
+  </div>
 </section>
 
 <section class="slide">
   <h2>Формирование цветного изображения</h2>
-  <p>Сам сенсель (пиксель) фиксирует только яркость (светлоту) в одном широком спектральном диапазоне и не различает цвета. Конкретные цвета получают, как правило, с помощью светофильтров и линз, пропускающих излучение в заданном диапазоне спектра.</p>
-</section>
-
-<section class="slide">
-  <h2>Чувствительность матрицы</h2>
-  <figure class="fig fig-lg">
-    <img src="images/s_sensitivity.jpg" alt="Чувствительность матрицы">
-  </figure>
+  <div class="columns columns--text-first">
+    <div>
+      <p>Сам сенсель (пиксель) фиксирует только яркость (светлоту) в одном широком спектральном диапазоне и не различает цвета. Конкретные цвета получают, как правило, с помощью светофильтров и линз, пропускающих излучение в заданном диапазоне спектра.</p>
+      <p class="caveat">Чувствительность матрицы — квантовая эффективность и порог, при котором фототок превышает темновой ток.</p>
+    </div>
+    <div class="gallery gallery--plain">
+      <img src="images/s10_tricolor.png" alt="Разложение на цветовые каналы">
+      <img src="images/s_sensitivity.jpg" alt="Чувствительность матрицы">
+    </div>
+  </div>
 </section>
 
 <section class="slide">
   <h2>Панхроматическое изображение</h2>
   <div class="columns">
     <p>Чёрно-белое изображение, полученное с использованием одного спектрального канала, охватывающего весь видимый диапазон электромагнитного спектра (примерно 450–900 нм). Информация о цвете отсутствует; изображение представлено в оттенках серого.</p>
-    <figure class="fig fig-lg">
+    <figure class="fig fig-lg fig--plain">
       <img src="images/s_pan.jpg" alt="Панхроматический снимок">
     </figure>
   </div>
@@ -202,9 +207,9 @@
       <p>Трёхслойный сенсор: фотоны разных длин волн поглощаются на разной глубине кремния. Цветовые каналы формируются в одном столбце пикселей без цветной мозаики на поверхности.</p>
     </div>
   </div>
-  <div class="gallery">
+  <div class="gallery gallery--plain">
     <img src="images/s19_01.jpg" alt="3CCD / разделение спектра">
-    <img src="images/s19_02.jpg" alt="Foveon / многослойный сенсор">
+    <img src="images/s14_foveon.jpg" alt="Foveon X3">
   </div>
 </section>
 
@@ -212,7 +217,7 @@
   <h2>Pixel Shift</h2>
   <div class="columns">
     <p>Серия кадров со сдвигом матрицы на долю пикселя. На каждой позиции под другим цветным фильтром оказывается тот же участок изображения; после совмещения получают более полное цветовое и/или пространственное разрешение без (или с меньшей) интерполяцией мозаики.</p>
-    <figure class="fig fig-lg">
+    <figure class="fig fig-lg fig--plain">
       <img src="images/s_pixel_shift.jpg" alt="Pixel Shift">
     </figure>
   </div>
@@ -221,30 +226,31 @@
 <section class="slide slide--definition">
   <p class="term">Фильтр Байера</p>
   <p class="defn">Мозаика цветных светофильтров над фотодиодами: 50&nbsp;% зелёных, 25&nbsp;% красных, 25&nbsp;% синих. Полноцветное значение в каждом узле восстанавливается интерполяцией (демозаика).</p>
-  <figure class="fig fig-lg">
+  <figure class="fig fig-lg fig--plain">
     <img src="images/schemes/f03b-bayer.png" alt="Фильтр Байера: красный, зелёный, синий">
   </figure>
 </section>
 
 <section class="slide">
   <h2>Демозаика</h2>
-  <div class="gallery"><img src="images/s21_01.jpg" alt=""><img src="images/s21_02.png" alt=""><img src="images/s21_03.png" alt=""><img src="images/s21_04.png" alt=""></div>
+  <div class="gallery gallery--plain"><img src="images/s21_01.jpg" alt=""><img src="images/s21_02.png" alt=""><img src="images/s21_03.png" alt=""><img src="images/s21_04.png" alt=""></div>
   <p class="caveat">Оценка недостающих каналов по соседним отсчётам; повышение резкости контуров.</p>
 </section>
 
-<section class="slide slide--dense">
+<section class="slide">
   <h2>Физический размер матрицы</h2>
-  <p class="defn">Линейные размеры светочувствительной области (ширина × высота) в миллиметрах. Определяет площадь пикселя при заданном числе элементов, отношение сигнал/шум, ГРИП и угол поля при той же оптике. На практике размер указывают по диагонали или через кроп-фактор относительно кадра 24×36&nbsp;мм.</p>
-  <figure class="fig fig-lg">
-    <img src="images/schemes/f04-rain-buckets.svg" alt="Аналогия: фотоны — дождь, пиксели — вёдра">
+  <p class="defn-lead">Линейные размеры светочувствительной области (ширина × высота) в миллиметрах.</p>
+  <p class="defn-rest">Определяет площадь пикселя при заданном числе элементов, отношение сигнал/шум, ГРИП и угол поля при той же оптике. На практике размер указывают по диагонали или через кроп-фактор относительно кадра 24×36&nbsp;мм.</p>
+  <figure class="fig fig-lg fig--plain">
+    <img src="images/schemes/f04-rain-buckets.png" alt="Аналогия: фотоны — дождь, пиксели — вёдра">
   </figure>
 </section>
 
 <section class="slide">
   <h2>Стандартные размеры матриц</h2>
   <p class="caveat">В обозначениях вида 1″, 1/2,3″ «дюйм» условен: примерно 16&nbsp;мм диагонали на единицу обозначения, это не длина по линейке.</p>
-  <figure class="fig fig-lg">
-    <img src="images/schemes/f04-sensor-sizes.svg" alt="Стандартные физические размеры матриц">
+  <figure class="fig fig-lg fig--plain">
+    <img src="images/schemes/f04-sensor-sizes.png" alt="Стандартные физические размеры матриц">
   </figure>
 </section>
 
