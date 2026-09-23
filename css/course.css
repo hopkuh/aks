@@ -2487,3 +2487,12 @@ html[data-slide-theme="light"] body.mode-slides .speaker-notes {
   min-height: 280px;
   flex: 1 1 auto;
 }
+
+.f03a-location-layout ul {
+  margin: 0;
+  padding-left: 1.1em;
+  align-self: start;
+}
+.f03a-location-layout .f03a-static-figure {
+  min-height: 300px;
+}
