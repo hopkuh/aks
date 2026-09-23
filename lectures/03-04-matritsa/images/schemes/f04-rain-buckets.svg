@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 420" role="img" aria-labelledby="t">
+  <title id="t">=0;>38O: D>B>=K  4>64L, ?8:A5;8  2Q4@0</title>
+  <rect width="920" height="420" fill="#0f141c"/>
+  <text x="460" y="36" text-anchor="middle" fill="#9fb0c3" font-family="Segoe UI, Arial, sans-serif" font-size="18">!25B  4>64L (D>B>=K). 8:A5;8  2Q4@0. >;LH5 254@>  1>;LH5 2>4K, B>G=55 87<5@5=85.</text>
+
+  <!-- small buckets -->
+  <g transform="translate(80,70)">
+    <text x="160" y="24" text-anchor="middle" fill="#e8eef6" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">5;:85 ?8:A5;8</text>
+    <!-- rain -->
+    <g stroke="#6ec6ff" stroke-width="2" opacity="0.85">
+      <line x1="40" y1="50" x2="28" y2="95"/><line x1="70" y1="45" x2="58" y2="90"/>
+      <line x1="100" y1="52" x2="88" y2="97"/><line x1="130" y1="48" x2="118" y2="93"/>
+      <line x1="160" y1="50" x2="148" y2="95"/><line x1="190" y1="46" x2="178" y2="91"/>
+      <line x1="220" y1="52" x2="208" y2="97"/><line x1="250" y1="48" x2="238" y2="93"/>
+      <line x1="280" y1="50" x2="268" y2="95"/>
+    </g>
+    <!-- buckets row -->
+    <g fill="#1b2636" stroke="#8aa0b8" stroke-width="2">
+      <path d="M30 200 L50 280 L90 280 L110 200 Z"/><path d="M120 200 L140 280 L180 280 L200 200 Z"/>
+      <path d="M210 200 L230 280 L270 280 L290 200 Z"/>
+    </g>
+    <g fill="#3d8bfd" opacity="0.55">
+      <path d="M42 250 L55 280 L85 280 L98 250 Z"/><path d="M132 255 L145 280 L175 280 L188 255 Z"/>
+      <path d="M222 248 L235 280 L265 280 L278 248 Z"/>
+    </g>
+    <text x="160" y="320" text-anchor="middle" fill="#9fb0c3" font-family="Segoe UI, Arial, sans-serif" font-size="15"><0;> D>B>=>2 =0 OG59:C · 2KH5 >B=>A8B5;L=K9 HC<</text>
+  </g>
+
+  <!-- large buckets -->
+  <g transform="translate(500,70)">
+    <text x="160" y="24" text-anchor="middle" fill="#e8eef6" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">@C?=K5 ?8:A5;8</text>
+    <g stroke="#6ec6ff" stroke-width="2.5" opacity="0.85">
+      <line x1="60" y1="50" x2="40" y2="110"/><line x1="100" y1="45" x2="80" y2="105"/>
+      <line x1="140" y1="52" x2="120" y2="112"/><line x1="180" y1="48" x2="160" y2="108"/>
+      <line x1="220" y1="50" x2="200" y2="110"/><line x1="260" y1="46" x2="240" y2="106"/>
+    </g>
+    <g fill="#1b2636" stroke="#8aa0b8" stroke-width="2.5">
+      <path d="M40 190 L70 300 L150 300 L180 190 Z"/>
+      <path d="M200 190 L230 300 L310 300 L340 190 Z"/>
+    </g>
+    <g fill="#3d8bfd" opacity="0.65">
+      <path d="M55 230 L80 300 L140 300 L165 230 Z"/>
+      <path d="M215 225 L240 300 L300 300 L325 225 Z"/>
+    </g>
+    <text x="190" y="340" text-anchor="middle" fill="#9fb0c3" font-family="Segoe UI, Arial, sans-serif" font-size="15">1>;LH5 D>B>=>2 · AB018;L=55 >F5=:0 A83=0;0</text>
+  </g>
+</svg>

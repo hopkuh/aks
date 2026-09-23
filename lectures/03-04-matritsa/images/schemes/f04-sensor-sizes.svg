@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 520" role="img" aria-labelledby="t">
+  <title id="t">!B0=40@B=K5 D878G5A:85 @07<5@K <0B@8F</title>
+  <rect width="980" height="520" fill="#0f141c"/>
+  <text x="490" y="36" text-anchor="middle" fill="#e8eef6" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">$878G5A:89 @07<5@ <0B@8FK (?@81;86Q==>)</text>
+  <text x="490" y="62" text-anchor="middle" fill="#9fb0c3" font-family="Segoe UI, Arial, sans-serif" font-size="15">«N9<» 2 >1>7=0G5=88 B8?0 13, 1/2,33  CA;>2=0O 4803>=0;L H 16 << =0 >48= 4N9< >1>7=0G5=8O, =5 4;8=0 ;8=59:8</text>
+
+  <!-- scale: 1 mm = 8 px, origin bottom-left of sensor area -->
+  <g transform="translate(70,90)">
+    <!-- full frame 36x24 -->
+    <rect x="0" y="48" width="288" height="192" fill="none" stroke="#e8eef6" stroke-width="3"/>
+    <text x="144" y="40" text-anchor="middle" fill="#e8eef6" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">Full frame 36×24 <<</text>
+    <text x="144" y="155" text-anchor="middle" fill="#9fb0c3" font-family="Segoe UI, Arial, sans-serif" font-size="14">4803>=0;L H 43,3 << · :@>? 1</text>
+
+    <!-- APS-C ~23.5x15.6 -->
+    <rect x="50" y="98" width="188" height="125" fill="rgba(61,139,253,0.12)" stroke="#3d8bfd" stroke-width="2.5"/>
+    <text x="144" y="165" text-anchor="middle" fill="#7eb6ff" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">APS-C H 23,5×15,6</text>
+    <text x="144" y="185" text-anchor="middle" fill="#7eb6ff" font-family="Segoe UI, Arial, sans-serif" font-size="13">:@>? H 1,5</text>
+
+    <!-- 1" ~13.2x8.8 -->
+    <rect x="90" y="130" width="106" height="70" fill="rgba(110,198,255,0.15)" stroke="#6ec6ff" stroke-width="2"/>
+    <text x="143" y="172" text-anchor="middle" fill="#b7e4ff" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">13 H 13,2×8,8</text>
+
+    <!-- 1/2.3" ~6.2x4.6 -->
+    <rect x="115" y="150" width="50" height="37" fill="rgba(255,180,90,0.25)" stroke="#ffb45a" stroke-width="2"/>
+    <text x="250" y="175" fill="#ffb45a" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">1/2,33 H 6,2×4,6</text>
+  </g>
+
+  <g font-family="Segoe UI, Arial, sans-serif" fill="#c5d0dc" font-size="15">
+    <text x="70" y="360">"8? (4N9<K)</text>
+    <text x="280" y="360">H H8@8=0 × 2KA>B0, <<</text>
+    <text x="560" y="360">H 4803>=0;L, <<</text>
+    <line x1="70" y1="370" x2="900" y2="370" stroke="#2a3544"/>
+    <text x="70" y="398">1/2,33</text><text x="280" y="398">6,2 × 4,6</text><text x="560" y="398">7,7</text>
+    <text x="70" y="424">13</text><text x="280" y="424">13,2 × 8,8</text><text x="560" y="424">15,9 H 16</text>
+    <text x="70" y="450">APS-C</text><text x="280" y="450">23,5 × 15,6</text><text x="560" y="450">28,2</text>
+    <text x="70" y="476">Full frame</text><text x="280" y="476">36 × 24</text><text x="560" y="476">43,3</text>
+  </g>
+</svg>
