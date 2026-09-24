@@ -8,8 +8,8 @@
 </head>
 <body class="mode-slides">
   <header class="topbar">
-    <div class="brand">Ф06 · Форматы и сжатие <small>стрелки · F полноэкран · N заметки · ? справка</small></div>
-        <nav class="nav">
+    <div class="brand">Ф06 · Форматы <small>стрелки · F полноэкран · N заметки · ? справка</small></div>
+    <nav class="nav">
       <a href="../../index.html">Лекции</a>
       <a href="../../practice.html">Практика</a>
       <a href="../../simulators.html">Симуляторы</a>
@@ -25,136 +25,598 @@
   <div class="deck">
 <section class="slide slide--title is-active">
   <h1>Форматы и сжатие</h1>
-  <p>Ф06 · JPEG TIFF PNG RAW · потери / без потерь</p>
+  <p>Ф06 · Форматы</p>
 </section>
-
-<section class="slide">
-  <h2>Не путать</h2>
-  <ul>
-    <li>метод — идея (RLE)</li>
-    <li>алгоритм — конкретные шаги</li>
-    <li>формат — порядок байт в файле</li>
-    <li>расширение — подсказка ОС</li>
-    <li>кодек / контейнер — в видео</li>
-  </ul>
-  <p class="caveat">JPEG-сжатие может жить внутри TIFF</p>
+<section class="slide slide--pptx">
+  <h2>Формат и сжатие</h2>
+<ul>
+<li>Алгоритмы</li>
+<li>Методы</li>
+<li>Форматы</li>
+<li>Расширения</li>
+<li>Кодеки</li>
+<li>Контейнеры</li>
+<li>Стандарты</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s02_01.png" alt=""></figure>
 </section>
-
-<section class="slide slide--definition">
-  <p class="term">Формат файла</p>
-  <p class="defn">Структура данных в именованной области памяти. Задаёт размер и то, что ещё можно править.</p>
+<section class="slide slide--pptx">
+  <h2>Форматы файлов</h2>
+<ul>
+<li>Графический формат — это способ записи графической информации</li>
+<li>От него зависит размер файла и возможности редактирования</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s03_01.png" alt=""></figure>
 </section>
-
-<section class="slide">
-  <h2>BMP и GIF</h2>
-  <ul>
-    <li>BMP — RGB, без альфы, разве что RLE</li>
-    <li>GIF — 256 цветов, LZW, одна прозрачность, анимация</li>
-  </ul>
-  <p class="caveat">Схемы и кнопки — да · фото — нет</p>
+<section class="slide slide--pptx">
+  <h2>Форматы файлов</h2>
+<ul>
+<li>Способ хранения информации в файле:</li>
+<li>Растровый</li>
+<li>Векторный</li>
+<li>Смешаный</li>
+<li>Двухмерный</li>
+<li>Трехмерный</li>
+<li>Форма хранения информации</li>
+<li>Алгоритм сжатия</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s04_01.png" alt=""></figure>
 </section>
-
-<section class="slide slide--definition">
-  <p class="term">JPEG</p>
-  <p class="defn">Полноцвет, сжатие с потерями, без прозрачности, есть EXIF. Лидер фото с 1990-х.</p>
-  <div class="gallery"><img src="images/s08_01.jpg" alt=""><img src="images/s08_02.jpg" alt=""></div>
+<section class="slide slide--pptx">
+  <h2>Форматы файлов</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s05_01.png" alt=""></figure>
 </section>
-
-<section class="slide slide--definition">
-  <p class="term">PNG</p>
-  <p class="defn">Deflate без потерь, глубокий цвет или палитра, альфа-канал. Тяжелее JPEG на фото, незаменим на графике.</p>
+<section class="slide slide--pptx">
+  <h2>BMP – bitmap picture</h2>
+<ul>
+<li>Заголовок</li>
+<li>Информация о изображении</li>
+<li>Изображение</li>
+<li>RGB 1-8 бит на канал</li>
+<li>Сжатие RLE</li>
+<li>Нет прозрачности</li>
+<li>Формат Microsoft</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s06_01.png" alt=""></figure>
 </section>
-
-<section class="slide slide--definition">
-  <p class="term">TIFF</p>
-  <p class="defn">Теги, профили, маски, много страниц. Сжатие на выбор: LZW/ZIP или JPEG внутри — потери не исчезают.</p>
-  <p class="caveat">GeoTIFF — проекция, датум, аффинное преобразование</p>
+<section class="slide slide--pptx">
+  <h2>GIF - Graphics Interchange Format</h2>
+<ul>
+<li>8 бит/pxl</li>
+<li>Сжатие LZW</li>
+<li>1 значение прозрачности</li>
+<li>Анимация</li>
+<li>Применение:</li>
+<li>текст</li>
+<li>схемы</li>
+<li>картинки и анимация веб</li>
+<li>прозрачный</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s07_01.gif" alt=""><img src="images/pptx/s07_02.png" alt=""><img src="images/pptx/s07_03.png" alt=""></div>
 </section>
-
-<section class="slide slide--definition">
-  <p class="term">RAW</p>
-  <p class="defn">Семейство сырых отсчётов после АЦП, не единый формат. DNG — попытка Adobe.</p>
-  <p>ББ и кривой ещё нет. Битность часто 12–14. Дискретизация уже случилась.</p>
-  <div class="gallery"><img src="images/s14_01.png" alt=""><img src="images/s14_02.png" alt=""></div>
+<section class="slide slide--pptx">
+  <h2>JPEG - Joint Photographic Experts Group</h2>
+<ul>
+<li>Сжатие JPEG и lossless JPEG</li>
+<li>Цветовые модели</li>
+<li>До 32 бит/пиксель</li>
+<li>Нет прозрачности</li>
+<li>Метаданные</li>
+<li>Применение:</li>
+<li>Фотографии для просмотра</li>
+<li>Цветная графика в web</li>
+<li>.jpg, .jfif, .jpe, .jpeg.</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s08_01.jpg" alt=""><img src="images/pptx/s08_02.jpg" alt=""></div>
 </section>
-
-<section class="slide">
-  <h2>Метаданные Exif</h2>
-  <p>Камера, t, K, ISO, вспышка, f, ориентация, ББ, иногда координаты. Для серии АФС — не украшение.</p>
+<section class="slide slide--pptx">
+  <h2>JPEG - Joint Photographic Experts Group</h2>
+<ul>
+<li>Сжатие JPEG и lossless JPEG</li>
+<li>Цветовые модели</li>
+<li>До 32 бит/пиксель</li>
+<li>Нет прозрачности</li>
+<li>Метаданные</li>
+<li>Применение:</li>
+<li>Фотографии для просмотра</li>
+<li>Цветная графика в web</li>
+<li>.jpg, .jfif, .jpe, .jpeg.</li>
+<li>…лучшее сжатие и прозрачность, но отсутствие поддержки</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s09_01.png" alt=""></figure>
 </section>
-
-<section class="slide">
-  <h2>С потерями и без</h2>
-  <figure class="fig fig-lg">
-        <img src="images/schemes/f05-lossy-lossless.png" alt="Сжатие без потерь и с потерями">
-        
-      </figure>
+<section class="slide slide--pptx">
+  <h2>PNG - Portable Network Graphics</h2>
+<ul>
+<li>lossless Deflate</li>
+<li>Цветовые модели</li>
+<li>До 32 бит/канал</li>
+<li>Канал прозрачности</li>
+<li>Метаданные</li>
+<li>Служебная разметка</li>
+<li>Применение:</li>
+<li>Фотографии для просмотра</li>
+<li>Цветная графика в web</li>
+<li>.png</li>
+<li>… а еще есть анимация apng и mng</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s10_01.png" alt=""></figure>
 </section>
-
-<section class="slide">
-  <h2>Без потерь</h2>
-  <ul>
-    <li>RLE — серии повторов: WWWWW → W5</li>
-    <li>LZW — словарь, GIF/TIFF</li>
-    <li>Deflate — LZ77 + Хаффман, PNG</li>
-  </ul>
-  <p class="caveat">На фото типичный выигрыш 1,5–4 раза</p>
+<section class="slide slide--pptx">
+  <h2>TIFF-Tagged Image File Format</h2>
+<ul>
+<li>Цветовые модели</li>
+<li>Цветовые профили</li>
+<li>Многослойная прозрачность (маски)</li>
+<li>Метаданные</li>
+<li>Служебная разметка</li>
+<li>алгоритмы сжатия:</li>
+<li>lossless RLE, LZW</li>
+<li>JPEG</li>
+<li>ZIP</li>
+<li>LZ77, JBIG, CCITT Group 3, CCITT Group 4</li>
+<li>Применение:</li>
+<li>Полиграфия</li>
+<li>Факсы</li>
+<li>.tif</li>
+</ul>
 </section>
-
-<section class="slide">
-  <h2>Конвейер JPEG</h2>
-  <figure class="fig fig-lg">
-        <img src="images/schemes/f05-jpeg-pipeline.png" alt="Шаги lossy JPEG">
-        
-      </figure>
+<section class="slide slide--pptx">
+  <h2>GeoTIFF by NASA</h2>
+<ul>
+<li>Вид картографической проекции</li>
+<li>Система географических координат</li>
+<li>Параметры (датум) земного геоида</li>
+<li>Дискреты разрешения изображения</li>
+<li>Матрицу полиномиального, сплайнового или аффинного преобразования</li>
+<li>Характерные параметры изображения</li>
+<li>.tif</li>
+</ul>
 </section>
-
-<section class="slide">
-  <h2>Субдискретизация</h2>
-  <p>Y отдельно, цветности реже. Глаз к цвету слепее. 4:2:2 ≈ ⅔ от 4:4:4.</p>
-  <figure class="fig fig-lg"><img src="images/s36_01.jpg" alt=""></figure>
+<section class="slide slide--pptx">
+  <h2>Метаданные</h2>
+<ul>
+<li>производитель камеры</li>
+<li>модель</li>
+<li>выдержка</li>
+<li>диафрагма</li>
+<li>светочувствительность в ед. ISO</li>
+<li>использование вспышки</li>
+<li>разрешение кадра</li>
+<li>фокусное расстояние</li>
+<li>размер матрицы</li>
+<li>эквивалентное фокусное расстояние</li>
+<li>дата и время съёмки</li>
+<li>ориентация камеры (вертикально/горизонтально)</li>
+<li>тип баланса белого</li>
+<li>географические координаты и адрес места съёмки</li>
+</ul>
 </section>
-
-<section class="slide">
-  <h2>ДКП 8×8</h2>
-  <p>Низкие частоты — смысл. Высокие — шум и мелкий контраст. Квантование — здесь крутят «качество».</p>
-  <div class="gallery"><img src="images/s37_01.png" alt=""><img src="images/s37_02.png" alt=""><img src="images/s37_03.gif" alt=""></div>
+<section class="slide slide--pptx">
+  <h2>Цифровые негативы/сырые данные/RAW</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s14_01.png" alt=""><img src="images/pptx/s14_02.png" alt=""><img src="images/pptx/s14_03.png" alt=""></div>
 </section>
-
-<section class="slide">
-  <h2>Цена JPEG</h2>
-  <p>Сетка блоков, нет альфы, повторное пересохранение копит артефакты.</p>
-  <figure class="fig fig-lg"><img src="images/s50_01.jpg" alt=""></figure>
+<section class="slide slide--pptx">
+  <h2>RAW – это не формат файла</h2>
+<p>Из-за технических особенностей матриц и АЦП разных производителей всеобщего стандарта RAW не существует</p>
+<p>DNG (Digital Negative Specification) - открытый формат для Raw-файлов изображений, используемый в цифровой фотографии. Попытка компании Adobe стандартизировать брендовый хаос.</p>
 </section>
-
-<section class="slide">
-  <h2>Дальше по вебу</h2>
-  <ul>
-    <li>WebP — часто легче JPEG, умеет альфу</li>
-    <li>HEIF / BPG — сильнее, лицензии мешают</li>
-    <li>PDF — электронная распечатка, не Word</li>
-  </ul>
+<section class="slide slide--pptx">
+  <h2>Особенности RAW</h2>
+<ul>
+<li>Нельзя работать напрямую, без интерпретации</li>
+<li>Камера не устанавливает:</li>
+<li>ББ</li>
+<li>Смещение экспозиции</li>
+<li>Параметры экспозиции и цвета</li>
+<li>Резкость и шумоподавление</li>
+<li>Изображения не сжаты</li>
+<li>Бо́льшая широта экспозиционных ступеней</li>
+<li>тем не менее сигнал оцифрован, то есть прошел этапы дискретизации и квантования в АЦП</li>
+</ul>
 </section>
-
-<section class="slide">
-  <h2>Для модели</h2>
-  <p>Серия, с которой ещё считаете стерео: RAW или TIFF без потерь. Показ заказчику — JPEG.</p>
+<section class="slide slide--pptx">
+  <h2>PSD - Photoshop Document</h2>
+<ul>
+<li>Рабочий формат Adobe Photoshop</li>
+<li>Поддержка:</li>
+<li>слоев и масок</li>
+<li>Текста</li>
+<li>Вектора</li>
+<li>3D</li>
+<li>Видео</li>
+</ul>
 </section>
-
-<section class="slide">
-  <h2>Вопросы</h2>
-  <ol>
-    <li>Формат vs алгоритм — пример?</li>
-    <li>JPEG / TIFF / PNG / RAW — потери и задача?</li>
-    <li>Что в RAW уже сделал АЦП?</li>
-    <li>Зачем YCbCr и 8×8?</li>
-    <li>Какой файл для стереопары?</li>
-  </ol>
+<section class="slide slide--pptx">
+  <h2>SVG - Scalable Vector Graphics</h2>
+<ul>
+<li>Основной векторный формат в web</li>
+<li>Поддерживает анимацию</li>
+<li>Отслеживает события на странице</li>
+<li>Открытый</li>
+<li>Текстовый (XML)</li>
+<li>Много весит (есть сжатый SVGZ – zip)</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s18_01.png" alt=""></figure>
 </section>
-
-<section class="slide slide--title">
-  <h1>Спасибо</h1>
-  <p><a href="notes.html">Конспект</a> · <a href="../06-cvet/slides.html">Ф07 цвет</a></p>
+<section class="slide slide--pptx">
+  <h2>Кратко о векторах</h2>
+<ul>
+<li>PS PostScript</li>
+<li>EPS Encapsulated PostScript</li>
+<li>WMF Windows Metafile</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s19_01.png" alt=""><img src="images/pptx/s19_02.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>PDF - Portable Document Format</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s20_01.png" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Более полный перечень:</h2>
+<ul>
+<li>https://fileinfo.com/filetypes/vector_image</li>
+<li>https://fileinfo.com/filetypes/raster_image</li>
+</ul>
+</section>
+<section class="slide slide--pptx">
+  <h2>Формат и сжатие</h2>
+<ul>
+<li>Алгоритмы</li>
+<li>Методы</li>
+<li>Форматы</li>
+<li>Расширения</li>
+<li>Кодеки</li>
+<li>Контейнеры</li>
+<li>Стандарты</li>
+<li>Сжатие (компрессия)</li>
+<li>Кодирование</li>
+</ul>
+</section>
+<section class="slide slide--pptx">
+  <h2>Алгоритмы и методы</h2>
+<ul>
+<li>алгоритмы</li>
+<li>методы</li>
+<li>набор инструкций, который в конечное число шагов приводит к преобразованию исходного кода цифрового изображения в код меньшего объёма за счёт устранения избыточности</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s23_01.png" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Кодирование</h2>
+<ul>
+<li>представление информации в виде кода</li>
+<li>Код – это конечная последовательность битов</li>
+<li>Длина кода – это количество битов в нём.</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s24_01.jpg" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Формат файла</h2>
+<p>- структура(порядок) данных, записанных в этом файле. Файл – это просто ограниченная область памяти с определенным именем и атрибутами.</p>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s25_01.png" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Расширение файла</h2>
+<p>- это дополнительные символы к имени файла, записываются через точку. Это простой способ объяснить всем программам, какого формата данный файл.</p>
+</section>
+<section class="slide slide--pptx">
+  <h2>Видео</h2>
+<ul>
+<li>Кодеки - программа, реализующая алгоритм кодирования.</li>
+<li>Контейнеры - определяет структуру файла, возможные кодеки и их параметры, состав потоков и дополнительных данных, например, субтитры</li>
+<li>Стандарты -  PAL: 50i, 25p, 50p, NTSC:  60i, 29.97p, 30p, 59.94p, 60p и т.д.</li>
+<li>Потоки – аудио, видео, текст</li>
+<li>И также форматы, алгоритмы, методы…</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s27_01.png" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Сжатие</h2>
+<ul>
+<li>Недеструктивное - сжатие графики без потерь (lossless)</li>
+<li>Деструктивное - сжатие изображений с потерями (lossy)</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s28_01.png" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Недеструктивное/lossless</h2>
+<ul>
+<li>HEIF – High Efficiency Image File Format (lossless or lossy compression, using HEVC)</li>
+<li>ILBM – (lossless RLE compression of Amiga IFF images)</li>
+<li>LDCT – Lossless Discrete Cosine Transform</li>
+<li>JBIG2 – (lossless or lossy compression of B&amp;W images)</li>
+<li>JPEG 2000 – (lossless compression method LeGall-Tabatabai reversible integer wavelet transform)</li>
+<li>JPEG XR – formerly WMPhoto and HD Photo, includes a lossless compression method</li>
+<li>JPEG-LS – (lossless/near-lossless compression standard)</li>
+<li>PCX – PiCture eXchange</li>
+<li>PDF – Portable Document Format (lossless or lossy compression)</li>
+<li>PNG – Portable Network Graphics</li>
+<li>TIFF – Tagged Image File Format (lossless or lossy compression)</li>
+<li>TGA – Truevision TGA</li>
+<li>WebP – (lossless or lossy compression of RGB and RGBA images)</li>
+<li>FLIF – Free Lossless Image Format</li>
+<li>Недеструктивное/lossless</li>
+</ul>
+</section>
+<section class="slide slide--pptx">
+  <h2>RLE run-length encoding</h2>
+<ul>
+<li>Кодирование длин серий или кодирование повторов -  алгоритм сжатия данных, заменяющий повторяющиеся символы (серии) на один символ и число его повторов</li>
+<li>10 x</li>
+<li>Недеструктивное/lossless</li>
+<li>BMP, TGA, TIFF</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s30_01.jpg" alt=""><img src="images/pptx/s30_02.jpg" alt=""><img src="images/pptx/s30_03.jpg" alt=""><img src="images/pptx/s30_04.jpg" alt=""><img src="images/pptx/s30_05.jpg" alt=""><img src="images/pptx/s30_06.jpg" alt=""><img src="images/pptx/s30_07.jpg" alt=""><img src="images/pptx/s30_08.jpg" alt=""><img src="images/pptx/s30_09.jpg" alt=""><img src="images/pptx/s30_10.jpg" alt=""><img src="images/pptx/s30_11.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>LZW - алгоритм Лемпеля-Зива-Велча (LZ77-78)</h2>
+<ul>
+<li>«abacabadabacabae»</li>
+<li>«0 1 0 2 5 0 3 9 8 6 4»</li>
+<li>«a b a c ab a d aba ca ba e»</li>
+<li>Не требует вычисления вероятностей встречаемости символов или кодов.</li>
+<li>Для декомпрессии не надо сохранять таблицу строк в файл для распаковки. Алгоритм построен таким образом, что мы в состоянии восстановить таблицу строк, пользуясь только потоком кодов.</li>
+<li>Данный тип компрессии не вносит искажений в исходный графический файл, и подходит для сжатия растровых данных любого типа.</li>
+<li>Алгоритм не проводит анализ входных данных поэтому не оптимален.</li>
+<li>Не более 256 значений!</li>
+<li>Анимация – разница с предыдущим кадром</li>
+<li>Этот алгоритм воспринимался как математическая абстракция до 1984</li>
+<li>GIF and TIFF</li>
+<li>Недеструктивное/lossless</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s31_01.jpg" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Deflate</h2>
+<ul>
+<li>замена повторяющихся строк указателями (алгоритм LZ77);</li>
+<li>замена символов новыми символами, основываясь на частоте их использования (алгоритм Хаффмана).</li>
+<li>Открытый</li>
+<li>До 16 бит/канал</li>
+<li>Нет CMYK</li>
+<li>Alpha канал 8 бит</li>
+<li>Метаданные</li>
+<li>PNG, MNG, and TIFF</li>
+<li>Недеструктивное/lossless</li>
+<li>Сжимает между строк!</li>
+</ul>
+</section>
+<section class="slide slide--pptx">
+  <h2>FLIF (Free Lossless Image Format)</h2>
+<ul>
+<li>использует арифметическое кодирование, один из алгоритмов энтропийного сжатия</li>
+<li>Коэффициент сжатия выше другихсуществующих</li>
+<li>Недеструктивное/lossless</li>
+<li>достаточно низкая скорость кодирования</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s33_01.png" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Изначально:</h2>
+<p>ориентировочно сжимают в 1.5-4 раза</p>
+</section>
+<section class="slide slide--pptx">
+  <h2>JPEG lossy сжатие</h2>
+<ul>
+<li>Перевод RGB в YCbCr</li>
+<li>Субдискретизация</li>
+<li>Дискретное косинусное преобразование</li>
+<li>Квантование</li>
+<li>Линейный вид</li>
+<li>RLE</li>
+<li>Алгоритм Хаффмана</li>
+<li>Деструктивное/lossy</li>
+</ul>
+</section>
+<section class="slide slide--pptx">
+  <h2>Цветовая субдискретизация</h2>
+<ul>
+<li>технология кодирования изображений со снижением цветового разрешения, при которой частота выборки цветоразностных сигналов может быть меньше частоты выборки яркостного сигнала.</li>
+<li>Сжатые изображения Y&#x27;CbCr 4: 2: 2 требуют двух третей исходного 4: 4: 4 R&#x27;G&#x27;B &#x27; .</li>
+<li>При этом зритель почти не видит визуальных различий.</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s36_01.jpg" alt=""><img src="images/pptx/s36_02.wmf" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Дискретное косинусное преобразование и дискретизация</h2>
+<ul>
+<li>низкая частота – информация</li>
+<li>высокая частота - шум</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s37_01.wmf" alt=""><img src="images/pptx/s37_02.gif" alt=""><img src="images/pptx/s37_03.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Квантование</h2>
+<ul>
+<li>деление матрицы коэффициентов на матрицу квантования (матрицу весов)</li>
+<li>Именно на этом этапе можно управлять степенью сжатия и определять, что именно будет сжато</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s38_01.png" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Квантование</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s39_01.png" alt=""><img src="images/pptx/s39_02.png" alt=""><img src="images/pptx/s39_03.png" alt=""><img src="images/pptx/s39_04.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Линейный вид</h2>
+<ul>
+<li>Преобразование матрицы в строку</li>
+<li>По диагонали, начиная с верхнего левого угла – соответствует росту частоты коэфиициентов</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s40_01.wmf" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>RLE</h2>
+<ul>
+<li>замена повторяющихся символов на один символ и число его повторов</li>
+<li>WWOOOOOKRRRRR - W2O5K1R4</li>
+</ul>
+</section>
+<section class="slide slide--pptx">
+  <h2>Дельта-кодирование</h2>
+<ul>
+<li>каждый байт содержит отличие от какого-то значения, а не абсолютную величину</li>
+<li>12 13 14 14 14 13 13 14                -             12 1 1 0 0 -1 0 1</li>
+</ul>
+</section>
+<section class="slide slide--pptx">
+  <h2>Алгоритм Хаффмана</h2>
+<ul>
+<li>часто используемым значениям присваиваются короткие коды, а редко встречающимся – длинные</li>
+<li>ABBAAABA – 01100010</li>
+<li>ABC – 001100 (одного бита уже не хватает)</li>
+<li>ABC – 0100 («сжали»)</li>
+<li>А – 0</li>
+<li>B – 1</li>
+<li>А – 00</li>
+<li>B – 01</li>
+<li>C – 10</li>
+<li>А – 0</li>
+<li>B – 1</li>
+<li>C – 00</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s43_01.png" alt=""><img src="images/pptx/s43_02.png" alt=""><img src="images/pptx/s43_03.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Алгоритм Хаффмана</h2>
+<ul>
+<li>AAAAAABC – 000000100</li>
+<li>AAAAAABC – 0000001011</li>
+<li>AAAAAABC - 0000000000000110</li>
+<li>А – 0</li>
+<li>B – 1</li>
+<li>C – 00</li>
+<li>А – 0</li>
+<li>B – 10</li>
+<li>C – 11</li>
+<li>А – 00</li>
+<li>B – 01</li>
+<li>C – 10</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s44_01.png" alt=""><img src="images/pptx/s44_02.png" alt=""><img src="images/pptx/s44_03.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Алгоритм Хаффмана</h2>
+<ul>
+<li>Необходимо проанализировать весьдокумент</li>
+<li>Больше итераций – выше степень сжатия</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s45_01.png" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Про это самое:</h2>
+<ul>
+<li>https://habr.com/ru/post/206264/</li>
+<li>https://habr.com/ru/post/454944/</li>
+</ul>
+</section>
+<section class="slide slide--pptx">
+  <h2>Вейвлет и фрактальное сжатие</h2>
+<ul>
+<li>Нет дробления на блоки (эффекта Гиббса)</li>
+<li>Постепенное декодирование (удобно передавать по сети)</li>
+<li>Наличие миниатюры изображения</li>
+<li>Регулируемая степень сжатия (от двух до двухсот раз)</li>
+<li>Артефакты на контурах объектов</li>
+<li>Использование в JPEG2000</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s47_01.wmf" alt=""><img src="images/pptx/s47_02.png" alt=""><img src="images/pptx/s47_03.jpg" alt=""><img src="images/pptx/s47_04.jpg" alt=""><img src="images/pptx/s47_05.jpg" alt=""><img src="images/pptx/s47_06.jpg" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Фрактальное сжатие</h2>
+<ul>
+<li>Оптимален для сжатия самоподобных изображений</li>
+<li>Коэффициент сжатия до 20 000 раз</li>
+<li>Сжимает лучше обычных алгоритмов</li>
+<li>Крайне медленное кодирование</li>
+<li>Декодирует быстрее, чем JPEG</li>
+<li>Избегает пикселизации при маштабировании</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s48_01.png" alt=""><img src="images/pptx/s48_02.jpg" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Даты релизов:</h2>
+<ul>
+<li>TIFF 1986</li>
+<li>BMP 1987</li>
+<li>GIF 1987-1989</li>
+<li>JPEG 1991</li>
+<li>JPEG2000 2000</li>
+<li>PNG 1996</li>
+<li>WEBP 2010</li>
+<li>BPG 2014</li>
+<li>FLIF 2015</li>
+</ul>
+</section>
+<section class="slide slide--pptx">
+  <h2>Недостатки JPEG</h2>
+<ul>
+<li>Блочная структура изображения (8*8)</li>
+<li>Отсутствие прозрачности</li>
+<li>Малый коэффициент сжатия</li>
+<li>Прямая последовательность кодирования</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s50_01.jpg" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>JPEG и PJPEG</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s51_01.jpg" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>JPEG и PJPEG</h2>
+<p>В 2015 году Facebook перешёл на PJPEG и трафик уменьшился на 10%. Они смогли показать изображение хорошего качества на 15% быстрее, чем раньше, оптимизировав воспринимаемое время загрузки, как показано на рисунке выше</p>
+<p>Декодирование PJPEG медленнее, чем базового JPEG — иногда втрое медленнее</p>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s52_01.png" alt=""><img src="images/pptx/s52_02.jpg" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>RIFF (WebP)</h2>
+<ul>
+<li>Согласно данным Google , в среднем изображения WebP на 25-40% меньше, чем сопоставимые JPEG, и на 26% меньше, чем сопоставимые PNG.</li>
+<li>Для работы с данным форматом существует открытое программное обеспечение, в частности библиотека libvpx и конвертер webpconv.</li>
+<li>Прозрачность</li>
+<li>Анимация</li>
+<li>Сжатие без потерь</li>
+<li>Только 8 bit/канал</li>
+<li>YUV 4:2:0</li>
+<li>Предсказание блоков!</li>
+<li>Google Chrome</li>
+<li>Opera</li>
+<li>Firefox</li>
+<li>Microsoft Edge</li>
+<li>Android</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s53_01.png" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>BPG</h2>
+<ul>
+<li>Поддержка в большинстве браузеров, благодаря наличию декодировщика на языке JavaScript. (Размер библиотеки 76 Кб)</li>
+<li>Методы кодирования основаны на подмножестве стандарта сжатия видео HEVC/H.265;</li>
+<li>Использование идентичных с JPEG форматов цветовой субдискретизации: оттенки серого, YCbCr 4:2:0, 4:2:2, 4:4:4, что позволяет исключить потери при преобразовании из JPEG.</li>
+<li>Поддержка слоя прозрачности;</li>
+<li>Поддержка от 8 до 14 битов на цветовой канал;</li>
+<li>Наличие режима сжатия без потерь.</li>
+<li>Поддерка анимации</li>
+<li>проблемы с лицензированием</li>
+<li>http://xooyoozoo.github.io</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s54_01.jpg" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Скорость кодирования/декодирования</h2>
+<p>Уровень сжатия ~ скорость открытия</p>
+</section>
+<section class="slide slide--pptx">
+  <h2>Немного о недеструктивном в деструктивном</h2>
+<ul>
+<li>Большинство Lossy форматов имеет свою Lossless версию</li>
+<li>Однако они редко пользуются популярностью и не так хороши</li>
+</ul>
+</section>
+<section class="slide slide--pptx">
+  <h2>Итоги:</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s57_01.png" alt=""></figure>
 </section>
   </div>
   <div class="footer-bar">

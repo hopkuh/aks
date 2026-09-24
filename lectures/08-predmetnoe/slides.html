@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ф09 · Моделирование — слайды</title>
+  <title>Ф09 · Предмет — слайды</title>
   <link rel="stylesheet" href="../../css/course.css" />
 </head>
 <body class="mode-slides">
   <header class="topbar">
-    <div class="brand">Ф09 · Предметное моделирование <small>стрелки · F полноэкран · N заметки · ? справка</small></div>
-        <nav class="nav">
+    <div class="brand">Ф09 · Предмет <small>стрелки · F полноэкран · N заметки · ? справка</small></div>
+    <nav class="nav">
       <a href="../../index.html">Лекции</a>
       <a href="../../practice.html">Практика</a>
       <a href="../../simulators.html">Симуляторы</a>
@@ -20,95 +20,418 @@
       <a href="SOURCES.md">Источники</a>
       <a href="../07-stereo/slides.html">Ф08</a>
       <a href="../09-fotogrammetriya/slides.html">Ф10</a>
-      <a href="../a01-vvedenie/slides.html">А01</a>
     </nav>
   </header>
   <div class="deck">
 <section class="slide slide--title is-active">
   <h1>Предметное моделирование</h1>
-  <p>Ф09 · стенд · виды моделей · съёмка · ретопология</p>
+  <p>Ф09 · Предмет</p>
 </section>
-
-<section class="slide slide--definition">
-  <p class="term">Фотограмметрия</p>
-  <p class="defn">Форма, размеры, положение — по фото. Бытовой выход пары — замкнутая 3D-копия, не рендер «из головы».</p>
+<section class="slide slide--pptx">
+  <h2>Выбор фотоаппарата</h2>
+<ul>
+<li>Большая матрица</li>
+<li>Крупный пиксель</li>
+<li>Много пикселей</li>
+<li>Хорошая оптика</li>
+<li>Умный процессор</li>
+<li>…тот, что есть у себя или соседа слева</li>
+<li>Phase One XF Camera Body</li>
+<li>2 240 000,00 ₽*</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s02_01.jpg" alt=""></figure>
 </section>
-
-<section class="slide">
-  <h2>Камера</h2>
-  <p>Большая матрица, крупный пиксель, оптика, процессор. На практике — та, что есть.</p>
-  <figure class="fig"><img src="images/s02_01.jpg" alt=""></figure>
+<section class="slide slide--pptx">
+  <h2>Домашняя фотостудия</h2>
+<ul>
+<li>Фотоаппарат</li>
+<li>Штатив</li>
+<li>Свет</li>
+<li>Рассеиватель</li>
+<li>Спусковой тросик</li>
+<li>Фон</li>
+<li>Поворотный стол</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s03_01.jpg" alt=""></figure>
 </section>
-
-<section class="slide">
-  <h2>Домашний стенд</h2>
-  <p>Штатив · свет · рассеиватель · тросик · фон · поворотный стол</p>
-  <div class="gallery"><img src="images/s04_01.jpeg" alt=""><img src="images/s04_02.jpeg" alt=""><img src="images/s04_03.jpeg" alt=""><img src="images/s04_04.jpeg" alt=""></div>
+<section class="slide slide--pptx">
+  <h2>Домашняя фотостудия</h2>
+<ul>
+<li>Фотоаппарат</li>
+<li>Штатив</li>
+<li>Свет</li>
+<li>Рассеиватель</li>
+<li>Спусковой тросик</li>
+<li>Фон</li>
+<li>Поворотный стол</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s04_01.jpg" alt=""><img src="images/pptx/s04_02.jpg" alt=""><img src="images/pptx/s04_03.jpg" alt=""><img src="images/pptx/s04_04.jpg" alt=""><img src="images/pptx/s04_05.jpg" alt=""></div>
 </section>
-
-<section class="slide">
-  <h2>Виды моделей</h2>
-  <figure class="fig fig-lg">
-        <img src="images/schemes/f08-model-types.png" alt="Виды 3D-моделей">
-        
-      </figure>
-  <p class="caveat">Автомат из фото → триангуляция + текстура</p>
+<section class="slide slide--pptx">
+  <h2>Фотограмметрия</h2>
+<p>- направление, занимающееся определением формы, размеров, положения и иных характеристик объектов по их фотоизображениям</p>
+<p>Одним из современных направлений фотограмметрии является создание трехмерных копий объектов по фотографиям</p>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s05_01.png" alt=""></figure>
 </section>
-
-<section class="slide">
-  <h2>Цепочка</h2>
-  <figure class="fig fig-lg">
-        <img src="images/schemes/f08-pipeline.png" alt="Съёмка, соответствия, облако, сетка, текстура, ретопология">
-        
-      </figure>
+<section class="slide slide--pptx">
+  <h2>Трёхмерное сканирование (3D-scan)</h2>
+<p>Трехмерное сканирование объектов набирает большую популярность в связи с растущей цифровизацией общества.</p>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s06_01.png" alt=""></figure>
 </section>
-
-<section class="slide">
-  <h2>Параллакс</h2>
-  <p class="formula">p = X<sub>1</sub> − X<sub>2</sub></p>
-  <p class="formula">Z / f = − B / p<span class="eq-note">нормальная пара</span></p>
-  <div class="gallery"><img src="images/s22_01.png" alt=""><img src="images/s22_02.png" alt=""></div>
+<section class="slide slide--pptx">
+  <h2>Применение трёхмерных моделей:</h2>
+<ul>
+<li>Индустрия компьютерных игр (игры)</li>
+<li>фотосъёмка</li>
+<li>создание фотограмметрических 3D-моделей</li>
+<li>3D-моделирование в графических редакторах</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s07_01.jpg" alt=""><img src="images/pptx/s07_02.jpg" alt=""><img src="images/pptx/s07_03.jpg" alt=""><img src="images/pptx/s07_04.jpg" alt=""></div>
 </section>
-
-<section class="slide">
-  <h2>Объект</h2>
-  <ul>
-    <li>матовый, цветной, простая геометрия</li>
-    <li>не стекло, металл, шерсть, монотон</li>
-    <li>не менять f и фокус · выключить автоповорот</li>
-  </ul>
+<section class="slide slide--pptx">
+  <h2>Применение трёхмерных моделей:</h2>
+<ul>
+<li>Индустрия компьютерных игр (игры)</li>
+<li>Тизер к игре Cyberpunk: youtu.be</li>
+<li>итоговый рендер</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s08_01.jpg" alt=""><img src="images/pptx/s08_02.jpg" alt=""></div>
 </section>
-
-<section class="slide">
-  <h2>Съёмка</h2>
-  <p>Траектории вокруг. Лишние кадры лучше дыр между маршрутами. Рёбра — чаще.</p>
-  <div class="gallery"><img src="images/s27_01.png" alt=""><img src="images/s27_02.png" alt=""><img src="images/s27_03.png" alt=""><img src="images/s27_04.png" alt=""></div>
+<section class="slide slide--pptx">
+  <h2>Применение трёхмерных моделей:</h2>
+<ul>
+<li>Киноиндустрия (фильмы и мультфильмы)</li>
+<li>3D-модели для фильма «Безумный Макс»</li>
+<li>моделирование персонажей для МФ «Relicts»</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s09_01.jpg" alt=""><img src="images/pptx/s09_02.jpg" alt=""></div>
 </section>
-
-<section class="slide">
-  <h2>Ретопология</h2>
-  <p>Шум вниз, полигоны вниз (млн → тысячи), UV, карты нормалей вместо «ещё треугольников».</p>
-  <div class="gallery"><img src="images/s32_01.png" alt=""><img src="images/s32_02.png" alt=""></div>
+<section class="slide slide--pptx">
+  <h2>Слайд 10</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s10_01.jpg" alt=""><img src="images/pptx/s10_02.jpg" alt=""></div>
 </section>
-
-<section class="slide">
-  <h2>Одни снимки ≠ одна модель</h2>
-  <p>Разное ПО и пресеты. Ошибка взаимного ориентирования ломает грани. Проще переснять, чем сутки тыкать маркеры.</p>
+<section class="slide slide--pptx">
+  <h2>Применение трёхмерных моделей:</h2>
+<ul>
+<li>Отрасль культуры (музеи)</li>
+<li>Библиотека 3D-моделей объектов культуры и истории: sketchfab.com</li>
+<li>Крылатый «Лев-Сигна», музей Востока, г. Москва</li>
+<li>Белокаменный Георгиевский собор ХIII века в г. Юрьев-Польском</li>
+<li>стенд для предметной съемки</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s11_01.png" alt=""><img src="images/pptx/s11_02.png" alt=""><img src="images/pptx/s11_03.png" alt=""><img src="images/pptx/s11_04.png" alt=""></div>
 </section>
-
-<section class="slide">
-  <h2>Вопросы</h2>
-  <ol>
-    <li>Какой тип модели выдаёт Metashape?</li>
-    <li>Почему стекло не строится?</li>
-    <li>Что нельзя менять в серии?</li>
-    <li>Зачем ретопология?</li>
-  </ol>
+<section class="slide slide--pptx">
+  <h2>Применение трёхмерных моделей:</h2>
+<ul>
+<li>Отрасли промышленности (реинжиниринг и контроль качества)</li>
+<li>реставрация Ford Eifel 1937 года</li>
+<li>Контроль качества фрезеровочных работ</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s12_01.jpg" alt=""><img src="images/pptx/s12_02.jpg" alt=""><img src="images/pptx/s12_03.jpg" alt=""></div>
 </section>
-
-<section class="slide slide--title">
-  <h1>Спасибо</h1>
-  <p><a href="notes.html">Конспект</a> · <a href="../a01-vvedenie/slides.html">семестр 4 · А01</a></p>
+<section class="slide slide--pptx">
+  <h2>Применение трёхмерных моделей:</h2>
+<ul>
+<li>Дизайн и проектирование (3D-визуализация)</li>
+<li>Автоматическое определение зданий на 3D-модели</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s13_01.jpg" alt=""><img src="images/pptx/s13_02.jpg" alt=""><img src="images/pptx/s13_03.jpg" alt=""><img src="images/pptx/s13_04.jpg" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Применение трёхмерных моделей:</h2>
+<ul>
+<li>Медицина и органы безопасности</li>
+<li>Цифровая модель голени и ортеза</li>
+<li>фиксация ущерба от аварии</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s14_01.jpg" alt=""><img src="images/pptx/s14_02.jpg" alt=""><img src="images/pptx/s14_03.jpg" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Применение трёхмерных моделей:</h2>
+<p>Индивидуальное применение</p>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s15_01.png" alt=""><img src="images/pptx/s15_02.jpg" alt=""><img src="images/pptx/s15_03.jpg" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Применение трёхмерных моделей:</h2>
+<ul>
+<li>Индустрия компьютерных игр (игры)</li>
+<li>Киноиндустрия (фильмы и мультфильмы)</li>
+<li>Отрасль культуры (музеи)</li>
+<li>Отрасли промышленности (реинжиниринг и контроль качества)</li>
+<li>Дизайн и проектирование (3D-визуализация)</li>
+<li>Индивидуальное применение</li>
+<li>Медицина и органы безопасности</li>
+<li>…</li>
+</ul>
+</section>
+<section class="slide slide--pptx">
+  <h2>Поверхностная триангуляционная модель</h2>
+<ul>
+<li>Поверхностная квадраляционная модель</li>
+<li>Твердотельная модель</li>
+<li>Воксельная модель</li>
+<li>Каркасная модель</li>
+<li>Прототип (фото)</li>
+<li>Текстурированная поверхностная модель</li>
+<li>Виды 3D компьютерных моделей</li>
+<li>Результат работы фотограмметрических программ</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s17_01.png" alt=""><img src="images/pptx/s17_02.png" alt=""><img src="images/pptx/s17_03.png" alt=""><img src="images/pptx/s17_04.png" alt=""><img src="images/pptx/s17_05.png" alt=""><img src="images/pptx/s17_06.jpg" alt=""><img src="images/pptx/s17_07.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Фотоаппарат</h2>
+<ul>
+<li>Мощный ПК</li>
+<li>ПО для обработки</li>
+<li>Требуемое оборудование</li>
+<li>световой куб</li>
+<li>Поворотный столик</li>
+<li>штатив</li>
+<li>освещение</li>
+<li>спусковой тросик</li>
+<li>обязательно</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s18_01.png" alt=""><img src="images/pptx/s18_02.png" alt=""><img src="images/pptx/s18_03.jpg" alt=""><img src="images/pptx/s18_04.png" alt=""><img src="images/pptx/s18_05.jpg" alt=""><img src="images/pptx/s18_06.jpg" alt=""><img src="images/pptx/s18_07.jpg" alt=""><img src="images/pptx/s18_08.jpg" alt=""><img src="images/pptx/s18_09.jpg" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Autodesk Recap Photo (edu free)</h2>
+<ul>
+<li>RealityCapture</li>
+<li>ContexCapture</li>
+<li>Pix4D</li>
+<li>Altizure (free?)</li>
+<li>Photomodeller</li>
+<li>Metashape</li>
+<li>3DFZephyr (free?)</li>
+<li>VisualSFM (free)</li>
+<li>Meshroom (free)</li>
+<li>Программное обеспечение</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s19_01.png" alt=""><img src="images/pptx/s19_02.png" alt=""><img src="images/pptx/s19_03.png" alt=""><img src="images/pptx/s19_04.png" alt=""><img src="images/pptx/s19_05.png" alt=""><img src="images/pptx/s19_06.png" alt=""><img src="images/pptx/s19_07.jpg" alt=""><img src="images/pptx/s19_08.png" alt=""><img src="images/pptx/s19_09.png" alt=""><img src="images/pptx/s19_10.png" alt=""><img src="images/pptx/s19_11.png" alt=""><img src="images/pptx/s19_12.png" alt=""><img src="images/pptx/s19_13.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Intel i5 и выше (рекомендуется i7+ или Xeon)</h2>
+<ul>
+<li>16 GB ROM и выше (рекомендуется 64)</li>
+<li>Видеокарты Nvidia с поддержкой CUDA (возможно использовать несколько)</li>
+<li>SSD</li>
+<li>Системные требования</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s20_01.png" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Математика вопроса</h2>
+<ul>
+<li>Базовые фотограмметрические уравнения</li>
+<li>Первый патент на фотограмметрический метод (1893 г.)</li>
+<li>измерение параллаксов на стереопаре</li>
+<li>Параллакс - изменение видимого положения объекта относительно удалённого фона в зависимости от положения наблюдателя.</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s21_01.png" alt=""><img src="images/pptx/s21_02.png" alt=""><img src="images/pptx/s21_03.png" alt=""><img src="images/pptx/s21_04.png" alt=""><img src="images/pptx/s21_05.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>P=X1-X2</h2>
+<ul>
+<li>Z/f=-B/p</li>
+<li>X1</li>
+<li>X2</li>
+<li>Если сделать две фотографии на определенном расстоянии друг от друга (базисе фотографирования B),</li>
+<li>а потом измерить координаты одноименных точек (X1,X2), то мы можем узнать расстояние до этого объекта (Z).</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s22_01.png" alt=""><img src="images/pptx/s22_02.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Стереоэффект</h2>
+<ul>
+<li>Левый глаз видит звезду на синем фоне, а правый глаз видит звезду на красном фоне</li>
+<li>ощущение протяжённости пространства и рельефности, возникающие при наблюдении реальных объектов</li>
+<li>Дальние объекты движутся с меньшей скоростью, чем ближние</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s23_01.gif" alt=""><img src="images/pptx/s23_02.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Стереоэффект</h2>
+<ul>
+<li>карта глубины(справа), полученная по стереопаре (изображениям слева)</li>
+<li>Карта глубины - это изображение, на котором для каждого пикселя, вместо цвета, храниться его расстояние до камеры</li>
+<li>тёмное – дальше</li>
+<li>светлое - ближе</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s24_01.png" alt=""><img src="images/pptx/s24_02.png" alt=""><img src="images/pptx/s24_03.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Как это было раньше</h2>
+<p>стереокомпаратор</p>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s25_01.jpg" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Современность</h2>
+<p>технологии получения геометрии по видео в режиме реального времени (VSLAM)</p>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s26_01.gif" alt=""><img src="images/pptx/s26_02.gif" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Что ВЫ можете сделать уже сейчас:</h2>
+<ul>
+<li>Эти модели сделаны по фотографиям</li>
+<li>начните с простых матовых цветных предметов с небольшим количеством деталей</li>
+<li>меня сделать проще остальных!</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s27_01.png" alt=""><img src="images/pptx/s27_02.png" alt=""><img src="images/pptx/s27_03.png" alt=""><img src="images/pptx/s27_04.png" alt=""><img src="images/pptx/s27_05.png" alt=""><img src="images/pptx/s27_06.png" alt=""><img src="images/pptx/s27_07.png" alt=""><img src="images/pptx/s27_08.png" alt=""><img src="images/pptx/s27_09.png" alt=""><img src="images/pptx/s27_10.png" alt=""><img src="images/pptx/s27_11.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Выбор объекта</h2>
+<ul>
+<li>Простая геометрия</li>
+<li>Отсутствие монотонных поверхностей</li>
+<li>Отсутствие шерсти, чистого стекла и металла</li>
+<li>Отсутствие мелких деталей</li>
+<li>…посмотрите какие объекты используют в интернет гайдах – все они простые</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s28_01.jpg" alt=""><img src="images/pptx/s28_02.jpg" alt=""><img src="images/pptx/s28_03.jpg" alt=""><img src="images/pptx/s28_04.jpg" alt=""><img src="images/pptx/s28_05.jpg" alt=""><img src="images/pptx/s28_06.jpg" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Съемка</h2>
+<ul>
+<li>Объект желательно полностью уместить в кадр</li>
+<li>Либо не двигать объект, либо использовать монотонный контрастный фон (лист бумаги – просто и сердито)</li>
+<li>Снимать последовательными траекториями – вокруг объекта</li>
+<li>Лучше снять больше и удалить!</li>
+<li>Чаще не хватает связи между маршрутами, чем внутри них</li>
+<li>Больше кадров на узких гранях</li>
+<li>Крупный план на деталях</li>
+<li>Отключите автоповорот фотографий</li>
+<li>Старайтесь не менять фокусного расстояния и фокусировки</li>
+</ul>
+</section>
+<section class="slide slide--pptx">
+  <h2>Строго следите за качеством фотографий:</h2>
+<ul>
+<li>Объект в фокусе</li>
+<li>Баланс белого близок к истине</li>
+<li>Объект видно на фото</li>
+<li>Объект не смазан на фото</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s30_01.jpg" alt=""><img src="images/pptx/s30_02.png" alt=""><img src="images/pptx/s30_03.png" alt=""><img src="images/pptx/s30_04.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Обработка изображений</h2>
+<ul>
+<li>Структура хранения! Все по папочкам!</li>
+<li>Переименовать фотографии, если необходимо</li>
+<li>Удалить фон, исправить цвет, добавить контраст</li>
+<li>Связать все фотографии воедино. Если часть не встала – либо связывать вручную, либо переснять. Переснять обычно проще</li>
+<li>Если что-то встало не на свое место – править сразу!</li>
+<li>Построить облако, посмотреть на качество, если есть ошибки – править. Мелкие ошибки можно будет замазать на модели</li>
+<li>Строим модель</li>
+<li>Упрощаем модель</li>
+<li>Натягиваем текстуру</li>
+</ul>
+</section>
+<section class="slide slide--pptx">
+  <h2>Исправление геометрии и ретопология</h2>
+<ul>
+<li>Удалить шумы и ошибки геометрии</li>
+<li>Уменьшить количество полигонов</li>
+<li>Преобразовать триангуляцию в квадраляцию</li>
+<li>Выделить структурные линии</li>
+<li>Создать корректную развертку UV матрицы</li>
+<li>~6 000 000 полигонов</li>
+<li>~15 000 полигонов</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s32_01.png" alt=""><img src="images/pptx/s32_02.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Создание дополнительных «карт»</h2>
+<ul>
+<li>Карта нормалей (Normal bump)</li>
+<li>Карта диффузных отражений (Albedo. Diffuse. Base color)</li>
+<li>Карта зеркальных отражений (Specular)</li>
+<li>Карта металличности (Metalness)</li>
+<li>Карта шероховатости (Roughness. Glossiness. Smoothness)</li>
+<li>Окклюзия окружающей среды (Ambient occlusion)</li>
+<li>https://habr.com/ru/company/funcorp/blog/465457/</li>
+<li>…про это подробнее читайте в интернетах, много и сложно</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s33_01.png" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Требования к зачёту(по моей теме):</h2>
+<ul>
+<li>ФГМ модель с упрощенной геометрией и корректной текстурой, загруженная на портал Sketchfab и .zip архивом на официальную почту;</li>
+<li>Отчет по теме «предметное моделирование»;</li>
+<li>Представление на установление местного/временного режима в указанном районе;</li>
+<li>План полетов для ЗЦ;</li>
+<li>План полета для автопилота БЛА;</li>
+<li>Ортофотоплан и ЦММ района;</li>
+<li>План расположения и паспорта ПВО;</li>
+<li>Горизонтали;</li>
+<li>Топографический план указанного участка, выполненный в масштабе 1:1000;</li>
+<li>Отчет по теме «аэрофототопография».</li>
+</ul>
+</section>
+<section class="slide slide--pptx">
+  <h2>Дополнительная литература</h2>
+<ul>
+<li>Методические указания по созданию трёхмерной модели в домашних условиях: docs.google.com</li>
+<li>Официальная инструкция Unity по фотограмметрии: unity3d.com</li>
+<li>Руководство пользователя Agisoft Metashape: agisoft.com/pdf/metashape-pro_1_5_ru.pdf</li>
+<li>Пошаговое руководство:  Построение 3D модели в программе Agisoft: agisoft.com/pdf/PS_1.1</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s35_01.jpg" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>ЦМИТ - площадка для технического творчества</h2>
+<ul>
+<li>Идея</li>
+<li>Эскиз</li>
+<li>Чертеж или 3D-модель</li>
+<li>3D-печать</li>
+<li>или</li>
+<li>ЧПУ фрезеровка</li>
+<li>Ручная доработка                  Упаковка</li>
+<li>Для полноценной работы можете воспользоваться услугами ЦМИТов</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s36_01.png" alt=""><img src="images/pptx/s36_02.png" alt=""><img src="images/pptx/s36_03.png" alt=""><img src="images/pptx/s36_04.png" alt=""><img src="images/pptx/s36_05.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Посторонние объекты могут закрыть доступ к снимаемому объекту:</h2>
+<ul>
+<li>Деревья и кусты</li>
+<li>Автомобили</li>
+<li>Люди</li>
+<li>Строительные материалы</li>
+<li>Столбы и рекламные щиты</li>
+<li>Особенности съемки</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s37_01.png" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>С одними и теми же исходными данными результаты могут быть различны</h2>
+<p>Особенности обработки</p>
+<p>ошибочные результаты взаимного ориентирования привели к некорректному построению геометрии зданий</p>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s38_01.png" alt=""><img src="images/pptx/s38_02.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Особенности обработки</h2>
+<ul>
+<li>С одними и теми же исходными данными результаты могут быть различны</li>
+<li>Существенная разница в результатах программ с одинаковым набором исходных снимков</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s39_01.png" alt=""><img src="images/pptx/s39_02.png" alt=""><img src="images/pptx/s39_03.png" alt=""><img src="images/pptx/s39_04.png" alt=""><img src="images/pptx/s39_05.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Существенная разница в результатах программ с одинаковым набором исходных снимков</h2>
+<ul>
+<li>Особенности обработки</li>
+<li>С одними и теми же исходными данными результаты могут быть различны</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s40_01.png" alt=""><img src="images/pptx/s40_02.png" alt=""><img src="images/pptx/s40_03.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Особенности обработки</h2>
+<p>Существенная разница в результатах в зависимости от выбранных параметров обработки</p>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s41_01.gif" alt=""></figure>
 </section>
   </div>
   <div class="footer-bar">

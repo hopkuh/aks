@@ -8,8 +8,8 @@
 </head>
 <body class="mode-slides">
   <header class="topbar">
-    <div class="brand">Ф08 · Стереофотосъёмка <small>стрелки · F полноэкран · N заметки · ? справка</small></div>
-        <nav class="nav">
+    <div class="brand">Ф08 · Стерео <small>стрелки · F полноэкран · N заметки · ? справка</small></div>
+    <nav class="nav">
       <a href="../../index.html">Лекции</a>
       <a href="../../practice.html">Практика</a>
       <a href="../../simulators.html">Симуляторы</a>
@@ -18,197 +18,446 @@
       <a href="../../literature.html">Литература</a>
       <a href="notes.html">Конспект</a>
       <a href="SOURCES.md">Источники</a>
-      <a href="../03-04-matritsa/slides.html">Ф04</a>
-      <a href="../09-fotogrammetriya/slides.html">Ф10</a>
+      <a href="../06-cvet/slides.html">Ф07</a>
       <a href="../08-predmetnoe/slides.html">Ф09</a>
     </nav>
   </header>
   <div class="deck">
 <section class="slide slide--title is-active">
-  <h1>Стереофотосъёмка</h1>
-  <p>Ф08 · пара 1,5 ч · базис · параллакс · триплет · конвергенция</p>
+  <h1>Что-то там о конвергентной съемке</h1>
+  <p>Ф08 · Стерео</p>
 </section>
-
-<section class="slide">
-  <h2>На пару</h2>
-  <ul>
-    <li>Моно vs бинокуляр: откуда берётся рельеф</li>
-    <li>Параллакс p и отстояние D в нормальном случае</li>
-    <li>σ<sub>Z</sub> ∝ Z² / (B·f) — почему узкий базис «как глаза» бесполезен с 200 м</li>
-    <li>Перекрытие объекта ≠ перекрытие кадра</li>
-    <li>Сколько кадров вокруг предмета, если нужны триплеты</li>
-  </ul>
+<section class="slide slide--pptx">
+  <h2>Монокулярное зрение</h2>
+<p>- наблюдение объектов одним глазом.</p>
+<p>Изображение объекта строится на сетчатке в перспективной, центральной проекции с помощью хрусталика, обеспечивающего резкость изображения путём изменения своей кривизны, что называется аккомодацией</p>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s02_01.png" alt=""></figure>
 </section>
-
-<section class="slide">
-  <h2>Цепочка, ради которой эта пара</h2>
-  <div data-widget="pipeline"></div>
+<section class="slide slide--pptx">
+  <h2>Бинокулярное зрение</h2>
+<p>наблюдение объектов двумя глазами</p>
+<p>Глазной базис bг - расстояние между центрами хрусталиков глаз называется Угол конвергенции γ - угол под которым пересекаются зрительные оси.</p>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s03_01.png" alt=""><img src="images/pptx/s03_02.png" alt=""></div>
 </section>
-
-<section class="slide slide--definition">
-  <p class="term">Монокулярное зрение</p>
-  <p class="defn">Один глаз. Центральная проекция, резкость — аккомодация. Глубину мозг угадывает по перспективе, перекрытию, дымке, знакомому размеру — не по разности ракурсов.</p>
+<section class="slide slide--pptx">
+  <h2>Стереоэффект</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s04_01.png" alt=""></figure>
 </section>
-
-<section class="slide">
-  <h2>Бинокуляр</h2>
-  <figure class="fig fig-lg">
-    <img src="images/schemes/f07-binocular.png" alt="Глазной базис и угол конвергенции">
-  </figure>
+<section class="slide slide--pptx">
+  <h2>Стереоэффект</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s05_01.gif" alt=""></figure>
 </section>
-
-<section class="slide slide--definition">
-  <p class="term">Глазной базис b<sub>г</sub></p>
-  <p class="defn">Расстояние между центрами хрусталиков. У людей примерно 55–72 мм, среднее ~64–65 мм.</p>
+<section class="slide slide--pptx">
+  <h2>Стереоэффект</h2>
+<p>gif анимация</p>
 </section>
-
-<section class="slide slide--definition">
-  <p class="term">Угол конвергенции γ</p>
-  <p class="defn">Угол между зрительными осями на точку фиксации. На бесконечности оси параллельны, γ → 0. Аккомодация с γ связана, но это не одно и то же.</p>
+<section class="slide slide--pptx">
+  <h2>Слайд 7</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s07_01.jpg" alt=""></figure>
 </section>
-
-<section class="slide slide--definition">
-  <p class="term">Стереоэффект</p>
-  <p class="defn">Ощущение рельефа при двух ракурсах: натура, стереопара, автостереограмма, голограмма. В ФГМ нужен измеримый вариант: разность ракурсов → координаты.</p>
+<section class="slide slide--pptx">
+  <h2>Средства просмотра стереоизображений</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s08_01.jpg" alt=""><img src="images/pptx/s08_02.png" alt=""></div>
 </section>
-
-<section class="slide">
-  <h2>Показ ≠ измерение</h2>
-  <ul>
-    <li>анаглиф · затвор · поляризация · интерлейс</li>
-    <li>параллельный / перекрёстный взгляд</li>
-    <li>лентикуляр — без очков</li>
-    <li>качание / гифка — псевдостерео</li>
-  </ul>
-  <p class="caveat">Кино и StereoPhoto Maker не заменяют уравнивание связки.</p>
+<section class="slide slide--pptx">
+  <h2>«Качающаяся» стереоскопия</h2>
+<p>gif анимация</p>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s09_01.gif" alt=""></figure>
 </section>
-
-<section class="slide slide--definition">
-  <p class="term">Стереопара</p>
-  <p class="defn">Два кадровых снимка одной местности (или объекта), полученных с разных точек пространства и имеющих взаимное перекрытие. Измеряемая величина — продольный параллакс одноимённых точек. Не путать с анаглифом и «3D в кино»: там показ, здесь — засечка.</p>
+<section class="slide slide--pptx">
+  <h2>«Качающаяся» стереоскопия</h2>
+<p>gif анимация</p>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s10_01.gif" alt=""></figure>
 </section>
-
-<section class="slide slide--definition">
-  <p class="term">Параллакс</p>
-  <p class="defn">Смещение видимого положения объекта относительно фона при смене точки съёмки. На стереопаре продольный параллакс p = X₁ − X₂ (разность абсцисс одноимённых изображений точки).</p>
-  <p class="formula">p = X<sub>1</sub> − X<sub>2</sub><span class="eq-note">в нормальном случае оси параллельны, равные f, базис вдоль X</span></p>
+<section class="slide slide--pptx">
+  <h2>Анаглиф</h2>
+<ul>
+<li>в красном канале изображена картина для левого глаза,</li>
+<li>в бирюзовом — для               правого.</li>
+<li>red-cyan / Красно - синий+зеленый: (по RGB, R/G+B)green-magenta / Зелено - красный+синий: (по RGB, G/R+B)yellow-blue / Желто - синий: (по RGB, R+G/B)</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s11_01.png" alt=""></figure>
 </section>
-
-<section class="slide">
-  <h2>Параллакс</h2>
-  <figure class="fig fig-lg">
-    <img src="images/schemes/f07-parallax.png" alt="Базис съёмки и параллакс на стереопаре">
-  </figure>
+<section class="slide slide--pptx">
+  <h2>Анаглиф</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s12_01.png" alt=""></figure>
 </section>
-
-<section class="slide">
-  <h2>Нормальный случай — формула в тетрадь</h2>
-  <p class="formula">D / f = − B / p<span class="eq-note">D — отстояние до точки, B — базис, f — фокусное, p — параллакс; ближе объект — больше |p|; p → 0 на бесконечности</span></p>
-  <p>Идеализация: оптические оси параллельны, равные f, базис вдоль оси X снимка. Реальный полёт и конвергентный стенд — полный случай Ф10, эту формулу туда не тащить.</p>
+<section class="slide slide--pptx">
+  <h2>Анаглиф</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s13_01.jpg" alt=""></figure>
 </section>
-
-<section class="slide">
-  <h2>Точность высоты</h2>
-  <p class="formula">σ<sub>Z</sub> ∼ Z² / (B · f) · σ<sub>p</sub></p>
-  <p>Узкий базис «как глаза» с 200 м даёт рельеф в шуме. Слишком широкий — нет общих точек. Тот же компромисс B/H, что на А04.</p>
+<section class="slide slide--pptx">
+  <h2>Анаглиф</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s14_01.png" alt=""></figure>
 </section>
-
-<section class="slide">
-  <h2>Считать порядок</h2>
-  <p>Z = 50 м, B = 0,065 м (глаза), f = 50 мм, σ<sub>p</sub> = 1 px ≈ 0,005 мм.</p>
-  <p>σ<sub>Z</sub> огромна: глазной базис не для обмера фасада. На стенде B — десятки сантиметров / метры.</p>
+<section class="slide slide--pptx">
+  <h2>Затворное стерео</h2>
+<ul>
+<li>Мигание правого и левого изображений синхронизировано с закрытием левого и правого глаза</li>
+<li>XpanD</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s15_01.jpg" alt=""><img src="images/pptx/s15_02.jpg" alt=""></div>
 </section>
-
-<section class="slide slide--definition">
-  <p class="term">Диспарантность</p>
-  <p class="defn">Разность положений одной точки на двух сетчатках. В курсе часто синоним параллакса на снимках. В CV disparity — поле p(x,y).</p>
+<section class="slide slide--pptx">
+  <h2>Затворное стерео</h2>
+<ul>
+<li>Мигание правого и левого изображений синхронизировано с закрытием левого и правого глаза</li>
+<li>XpanD</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s16_01.jpg" alt=""></figure>
 </section>
-
-<section class="slide slide--definition">
-  <p class="term">Карта глубины</p>
-  <p class="defn">Изображение, в пикселе которого лежит расстояние до камеры, а не цвет. Продукт стереосопоставления. Ещё не ЦМР в СК местности.</p>
+<section class="slide slide--pptx">
+  <h2>Поляризационное стерео</h2>
+<ul>
+<li>Правое изображение перпендикулярно поляризовано относительно левого изображения</li>
+<li>IMAX 3D</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s17_01.jpg" alt=""><img src="images/pptx/s17_02.jpg" alt=""></div>
 </section>
-
-<section class="slide">
-  <h2>Отождествление</h2>
-  <ul>
-    <li>коррелятор / особые точки — найти одну точку объекта на двух кадрах</li>
-    <li>ломается: стекло, снег, повтор окон, разный ББ, жёсткий JPEG</li>
-    <li>эпиполяра сужает поиск до линии (нужно взаимное ориентирование)</li>
-    <li>кадровая стереопара ≠ две щелевые строки</li>
-  </ul>
+<section class="slide slide--pptx">
+  <h2>Поляризационное стерео</h2>
+<ul>
+<li>Правое изображение перпендикулярно поляризовано относительно левого изображения</li>
+<li>IMAX 3D</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s18_01.png" alt=""><img src="images/pptx/s18_02.jpg" alt=""></div>
 </section>
-
-<section class="slide">
-  <h2>Виды съёмки</h2>
-  <ul>
-    <li>воздушная АФС — карты и орто</li>
-    <li>наземная короткобазисная — фасады</li>
-    <li>предметная — замкнутая модель (Ф09)</li>
-  </ul>
+<section class="slide slide--pptx">
+  <h2>Метод чередования (интерлейса)</h2>
+<p>в одном кадре происходит чересстрочное смешение двух ракурсов</p>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s19_01.jpg" alt=""><img src="images/pptx/s19_02.gif" alt=""></div>
 </section>
-
-<section class="slide slide--definition">
-  <p class="term">Цифровая модель местности (ЦММ)</p>
-  <p class="defn">Цифровое представление видимой земной поверхности, включая искусственные сооружения и растительность. Строится по параллаксу (или лидару) после уравнивания блока. Ещё не ортофотоплан: нет ортогональной проекции кадра на эту поверхность.</p>
+<section class="slide slide--pptx">
+  <h2>Метод чередования (интерлейса)</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s20_01.jpg" alt=""></figure>
 </section>
-
-<section class="slide slide--definition">
-  <p class="term">Перекрытие снимка P</p>
-  <p class="defn">Доля площади снимка, покрываемая смежным кадром. Продольное P<sub>x</sub> — вдоль маршрута, поперечное P<sub>y</sub> — между маршрутами. Классика площадной АФС: P<sub>x</sub> ≈ 60%, P<sub>y</sub> ≈ 40%. На БВС часто 80×60: запас на триплеты и брак кадра.</p>
+<section class="slide slide--pptx">
+  <h2>Метод паралельного взгляда</h2>
+<p>за счет сведения глаз дальше плоскости изображения</p>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s21_01.jpg" alt=""></figure>
 </section>
-
-<section class="slide slide--definition">
-  <p class="term">Триплет</p>
-  <p class="defn">Зона тройного продольного перекрытия — часть местности, изображённая на трёх соседних кадрах. По общим точкам передают систему координат и масштаб с одной стереопары на следующую. Две изолированные пары без триплета — два несвязанных куска модели.</p>
+<section class="slide slide--pptx">
+  <h2>Метод перекрестного взгляда</h2>
+<p>за счет сведения глаз перед плоскостью изображения</p>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s22_01.jpg" alt=""></figure>
 </section>
-
-<section class="slide slide--definition">
-  <p class="term">Конвергентная съёмка</p>
-  <p class="defn">Главные лучи не параллельны — пересекаются под углом γ. Формулы надирной АФС с B<sub>x</sub> и P<sub>x</sub> «как на карте» здесь разваливаются.</p>
+<section class="slide slide--pptx">
+  <h2>Попеременные стереопары</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s23_01.jpg" alt=""><img src="images/pptx/s23_02.jpg" alt=""></div>
 </section>
-
-<section class="slide">
-  <h2>Пример со слайда</h2>
-  <p>B = 6 м, γ = 30°. Формальное P<sub>x</sub> кадра 100% → полезное перекрытие объекта ~30%. Часть кадра — фон.</p>
-  <p>Коррелятор слепнет, если угол падения луча к поверхности ≳ 45°.</p>
+<section class="slide slide--pptx">
+  <h2>Попеременные стереопары</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s24_01.jpg" alt=""><img src="images/pptx/s24_02.jpg" alt=""></div>
 </section>
-
-<section class="slide">
-  <h2>Сколько кадров вокруг цилиндра</h2>
-  <ul>
-    <li>с одного ракурса видно ≤ 180°</li>
-    <li>4 снимка: стерео P ≈ 50%, без триплетов пары не склеить</li>
-    <li>6 снимков: триплеты, P ≈ 66%</li>
-    <li>реальный угол, который переваривает коррелятор, &lt; 180°</li>
-  </ul>
+<section class="slide slide--pptx">
+  <h2>Попеременные стереопары</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s25_01.png" alt=""><img src="images/pptx/s25_02.jpg" alt=""></div>
 </section>
-
-<section class="slide">
-  <h2>Окклюзия</h2>
-  <p>Чтобы посчитать геометрию, нужна видимость; чтобы знать видимость — нужна геометрия. Дырки лечат вторым маршрутом (объект на боку). Дальше ретопология — Ф09.</p>
+<section class="slide slide--pptx">
+  <h2>Попеременные стереопары</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s26_01.jpg" alt=""><img src="images/pptx/s26_02.jpg" alt=""></div>
 </section>
-
-<section class="slide">
-  <h2>Взаимное ориентирование</h2>
-  <p>ГОСТ Р 51833: как два кадра стоят друг относительно друга, ещё до внешней ориентации в мире. Обычно пять угловых элементов стереопары.</p>
+<section class="slide slide--pptx">
+  <h2>Лентикулярные технологии и австостереоскопия</h2>
+<p>Направленные изображения</p>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s27_01.jpg" alt=""><img src="images/pptx/s27_02.jpg" alt=""><img src="images/pptx/s27_03.jpg" alt=""></div>
 </section>
-
-<section class="slide">
-  <h2>Вопросы</h2>
-  <ol>
-    <li>Глазной базис и γ на бесконечности?</li>
-    <li>Как от p перейти к D в нормальном случае?</li>
-    <li>Зачем триплет, если стерео уже есть на паре?</li>
-    <li>Почему P<sub>x</sub> кадра ≠ перекрытие объекта при конвергенции?</li>
-    <li>Почему коррелятор слепнет при угле падения ≳ 45°?</li>
-    <li>Минимум кадров вокруг предмета с триплетами?</li>
-  </ol>
+<section class="slide slide--pptx">
+  <h2>Слайд 28</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s28_01.jpg" alt=""></figure>
 </section>
-
-<section class="slide slide--title">
-  <h1>Спасибо</h1>
-  <p><a href="notes.html">Конспект</a> · теория кадра — <a href="../09-fotogrammetriya/slides.html">Ф10</a></p>
+<section class="slide slide--pptx">
+  <h2>Доступные программы для создания стерео</h2>
+<ul>
+<li>Stereophoto maker</li>
+<li>Adobe Photoshop</li>
+<li>Adobe Premier</li>
+<li>3DSteroid Pro (android)</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s29_01.png" alt=""><img src="images/pptx/s29_02.png" alt=""><img src="images/pptx/s29_03.png" alt=""><img src="images/pptx/s29_04.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>— ощущение протяжённости пространства и рельефности, возникающие при наблюдении реальных объектов, при бинокулярном оптическом наблюдении, рассматривании стереопар, автостереограмм и голограмм (см. бинокулярное зрение).</h2>
+<p>Стереоэффект</p>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s30_01.gif" alt=""><img src="images/pptx/s30_02.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Фотограмметрия</h2>
+<p>- направление, занимающееся определением формы, размеров, положения и иных характеристик объектов по их фотоизображениям</p>
+<p>Одним из современных направлений фотограмметрии является создание трехмерных копий объектов по фотографиям</p>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s31_01.png" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Математика вопросика</h2>
+<ul>
+<li>Базовые фотограмметрические уравнения</li>
+<li>Первый патент на фотограмметрический метод (1893 г.)</li>
+<li>Параллакс - изменение видимого положения объекта относительно удалённого фона в зависимости от положения наблюдателя.</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s32_01.png" alt=""><img src="images/pptx/s32_02.png" alt=""><img src="images/pptx/s32_03.png" alt=""><img src="images/pptx/s32_04.png" alt=""><img src="images/pptx/s32_05.gif" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>измерение параллаксов на стереопаре</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s33_01.png" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>P=X1-X2</h2>
+<ul>
+<li>D/f=-B/p</li>
+<li>X1</li>
+<li>X2</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s34_01.png" alt=""><img src="images/pptx/s34_02.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Стереоэффект</h2>
+<ul>
+<li>карта глубины(справа), полученная по стереопаре (изображениям слева)</li>
+<li>Карта глубины - это изображение, на котором для каждого пикселя, вместо цвета, храниться его расстояние до камеры</li>
+<li>тёмное – дальше</li>
+<li>светлое - ближе</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s35_01.png" alt=""><img src="images/pptx/s35_02.png" alt=""><img src="images/pptx/s35_03.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>А что там с глазками?</h2>
+<ul>
+<li>Глазной базис («interocular distance») – расстояние между глазами</li>
+<li>Конвергенция («convergence»)  - угол, под которым сходятся оптические лучи глаз</li>
+<li>Аккомодация («accommodation») – глазной «автофокус»</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s36_01.jpg" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Классификация стереофотосъемки (СФС)</h2>
+<p>Воздушная съемка (АФС) - выполняется для создания карт и планов, СС установлена на воздушном носителе</p>
+<p>Наземная съемка (Короткобазисная) -выполняется для создания обмерных чертежей зданий, СС установлена на штативе</p>
+<p>Предметная съемка - для создания трёхмерных моделей объектов, СС установлена на штативе или является элементом съемочного стенда</p>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s37_01.jpg" alt=""><img src="images/pptx/s37_02.jpg" alt=""><img src="images/pptx/s37_03.jpg" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Площадная АФС</h2>
+<p>— Состоит из ряда параллельных маршрутов. Этим видом съемки покрывают большие территории. Обычно залеты имеют широтную ориентировку. Это наиболее часто используемый вид съемки</p>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s38_01.jpg" alt=""><img src="images/pptx/s38_02.jpg" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>~60%</h2>
+<ul>
+<li>~60%</li>
+<li>Сшить изображения между собой = перекрытия</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s39_01.png" alt=""><img src="images/pptx/s39_02.png" alt=""><img src="images/pptx/s39_03.png" alt=""><img src="images/pptx/s39_04.png" alt=""><img src="images/pptx/s39_05.png" alt=""><img src="images/pptx/s39_06.png" alt=""><img src="images/pptx/s39_07.png" alt=""><img src="images/pptx/s39_08.png" alt=""><img src="images/pptx/s39_09.png" alt=""><img src="images/pptx/s39_10.png" alt=""><img src="images/pptx/s39_11.png" alt=""><img src="images/pptx/s39_12.png" alt=""><img src="images/pptx/s39_13.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Перекрытие снимка</h2>
+<p>— доля площади снимка (аэроснимка), перекрываемая смежным снимком</p>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s40_01.jpg" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Перекрытия снимков</h2>
+<ul>
+<li>Стереоэффект</li>
+<li>Триплет</li>
+<li>Px = 60%,  Py = 40%</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s41_01.jpg" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Перекрытия снимков</h2>
+<ul>
+<li>Стереоэффект</li>
+<li>Триплет</li>
+<li>Px = 60%,  Py = 40%</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s42_01.jpg" alt=""><img src="images/pptx/s42_02.jpg" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Перекрытия снимков</h2>
+<ul>
+<li>Стереоэффект</li>
+<li>Триплет</li>
+<li>Px &gt; 66%, Py &gt; 50%        (80%x60%)</li>
+<li>Bx</li>
+<li>Px</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s43_01.jpg" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Триплет</h2>
+<p>— зона тройного продольного перекрытия используется для связи смежных стереопар по общим точкам и передачи от одной из них к другой системе координат и масштаба фотограмметрических построений.</p>
+</section>
+<section class="slide slide--pptx">
+  <h2>Базис фотографирования</h2>
+<ul>
+<li>расстояние между соседними точками фотографирования (м).</li>
+<li>Bx</li>
+<li>Px</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s45_01.png" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Перекрытие снимка</h2>
+<ul>
+<li>доля площади снимка (аэроснимка), перекрываемая смежным снимком</li>
+<li>…но в случае со съемкой предмета важна площадь снимка с общими элементами объекта</li>
+</ul>
+</section>
+<section class="slide slide--pptx">
+  <h2>Плановая vs Конвергентная</h2>
+<ul>
+<li>Базисы не работают!</li>
+<li>Нет адекватной теории!</li>
+<li>Bx</li>
+<li>Bx</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s47_01.jpg" alt=""><img src="images/pptx/s47_02.jpg" alt=""><img src="images/pptx/s47_03.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Конвергентная съемка</h2>
+<ul>
+<li>B = 6 м</li>
+<li> =  30</li>
+<li>Px = 100%</li>
+<li>Какое перекрытие на снимках?</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s48_01.png" alt=""><img src="images/pptx/s48_02.png" alt=""><img src="images/pptx/s48_03.png" alt=""><img src="images/pptx/s48_04.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Конвергентная съемка</h2>
+<ul>
+<li>Какое перекрытие на снимках?</li>
+<li>B = 6 м</li>
+<li> =  30</li>
+<li>Px = ???%</li>
+<li>~30%</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s49_01.png" alt=""><img src="images/pptx/s49_02.png" alt=""><img src="images/pptx/s49_03.png" alt=""><img src="images/pptx/s49_04.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>не участвуют в обработке</h2>
+<ul>
+<li>Угол падения проектирующего луча к поверхности</li>
+<li>Какое перекрытие на снимках?</li>
+<li>Если угол между лучом и касательно станет более 45°, то коррелятор не сможет выявить общие точки на стереопарах, что ограничит нам угловой размер объекта 𝛀, видимый из точки фотографирования</li>
+<li>низкое разрешение</li>
+<li>Px &lt; 30 %</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s50_01.png" alt=""><img src="images/pptx/s50_02.png" alt=""><img src="images/pptx/s50_03.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Существующие рекомендации</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s51_01.jpg" alt=""><img src="images/pptx/s51_02.jpg" alt=""><img src="images/pptx/s51_03.jpg" alt=""><img src="images/pptx/s51_04.jpg" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Захват одним снимком</h2>
+<ul>
+<li>С одного ракурса в идеальных условиях видно 50% объекта</li>
+<li>Если представить объект в виде цилиндра, то на одном изображении будет отображаться сегмент в 180 объекта</li>
+<li>Угловой размер объекта видимый из</li>
+<li>точки фотографирования Ω = 180 .</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s52_01.jpg" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Конвергентная съемка</h2>
+<ul>
+<li>Для обеспечения полного покрытия объекта стереопарами необходимо 4 снимка</li>
+<li>Стереоэффект</li>
+<li>Px = 50%</li>
+<li>…но без триплетов мы не сможем объединить эти стереопары между собой!</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s53_01.jpg" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Конвергентная съемка</h2>
+<ul>
+<li>Для обеспечения съемки триплетами необходимо 6 снимков</li>
+<li>Стереоэффект</li>
+<li>Триплеты</li>
+<li>Px = 66%</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s54_01.jpg" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Угол падения проектирующего луча к поверхности</h2>
+<p>Если угол между лучом и касательно станет более 45°, то коррелятор не сможет выявить общие точки на стереопарах, что ограничит нам угловой размер объекта 𝛀, видимый из точки фотографирования</p>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s55_01.png" alt=""><img src="images/pptx/s55_02.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Конвергентная съемка</h2>
+<ul>
+<li>Эффективный угловой размер объекта существенно меньше Ω &lt; 180</li>
+<li>Стереоэффект</li>
+<li>Триплеты</li>
+<li>Px &gt; 66%</li>
+<li> - угол конвергенции, он же угол поворота объекта относительно фотоаппарата</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s56_01.jpg" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Технология создания 3D-модели</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s57_01.png" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Недостаточное межмаршрутное перекрытие!</h2>
+<p>Помните о корреляторе!</p>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s58_01.png" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Проблема окклюзии</h2>
+<p>Для вычисления геометрии с использованием взаимной ориентации снимков требуется видимость камеры. В то же время, чтобы рассчитать видимость камеры, требуется наличие геометрии.</p>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s59_01.jpg" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Синим цветом обозначены траектории маршрутов при вертикальном расположении объекта</h2>
+<p>Красным и зеленым цветом обозначены траектории маршрутов при горизонтальном расположении объекта (на боку)</p>
+<p>Траектория маршрутов и их количество</p>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s60_01.png" alt=""><img src="images/pptx/s60_02.png" alt=""><img src="images/pptx/s60_03.png" alt=""><img src="images/pptx/s60_04.png" alt=""><img src="images/pptx/s60_05.png" alt=""><img src="images/pptx/s60_06.png" alt=""><img src="images/pptx/s60_07.png" alt=""><img src="images/pptx/s60_08.png" alt=""><img src="images/pptx/s60_09.png" alt=""><img src="images/pptx/s60_10.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>1 000 000 граней (105 Мб)        500 000 граней (36 Мб)            10 000 граней (650 Кб)                1000 граней (60 Кб)</h2>
+<ul>
+<li>Объект-прототип (фото)</li>
+<li>Упрощение и ретопология</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s61_01.png" alt=""><img src="images/pptx/s61_02.png" alt=""><img src="images/pptx/s61_03.png" alt=""><img src="images/pptx/s61_04.png" alt=""><img src="images/pptx/s61_05.png" alt=""><img src="images/pptx/s61_06.png" alt=""><img src="images/pptx/s61_07.png" alt=""><img src="images/pptx/s61_08.png" alt=""><img src="images/pptx/s61_09.png" alt=""><img src="images/pptx/s61_10.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>http://dryga.9055581347.myjino.ru/VR/zmeya/</h2>
+<ul>
+<li>Многоплановая фотография VR-object:http://dryga.9055581347.myjino.ru/VR/theodolite/http://pano.atlasgeo.ru/Dissertation/compass/</li>
+<li>Использование специализированных сайтов:https://sketchfab.com/models/4d48e6903ebe4560ae202d417ab4aded/embed</li>
+<li>Использование веб интерфейсов и специальных библиотек (WebGL):http://pano.atlasgeo.ru/measure_test/http://dryga.9055581347.myjino.ru/3D/Slon/</li>
+<li>Тайловая визуализация:http://dryga.9055581347.myjino.ru/evpatoria/3D/</li>
+<li>Видео:https://youtu.be/iQTSpnAKPz4</li>
+<li>Дополненная реальность:https://augment.com</li>
+<li>Способы визуализации в  Web среде:</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s62_01.gif" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Съемка для голографического 3D-проектора</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s63_01.png" alt=""><img src="images/pptx/s63_02.png" alt=""><img src="images/pptx/s63_03.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Дрыга Данила Олегович</h2>
+<ul>
+<li>+7(916)030-62-56</li>
+<li>hopkuh@gmail.com</li>
+<li>Спасибо за внимание</li>
+<li>sketchfab.com/hopkuh</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s64_01.png" alt=""><img src="images/pptx/s64_02.png" alt=""><img src="images/pptx/s64_03.png" alt=""><img src="images/pptx/s64_04.png" alt=""><img src="images/pptx/s64_05.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Дополнительная литература</h2>
+<ul>
+<li>Методические указания по созданию трёхмерной модели в домашних условиях: docs.google.com</li>
+<li>Официальная инструкция Unity по фотограмметрии: unity3d.com</li>
+<li>Руководство пользователя Agisoft Metashape: agisoft.com/pdf/metashape-pro_1_5_ru.pdf</li>
+<li>Пошаговое руководство:  Построение 3D модели в программе Agisoft: agisoft.com/pdf/PS_1.1</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s65_01.jpg" alt=""></figure>
 </section>
   </div>
   <div class="footer-bar">
@@ -225,6 +474,5 @@
     </div>
   </div>
   <script src="../../js/slides.js"></script>
-  <script src="../../js/widgets.js"></script>
 </body>
 </html>
