@@ -52,28 +52,23 @@
   </div>
 </section>
 
-<section class="slide">
-  <div class="columns">
-    <div>
-      <p class="term">ДЗЗ</p>
-      <p class="defn">Совокупность методов получения информации по результатам измерений <strong>без прямого контакта</strong> с объектом.</p>
-      <div class="stages stages--stack">
-        <div class="stage-card">
-          <p class="n">Этап 1</p>
-          <p>Получение изображений: носитель, камера, экспозиция, перекрытие.</p>
-        </div>
-        <div class="stage-arrow" aria-hidden="true">→</div>
-        <div class="stage-card">
-          <p class="n">Этап 2</p>
-          <p>Обработка изображений: ориентирование, ЦМР, орто, дешифрирование.</p>
-        </div>
-      </div>
+<section class="slide slide--pptx">
+  <h2>ДЗЗ</h2>
+  <p class="defn">Совокупность методов получения информации по результатам измерений <strong>без прямого контакта</strong> с объектом.</p>
+  <div class="stages stages--stack">
+    <div class="stage-card">
+      <p class="n">Этап 1</p>
+      <p>Получение изображений: носитель, камера, экспозиция, перекрытие.</p>
     </div>
-    <figure class="fig fig-lg">
-        <img src="images/schemes/f01-dzz-cycle.svg" alt="Цикл дистанционного зондирования">
-        <figcaption>Цикл ДЗЗ</figcaption>
-      </figure>
+    <div class="stage-arrow" aria-hidden="true">→</div>
+    <div class="stage-card">
+      <p class="n">Этап 2</p>
+      <p>Обработка изображений: ориентирование, ЦМР, орто, дешифрирование.</p>
+    </div>
   </div>
+  <figure class="fig fig-fill fig--plain">
+    <img src="images/schemes/f01-dzz-cycle.png" alt="Цикл дистанционного зондирования">
+  </figure>
 </section>
 
 <section class="slide">
@@ -106,26 +101,13 @@
   <aside class="speaker-notes">По типу носителя: космос и воздух. Пассивные принимают своё/отражённое; активные подсвечивают сами.</aside>
 </section>
 
-<section class="slide">
-  <h2>БВС снимает землю с перекрытием</h2>
-  <figure class="fig fig-lg">
-    <img src="images/schemes/f01-uav-overlap.svg" alt="БВС, два кадра и продольное перекрытие Px">
-    <figcaption>Два соседних кадра · общая полоса — стереопара</figcaption>
+<section class="slide slide--pptx">
+  <h2>АФС</h2>
+  <p class="defn">Основной вид АКС: аэрофотосъёмка аэрофотоаппаратами и спецоборудованием в <strong>видимом диапазоне</strong>.</p>
+  <p>Видимый диапазон — то, что видит глаз: примерно 380–780 нм, от фиолетового к красному. Короче — УФ, длиннее — ближний ИК и тепло.</p>
+  <figure class="fig fig-fill fig--plain">
+    <img src="images/s06_spectrum.png" alt="Спектр солнечного излучения с видимым диапазоном">
   </figure>
-</section>
-
-<section class="slide">
-  <div class="columns">
-    <div>
-      <p class="term">АФС</p>
-      <p class="defn">Основной вид АКС: аэрофотосъёмка аэрофотоаппаратами и спецоборудованием в <strong>видимом диапазоне</strong>.</p>
-      <p>Видимый диапазон — то, что видит глаз: примерно 380–780 нм, от фиолетового к красному. Короче — УФ, длиннее — ближний ИК и тепло.</p>
-    </div>
-    <figure class="fig fig-lg">
-        <img src="images/schemes/f01-em-spectrum.svg" alt="Электромагнитный спектр с выделенным видимым диапазоном">
-        <figcaption>Видимый диапазон ≈ 380–780 нм</figcaption>
-      </figure>
-  </div>
   <aside class="speaker-notes">От бытовой фотографии: мелкие малоконтрастные детали, атмосфера, движение и вибрации камеры во время экспонирования.</aside>
 </section>
 
@@ -140,10 +122,10 @@
 <section class="slide">
   <h2>Основные результаты обработки АФС</h2>
   <div data-widget="layers"
-       data-ortho="images/s08_08.png"
-       data-dem="images/s08_07.png"
        data-tin="images/s08_06.png"
-       data-tex="images/s08_05.png"></div>
+       data-tex="images/s08_05.png"
+       data-dem="images/s08_07.png"
+       data-ortho="images/s08_08.png"></div>
 </section>
 
 <section class="slide">
@@ -219,17 +201,36 @@
       </figure>
 </section>
 
-<section class="slide">
+<section class="slide slide--dense slide--pptx">
   <h2>Масштаб</h2>
+  <p class="defn">Соотношение, показывающее, во сколько раз линия на карте или чертеже меньше или больше действительного размера. («Мерная палка»)</p>
   <ul>
     <li>именованный</li>
     <li>численный</li>
     <li>линейный</li>
   </ul>
-  <figure class="fig fig-lg">
-        <img src="images/s17_26.png" alt="Виды масштаба">
-        <figcaption>Три записи масштаба · <a href="SOURCES.md">источник</a></figcaption>
-      </figure>
+  <ul>
+    <li>Полнота (генерализация)</li>
+    <li>точность</li>
+  </ul>
+  <p>Погрешность контуров на плане ≤ 0,5 мм относительно ближайших точек обоснования.</p>
+  <p>Погрешность съёмки рельефа — не более 1/4 принятой высоты сечения.</p>
+  <div class="columns columns--text-wide">
+    <table class="data data--bordered">
+      <thead>
+        <tr><th>Рельеф</th><th>1:5000</th><th>1:2000</th><th>1:1000 / 1:500</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Равнинный, до 2°</td><td>1,0 м</td><td>0,5 м</td><td>0,5 м</td></tr>
+        <tr><td>Всхолмлённый, до 4°</td><td>2,0 м</td><td>1,0 м</td><td>0,5 м</td></tr>
+        <tr><td>Пересечённый, до 6°</td><td>2,0 м</td><td>2,0 м</td><td>0,5 м</td></tr>
+        <tr><td>Горный, более 6°</td><td>5,0 м</td><td>2,0 м</td><td>1,0 м</td></tr>
+      </tbody>
+    </table>
+    <figure class="fig fig--plain">
+      <img src="images/s17_26.png" alt="Виды масштаба" style="max-height:28vh">
+    </figure>
+  </div>
 </section>
 
 <section class="slide">
@@ -242,31 +243,6 @@
   <h2>Одинаковый масштаб · разное разрешение</h2>
   <div class="gallery"><img src="images/s19_29.jpg" alt="разрешение 1">
 <img src="images/s19_30.jpg" alt="разрешение 2"></div>
-</section>
-
-<section class="slide slide--definition">
-  <p class="term">Масштаб</p>
-  <p class="defn">Соотношение, показывающее, во сколько раз линия на карте или чертеже меньше или больше действительного размера.</p>
-  <ul>
-    <li>Полнота (генерализация) и точность</li>
-    <li>«Мерная палка»: погрешность контуров на плане ≤ 0,5 мм относительно ближайших точек обоснования</li>
-  </ul>
-</section>
-
-<section class="slide slide--table">
-  <h2>Высота сечения рельефа на топопланах</h2>
-  <p class="caveat">Погрешность съёмки рельефа — не более 1/4 принятой высоты сечения.</p>
-  <table class="data">
-    <thead>
-      <tr><th>Рельеф</th><th>1:5000</th><th>1:2000</th><th>1:1000 / 1:500</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>Равнинный, до 2°</td><td>1,0 м</td><td>0,5 м</td><td>0,5 м</td></tr>
-      <tr><td>Всхолмлённый, до 4°</td><td>2,0 м</td><td>1,0 м</td><td>0,5 м</td></tr>
-      <tr><td>Пересечённый, до 6°</td><td>2,0 м</td><td>2,0 м</td><td>0,5 м</td></tr>
-      <tr><td>Горный, более 6°</td><td>5,0 м</td><td>2,0 м</td><td>1,0 м</td></tr>
-    </tbody>
-  </table>
 </section>
 
 <section class="slide">
