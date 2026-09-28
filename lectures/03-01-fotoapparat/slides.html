@@ -55,17 +55,10 @@
 <section class="slide slide--pptx">
   <h2>ДЗЗ</h2>
   <p class="defn">Совокупность методов получения информации по результатам измерений <strong>без прямого контакта</strong> с объектом.</p>
-  <div class="stages stages--stack">
-    <div class="stage-card">
-      <p class="n">Этап 1</p>
-      <p>Получение изображений: носитель, камера, экспозиция, перекрытие.</p>
-    </div>
-    <div class="stage-arrow" aria-hidden="true">→</div>
-    <div class="stage-card">
-      <p class="n">Этап 2</p>
-      <p>Обработка изображений: ориентирование, ЦМР, орто, дешифрирование.</p>
-    </div>
-  </div>
+  <ul>
+    <li>Получение изображений</li>
+    <li>Обработка изображений</li>
+  </ul>
   <figure class="fig fig-fill fig--plain">
     <img src="images/schemes/f01-dzz-cycle.png" alt="Цикл дистанционного зондирования">
   </figure>
@@ -201,35 +194,37 @@
       </figure>
 </section>
 
-<section class="slide slide--dense slide--pptx">
+<section class="slide slide--pptx">
   <h2>Масштаб</h2>
-  <p class="defn">Соотношение, показывающее, во сколько раз линия на карте или чертеже меньше или больше действительного размера. («Мерная палка»)</p>
+  <p class="defn defn-full">Соотношение, показывающее, во сколько раз линия на карте или чертеже меньше или больше действительного размера. («Мерная палка»)</p>
   <ul>
     <li>именованный</li>
     <li>численный</li>
     <li>линейный</li>
   </ul>
-  <ul>
-    <li>Полнота (генерализация)</li>
-    <li>точность</li>
-  </ul>
-  <p>Погрешность контуров на плане ≤ 0,5 мм относительно ближайших точек обоснования.</p>
-  <p>Погрешность съёмки рельефа — не более 1/4 принятой высоты сечения.</p>
-  <div class="columns columns--text-wide">
-    <table class="data data--bordered">
-      <thead>
-        <tr><th>Рельеф</th><th>1:5000</th><th>1:2000</th><th>1:1000 / 1:500</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Равнинный, до 2°</td><td>1,0 м</td><td>0,5 м</td><td>0,5 м</td></tr>
-        <tr><td>Всхолмлённый, до 4°</td><td>2,0 м</td><td>1,0 м</td><td>0,5 м</td></tr>
-        <tr><td>Пересечённый, до 6°</td><td>2,0 м</td><td>2,0 м</td><td>0,5 м</td></tr>
-        <tr><td>Горный, более 6°</td><td>5,0 м</td><td>2,0 м</td><td>1,0 м</td></tr>
-      </tbody>
-    </table>
-    <figure class="fig fig--plain">
-      <img src="images/s17_26.png" alt="Виды масштаба" style="max-height:28vh">
-    </figure>
+  <div class="class-grid class-grid--2">
+    <article class="class-card">
+      <h3>Полнота (генерализация)</h3>
+      <figure class="fig fig--plain">
+        <img src="images/s17_26.png" alt="Виды масштаба" style="max-height:22vh">
+      </figure>
+    </article>
+    <article class="class-card">
+      <h3>Точность</h3>
+      <p>Погрешность контуров на плане ≤ 0,5 мм относительно ближайших точек обоснования.</p>
+      <p>Погрешность съёмки рельефа — не более 1/4 принятой высоты сечения.</p>
+      <table class="data data--bordered">
+        <thead>
+          <tr><th>Рельеф</th><th>1:5000</th><th>1:2000</th><th>1:1000 / 1:500</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Равнинный, до 2°</td><td>1,0 м</td><td>0,5 м</td><td>0,5 м</td></tr>
+          <tr><td>Всхолмлённый, до 4°</td><td>2,0 м</td><td>1,0 м</td><td>0,5 м</td></tr>
+          <tr><td>Пересечённый, до 6°</td><td>2,0 м</td><td>2,0 м</td><td>0,5 м</td></tr>
+          <tr><td>Горный, более 6°</td><td>5,0 м</td><td>2,0 м</td><td>1,0 м</td></tr>
+        </tbody>
+      </table>
+    </article>
   </div>
 </section>
 

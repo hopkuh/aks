@@ -2584,6 +2584,7 @@ html[data-slide-theme="light"] body.mode-slides input {
 }
 html[data-slide-theme="light"] body.mode-slides .fig img,
 html[data-slide-theme="light"] body.mode-slides .gallery img {
+  background: transparent;
   border: 1px solid var(--line);
 }
 html[data-slide-theme="light"] body.mode-slides .scheme,
