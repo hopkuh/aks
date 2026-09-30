@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>А12 · СК — слайды</title>
+  <title>А12 · СК и проекции — слайды</title>
   <link rel="stylesheet" href="../../css/course.css" />
 </head>
 <body class="mode-slides">
   <header class="topbar">
-    <div class="brand">А12 · Системы координат и орто <small>стрелки · F полноэкран · N заметки · ? справка</small></div>
-        <nav class="nav">
+    <div class="brand">А12 · СК и проекции <small>стрелки · F полноэкран · N заметки · ? справка</small></div>
+    <nav class="nav">
       <a href="../../index.html">Лекции</a>
       <a href="../../practice.html">Практика</a>
       <a href="../../simulators.html">Симуляторы</a>
@@ -18,162 +18,404 @@
       <a href="../../literature.html">Литература</a>
       <a href="notes.html">Конспект</a>
       <a href="SOURCES.md">Источники</a>
+      <a href="../a10-ivp/slides.html">А10</a>
       <a href="../a11-gnss/slides.html">А11</a>
-      <a href="../09-fotogrammetriya/slides.html">Ф10</a>
     </nav>
   </header>
   <div class="deck">
-<section class="slide slide--title is-active">
-  <h1>СК, проекции, орто</h1>
-  <p>А12 · пара 1,5 ч · геоид · Гаусса–Крюгера · ГСК-2011 · ортофотоплан</p>
+<section class="slide slide--pptx is-active">
+  <h2>Системы координат и проекции</h2>
+<ul>
+<li>Данила Олегович Дрыга</li>
+<li>dryga_do@pfur.ru</li>
+<li>https://kartoweb.itc.nl/geometrics/</li>
+</ul>
 </section>
-
-<section class="slide">
-  <h2>На пару</h2>
-  <ul>
-    <li>Физическая поверхность → геоид → эллипсоид → плоскость карты</li>
-    <li>Искажения проекций: углы, площади, длины</li>
-    <li>Гаусса–Крюгера, UTM, Web Mercator — кому что нельзя</li>
-    <li>ГСК-2011, МСК, WGS-84</li>
-    <li>Что нужно для орто кроме JPEG</li>
-  </ul>
+<section class="slide slide--pptx">
+  <h2>https://www.worldmapgenerator.com/</h2>
+<ul>
+<li>https://www.jasondavies.com/maps/transition/</li>
+<li>https://projectionwizard.org/</li>
+<li>https://map-projections.net/index.php</li>
+<li>https://epsg.io/</li>
+</ul>
 </section>
-
-<section class="slide slide--definition">
-  <p class="term">Геоид</p>
-  <p class="defn">Уровенная поверхность поля силы тяжести, близкая к среднему уровню моря. Отвесные линии к ней ортогональны.</p>
+<section class="slide slide--pptx">
+  <h2>Создание карт</h2>
+<ul>
+<li>https://www.worldanvil.com/features/maps</li>
+<li>https://www.campfirewriting.com/interactive-maps</li>
+<li>https://inkarnate.com/</li>
+<li>https://azgaar.github.io/Fantasy-Map-Generator/</li>
+</ul>
 </section>
-
-<section class="slide slide--definition">
-  <p class="term">Земной эллипсоид</p>
-  <p class="defn">Математическая модель: вращение эллипса. На нём считают геодезические широту и долготу. Нормаль эллипсоида ≠ отвес (уклонение отвеса).</p>
+<section class="slide slide--pptx">
+  <h2>Как из кадров получается карта · интерактив</h2>
+<div data-widget="pipeline"></div>
 </section>
-
-<section class="slide">
-  <h2>Высоты</h2>
-  <ul>
-    <li>в России отсчёт от нуля Кронштадтского футштока (балтийская система)</li>
-    <li>геодезическая высота — над эллипсоидом</li>
-    <li>нормальная / ортометрическая — к геоиду / квазигеоиду</li>
-    <li>H борта GNSS и H на плане — разные оси, пока не сделали переход</li>
-  </ul>
+<section class="slide slide--pptx">
+  <h2>Математика</h2>
+<ul>
+<li>Примерно так выглядит Земля:</li>
+<li>Длина Земли вдоль экватора 40 075.696 км</li>
+<li>Длина Земли вдоль меридианов  40 008.548 км</li>
+<li>Поэтому землю часто не принимают за идеальный шар</li>
+<li>…так что кругосветка вдоль меридиана будет короче на 67 км!</li>
+<li>разница меньше 0.2%!</li>
+</ul>
 </section>
-
-<section class="slide">
-  <h2>Шар ещё живёт в навигации</h2>
-  <p>Экватор длиннее меридиана ~67 км (&lt; 0,2%). Для топоплана 1:2000 шар недостаточен: нужны эллипсоид и проекция.</p>
+<section class="slide slide--pptx">
+  <h2>Про начало СК</h2>
+<ul>
+<li>Геоцентрические системы координат (например ГСК-2011)</li>
+<li>Селенографические системы координат</li>
+<li>Планетографические системы координат</li>
+<li>Международная небесная система координат (Гелиоцентрическая)</li>
+</ul>
 </section>
-
-<section class="slide">
-  <h2>Проекция всегда врёт</h2>
-  <p>Развернуть эллипсоид на плоскость без складок нельзя. Классификация по характеру искажений:</p>
-  <ul>
-    <li>равноугольные (конформные) — углы локально верны</li>
-    <li>равновеликие — площади</li>
-    <li>произвольные — компромисс</li>
-  </ul>
+<section class="slide slide--pptx">
+  <h2>Геоид – Сфера – Плоскость</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s06_01.gif" alt=""><img src="images/pptx/s06_02.jpg" alt=""></div>
 </section>
-
-<section class="slide">
-  <h2>Рабочие проекции</h2>
-  <ul>
-    <li>Меркатор — море, локсодромия = прямая</li>
-    <li>Гаусса–Крюгера — поперечный цилиндр, зоны 6°, топография РФ</li>
-    <li>UTM — то же семейство, k₀ = 0,9996, false easting 500&nbsp;000</li>
-    <li>Web Mercator EPSG:3857 — веб-карты; площади на севере чудовищны</li>
-  </ul>
-  <p>Топоплан 1:2000 в 3857 не сдают.</p>
+<section class="slide slide--pptx">
+  <h2>1. Мировой океан 2. Земной эллипсоид 3. Отвесные линии 4. Суша. 5. Геоид</h2>
 </section>
-
-<section class="slide">
-  <h2>Оси не перепутать</h2>
-  <ul>
-    <li>Гаусса–Крюгера (отечественная традиция): X на север, Y на восток с номером зоны в миллионах</li>
-    <li>UTM: E, N</li>
-    <li>перепутать X/Y — типичный брак орто</li>
-  </ul>
+<section class="slide slide--pptx">
+  <h2>Сфера – Эллипс - Геоид</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s08_01.png" alt=""></figure>
 </section>
-
-<section class="slide slide--definition">
-  <p class="term">Локсодромия</p>
-  <p class="defn">Линия постоянного путевого угла. На Меркаторе — прямая. Не кратчайшая.</p>
+<section class="slide slide--pptx">
+  <h2>Математика</h2>
+<p>Тем не менее обычная «математика» с шаром уже не работает</p>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s09_01.png" alt=""></figure>
 </section>
-
-<section class="slide slide--definition">
-  <p class="term">Ортодромия</p>
-  <p class="defn">Кратчайшая на сфере — дуга большого круга. На Меркаторе — кривая.</p>
+<section class="slide slide--pptx">
+  <h2>Географическая система координат</h2>
+<ul>
+<li>Запись координат:</li>
+<li>в градусах (°) , с долями градусов:  	N55.63165° W037.55952°</li>
+<li>в градусах (°) и минутах (ʹ) , с долями минут:  	N55° 37.899’ E037° 33.571’</li>
+<li>в градусах (°), минутах (ʹ) и секундах (ʺ), с долями секунд:  	N55° 37’53.9’’ E037° 33’ 34.2’’</li>
+<li>Высота?</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s10_01.wmf" alt=""></figure>
 </section>
-
-<section class="slide">
-  <h2>СК России (смысл, не дата приказа)</h2>
-  <ul>
-    <li>СК-42, СК-95 — эллипсоид Красовского, архив</li>
-    <li>ПЗ-90.11 — навигация, оборона</li>
-    <li>ГСК-2011 — основные геодезические работы</li>
-    <li>МСК субъекта — кадастр и градостроительство</li>
-    <li>WGS-84 — ГНСС и «гуглокарты»</li>
-  </ul>
+<section class="slide slide--pptx">
+  <h2>Математика</h2>
+<p>Но наша задача перевести этот огромный объект странной формы на плоскую бумагу, на экран компьютера или в мобильный телефон. Как это сделать?</p>
+<p>Картографических проекций очень много, с некоторыми можно ознакомиться здесь: pro.arcgis.com</p>
+<p>Можно приложить к глобусу лист бумаги и перерисовать(спроецировать) на него все объекты</p>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s11_01.png" alt=""><img src="images/pptx/s11_02.png" alt=""><img src="images/pptx/s11_03.png" alt=""></div>
 </section>
-
-<section class="slide">
-  <h2>Переход</h2>
-  <ul>
-    <li>7 параметров Гельмерта / ГОСТ</li>
-    <li>WKT, PROJ, EPSG-коды</li>
-    <li>ключи МСК — из региональной документации, не с форума</li>
-    <li>RTK в WGS без перехода в МСК кадастр не примет</li>
-  </ul>
+<section class="slide slide--pptx">
+  <h2>Математика</h2>
+<ul>
+<li>В зависимости от того, какой формы лист мы приложим – зависит тип будущей проекции</li>
+<li>Цилиндр – цилиндрическая проекция</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s12_01.gif" alt=""></figure>
 </section>
-
-<section class="slide">
-  <h2>ПВО здесь</h2>
-  <p>Опознаки в СК объекта (А04). Пункты ГГС, реперы, каталог. Блок АФС вписывают в ту СК, что в ТЗ.</p>
+<section class="slide slide--pptx">
+  <h2>Математика</h2>
+<ul>
+<li>В зависимости от того, какой формы лист мы приложим – зависит тип будущей проекции</li>
+<li>Конус – коническая проекция</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s13_01.gif" alt=""><img src="images/pptx/s13_02.jpg" alt=""></div>
 </section>
-
-<section class="slide">
-  <h2>Как из двух кадров получается карта</h2>
-  <div data-widget="pipeline"></div>
+<section class="slide slide--pptx">
+  <h2>Математика</h2>
+<ul>
+<li>В зависимости от того, какой формы лист мы приложим – зависит тип будущей проекции</li>
+<li>Плоскость – азимутальная проекция</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s14_01.gif" alt=""><img src="images/pptx/s14_02.jpg" alt=""></div>
 </section>
-
-<section class="slide slide--definition">
-  <p class="term">Ортофотоплан</p>
-  <p class="defn">Фотограмметрическое изображение местности в ортогональной проекции, приведённое к заданным масштабу и системе координат. Строится из ориентированных снимков и ЦМР/ЦММ той же СК. Это продукт сдачи, а не склейка JPEG в графическом редакторе.</p>
+<section class="slide slide--pptx">
+  <h2>Искажения</h2>
+<ul>
+<li>В любой проекции существуют искажения, они бывают четырёх видов:</li>
+<li>искажения длин</li>
+<li>искажения углов</li>
+<li>искажения площадей</li>
+<li>искажения форм</li>
+<li>Применение тех или иных картографических проекций зависит от назначения карты, конфигурации и положения картографируемой области</li>
+</ul>
 </section>
-
-<section class="slide">
-  <h2>Что нужно для орто — чеклист в тетрадь</h2>
-  <ul>
-    <li>уравненный блок снимков или элементы внешнего ориентирования каждого кадра</li>
-    <li>элементы внутреннего ориентирования (f, главная точка, дисторсия)</li>
-    <li>ЦМР или ЦММ в той же системе координат, что орто</li>
-    <li>«подтянуть по четырём углам» без ЦМР — аффинная пародия: вертикали зданий ложатся</li>
-  </ul>
+<section class="slide slide--pptx">
+  <h2>Классификация проекций по характеру искажений</h2>
+<ul>
+<li>Равноугольные проекции</li>
+<li>Равновеликие проекции</li>
+<li>Произвольные проекции</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s16_01.png" alt=""></figure>
 </section>
-
-<section class="slide slide--definition">
-  <p class="term">ЦМР и ЦММ</p>
-  <p class="defn">ЦМР — цифровая модель рельефа земной поверхности (часто без домов и крон). ЦММ / ЦМП — модель видимой местности, с растительностью и крышами. True ortho дополнительно «ставит» фасады: другой класс работ и другая цена, чем обычный ортофотоплан.</p>
+<section class="slide slide--pptx">
+  <h2>Равноугольная проекция</h2>
+<ul>
+<li>картографическая проекция, позволяющая передавать на картах углы без искажений и сохранять в каждой точке постоянный масштаб по всем направлениям, хотя в разных местах карты масштаб различен.</li>
+<li>обладающая свойством конформного отображения</li>
+<li>.</li>
+<li>Проекция Меркатора</li>
+<li>(«равноугольная проекция»)</li>
+<li>Проекция Гаусса — Крюгера</li>
+<li>(поперечно-цилиндрическая</li>
+<li>проекция Меркатора)</li>
+<li>Стереографическая проекция</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s17_01.png" alt=""><img src="images/pptx/s17_02.jpg" alt=""></div>
 </section>
-
-<section class="slide">
-  <h2>Накидной монтаж ≠ орто</h2>
-  <p>Монтаж — контроль покрытия (А06). Орто — метрический продукт в СК. Нормы: ГОСТ Р 59328, ГОСТ Р 59562, ГКИНП 02-036-02.</p>
+<section class="slide slide--pptx">
+  <h2>Равновеликая проекция</h2>
+<ul>
+<li>картографическая проекция, позволяющая передавать на картах площади без искажений и сохраняющая на всей карте единый масштаб площадей. При этом сильны искажения углов и форм</li>
+<li>Коническая проекция Альберса</li>
+<li>(«равновеликая коническая проекция»)</li>
+<li>Азимутальная проекция Ламберта</li>
+<li>(равновеликая азимутальная проекция)</li>
+<li>цилиндрическая проекция Ламберта</li>
+<li>(равновеликая цилиндрическая проекция)</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s18_01.jpg" alt=""><img src="images/pptx/s18_02.jpg" alt=""><img src="images/pptx/s18_03.jpg" alt=""><img src="images/pptx/s18_04.jpg" alt=""></div>
 </section>
-
-<section class="slide">
-  <h2>Вопросы</h2>
-  <ol>
-    <li>Чем геоид отличается от эллипсоида?</li>
-    <li>Почему Web Mercator нельзя сдавать как топоплан 1:2000?</li>
-    <li>ГСК-2011 и МСК: что кому?</li>
-    <li>Какие данные нужны для орто кроме JPEG?</li>
-    <li>Чем ортофотоплан отличается от накидного монтажа?</li>
-  </ol>
+<section class="slide slide--pptx">
+  <h2>Произвольная проекция</h2>
+<ul>
+<li>картографическая проекция, имеются искажения и углов, и площадей, но в значительно меньшей степени, чем в равновеликих и равноугольных проекциях</li>
+<li>Кубическая проекция</li>
+<li>Компактная проекция Миллера</li>
+<li>Проекция Эккерта</li>
+<li>(псевдоцилиндрическая проекция)</li>
+<li>поэтому они наиболее употребляемые</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s19_01.png" alt=""><img src="images/pptx/s19_02.png" alt=""></div>
 </section>
-
-<section class="slide slide--title">
-  <h1>Спасибо</h1>
-  <p><a href="notes.html">Конспект</a> · <a href="https://epsg.io/">epsg.io</a></p>
+<section class="slide slide--pptx">
+  <h2>Еще немного проекций</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s20_01.png" alt=""><img src="images/pptx/s20_02.png" alt=""><img src="images/pptx/s20_03.png" alt=""><img src="images/pptx/s20_04.png" alt=""><img src="images/pptx/s20_05.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Проекция Меркатора (равноугольная цилиндрическая проекция)</h2>
+<p>— одна из основных картографических проекций. Разработана Герардом Меркатором для нужд мореходства. Проекция сохраняет углы между направлениями.</p>
+<p>траектория движения корабля, идущего с неизменным положением стрелки компаса, изображается прямой линией на карте в проекции Меркатора.</p>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s21_01.png" alt=""><img src="images/pptx/s21_02.gif" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Проекция Гаусса-Крюгера (эллипсоидальная поперечная проекция Меркатора)</h2>
+<p>— поперечная цилиндрическая равноугольная картографическая проекция</p>
+<p>Универсальная поперечная проекция Меркатора «Universal Transverse Mercator» (UTM) – работает аналогично</p>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s22_01.png" alt=""><img src="images/pptx/s22_02.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Расстояния</h2>
+<p>Угловое расстояние: Это угол между двумя лучами, исходящими из центра земли через две точки. Угловые расстояния обычно используются в сейсмологии, и вы можете столкнуться с ними при работе с геоданными.</p>
+<p>Линейное расстояние: Это то, что люди обычно имеют в виду, когда говорят о расстоянии между двумя точками на поверхности земли. Часто описывается как расстояние &quot;по прямой&quot;.</p>
+<p>Расстояние пути: Линейные расстояния - это очень хорошо, но люди не могут летать, как птицы, для преодоления расстояний “по прямой” (напрямик). Поэтому логичным способом измерения расстояния между точками А и Б является измерение расстояния пути по дороге или другому очевидному маршруту.</p>
+<p>Источник: Erik Westra - Python Geospatial Development</p>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s23_01.png" alt=""><img src="images/pptx/s23_02.png" alt=""><img src="images/pptx/s23_03.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Расстояния</h2>
+<ul>
+<li>В геоинформатике работают с расстояниями между точками на поверхности Земли, а не с точками на плоской поверхности, Фактически используется так называемое great circle distance (расстояние по большому кругу).</li>
+<li>Расстояние по большому кругу - это расстояние между двумя точками на сфере , измеренное вдоль дуги большого круга между ними.</li>
+<li>Эта дуга представляет собой кратчайший путь между двумя точками на поверхности сферы.</li>
+<li>Источник:</li>
+<li>Erik Westra –</li>
+<li>Python</li>
+<li>Geospatial</li>
+<li>Development</li>
+<li>расстояние</li>
+<li>по большому кругу</li>
+<li>Сравнение реального расстояния и расстояния, рассчитанного при условии &quot;Плоской&quot; Земли</li>
+<li>http://morez.ru/sposobi-naneseniya-dbk/</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s24_01.png" alt=""><img src="images/pptx/s24_02.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>и	    - географическая долгота и широта  двух точек Q и P. Если же между ними существуют абсолютные различия		, то центральный угол между ними Δσ определяется сферическим законом косинусов , если один из  полюсов используется в качестве вспомогательной третьей точки на сфере</h2>
+<ul>
+<li>Задача обычно формулируется в виде нахождения центрального угла Δσ.</li>
+<li>Учитывая этот угол в радианах, фактическую длину дуги d на сфере радиуса r можно легко вычислить следующим образом:</li>
+<li>Расстояния</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s25_01.png" alt=""><img src="images/pptx/s25_02.png" alt=""><img src="images/pptx/s25_03.png" alt=""><img src="images/pptx/s25_04.png" alt=""><img src="images/pptx/s25_05.png" alt=""><img src="images/pptx/s25_06.png" alt=""><img src="images/pptx/s25_07.png" alt=""><img src="images/pptx/s25_08.png" alt=""><img src="images/pptx/s25_09.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Локсодрома и Ортодрома</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s26_01.gif" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Локсодрома и Ортодрома</h2>
+<p>Локсодрома, или локсодромия — кривая на поверхности вращения, пересекающая все меридианы под постоянным углом, называемым локсодромическим путевым углом.</p>
+<p>Ортодромия ортодро́ма — кратчайшая линия между двумя точками на поверхности вращения, частный случай геодезической линии.</p>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s27_01.png" alt=""><img src="images/pptx/s27_02.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Системы координат</h2>
+<ul>
+<li>это набор математических правил, описывающих, как координаты должны быть соотнесены с точками пространства.</li>
+<li>Полярная СК</li>
+<li>Плоская прямоугольная СК</li>
+<li>Пространственная прямоугольная СК</li>
+<li>Географическая СК</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s28_01.png" alt=""><img src="images/pptx/s28_02.jpg" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Применяемые в России</h2>
+<ul>
+<li>WGS-84 - World Geodetic System (а также UTM)</li>
+<li>Web Mercator</li>
+<li>ПЗ-90.11 - общеземная геоцентрическая система координат «Параметры Земли 1990 года»</li>
+<li>ГСК-2011 - геодезическая система координат 2011 года</li>
+<li>МСК - местная система координат субъекта Российской Федерации</li>
+<li>Архивные:</li>
+<li>СК-42 – система координат 1942 года</li>
+<li>СК-63 – система координат 1963 года</li>
+<li>СК-95 – система координат 1995 года</li>
+</ul>
+</section>
+<section class="slide slide--pptx">
+  <h2>Основные системы координат России</h2>
+<p>С 1 января 2017 года все геодезические и картографические работы, предусматривающие создание новых пространственных данных, должны выполняться только в ГСК-2011.</p>
+<p>С 1 января 2021 года СК-42 и СК-95 запрещены для новых работ согласно постановлению Правительства РФ № 1240 от 24.11.2016. Используются только для работы с архивными материалами.</p>
+<p>https://inner.su/</p>
+</section>
+<section class="slide slide--pptx">
+  <h2>Местные системы координат.</h2>
+<ul>
+<li>МСК-69</li>
+<li>МСК-44</li>
+<li>МСК-36</li>
+<li>МСК-67</li>
+<li>МСК-50</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s31_01.jpg" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Система координат</h2>
+<p>Пулковская обсерватория Начало системы координат</p>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s32_01.jpg" alt=""><img src="images/pptx/s32_02.jpg" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Система высот</h2>
+<p>Кронштадтский футшток Начало системы высот</p>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s33_01.jpg" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Система координат</h2>
+<p>Стенные репера</p>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s34_01.jpg" alt=""><img src="images/pptx/s34_02.jpg" alt=""><img src="images/pptx/s34_03.jpg" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Система координат</h2>
+<p>Грунтовые репера</p>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s35_01.jpg" alt=""><img src="images/pptx/s35_02.jpg" alt=""><img src="images/pptx/s35_03.jpg" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Привязка АФС</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s36_01.jpg" alt=""><img src="images/pptx/s36_02.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Привязка АФС</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s37_01.jpg" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Привязка АФС</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s38_01.jpg" alt=""><img src="images/pptx/s38_02.png" alt=""><img src="images/pptx/s38_03.jpg" alt=""><img src="images/pptx/s38_04.jpg" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>WGS-84</h2>
+<p>— Всемирная геодезическая система(WGS) является стандартом, используемым в картографии , геодезии и спутниковой навигации. Это геоцентрическая система координат с геодезической системой отсчета , и связанной с ней гравитационной(EGM) и магнитной(WMM) моделями Земли.</p>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s39_01.gif" alt=""><img src="images/pptx/s39_02.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Переход из одной СК в другую</h2>
+<p>&quot;?????&quot;, 8, 9999, 10, 316.151, 78.924, 589.650, 1.57273, -2.69209, -2.34693, 8.4507, 0, 7, 37.5, 55.66666666667, 1, 16.098, 14.512</p>
+<p>https://mapbasic.ru/msksolutions</p>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s40_01.gif" alt=""><img src="images/pptx/s40_02.gif" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Описание 		WKT 				proj4</h2>
+<ul>
+<li>WKT</li>
+<li>PROJCRS[&quot;WGS 84 / UTM zone 37N&quot;,     BASEGEOGCRS[&quot;WGS 84&quot;,         ENSEMBLE[&quot;World Geodetic System 1984 ensemble&quot;,             MEMBER[&quot;World Geodetic System 1984 (Transit)&quot;],             MEMBER[&quot;World Geodetic System 1984 (G730)&quot;],             MEMBER[&quot;World Geodetic System 1984 (G873)&quot;],             MEMBER[&quot;World Geodetic System 1984 (G1150)&quot;],             MEMBER[&quot;World Geodetic System 1984 (G1674)&quot;],             MEMBER[&quot;World Geodetic System 1984 (G1762)&quot;],             MEMBER[&quot;World Geodetic System 1984 (G2139)&quot;],             ELLIPSOID[&quot;WGS 84&quot;,6378137,298.257223563,                 LENGTHUNIT[&quot;metre&quot;,1]],             ENSEMBLEACCURACY[2.0]],         PRIMEM[&quot;Greenwich&quot;,0,             ANGLEUNIT[&quot;degree&quot;,0.0174532925199433]],         ID[&quot;EPSG&quot;,4326]],     CONVERSION[&quot;UTM zone 37N&quot;,         METHOD[&quot;Transverse Mercator&quot;,             ID[&quot;EPSG&quot;,9807]],         PARAMETER[&quot;Latitude of natural origin&quot;,0,             ANGLEUNIT[&quot;degree&quot;,0.0174532925199433],             ID[&quot;EPSG&quot;,8801]],         PARAMETER[&quot;Longitude of natural origin&quot;,39,             ANGLEUNIT[&quot;degree&quot;,0.0174532925199433],             ID[&quot;EPSG&quot;,8802]],         PARAMETER[&quot;Scale factor at natural origin&quot;,0.9996,             SCALEUNIT[&quot;unity&quot;,1],             ID[&quot;EPSG&quot;,8805]],         PARAMETER[&quot;False easting&quot;,500000,             LENGTHUNIT[&quot;metre&quot;,1],             ID[&quot;EPSG&quot;,8806]],         PARAMETER[&quot;False northing&quot;,0,             LENGTHUNIT[&quot;metre&quot;,1],             ID[&quot;EPSG&quot;,8807]]],     CS[Cartesian,2],         AXIS[&quot;(E)&quot;,east,             ORDER[1],             LENGTHUNIT[&quot;metre&quot;,1]],         AXIS[&quot;(N)&quot;,north,             ORDER[2],             LENGTHUNIT[&quot;metre&quot;,1]],     USAGE[         SCOPE[&quot;Engineering survey, topographic mapping.&quot;],         AREA[&quot;Between 36°E and 42°E, northern hemisphere between equator and 84°N, onshore and offshore. Djibouti. Egypt. Eritrea. Ethiopia. Georgia. Iraq. Jordan. Kenya. Lebanon. Russian Federation. Saudi Arabia. Somalia. Sudan. Syria. Turkey. Ukraine.&quot;],         BBOX[0,36,84,42]],     ID[&quot;EPSG&quot;,32637]]</li>
+<li>WGS 84 / UTM zone 37N</li>
+<li>Свойства</li>
+<li>Единицы: метры</li>
+<li>Динамическая (основана на датуме, не привязанном к опорной сети)</li>
+<li>Небесное тело: Earth</li>
+<li>На основе World Geodetic System 1984 ensemble (EPSG:6326), ограниченной точности в лучшем случае 2 метра .</li>
+<li>Метод: Universal Transverse Mercator (UTM)</li>
+<li>Охват</li>
+<li>36.00, 0.00, 42.00, 84.00</li>
+<li>+proj=utm</li>
+<li>+zone=37</li>
+<li>+datum=WGS84</li>
+<li>+units=m</li>
+<li>+no_defs</li>
+</ul>
+</section>
+<section class="slide slide--pptx">
+  <h2>Описание 		WKT 				proj4</h2>
+<ul>
+<li>WKT</li>
+<li>PROJCRS[&quot;Pulkovo 1942 / Gauss-Kruger zone 7&quot;,     BASEGEOGCRS[&quot;Pulkovo 1942&quot;,         DATUM[&quot;Pulkovo 1942&quot;,             ELLIPSOID[&quot;Krassowsky 1940&quot;,6378245,298.3,                 LENGTHUNIT[&quot;metre&quot;,1]]],         PRIMEM[&quot;Greenwich&quot;,0,             ANGLEUNIT[&quot;degree&quot;,0.0174532925199433]],         ID[&quot;EPSG&quot;,4284]],     CONVERSION[&quot;6-degree Gauss-Kruger zone 7&quot;,         METHOD[&quot;Transverse Mercator&quot;,             ID[&quot;EPSG&quot;,9807]],         PARAMETER[&quot;Latitude of natural origin&quot;,0,             ANGLEUNIT[&quot;degree&quot;,0.0174532925199433],             ID[&quot;EPSG&quot;,8801]],         PARAMETER[&quot;Longitude of natural origin&quot;,39,             ANGLEUNIT[&quot;degree&quot;,0.0174532925199433],             ID[&quot;EPSG&quot;,8802]],         PARAMETER[&quot;Scale factor at natural origin&quot;,1,             SCALEUNIT[&quot;unity&quot;,1],             ID[&quot;EPSG&quot;,8805]],         PARAMETER[&quot;False easting&quot;,7500000,             LENGTHUNIT[&quot;metre&quot;,1],             ID[&quot;EPSG&quot;,8806]],         PARAMETER[&quot;False northing&quot;,0,             LENGTHUNIT[&quot;metre&quot;,1],             ID[&quot;EPSG&quot;,8807]]],     CS[Cartesian,2],         AXIS[&quot;northing (X)&quot;,north,             ORDER[1],             LENGTHUNIT[&quot;metre&quot;,1]],         AXIS[&quot;easting (Y)&quot;,east,             ORDER[2],             LENGTHUNIT[&quot;metre&quot;,1]],     USAGE[         SCOPE[&quot;Topographic mapping (medium scale).&quot;],         AREA[&quot;Georgia - onshore west of 36°E; Russian Federation - onshore 36°E to 42°E; Ukraine - onshore east of 36°E.&quot;],         BBOX[41.43,36,69.23,42]],     ID[&quot;EPSG&quot;,28407]]</li>
+<li>Pulkovo 1942 / Gauss-Kruger zone 7</li>
+<li>Свойства</li>
+<li>Единицы: метры</li>
+<li>Статическая (базируется на опорной сети)</li>
+<li>Небесное тело: Earth</li>
+<li>Метод: Transverse Mercator</li>
+<li>Охват</li>
+<li>36.00, 41.43, 42.00, 69.23</li>
+<li>+proj=tmerc +lat_0=0 +lon_0=39 +k=1 +x_0=7500000 +y_0=0 +ellps=krass +units=m +no_defs</li>
+</ul>
+</section>
+<section class="slide slide--pptx">
+  <h2>Опорная сеть пунктов ГГС</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s43_01.png" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Проблемы</h2>
+<ul>
+<li>Различные описания геоидов, квазигеоидов, элипсоидов Земли</li>
+<li>Засекреченность и неточность параметров преобразования (перехода)</li>
+<li>Уничтоженная сеть опорных пунктов</li>
+<li>Плохая связь в передачи данных между приемниками</li>
+<li>Помехи, которые заглушают часть частот, на которых передаются сигналы GPS/ГЛОНАСС</li>
+</ul>
+</section>
+<section class="slide slide--pptx">
+  <h2>Разграфка и номенклатура</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s45_01.png" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Номенклатура карт</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s46_01.jpg" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Менять проекции это весело</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s47_01.png" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Слайд 48</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s48_01.png" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Примерно так выглядит Земля</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s49_01.gif" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Спасибо    за     внимание</h2>
+<p>www.thetruesize.com</p>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s50_01.png" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Эратосфен и колодцы и стадионы</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s51_01.png" alt=""></figure>
 </section>
   </div>
   <div class="footer-bar">

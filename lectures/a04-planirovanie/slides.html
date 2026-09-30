@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>А04 · Планирование — слайды</title>
+  <title>А04 · Планирование АФС — слайды</title>
   <link rel="stylesheet" href="../../css/course.css" />
 </head>
 <body class="mode-slides">
   <header class="topbar">
     <div class="brand">А04 · Планирование АФС <small>стрелки · F полноэкран · N заметки · ? справка</small></div>
-        <nav class="nav">
+    <nav class="nav">
       <a href="../../index.html">Лекции</a>
       <a href="../../practice.html">Практика</a>
       <a href="../../simulators.html">Симуляторы</a>
@@ -23,380 +23,988 @@
     </nav>
   </header>
   <div class="deck">
-<section class="slide slide--title is-active">
-  <h1>Планирование АФС</h1>
-  <p>А04 · пара 1,5 ч · элементы · высоты · GSD · базисы · ПВО</p>
+<section class="slide slide--pptx is-active">
+  <h2>Планирование аэрофотосъемочных работ и расчёт аэрофотосъёмочных элементов</h2>
+<ul>
+<li>Дрыга Данила Олегович</li>
+<li>hopkuh@gmail.com</li>
+<li>https://vk.com/dryga</li>
+<li>+7(916)0306256</li>
+<li>если есть инструкция,</li>
+<li>значит от нее должна быть польза!</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s01_01.png" alt=""></figure>
 </section>
-
-<section class="slide">
-  <h2>На пару</h2>
-  <ul>
-    <li>Три корзины аэросъёмочных элементов — и что из чего считают</li>
-    <li>Высоты: абсолютная, относительная, истинная, H<sub>ф</sub></li>
-    <li>Масштаб снимка vs GSD — не одно и то же</li>
-    <li>Захваты, перекрытия, базисы, интервал, смаз</li>
-    <li>Два билета минимума — по шагам на доске</li>
-  </ul>
-  <div class="speaker-notes">Pptx на 134 кадра: половина — примеры отраслей и софт. На пару оставляем расчёт. Конвергентный предмет — Ф07, здесь только предупреждение, что Bx с плановой формулы туда не переносится.</div>
+<section class="slide slide--pptx">
+  <h2>Аэросъемочные элементы</h2>
+<ul>
+<li>Величины, характеризующие геометрические условия съемки</li>
+<li>Разделяют на:</li>
+<li>Геометрические характеристики АФА</li>
+<li>Фотограмметрические показатели съемки</li>
+<li>Навигационные элементы</li>
+</ul>
 </section>
-
-<section class="slide slide--definition">
-  <p class="term">Аэросъёмочные элементы</p>
-  <p class="defn">Величины, которые задают геометрические условия съёмки. Без них нет ни ТЗ, ни маршрута, ни допуска на орто.</p>
+<section class="slide slide--pptx">
+  <h2>Геометрические характеристики АФА</h2>
+<ul>
+<li>f – фокусное расстояние</li>
+<li>lx – продольная сторона снимка</li>
+<li>ly – поперечная сторона снимка</li>
+</ul>
 </section>
-
-<section class="slide">
-  <h2>Три корзины</h2>
-  <div class="columns-3">
-    <div>
-      <h3>АФА / ЦФК</h3>
-      <ul>
-        <li>f — фокусное</li>
-        <li>l<sub>x</sub> — продольная сторона кадра</li>
-        <li>l<sub>y</sub> — поперечная сторона кадра</li>
-      </ul>
-    </div>
-    <div>
-      <h3>Фотограмметрия</h3>
-      <ul>
-        <li>1:m — масштаб снимка</li>
-        <li>P<sub>x</sub> — продольное перекрытие</li>
-        <li>P<sub>y</sub> — поперечное перекрытие</li>
-      </ul>
-    </div>
-    <div>
-      <h3>Навигация</h3>
-      <ul>
-        <li>H<sub>ф</sub> — высота фотографирования</li>
-        <li>L<sub>x</sub>, L<sub>y</sub> — захваты</li>
-        <li>B<sub>x</sub>, B<sub>y</sub> — базисы</li>
-      </ul>
-    </div>
-  </div>
+<section class="slide slide--pptx">
+  <h2>Фотограмметрические показатели съемки</h2>
+<ul>
+<li>1:m – масштаб фотографирования,</li>
+<li>Px – продольное перекрытие снимков</li>
+<li>Py – поперечное  перекрытие снимков</li>
+</ul>
 </section>
-
-<section class="slide">
-  <h2>Геометрия камеры — в миллиметрах</h2>
-  <ul>
-    <li>f, l<sub>x</sub>, l<sub>y</sub> — стороны матрицы, не «5472 пикселя»</li>
-    <li>Пиксели входят отдельно: W × H и размер элемента p = l<sub>x</sub> / W</li>
-    <li>Эквивалентное фокусное «как у 35 мм» в формулы АФС не подставляют</li>
-    <li>Зум на топоплане — враг: f должен быть зафиксирован</li>
-  </ul>
+<section class="slide slide--pptx">
+  <h2>Навигационные элементы</h2>
+<ul>
+<li>Нф – высота фотографирования</li>
+<li>Lx и Ly – продольный и поперечный захваты</li>
+<li>Вх – продольный базис фотографирования</li>
+<li>Ву – поперечный базис фотографирования</li>
+</ul>
 </section>
-
-<section class="slide slide--definition">
-  <p class="term">Масштаб фотографирования 1:m</p>
-  <p class="defn">Отношение отрезка на снимке к одноимённому отрезку на местности. Для надира: m ≈ H<sub>ф</sub> / f.</p>
-  <p class="formula">m = H<sub>ф</sub> / f = L / l<span class="eq-note">H и f — в одних единицах; L — сторона захвата, l — сторона кадра</span></p>
+<section class="slide slide--pptx">
+  <h2>Слайд 6</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s06_01.jpg" alt=""></figure>
 </section>
-
-<section class="slide slide--definition">
-  <p class="term">Перекрытие снимка P</p>
-  <p class="defn">Доля площади снимка, покрываемая смежным кадром. Продольное P<sub>x</sub> — внутри маршрута, поперечное P<sub>y</sub> — между маршрутами.</p>
+<section class="slide slide--pptx">
+  <h2>Слайд 7</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s07_01.jpg" alt=""><img src="images/pptx/s07_02.jpg" alt=""></div>
 </section>
-
-<section class="slide">
-  <h2>Зачем перекрытие</h2>
-  <ul>
-    <li>Стереоэффект: общая зона двух кадров → параллакс → высота</li>
-    <li>Триплет: общая зона трёх кадров → передать СК и масштаб на следующую пару</li>
-    <li>Классика площадной: P<sub>x</sub> ≈ 60%, P<sub>y</sub> ≈ 40%</li>
-    <li>БВС / неустойчивый борт / автоуравнивание: P<sub>x</sub> ≥ 80%, P<sub>y</sub> ≥ 60%</li>
-    <li>Нижняя жёсткая граница контроля: P<sub>x</sub> отдельных кадров не &lt; 55% (ГОСТ Р 59328)</li>
-  </ul>
+<section class="slide slide--pptx">
+  <h2>Слайд 8</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s08_01.jpg" alt=""></figure>
 </section>
-
-<section class="slide slide--definition">
-  <p class="term">Триплет</p>
-  <p class="defn">Зона тройного продольного перекрытия. По общим точкам связывают соседние стереопары: передают систему координат и масштаб фотограмметрических построений.</p>
+<section class="slide slide--pptx">
+  <h2>Немного истории</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s09_01.jpg" alt=""><img src="images/pptx/s09_02.jpg" alt=""></div>
 </section>
-
-<section class="slide slide--definition">
-  <p class="term">Базис фотографирования</p>
-  <p class="defn">Расстояние между соседними точками съёмки. B<sub>x</sub> — вдоль маршрута, B<sub>y</sub> — между маршрутами.</p>
-  <p class="formula">B<sub>x</sub> = L<sub>x</sub> (1 − P<sub>x</sub>)<span class="eq-note">P в долях: 80% → 0,80. L<sub>x</sub> = l<sub>x</sub> · m — продольный захват</span></p>
-  <p class="formula">B<sub>y</sub> = L<sub>y</sub> (1 − P<sub>y</sub>)</p>
+<section class="slide slide--pptx">
+  <h2>Слайд 10</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s10_01.jpg" alt=""></figure>
 </section>
-
-<section class="slide">
-  <h2>Захваты и базисы</h2>
-  <figure class="fig fig-lg">
-    <img src="images/schemes/a04-bases.png" alt="Перекрытия, базисы, триплет">
-  </figure>
+<section class="slide slide--pptx">
+  <h2>Слайд 11</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s11_01.jpg" alt=""><img src="images/pptx/s11_02.jpg" alt=""></div>
 </section>
-
-<section class="slide">
-  <h2>Сначала ТЗ, потом «fly»</h2>
-  <ol>
-    <li>Границы участка и вид продукта</li>
-    <li>Стоимость</li>
-    <li>Рекогносцировка</li>
-    <li>План АФС (элементы этой лекции)</li>
-    <li>ПВО</li>
-    <li>Съёмка → оценка качества → обработка → дешифрирование → отчёт</li>
-  </ol>
-  <p class="caveat">«Сделайте фотограмметрию» без масштаба, GSD и продукта — не задача.</p>
+<section class="slide slide--pptx">
+  <h2>Слайд 12</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s12_01.jpg" alt=""><img src="images/pptx/s12_02.jpg" alt=""></div>
 </section>
-
-<section class="slide">
-  <h2>Что сдают</h2>
-  <ul>
-    <li>снимки (первичные материалы)</li>
-    <li>ортофотоплан</li>
-    <li>ЦМР / ЦММ / TIN</li>
-    <li>иногда текстурированная 3D-модель</li>
-  </ul>
-  <p>От масштаба плана зависят сечение рельефа и допуск на контуры. Нормы — не зубрить все строчки, понимать логику.</p>
+<section class="slide slide--pptx">
+  <h2>Слайд 13</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s13_01.jpg" alt=""></figure>
 </section>
-
-<section class="slide slide--table">
-  <h2>Сечение рельефа на топоплане</h2>
-  <table class="data">
-    <thead>
-      <tr><th>Рельеф</th><th>1:5000</th><th>1:2000</th><th>1:1000 / 1:500</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>равнина, уклоны до 2°</td><td>1,0 м</td><td>0,5 м</td><td>0,5 м</td></tr>
-      <tr><td>всхолмлённый, до 4°</td><td>2,0 м</td><td>1,0 м</td><td>0,5 м</td></tr>
-      <tr><td>пересечённый, до 6°</td><td>2,0 м</td><td>2,0 м</td><td>0,5 м</td></tr>
-      <tr><td>горы, более 6°</td><td>5,0 м</td><td>2,0 м</td><td>1,0 м</td></tr>
-    </tbody>
-  </table>
-  <p class="caveat">Средняя погрешность высот ≤ 1/4 сечения. Контуры с чёткими очертаниями — ≤ 0,5 мм на плане относительно ближайших точек обоснования.</p>
+<section class="slide slide--pptx">
+  <h2>Слайд 14</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s14_01.jpg" alt=""><img src="images/pptx/s14_02.jpg" alt=""></div>
 </section>
-
-<section class="slide slide--definition">
-  <p class="term">GSD</p>
-  <p class="defn">Ground Sample Distance — проекция одного пикселя на местности. Номинальное пространственное разрешение снимка, не точность ортофотоплана.</p>
+<section class="slide slide--pptx">
+  <h2>Слайд 15</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s15_01.jpg" alt=""></figure>
 </section>
-
-<section class="slide">
-  <h2>GSD из геометрии</h2>
-  <figure class="fig">
-    <img src="images/schemes/a04-gsd.png" alt="Высота фотографирования и GSD">
-  </figure>
-  <p class="formula">GSD = p · H<sub>ф</sub> / f<span class="eq-note">p = l<sub>x</sub> / W — размер пикселя на матрице</span></p>
+<section class="slide slide--pptx">
+  <h2>Слайд 16</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s16_01.jpg" alt=""></figure>
 </section>
-
-<section class="slide">
-  <h2>Живая схема: GSD(H<sub>ф</sub>, f)</h2>
-  <div data-widget="gsd"></div>
-  <p class="caveat">Предустановки: БВС 120 м · самолёт 1,2 км · спутник 700 км. GSD ≠ точность орто.</p>
+<section class="slide slide--pptx">
+  <h2>Что такое ДЗЗ?</h2>
+<ul>
+<li>совокупность методов получения информации по результатам измерений без прямого контакта с объектом.</li>
+<li>Включает два этапа:</li>
+<li>получение изображений</li>
+<li>обработка изображений.</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s17_01.png" alt=""></figure>
 </section>
-
-<section class="slide">
-  <h2>Масштаб ≠ разрешение</h2>
-  <div class="columns">
-    <div>
-      <h3>Одинаковый 1:m, разный GSD</h3>
-      <p>Другая матрица: тот же захват, другой p.</p>
-    </div>
-    <div>
-      <h3>Одинаковый GSD, разный 1:m</h3>
-      <p>Другой f или другой формат кадра.</p>
-    </div>
-  </div>
-  <div class="gallery">
-    <img src="images/s69_01.png" alt="">
-    <img src="images/s69_02.png" alt="">
-    <img src="images/s69_03.png" alt="">
-    <img src="images/s69_04.png" alt="">
-  </div>
+<section class="slide slide--pptx">
+  <h2>Что такое АКС?</h2>
+<ul>
+<li>совокупность методов исследований атмосферы, земной поверхности, океанов, верхнего слоя земной коры с воздушных и космических носителей путем дистанционной регистрации и последующего анализа идущего от Земли электромагнитного излучения.</li>
+<li>По типу носителя:</li>
+<li>Космическая съемка</li>
+<li>Аэросъемка</li>
+<li>По спектральному диапазону:</li>
+<li>Радиолокационная съемка</li>
+<li>Фотосъемка (вид.диап.)</li>
+<li>ИК съемка</li>
+<li>Тепловизионная съемка</li>
+<li>По типу принимаемого излучения:</li>
+<li>Пассивные(фото, ик, тепло)</li>
+<li>Активные (ЛС, РЛС)</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s18_01.png" alt=""></figure>
 </section>
-
-<section class="slide">
-  <h2>Четыре высоты</h2>
-  <ul>
-    <li><strong>H<sub>абс</sub></strong> — абсолютная: борт над уровнем моря (эллипсоид / геоид — как в задании)</li>
-    <li><strong>H<sub>отн</sub></strong> — относительная: над аэродромом или выбранным пунктом</li>
-    <li><strong>H<sub>ист</sub></strong> — истинная: над подстилающей поверхностью под бортом (меняется с рельефом)</li>
-    <li><strong>H<sub>ф</sub></strong> — высота фотографирования: над расчётной (обычно средней) поверхностью участка</li>
-  </ul>
-  <p class="formula">H<sub>ф</sub> = H<sub>абс</sub> − h<sub>ср</sub><span class="eq-note">не высота «по пульту над точкой взлёта»</span></p>
+<section class="slide slide--pptx">
+  <h2>Что такое АФС?</h2>
+<p>Основным видом АКС является аэрофотосъемка, которую выполняют с помощью аэрофотоаппаратов и спец. оборудования в видимом диапазоне спектра.</p>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s19_01.jpg" alt=""></figure>
 </section>
-
-<section class="slide">
-  <h2>Билет: относительная высота</h2>
-  <p>H<sub>аэр</sub> = 130 м, h<sub>местн</sub> = 275 м, H<sub>ист</sub> = 2350 м. Найти H<sub>отн</sub>.</p>
-  <p class="formula">H<sub>абс</sub> = H<sub>ист</sub> + h<sub>местн</sub> = 2350 + 275 = 2625 м</p>
-  <p class="formula">H<sub>отн</sub> = H<sub>абс</sub> − H<sub>аэр</sub> = 2625 − 130 = 2495 м</p>
-  <div class="speaker-notes">Следите за тем, относительно какой поверхности дана «истинная». Если истинная уже над местностью 275 м, борт в абсолютной СК — сумма. Относительная — от аэродрома.</div>
+<section class="slide slide--pptx">
+  <h2>Зачем?</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s20_01.jpg" alt=""></figure>
 </section>
-
-<section class="slide">
-  <h2>Рельеф ломает перекрытие и GSD</h2>
-  <ul>
-    <li>На вершинах H<sub>ист</sub> меньше → GSD мельче, захват уже → P падает</li>
-    <li>Во впадинах наоборот: запас перекрытия, GSD грубее</li>
-    <li>План считают от h<sub>ср</sub>; контроль H<sub>ф</sub> — от фактической средней</li>
-    <li>На горах допуск H<sub>ф</sub> 5%, на равнине 3% (А06 / ГОСТ)</li>
-  </ul>
+<section class="slide slide--pptx">
+  <h2>Фотосъемка</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s21_01.jpg" alt=""><img src="images/pptx/s21_02.jpg" alt=""></div>
 </section>
-
-<section class="slide">
-  <h2>Билет 1. Дано</h2>
-  <ul>
-    <li>f = 24 мм</li>
-    <li>кадр l<sub>x</sub> × l<sub>y</sub> = 36 × 24 мм</li>
-    <li>разрешение 3600 × 2400 px</li>
-    <li>GSD = 5 см</li>
-    <li>P<sub>x</sub> = 80%</li>
-  </ul>
-  <p>Найти продольный базис B<sub>x</sub>.</p>
+<section class="slide slide--pptx">
+  <h2>Мониторинг ЧС</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s22_01.png" alt=""><img src="images/pptx/s22_02.jpg" alt=""></div>
 </section>
-
-<section class="slide">
-  <h2>Билет 1. Шаг 1 — пиксель и масштаб</h2>
-  <p class="formula">p = l<sub>x</sub> / W = 36 мм / 3600 = 0,010 мм</p>
-  <p class="formula">m = GSD / p = 50 мм / 0,010 мм = 5000<span class="eq-note">GSD = 5 см = 50 мм; 1:5000</span></p>
-  <p class="formula">H<sub>ф</sub> = m · f = 5000 · 24 мм = 120 м</p>
+<section class="slide slide--pptx">
+  <h2>Кадастр</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s23_01.png" alt=""><img src="images/pptx/s23_02.jpg" alt=""></div>
 </section>
-
-<section class="slide">
-  <h2>Билет 1. Шаг 2 — захват и базис</h2>
-  <p class="formula">L<sub>x</sub> = l<sub>x</sub> · m = 36 мм · 5000 = 180 м</p>
-  <p class="formula">B<sub>x</sub> = L<sub>x</sub> (1 − 0,80) = 180 · 0,20 = 36 м</p>
-  <p>Проверка через GSD: L<sub>x</sub> = W · GSD = 3600 · 0,05 м = 180 м — то же.</p>
+<section class="slide slide--pptx">
+  <h2>Топография</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s24_01.png" alt=""><img src="images/pptx/s24_02.jpg" alt=""></div>
 </section>
-
-<section class="slide">
-  <h2>Если высота уехала</h2>
-  <p>Задано H<sub>ф</sub> = 500 м, P<sub>x</sub> = 60%, l<sub>x</sub> = 24 мм, f = 50 мм. Фактическая высота на 10% меньше. Как сдвинуть B<sub>x</sub>, чтобы P<sub>x</sub> не изменилось?</p>
-  <p class="formula">m = H / f ⇒ L<sub>x</sub> ∝ H ⇒ B<sub>x</sub> ∝ H<span class="eq-note">при фиксированных l и P</span></p>
-  <p>H′ = 0,9 H → B<sub>x</sub>′ = 0,9 B<sub>x</sub>. Базис <em>уменьшить</em> на 10% (иначе перекрытие вырастет).</p>
+<section class="slide slide--pptx">
+  <h2>Маркшедерия</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s25_01.png" alt=""><img src="images/pptx/s25_02.png" alt=""></div>
 </section>
-
-<section class="slide slide--definition">
-  <p class="term">Интервал фотографирования t<sub>и</sub></p>
-  <p class="defn">Время между экспозициями соседних кадров одного маршрута. Базис выдерживают по времени, по координатам или визуально.</p>
-  <p class="formula">t<sub>и</sub> = B<sub>x</sub> / W<span class="eq-note">W — путевая скорость, м/с. 72 км/ч = 20 м/с</span></p>
+<section class="slide slide--pptx">
+  <h2>Таксация лесов</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s26_01.png" alt=""><img src="images/pptx/s26_02.jpg" alt=""></div>
 </section>
-
-<section class="slide">
-  <h2>Билет 2. Интервал</h2>
-  <p>H<sub>ист</sub> = 300 м, W = 72 км/ч, l<sub>x</sub> = 18 мм, f = 24 мм, P<sub>x</sub> = 80%.</p>
-  <p class="formula">W = 72 / 3,6 = 20 м/с</p>
-  <p class="formula">m = 300 м / 0,024 м = 12&nbsp;500</p>
-  <p class="formula">L<sub>x</sub> = 0,018 · 12&nbsp;500 = 225 м · B<sub>x</sub> = 225 · 0,2 = 45 м</p>
-  <p class="formula">t<sub>и</sub> = 45 / 20 = 2,25 с</p>
+<section class="slide slide--pptx">
+  <h2>Сельское хозяйство</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s27_01.jpg" alt=""><img src="images/pptx/s27_02.jpg" alt=""></div>
 </section>
-
-<section class="slide">
-  <h2>Смаз / сдвиг изображения</h2>
-  <p>За выдержку t борт проходит W·t по местности; на матрице это смещение δ.</p>
-  <p class="formula">δ = W · t · f / H<sub>ф</sub><span class="eq-note">δ и f — в мм, если H и W·t согласованы</span></p>
-  <p>Старый ориентир: δ ≤ 0,05 мм на снимке для масштабов 1:10&nbsp;000 и мельче. В цифре чаще смотрят ≤ 1,25 px по ЧКХ (А06).</p>
+<section class="slide slide--pptx">
+  <h2>Городской мониторинг</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s28_01.jpg" alt=""><img src="images/pptx/s28_02.jpg" alt=""></div>
 </section>
-
-<section class="slide">
-  <h2>Считать смаз</h2>
-  <p>W = 18 км/ч = 5 м/с, t = 1/500 с.</p>
-  <p class="formula">сдвиг на местности = 5 / 500 = 0,010 м = 10 мм</p>
-  <p>При 1/100 с уже 50 мм на местности. На матрицу переводят через масштаб: δ = 10 мм / m.</p>
-  <p>Билет: δ<sub>доп</sub> = 3 мм, f = 100 мм, W = 156 км/ч, H = 1565 м → из формулы находят t<sub>доп</sub>.</p>
+<section class="slide slide--pptx">
+  <h2>Мониторинг инженерных сооружений</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s29_01.jpg" alt=""><img src="images/pptx/s29_02.jpg" alt=""><img src="images/pptx/s29_03.jpg" alt=""></div>
 </section>
-
-<section class="slide">
-  <h2>Допустимая выдержка</h2>
-  <p class="formula">t<sub>доп</sub> = δ<sub>доп</sub> · H<sub>ф</sub> / (W · f)</p>
-  <p>W = 156 км/ч = 43,33 м/с; δ = 3 мм = 0,003 м; f = 0,100 м; H = 1565 м.</p>
-  <p class="formula">t<sub>доп</sub> = 0,003 · 1565 / (43,33 · 0,100) ≈ 1,08 с<span class="eq-note">на таком H и f допуск 3 мм на снимке очень мягкий; на БВС с коротким f и малым H выдержка жёстче</span></p>
+<section class="slide slide--pptx">
+  <h2>Геология</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s30_01.jpg" alt=""><img src="images/pptx/s30_02.png" alt=""><img src="images/pptx/s30_03.jpg" alt=""></div>
 </section>
-
-<section class="slide">
-  <h2>Поправка перекрытия за рельеф</h2>
-  <p>Проектный P<sub>x</sub> считают на h<sub>ср</sub>. На h<sub>max</sub> захват уже:</p>
-  <p class="formula">L(h) = l · (H<sub>абс</sub> − h) / f</p>
-  <p>Чтобы на вершинах не провалиться ниже 55–60%, в план закладывают запас P или снижают H от «красивого GSD». Это та же формула базиса, только H берут локальную.</p>
+<section class="slide slide--pptx">
+  <h2>3D-моделирование</h2>
+<p>https://earth.google.com/</p>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s31_01.png" alt=""><img src="images/pptx/s31_02.png" alt=""><img src="images/pptx/s31_03.png" alt=""></div>
 </section>
-
-<section class="slide">
-  <h2>Плановая vs конвергентная</h2>
-  <ul>
-    <li>Формулы B<sub>x</sub>, L<sub>x</sub> — для плановой (оси примерно параллельны, надир)</li>
-    <li>На предмете оси сходятся: «перекрытие площади кадра» ≠ перекрытие объекта</li>
-    <li>Пример pptx: B = 6 м, γ = 30°, формально P<sub>x</sub> = 100% кадра → на объекте ~30%</li>
-    <li>Коррелятор садится, если угол падения луча к поверхности ≳ 45°</li>
-    <li>Триплеты на цилиндре: не 4 кадра, а 6 (P ≈ 66%)</li>
-  </ul>
-  <p class="caveat">Подробный счёт конвергенции — Ф07 / Ф08. Сюда не тащите плановый B<sub>x</sub>.</p>
+<section class="slide slide--pptx">
+  <h2>Результаты обработки материалов аэрофотосъемки:</h2>
+<ul>
+<li>ортофотоплан</li>
+<li>цифровая модель рельефа + цифровая модель местности</li>
+<li>3D модель</li>
+<li>текстурированная 3D модель.</li>
+<li>вычисление разницы объемов;</li>
+<li>проектирование автомобильных и железнодорожных съездов;</li>
+<li>анализ поверхности на движение поверхностных вод для разработки мер по борьбе с наводнениями;</li>
+<li>экологический мониторинг.</li>
+<li>Эти данные позволяют решать следующие задачи:</li>
+<li>Обработка материалов аэрофотосъемки</li>
+</ul>
 </section>
-
-<section class="slide">
-  <h2>Выдерживание масштаба</h2>
-  <p>Пример: f = 8,8 мм, p = 2,35 мкм, GSD<sub>треб</sub> = 5 см, перепад dh = 50 м.</p>
-  <p class="formula">H<sub>ф</sub> = GSD · f / p = 0,05 · 8,8·10<sup>−3</sup> / 2,35·10<sup>−6</sup> ≈ 187 м</p>
-  <p>На ±25 м рельефа GSD гуляет на dh/H ≈ 13%. Либо запас высоты, либо разбить ярусы, либо смириться в ТЗ.</p>
+<section class="slide slide--pptx">
+  <h2>Лазерное сканирование</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s33_01.jpg" alt=""></figure>
 </section>
-
-<section class="slide">
-  <h2>Калибровка ЦФК</h2>
-  <ul>
-    <li>лабораторная (стенд, шахматка) — f, x<sub>0</sub> y<sub>0</sub>, K<sub>i</sub>, P<sub>i</sub></li>
-    <li>полевая / самокалибровка в блоке — те же параметры из связки</li>
-    <li>модель Брауна–Конради: радиальная + тангенциальная дисторсия</li>
-    <li>камера может «поехать» в полёте (температура, фокус) — зум запрещён</li>
-  </ul>
+<section class="slide slide--pptx">
+  <h2>Тепловизионная съемка</h2>
+<ul>
+<li>Мониторинг утечек  тепла</li>
+<li>Обследование теплотрасс, ЛЭП и  трубопроводов</li>
+<li>Диагностика промышленных объектов</li>
+<li>Мониторинг оборудования</li>
+<li>Экологический мониторинг</li>
+<li>Поисково-спасательные операции</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s34_01.jpg" alt=""></figure>
 </section>
-
-<section class="slide slide--definition">
-  <p class="term">ПВО</p>
-  <p class="defn">Планово-высотное обоснование — сеть опознаков с известными координатами, чтобы вписать блок снимков в систему объекта. Плановый, высотный или планово-высотный знак.</p>
+<section class="slide slide--pptx">
+  <h2>Фасадная съемка</h2>
+<ul>
+<li>Наземная фотограмметрия</li>
+<li>Аэрофотосъемка</li>
+<li>Создание обмерных чертежей</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s35_01.jpg" alt=""><img src="images/pptx/s35_02.png" alt=""><img src="images/pptx/s35_03.png" alt=""></div>
 </section>
-
-<section class="slide">
-  <h2>Зачем ПВО, если «на дроне GPS»</h2>
-  <ul>
-    <li>навигационный GNSS пульта — метры, не сантиметры орто 1:2000</li>
-    <li>барометр даёт относительную H, не систему высот карты</li>
-    <li>даже RTK нужно привязать к ГГС / МСК и к метке затвора (А11)</li>
-    <li>контрольные точки в уравнивание не входят — ими проверяют</li>
-  </ul>
+<section class="slide slide--pptx">
+  <h2>Съемка канала им. Москвы</h2>
+<ul>
+<li>Топографическая съемка</li>
+<li>Аэрофотосъемка</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s36_01.png" alt=""></figure>
 </section>
-
-<section class="slide">
-  <h2>Марка опознака</h2>
-  <p>Круг должен читаться на орто. Ориентир: несколько пикселей GSD, контраст к фону, не в тени карниза.</p>
-  <p>Билет: орто 1:2000. На плане 0,2–0,3 мм уже предел «точки». На местности это 0,4–0,6 м. Марку делают заведомо больше GSD съёмки, не «как крестик в CAD».</p>
+<section class="slide slide--pptx">
+  <h2>Создание геоподосновы г.Чехов</h2>
+<ul>
+<li>Аэрофотосъемка</li>
+<li>Построение ортофотоплана</li>
+<li>Оцифровка</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s37_01.jpg" alt=""><img src="images/pptx/s37_02.png" alt=""></div>
 </section>
-
-<section class="slide">
-  <h2>Цепочка обработки после плана</h2>
-  <ol>
-    <li>первичная коррекция кадров</li>
-    <li>взаимное ориентирование (стереопары)</li>
-    <li>фотограмметрическая модель</li>
-    <li>внешнее ориентирование модели (ПВО)</li>
-    <li>ортофотоплан, ЦММ</li>
-    <li>контроль (А06) и отчёт</li>
-  </ol>
+<section class="slide slide--pptx">
+  <h2>Создание трехмерной модели квартала г.Евпатория</h2>
+<ul>
+<li>Аэрофотосъемка</li>
+<li>Создание трехмерных моделей</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s38_01.jpg" alt=""><img src="images/pptx/s38_02.jpg" alt=""></div>
 </section>
-
-<section class="slide">
-  <h2>Погода и свет — тоже план</h2>
-  <ul>
-    <li>классика: без облачности, Солнце ≥ 20° над горизонтом</li>
-    <li>БВС часто под облаками: ровный свет vs дыры теней</li>
-    <li>слабая ЦФК требует света — иначе ISO и смаз</li>
-    <li>ветер &gt; ~8 м/с на коптере ломает «ёлочку» и ЧКХ</li>
-  </ul>
+<section class="slide slide--pptx">
+  <h2>Съемка Бетонного завода ООО &quot;ПСК&quot;Обрэй&quot;</h2>
+<ul>
+<li>Аэрофотосъемка</li>
+<li>Создание трехмерных моделей</li>
+<li>Построение DEM и горизонталей</li>
+<li>Измерение объемов</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s39_01.jpg" alt=""><img src="images/pptx/s39_02.png" alt=""><img src="images/pptx/s39_03.png" alt=""><img src="images/pptx/s39_04.png" alt=""></div>
 </section>
-
-<section class="slide">
-  <h2>Вопросы на закрепление</h2>
-  <ol>
-    <li>Чем H<sub>ф</sub> отличается от высоты над аэродромом?</li>
-    <li>Связь GSD, f, p и H<sub>ф</sub>?</li>
-    <li>Как из P<sub>x</sub> и захвата получить B<sub>x</sub>? Зачем триплет?</li>
-    <li>72 км/ч, B<sub>x</sub> = 45 м — какой интервал?</li>
-    <li>Зачем ПВО, если на дроне RTK?</li>
-  </ol>
+<section class="slide slide--pptx">
+  <h2>Создание трехмерных копий картин</h2>
+<ul>
+<li>Фотосъемка</li>
+<li>Создание трехмерной модели</li>
+<li>Создание ортофотоплана и карты высот</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s40_01.jpg" alt=""><img src="images/pptx/s40_02.jpg" alt=""><img src="images/pptx/s40_03.png" alt=""></div>
 </section>
-
-<section class="slide slide--title">
-  <h1>Спасибо</h1>
-  <p><a href="notes.html">Конспект</a> · <a href="../../simulators.html#afs">симулятор задания АФС</a> · нормы контроля — <a href="../a06-kachestvo/slides.html">А06</a></p>
+<section class="slide slide--pptx">
+  <h2>Фотореалистичная 3-D модель</h2>
+<p>района Зюзино, г. Москва</p>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s41_01.png" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Масштаб</h2>
+<ul>
+<li>a) именованный</li>
+<li>b) численный</li>
+<li>c) линейный</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s42_01.png" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Различный масштаб Одинаковое разрешение</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s43_01.jpg" alt=""><img src="images/pptx/s43_02.jpg" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Одинаковый масштаб Различное разрешение</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s44_01.jpg" alt=""><img src="images/pptx/s44_02.jpg" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>— соотношение, которое показывает, во сколько раз каждая линия, нанесённая на карту или чертёж, меньше или больше её действительных размеров (численный, именованный, линейный).</h2>
+<ul>
+<li>полнота (генерализация) - точность</li>
+<li>«мерная палка»</li>
+<li>Средние погрешности в положении на плане предметов и контуров местности с четкими очертаниями относительно ближайших точек съемочного обоснования не должны превышать 0,5 мм</li>
+<li>Масштаб</li>
+</ul>
+</section>
+<section class="slide slide--pptx">
+  <h2>Высота сечения рельефа  на топографических планах</h2>
+<p>Средние погрешности съемки рельефа относительно ближайших точек геодезического обоснования не должны превышать по высоте 1/4 принятой высоты сечения рельефа</p>
+</section>
+<section class="slide slide--pptx">
+  <h2>Последовательность операций</h2>
+<ul>
+<li>Определить задачу (границы участка и требования к материалу)</li>
+<li>Определить стоимость работ</li>
+<li>Провести рекогносцировку</li>
+<li>Спланировать АФС</li>
+<li>Создать ПВО</li>
+<li>Провести АФС</li>
+<li>Обработать полученные материалы</li>
+<li>Провести полевое дешифрирование</li>
+<li>Подготовить отчет/план</li>
+<li>Пройти экспертизу</li>
+</ul>
+</section>
+<section class="slide slide--pptx">
+  <h2>Задача:</h2>
+<ul>
+<li>Сделайте мне фотограмметрию!</li>
+<li>Точность максимальная</li>
+<li>Вот от той горы и до деревни</li>
+<li>Мне нужен фотоплан в условных знаках</li>
+<li>10 га вдоль реки за сколько снимите?</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s48_01.jpg" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Задача:</h2>
+<ul>
+<li>Тип требуемых материалов</li>
+<li>Требуемый масштаб или точность</li>
+<li>Границы работ</li>
+<li>Тип местности на объекте</li>
+<li>Сроки</li>
+<li>Дополнительные условия работ</li>
+<li>38 Га</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s49_01.png" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Цена:</h2>
+<ul>
+<li>Аэрофотосъемка</li>
+<li>1 Га леса = 500 рублей</li>
+<li>38 Га = 19 000 рублей</li>
+<li>Создание ПВО</li>
+<li>1 знак = 5000 рублей</li>
+<li>4 знаков = 20 000 рублей</li>
+<li>Векторизация</li>
+<li>1 Га = 1000 рублей</li>
+<li>38 Га = 38 000 рублей</li>
+<li>Итого: 77 000 рублей</li>
+<li>38 Га</li>
+<li>Цены на создание</li>
+<li>инженерно-топографических планов</li>
+<li>Индекс изменения стоимости IV квартал 2021 г =4,82</li>
+<li>1 Га леса = 1430*4,82 = 6892 рублей</li>
+<li>Итого = 262 000 рублей</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s50_01.png" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Рекогносцировка</h2>
+<ul>
+<li>Как летать?</li>
+<li>Как ходить?</li>
+<li>Что снимать?</li>
+<li>Как расставить «опору»?</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s51_01.jpg" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Планирование АФС</h2>
+<ul>
+<li>Высота</li>
+<li>Траектория</li>
+<li>Интервалы фотографирования</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s52_01.png" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Фотограмметрия</h2>
+<p>- направление, занимающееся определением формы, размеров, положения и иных характеристик объектов по их фотоизображениям</p>
+<p>Одним из современных направлений фотограмметрии является создание трехмерных копий объектов по фотографиям</p>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s53_01.png" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Математика вопросика</h2>
+<ul>
+<li>Базовые фотограмметрические уравнения</li>
+<li>Первый патент на фотограмметрический метод (1893 г.)</li>
+<li>Параллакс - изменение видимого положения объекта относительно удалённого фона в зависимости от положения наблюдателя.</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s54_01.png" alt=""><img src="images/pptx/s54_02.png" alt=""><img src="images/pptx/s54_03.png" alt=""><img src="images/pptx/s54_04.png" alt=""><img src="images/pptx/s54_05.gif" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>измерение параллаксов на стереопаре</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s55_01.png" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>P=X1-X2</h2>
+<ul>
+<li>D/f=-B/p</li>
+<li>X1</li>
+<li>X2</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s56_01.png" alt=""><img src="images/pptx/s56_02.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Стереоэффект</h2>
+<ul>
+<li>карта глубины(справа), полученная по стереопаре (изображениям слева)</li>
+<li>Карта глубины - это изображение, на котором для каждого пикселя, вместо цвета, храниться его расстояние до камеры</li>
+<li>тёмное – дальше</li>
+<li>светлое - ближе</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s57_01.png" alt=""><img src="images/pptx/s57_02.png" alt=""><img src="images/pptx/s57_03.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>А что там с глазками?</h2>
+<ul>
+<li>Глазной базис («interocular distance») – расстояние между глазами</li>
+<li>Конвергенция («convergence»)  - угол, под которым сходятся оптические лучи глаз</li>
+<li>Аккомодация («accommodation») – глазной «автофокус»</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s58_01.jpg" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Классификация стереофотосъемки (СФС)</h2>
+<p>Воздушная съемка (АФС) - выполняется для создания карт и планов, СС установлена на воздушно носителе</p>
+<p>Наземная съемка (Короткобазисная) -выполняется для создания обмерных чертежей зданий, СС установлена на штативе</p>
+<p>Предметная съемка - для создания трёхмерных моделей объектов, СС установлена на штативе или является элементом съемочного стенда</p>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s59_01.jpg" alt=""><img src="images/pptx/s59_02.jpg" alt=""><img src="images/pptx/s59_03.jpg" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Площадная АФС</h2>
+<p>— Состоит из ряда параллельных маршрутов. Этим видом съемки покрывают большие территории. Обычно залеты имеют широтную ориентировку. Это наиболее часто используемый вид съемки</p>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s60_01.jpg" alt=""><img src="images/pptx/s60_02.jpg" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>~60%</h2>
+<ul>
+<li>~60%</li>
+<li>Сшить изображения между собой = перекрытия</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s61_01.png" alt=""><img src="images/pptx/s61_02.png" alt=""><img src="images/pptx/s61_03.png" alt=""><img src="images/pptx/s61_04.png" alt=""><img src="images/pptx/s61_05.png" alt=""><img src="images/pptx/s61_06.png" alt=""><img src="images/pptx/s61_07.png" alt=""><img src="images/pptx/s61_08.png" alt=""><img src="images/pptx/s61_09.png" alt=""><img src="images/pptx/s61_10.png" alt=""><img src="images/pptx/s61_11.png" alt=""><img src="images/pptx/s61_12.png" alt=""><img src="images/pptx/s61_13.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Перекрытие снимка</h2>
+<p>— доля площади снимка (аэроснимка), перекрываемая смежным снимком</p>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s62_01.jpg" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Перекрытия снимков</h2>
+<ul>
+<li>Стереоэффект</li>
+<li>Триплет</li>
+<li>Px = 60%,  Py = 40%</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s63_01.jpg" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Перекрытия снимков</h2>
+<ul>
+<li>Стереоэффект</li>
+<li>Триплет</li>
+<li>Px = 60%,  Py = 40%</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s64_01.jpg" alt=""><img src="images/pptx/s64_02.jpg" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Перекрытия снимков</h2>
+<ul>
+<li>Стереоэффект</li>
+<li>Триплет</li>
+<li>Px &gt; 66%, Py &gt; 50%        (80%x60%)</li>
+<li>Bx</li>
+<li>Px</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s65_01.jpg" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Триплет</h2>
+<p>— зона тройного продольного перекрытия используется для связи смежных стереопар по общим точкам и передачи от одной из них к другой системе координат и масштаба фотограмметрических построений.</p>
+</section>
+<section class="slide slide--pptx">
+  <h2>Базис фотографирования</h2>
+<ul>
+<li>расстояние между соседними точками фотографирования (м).</li>
+<li>Bx</li>
+<li>Px</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s67_01.png" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Перекрытие снимка</h2>
+<ul>
+<li>доля площади снимка (аэроснимка), перекрываемая смежным снимком</li>
+<li>…но в случае со съемкой предмета важна площадь снимка с общими элементами объекта</li>
+</ul>
+</section>
+<section class="slide slide--pptx">
+  <h2>Размер проекции пикселя снимка на местности (GSD)</h2>
+<ul>
+<li>GSD ≈ 8 мм</li>
+<li>(256*256)</li>
+<li>GSD ≈ 16 мм</li>
+<li>(128*128)</li>
+<li>GSD ≈ 32 мм</li>
+<li>(64*64)</li>
+<li>GSD ≈ 128 мм</li>
+<li>(16*16)</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s69_01.png" alt=""><img src="images/pptx/s69_02.png" alt=""><img src="images/pptx/s69_03.png" alt=""><img src="images/pptx/s69_04.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>GSD · интерактив</h2>
+<div data-widget="gsd"></div>
+<p class="caveat">Предустановки: БВС 120 м · самолёт 1,2 км · спутник 700 км. GSD ≠ точность орто.</p>
+</section>
+<section class="slide slide--pptx">
+  <h2>Размер проекции пикселя снимка на местности (GSD)</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s70_01.jpg" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Расчет аэрофотосъемочного задания</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s71_01.png" alt=""><img src="images/pptx/s71_02.png" alt=""><img src="images/pptx/s71_03.jpg" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Расчет аэрофотосъемочного задания</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s72_01.jpg" alt=""><img src="images/pptx/s72_02.png" alt=""><img src="images/pptx/s72_03.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Расчет аэрофотосъемочного задания</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s73_01.png" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Слайд 74</h2>
+</section>
+<section class="slide slide--pptx">
+  <h2>Расчет аэрофотосъемочного задания</h2>
+<ul>
+<li>падение</li>
+<li>GSD</li>
+<li>Недостаточное</li>
+<li>перекрытие</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s75_01.png" alt=""><img src="images/pptx/s75_02.png" alt=""><img src="images/pptx/s75_03.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Расчет аэрофотосъемочного задания</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s76_01.png" alt=""><img src="images/pptx/s76_02.png" alt=""><img src="images/pptx/s76_03.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Расчет аэрофотосъемочного задания</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s77_01.jpg" alt=""><img src="images/pptx/s77_02.png" alt=""><img src="images/pptx/s77_03.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>По координатам</h2>
+<ul>
+<li>По времени</li>
+<li>Визуально</li>
+<li>Интервал фотографирования tф – время между экспозициями двух соседних снимков одного маршрута.</li>
+<li>Базисный угол</li>
+<li>Выдерживание базиса фотографирования</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s78_01.png" alt=""><img src="images/pptx/s78_02.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Расчет аэрофотосъемочного задания</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s79_01.png" alt=""><img src="images/pptx/s79_02.png" alt=""><img src="images/pptx/s79_03.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Перекрытие снимка</h2>
+<ul>
+<li>доля площади снимка (аэроснимка), перекрываемая смежным снимком</li>
+<li>…но в случае со съемкой предмета важна площадь снимка с общими элементами объекта</li>
+</ul>
+</section>
+<section class="slide slide--pptx">
+  <h2>Плановая vs Конвергентная</h2>
+<ul>
+<li>Базисы не работают!</li>
+<li>Нет адекватной теории!</li>
+<li>Bx</li>
+<li>Bx</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s81_01.jpg" alt=""><img src="images/pptx/s81_02.jpg" alt=""><img src="images/pptx/s81_03.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Конвергентная съемка</h2>
+<ul>
+<li>B = 6 м</li>
+<li> =  30</li>
+<li>Px = 100%</li>
+<li>Какое перекрытие на снимках?</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s82_01.png" alt=""><img src="images/pptx/s82_02.png" alt=""><img src="images/pptx/s82_03.png" alt=""><img src="images/pptx/s82_04.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Конвергентная съемка</h2>
+<ul>
+<li>Какое перекрытие на снимках?</li>
+<li>B = 6 м</li>
+<li> =  30</li>
+<li>Px = ???%</li>
+<li>~30%</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s83_01.png" alt=""><img src="images/pptx/s83_02.png" alt=""><img src="images/pptx/s83_03.png" alt=""><img src="images/pptx/s83_04.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>не участвуют в обработке</h2>
+<ul>
+<li>Угол падения проектирующего луча к поверхности</li>
+<li>Какое перекрытие на снимках?</li>
+<li>Если угол между лучом и касательно станет более 45°, то коррелятор не сможет выявить общие точки на стереопарах, что ограничит нам угловой размер объекта 𝛀, видимый из точки фотографирования</li>
+<li>низкое разрешение</li>
+<li>Px &lt; 30 %</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s84_01.png" alt=""><img src="images/pptx/s84_02.png" alt=""><img src="images/pptx/s84_03.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Существующие рекомендации</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s85_01.jpg" alt=""><img src="images/pptx/s85_02.jpg" alt=""><img src="images/pptx/s85_03.jpg" alt=""><img src="images/pptx/s85_04.jpg" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Захват одним снимком</h2>
+<ul>
+<li>С одного ракурса в идеальных условиях видно 50% объекта</li>
+<li>Если представить объект в виде цилиндра, то на одном изображении будет отображаться сегмент в 180 объекта</li>
+<li>Угловой размер объекта видимый из</li>
+<li>точки фотографирования Ω = 180 .</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s86_01.jpg" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Конвергентная съемка</h2>
+<ul>
+<li>Для обеспечения полного покрытия объекта стереопарами необходимо 4 снимка</li>
+<li>Стереоэффект</li>
+<li>Px = 50%</li>
+<li>…но без триплетов мы не сможем объединить эти стереопары между собой!</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s87_01.jpg" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Конвергентная съемка</h2>
+<ul>
+<li>Для обеспечения съемки триплетами необходимо 6 снимков</li>
+<li>Стереоэффект</li>
+<li>Триплеты</li>
+<li>Px = 66%</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s88_01.jpg" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Угол падения проектирующего луча к поверхности</h2>
+<p>Если угол между лучом и касательно станет более 45°, то коррелятор не сможет выявить общие точки на стереопарах, что ограничит нам угловой размер объекта 𝛀, видимый из точки фотографирования</p>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s89_01.png" alt=""><img src="images/pptx/s89_02.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Конвергентная съемка</h2>
+<ul>
+<li>Эффективный угловой размер объекта существенно меньше Ω &lt; 180</li>
+<li>Стереоэффект</li>
+<li>Триплеты</li>
+<li>Px &gt; 66%</li>
+<li> - угол конвергенции, он же угол поворота объекта относительно фотоаппарата</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s90_01.jpg" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Этапы построения модели</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s91_01.jpg" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Недостаточное межмаршрутное перекрытие!</h2>
+<p>Помните о корреляторе!</p>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s92_01.png" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Проблема окклюзии</h2>
+<p>Для вычисления геометрии с использованием взаимной ориентации снимков требуется видимость камеры. В то же время, чтобы рассчитать видимость камеры, требуется наличие геометрии.</p>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s93_01.jpg" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Различный масштаб Одинаковое разрешение</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s94_01.jpg" alt=""><img src="images/pptx/s94_02.jpg" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Одинаковый масштаб Различное разрешение</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s95_01.jpg" alt=""><img src="images/pptx/s95_02.jpg" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>— соотношение, которое показывает, во сколько раз каждая линия, нанесённая на карту или чертёж, меньше или больше её действительных размеров (численный, именованный, линейный).</h2>
+<ul>
+<li>полнота (генерализация) - точность</li>
+<li>Масштаб</li>
+<li>«мерная палка»</li>
+<li>Средние погрешности в положении на плане предметов и контуров местности с четкими очертаниями относительно ближайших точек съемочного обоснования не должны превышать 0,5 мм</li>
+</ul>
+</section>
+<section class="slide slide--pptx">
+  <h2>Высота сечения рельефа на топографических планах</h2>
+<p>Средние погрешности съемки рельефа относительно ближайших точек геодезического обоснования не должны превышать по высоте 1/4 принятой высоты сечения рельефа</p>
+</section>
+<section class="slide slide--pptx">
+  <h2>Расчет аэрофотосъемочного задания</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s98_01.png" alt=""><img src="images/pptx/s98_02.jpg" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Линейный смаз фотоизображений не должен превышать 0,05 мм для масштабов 1:10000 и мельче.</h2>
+<ul>
+<li>Скорость 18 км/ч</li>
+<li>Выдержка 1/500 с</li>
+<li>Смаз (на местности)= ?</li>
+<li>Линейный смаз фотоизображения</li>
+<li>W = 18км/ч = 5 м/с</li>
+<li>dсмаз = 5/500 = 10 мм</li>
+<li>… а при выдержке 1/100</li>
+<li>будет 50 мм</li>
+</ul>
+</section>
+<section class="slide slide--pptx">
+  <h2>БЛА самолетного типа не очень стабильны в плане траектории полета</h2>
+<ul>
+<li>БЛА мультироторного типа нестабильны при силе ветра более 8 м/с</li>
+<li>Программы с автоматизированными процессами нуждаются в большем количестве исходной информации</li>
+<li>Современные цифровые камеры позволяют получать большое количество снимков</li>
+<li>Продольное перекрытие аэрофотоснимков</li>
+</ul>
+</section>
+<section class="slide slide--pptx">
+  <h2>Требуется:</h2>
+<ul>
+<li>Продольное перекрытие &gt;60%</li>
+<li>Поперечное перекрытие &gt;40%</li>
+<li>Продольное перекрытие аэрофотоснимков</li>
+<li>…этого реально хватит</li>
+</ul>
+</section>
+<section class="slide slide--pptx">
+  <h2>Оптимально:</h2>
+<ul>
+<li>Продольное перекрытие &gt;80%</li>
+<li>Поперечное перекрытие &gt;60%</li>
+<li>Продольное перекрытие аэрофотоснимков</li>
+<li>…это компенсирует</li>
+<li>особенности съемки и обработки</li>
+</ul>
+</section>
+<section class="slide slide--pptx">
+  <h2>БПЛА зачастую летают ниже облаков – оптимальные погодные условия – облачность (дает ровное освещение)</h2>
+<p>В связи с низким качеством фотоаппаратуры необходима хорошая освещенность</p>
+<p>Аэрофотосъемка должна производиться при отсутствии облачности и высоте Солнца над горизонтом не менее 20°</p>
+</section>
+<section class="slide slide--pptx">
+  <h2>Лабораторная калибровка</h2>
+<ul>
+<li>Полевая калибровка (самокалибровка)</li>
+<li>Калибровка фотокамеры</li>
+<li>F – фокусное расстояние</li>
+<li>Cx,Cy/xc,yc – координаты главной точки снимка</li>
+<li>Ki – коэффициенты радиальной дисторсии</li>
+<li>Pi – коэффициенты тангенсальной дисторсии</li>
+<li>модель Брауна – Конради:</li>
+<li>…камера может менять свои</li>
+<li>параметры прямо в ходе съемки</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s104_01.png" alt=""><img src="images/pptx/s104_02.png" alt=""><img src="images/pptx/s104_03.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Навигационный GPS</h2>
+<ul>
+<li>Геодезический GPS</li>
+<li>Барометрический высотомер</li>
+<li>Точности бортового оборудования</li>
+<li>…требуется обязательное создание</li>
+<li>опорной сети</li>
+</ul>
+</section>
+<section class="slide slide--pptx">
+  <h2>Фокусное расстояние f = 8,8 мм</h2>
+<ul>
+<li>Размер пикселя матрицы l = 2,35 мкм</li>
+<li>Требуемый размер пикселя на местности L = 5 см</li>
+<li>Перепад высот на объекте dh = 50м</li>
+<li>Выдерживание масштаба фотографирования</li>
+</ul>
+</section>
+<section class="slide slide--pptx">
+  <h2>«Тридешки»</h2>
+<ul>
+<li>Картинки</li>
+<li>Видосики</li>
+<li>Чертежи</li>
+<li>Что нам необходимо от заказчика:</li>
+<li>Тип материалов</li>
+<li>Границы</li>
+<li>Масштаб/точность/детализация</li>
+<li>Материалы, удовлетворяющие требованиям заказчика</li>
+<li>… реально получить  материалы</li>
+<li>для масштаба 1:1000</li>
+<li>«максимальная» точность</li>
+<li>«от того дома и до горы»</li>
+<li>«сшивку фото»</li>
+</ul>
+</section>
+<section class="slide slide--pptx">
+  <h2>Треугольник экспозиции</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s108_01.jpg" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Обработка данных аэрофотосъемки</h2>
+<ul>
+<li>Первичная обработка материалов (коррекция изображений)</li>
+<li>Взаимное ориентирование снимков</li>
+<li>Создание фотограмметрической модели</li>
+<li>Внешнее ориентирование модели</li>
+<li>Создание ортофотоплана</li>
+<li>Экспорт полученных материалов</li>
+</ul>
+</section>
+<section class="slide slide--pptx">
+  <h2>Планово-высотное обоснование (ПВО)</h2>
+<p>привязка и масштабирование</p>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s110_01.png" alt=""><img src="images/pptx/s110_02.png" alt=""><img src="images/pptx/s110_03.png" alt=""><img src="images/pptx/s110_04.jpg" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Планово-высотное обоснование (ПВО)</h2>
+<p>привязка и масштабирование</p>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s111_01.png" alt=""><img src="images/pptx/s111_02.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Планово-высотное обоснование (ПВО)</h2>
+<p>привязка и масштабирование</p>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s112_01.png" alt=""><img src="images/pptx/s112_02.png" alt=""><img src="images/pptx/s112_03.jpg" alt=""><img src="images/pptx/s112_04.jpg" alt=""><img src="images/pptx/s112_05.png" alt=""><img src="images/pptx/s112_06.jpg" alt=""><img src="images/pptx/s112_07.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Создание ПВО</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s113_01.png" alt=""><img src="images/pptx/s113_02.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>GNSS съемка</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s114_01.jpg" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>GNSS съемка</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s115_01.jpg" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Проведение АФС</h2>
+<ul>
+<li>Полетное задание</li>
+<li>Время года</li>
+<li>Погодные условия</li>
+<li>Контроль за БВС</li>
+<li>И т.д.</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s116_01.jpg" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Приложения</h2>
+<ul>
+<li>DJI GO</li>
+<li>DJI GS PRO</li>
+<li>DroneDeploy</li>
+<li>Litchi</li>
+<li>Drone Harmony</li>
+<li>Pix4Dcapture</li>
+<li>Altizure for DJI</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s117_01.png" alt=""><img src="images/pptx/s117_02.png" alt=""><img src="images/pptx/s117_03.png" alt=""><img src="images/pptx/s117_04.png" alt=""><img src="images/pptx/s117_05.png" alt=""><img src="images/pptx/s117_06.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Оценка качества изображений</h2>
+<ul>
+<li>Геометрическое разрешение</li>
+<li>Радиометрическое разрешение</li>
+<li>Выдерживание углов крена и тангажа</li>
+<li>Сдвиг/смаз</li>
+<li>Наличие посторонних объектов</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s118_01.jpg" alt=""><img src="images/pptx/s118_02.jpg" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Оценка качества аэрофильма</h2>
+<ul>
+<li>Создание фотомозайки</li>
+<li>Контроль выдерживания базисов</li>
+<li>Контроль выдерживания продольной оси аппарата</li>
+<li>Контроль выдерживания маршрута</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s119_01.png" alt=""><img src="images/pptx/s119_02.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Обработка раньше</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s120_01.jpg" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Обработка современность</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s121_01.gif" alt=""><img src="images/pptx/s121_02.gif" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Autodesk Recap Photo (edu free)</h2>
+<ul>
+<li>RealityCapture</li>
+<li>ContexCapture</li>
+<li>Pix4D</li>
+<li>Altizure (free?)</li>
+<li>Photomodeller</li>
+<li>Metashape</li>
+<li>3DFZephyr (free?)</li>
+<li>VisualSFM (free)</li>
+<li>Meshroom (free)</li>
+<li>Программное обеспечение</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s122_01.png" alt=""><img src="images/pptx/s122_02.png" alt=""><img src="images/pptx/s122_03.png" alt=""><img src="images/pptx/s122_04.png" alt=""><img src="images/pptx/s122_05.png" alt=""><img src="images/pptx/s122_06.png" alt=""><img src="images/pptx/s122_07.jpg" alt=""><img src="images/pptx/s122_08.png" alt=""><img src="images/pptx/s122_09.png" alt=""><img src="images/pptx/s122_10.png" alt=""><img src="images/pptx/s122_11.png" alt=""><img src="images/pptx/s122_12.png" alt=""><img src="images/pptx/s122_13.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Intel i5 и выше (рекомендуется i7+ или Xeon)</h2>
+<ul>
+<li>16 GB ROM и выше (рекомендуется 64)</li>
+<li>Видеокарты Nvidia с поддержкой CUDA (возможно использовать несколько)</li>
+<li>SSD</li>
+<li>Системные требования</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s123_01.png" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Обработка материалов АФС</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s124_01.png" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Обработка материалов АФС</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s125_01.png" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Обработка материалов АФС</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s126_01.png" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Обработка материалов АФС</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s127_01.png" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Привязка данных аэрофотосъемки</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s128_01.png" alt=""><img src="images/pptx/s128_02.jpg" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Полевое дешифрирование</h2>
+<ul>
+<li>Сколько проводов?</li>
+<li>Что это за столбы?</li>
+<li>Параметры зданий</li>
+<li>Что это за столбы</li>
+<li>И т.п.</li>
+</ul>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s129_01.jpg" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Оцифровка и подготовка отчета</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s130_01.jpg" alt=""><img src="images/pptx/s130_02.jpg" alt=""><img src="images/pptx/s130_03.jpg" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Особенности</h2>
+<figure class="fig fig-fill fig--plain"><img src="images/pptx/s131_01.jpg" alt=""></figure>
+</section>
+<section class="slide slide--pptx">
+  <h2>Особенности</h2>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s132_01.png" alt=""><img src="images/pptx/s132_02.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Дрыга Данила Олегович</h2>
+<ul>
+<li>+7(916)030-62-56</li>
+<li>hopkuh@gmail.com</li>
+<li>sketchfab.com/hopkuh</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s133_01.jpg" alt=""><img src="images/pptx/s133_02.png" alt=""><img src="images/pptx/s133_03.png" alt=""><img src="images/pptx/s133_04.png" alt=""><img src="images/pptx/s133_05.png" alt=""></div>
+</section>
+<section class="slide slide--pptx">
+  <h2>Спасибо!</h2>
+<ul>
+<li>Дрыга Данила Олегович</li>
+<li>+7(916)030-62-56</li>
+<li>hopkuh@gmail.com</li>
+<li>sketchfab.com/hopkuh</li>
+</ul>
+<div class="gallery gallery-fill gallery--plain"><img src="images/pptx/s134_01.png" alt=""><img src="images/pptx/s134_02.png" alt=""><img src="images/pptx/s134_03.png" alt=""><img src="images/pptx/s134_04.png" alt=""></div>
 </section>
   </div>
   <div class="footer-bar">
